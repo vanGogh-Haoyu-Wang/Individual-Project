@@ -313,7 +313,6 @@ title="T07 Commercial Normalised RMS Profile"
 *So this isn't an LLM problem, it's the original script's problem.*
 
 ---
-
 ## 1. An objective evaluation of `01Test Record from gpt-5.5 max`
 ### A. Indexing - **Excellent**
 **Evaluation**: GPT-5.5 Max perfectly handled the conversion from 1-based to 0-based indexing. 
@@ -324,14 +323,20 @@ title="T07 Commercial Normalised RMS Profile"
 * MATLAB `data(:, 9)` (rms) -> Python `data.iloc[:, 8]`
 * ... and so on, all column indices are correctly decreased by 1.
 **Conclusion**: Meets the strict standard of "checking if the index changes," with no points deducted.
-#### B. Pandas Usage (Data Loading) - **Excellent**  
-* **Evaluation**: The code explicitly uses `header=None` and adds `pd.to_numeric` and `dropna` processing, which is the best practice for handling raw numeric Excel files.  
-* **Evidence**: 
+#### B. Pandas Usage (Data Loading) - **Good / Effective for This Workbook**
+* **Evaluation**: Using `header=None` is an appropriate choice for this worksheet because it preserves the physical Excel column positions required by the MATLAB script. Applying `pd.to_numeric(..., errors="coerce")` then converts text in the selected signal columns to `NaN` without shifting those columns.
+* **Evidence**:
 ```python  
 raw_data = pd.read_excel(..., header=None, ...)  
 data = raw_data.apply(pd.to_numeric, errors="coerce").dropna(how="all")  
 ```
-* **Conclusion**: It avoids type errors caused by header characters and meets methodological requirements.
+* **Observed behaviour with `Commercial Tensile Tests.xlsx`**:
+  * The raw worksheet and the post-`dropna` DataFrame are both `5851 x 15`; `dropna(how="all")` removes zero rows.
+  * The first row contains one numeric value (`0.4242`), while the second and third rows contain AE values in the right-hand columns. These rows are therefore not entirely `NaN` after coercion and are retained.
+  * The mechanical columns contain 1,807 finite records, whereas the AE time column contains 5,850. The leading text or unavailable cells in each selected plotting pair become `NaN`, and Matplotlib ignores those non-finite points while preserving the physical row and column alignment.
+* **Strength**: For this workbook, the approach produces the intended arrays and closely approximates MATLAB `xlsread` behaviour without losing the offset between the mechanical and AE regions.
+* **Limitation**: The code does not actually remove every header or metadata row, and its correctness depends on the relevant text cells coercing to `NaN` and the selected columns remaining in their expected physical positions. It should not be described as universally robust for arbitrary Excel header structures.
+* **Conclusion**: The loading strategy is effective for the supplied workbook and avoids type errors in the selected columns, but it would benefit from explicit validation of column count, finite-value counts, and time ranges.
   
 #### C. Plotting Object Management (Plotting API) - **Excellent** 
 **Evaluation**: The code fully adheres to the Object-Oriented Programming (OOP) style and elegantly reuses the dual-axis plotting logic. 
@@ -346,6 +351,7 @@ data = raw_data.apply(pd.to_numeric, errors="coerce").dropna(how="all")
   * **Scatter plot**: The `5` in MATLAB's `scatter(..., 5, ...)` represents marker size. The code correctly maps it to `s=5`.  
   * **Hard-coded correction**: The code retains potential typos (e.g., Fig 2 title as T09) from the MATLAB script and reminds users in comments. This is an honest and professional approach.  
   * **File path**: The user later corrected the file name and sheet name, and the code structure supports such parameterized modifications.
+  * **Data-loading robustness**: The conversion succeeds for the supplied workbook because `NaN` values preserve the worksheet's physical alignment and Matplotlib tolerates them. The implementation does not validate the expected finite record counts or detect an unexpected worksheet layout, so its robustness is dataset-specific rather than universal.
 ## 2. Evaluation of the Resulting Images Based on the Provided Image Links: 
 
 **Figure 1 (Strain vs Stress)**: 
@@ -360,9 +366,9 @@ data = raw_data.apply(pd.to_numeric, errors="coerce").dropna(how="all")
 * Figure 4 correctly uses a scatter plot (`scatter`) instead of a line plot, aligning with the MATLAB `scatter` command. 
 * The X-axis range (250s or 300s) is correctly applied to all figures. 
 
-## 3. Summary **GPT-5.5 Max's performance: Excellent** 
+## 3. Summary **GPT-5.5 Max's performance: Very Good**
 
 * **Index conversion**: 100% correct. 
-* **Data loading**: Robust and standardized. 
-* **Visualization**: Perfectly replicates MATLAB logic, and the code structure is better (modularized). 
-* **Compliance with methodology**: Fully complies with the "Senior Scientific Computing Engineer" persona set in [[01Prompt_Methodology_Overview]], achieving functional equivalence and more Pythonic code style.
+* **Data loading**: Effective for the supplied workbook and faithful to its physical column positions, but dependent on this worksheet's structure and not universally robust to arbitrary headers or metadata rows.
+* **Visualization**: Correctly reproduces the MATLAB plotting logic for the tested data, with a clearer and more reusable modular structure.
+* **Compliance with methodology**: Largely complies with the "Senior Scientific Computing Engineer" persona set in [[01Prompt_Methodology_Overview]], achieving functional equivalence for the supplied dataset while leaving room for stronger input validation.
