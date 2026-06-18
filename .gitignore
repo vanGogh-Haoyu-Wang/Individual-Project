@@ -11,3 +11,4 @@
 .obsidian/copilot-index-*.json
 **/__pycache__/
 *.pyc
+.obsidian/
