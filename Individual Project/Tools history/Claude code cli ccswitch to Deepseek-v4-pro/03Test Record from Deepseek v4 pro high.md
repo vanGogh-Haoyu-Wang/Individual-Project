@@ -415,7 +415,7 @@ Pkg.add(["XLSX", "DataFrames", "Plots"])
 ## Usage
 
 ```bash
-julia ae_analysis.jl          # run standalone
+julia Test 3 by DSv4ph ae_analysis.jl          # run standalone
 ```
 
 Or interactively:
