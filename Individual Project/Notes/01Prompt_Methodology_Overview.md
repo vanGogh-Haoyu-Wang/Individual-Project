@@ -131,85 +131,19 @@ title('T07 Commercial Normalised Cumulative AE Energy');
 grid('minor');
 ```
   ---
-**评判标准（阅卷指南）**
-
-  按照以下标准去寻找它们的“破绽”，并在对比文档中记录：
-  
-   1. **看索引变没变**：如果 Python 代码里依然是 data[:, 1] 或者 data.iloc[:, 1] 取 t1，**扣分！** 正确的应该是 data.iloc[:, 0] 或者转换为 numpy array 后 data_arr[:, 0]。
-
-   2. **看 pandas 用法**：有没有正确加上 header=None 或者跳过表头？（因为单纯切片 [:, 0] 如果包含了 Excel 表头字符会报错）。
-
-   3. **看绘图对象管理**：好的代码会写出类似这样的结构：
-
-   1    fig2, ax1 = plt.subplots()
-
-   2    ax1.plot(t1, stress, 'b')
-
-   3    ax2 = ax1.twinx()
-
-   4    ax2.plot(time, rms, 'r')
-
-   如果代码乱写一气或者忘记绑定副 Y 轴，说明该模型在绘图 API 掌握上较弱。
-
----
-这个脚本 CT07.m 是一个 MATLAB 数据可视化脚本，主要用于分析材料拉伸试验（Tensile Test）与声发射（Acoustic Emission,
-  AE）信号之间的关系。
-
-  简单来说，它的工作就是：读取指定的 Excel 数据，提取力学参数和声发射参数，然后画出 5 张对比图。
-
-  以下是详细的分析：
-
-  1. 它是不是把 Excel 喂给它然后画图？
-  是的。 
-  脚本的第一行明确指定了输入文件：
-
-   1 data = xlsread("Tensile-processed.xlsx", 'CT-07');
-  它会读取当前目录下名为 Tensile-processed.xlsx 的 Excel 文件中名为 CT-07 的工作表。
-
-  2. 工作流程是什么？
-  该脚本的工作流程分为三个阶段：
-
-   * 数据导入与提取：
-      从 Excel 的特定列中提取数据：
-       * 第 3、4 列：应变（Strain）和应力（Stress）。
-       * 第 1、5 列：对应的时间轴。
-       * 第 9、10 列：声发射的 RMS（均方根值）及其累积值。
-       * 第 12、14 列：声发射的能量（Energy）及其累积值。
-
-   * 数据处理：
-      脚本中使用了 yyaxis left 和 yyaxis
-  right，这意味着它在同一张图上使用了双纵坐标轴。左轴通常显示应力（反映材料受力状态），右轴显示声发射特征（反映内部损伤
-  或微裂纹活动）。
-
-   * 图形生成（生成 5 个图窗）：
-       1. Fig 1: 标准的应力-应变曲线（Stress vs. Strain）。
-       2. Fig 2: 应力与 RMS 随时间的变化（注：此处标题写的是 T09，可能是作者从其他脚本复制过来的笔误）。
-       3. Fig 3: 应力与 累积 RMS 随时间的变化。
-       4. Fig 4: 应力与 声发射能量 的散点对比图。
-       5. Fig 5: 应力与 累积声发射能量 随时间的变化。
-
-  3. 核心用途
-  这个脚本的主要目的是研究材料在拉伸过程中何时产生声发射信号。
-   * 通过观察 Fig 3 或 Fig 5
-     的斜率变化，研究人员可以判断材料何时进入塑性变形阶段，或者何时发生了显著的内部断裂，因为这些通常伴随着累积能量的陡
-     增。
-
-  注意事项：
-   * 文件依赖：运行此脚本必须确保 Tensile-processed.xlsx 文件位于 MATLAB 的当前工作路径下。
-   * 硬编码限制：脚本中有很多硬编码的坐标轴范围（如 ylim([0 520]) 和 xlim([0
-     300])），如果你的新数据范围超出了这些值，图片可能会显示不全。
-### 1. 运行结果的评价标准 (Evaluation Criteria) 根据方法论笔记，我们制定以下具体评分维度：
-1. **索引转换准确性 (Indexing Accuracy)**: 
-* **核心指标**: MATLAB 是 1-based，Python 是 0-based。 
-* **正确示例**: `data(:, 1)` (第1列) 应转换为 `data.iloc[:, 0]` 或 `data_arr[:, 0]`。 
-* **错误示例**: 仍使用 `data.iloc[:, 1]` (这将错误地获取第2列)。 
-2. **Pandas 数据加载规范性 (Data Loading)**: 
-* **核心指标**: 是否处理了 Excel 表头？ 
-* **正确做法**: 使用 `header=None` 或明确跳过表头，防止将列名（字符串）当作数据读取导致 `pd.to_numeric` 报错或数据错位。 
-* **错误做法**: 直接读取且未处理表头，导致第一行数据偏移或类型错误。 
-3. **绘图 API 掌握程度 (Plotting API Proficiency)**: 
-* **核心指标**: 是否使用面向对象 (OO) 接口？双 Y 轴 (`yyaxis`) 是否正确使用 `twinx()` 绑定到同一个 X 轴？ 
-* **正确示例**: ```python fig, ax1 = plt.subplots() ax2 = ax1.twinx() ax1.plot(...) ax2.plot(...) ``` 
-* **错误做法**: 使用 `plt.plot` 全局状态机混用，或者 `twinx()` 后未正确关联 X 轴范围，导致双轴图错位。 
-4. **代码模块化与可读性 (Modularity & Readability)**: 
-* **核心指标**: 是否将重复的双轴绘图逻辑封装为函数？是否遵循 PEP-8？
+**Judging Criteria (Grading Guide)**
+Look for their "flaws" according to the following standards and record them in the comparative document:
+1. **Indexing Accuracy**: 
+* **Core Indicator**: MATLAB is 1-based, Python is 0-based. 
+* **Correct Examples**: `data(:, 1)` (1st column) should be converted to `data.iloc[:, 0]` or `data_arr[:, 0]`.*
+* **Incorrect Example**: Still using `data.iloc[:, 1]` (this will incorrectly get the 2nd column). 
+2. **Pandas Data Loading Best Practices**: 
+* **Core Indicator**: Did you handle the Excel header? 
+* **Correct Approach**: Use `header=None` or explicitly skip the header to prevent reading column names (strings) as data, which can cause errors in `pd.to_numeric` or misaligned data. 
+* **Incorrect Approach**: Directly reading without handling the header, leading to the first row of data being shifted or having incorrect types. 
+3. **Proficiency in Plotting APIs**: 
+* **Core Indicators**: Whether an object-oriented (OO) interface is used? Is the dual Y-axis (`yyaxis`) correctly bound to the same X-axis using `twinx()`? 
+* **Correct Example**: ```python fig, ax1 = plt.subplots() ax2 = ax1.twinx() ax1.plot(...) ax2.plot(...) ``` 
+* **Incorrect Practices**: Mixing global state machines with `plt.plot`, or failing to correctly associate the X-axis range after `twinx()`, causing misalignment in dual-axis plots.
+4. **Modularity & Readability**: 
+* **Core indicators**: Is the repetitive dual-axis plotting logic encapsulated as a function? Does it follow PEP-8?
