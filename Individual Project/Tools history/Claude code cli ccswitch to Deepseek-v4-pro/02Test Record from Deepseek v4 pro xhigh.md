@@ -305,3 +305,27 @@ python ae_analysis.py
 ```
 
 Make sure `Commercial Tensile Tests.xlsx` is in the working directory, or update `FILE_PATH` in the script.
+
+---
+# Debug
+
+  
+---
+# Results
+Figure 1  
+![[01_CT07_strain_vs_stress.png]]
+Figure 2  
+![[02_CT07_normalised_RMS_profile.png]]
+Figure 3  
+![[03_CT07_normalised_cumulative_RMS.png]]
+Figure 4  
+![[04_CT07_normalised_AE_energy.png]]
+Figure 5  
+![[05_CT07_normalised_cumulative_AE_energy.png]]
+
+---
+# Evaluation:
+
+  
+---
+# Summary
