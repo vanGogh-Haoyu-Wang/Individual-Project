@@ -279,7 +279,7 @@ title_text = "T09 Commercial Normalised RMS Profile"
 But it reads CT-07/CT07 data, so this should be a typo in the original script. The Julia version retains it for faithful translation. The correct title should be changed to:
 
 ```
-title_text="T07 Commercial Normalised RMS Profile"
+title_text = "T07 Commercial Normalised RMS Profile"
 ```
 *So this isn't an LLM problem, it's the original script's problem.*
 
