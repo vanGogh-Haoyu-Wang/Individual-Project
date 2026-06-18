@@ -269,22 +269,208 @@ end
 If the Excel sheet has no header row, `XLSX.readtable` may treat the first data row as headers. In that case, use a raw matrix read instead; but for a processed Excel table with column headers, this version is the closest Julia analogue. XLSX.jl’s `readtable` to `DataFrame` pattern is documented in the XLSX.jl tutorial: 【0†source】([felipenoris.github.io](https://felipenoris.github.io/XLSX.jl/stable/tutorial/)).
 
 ---
-# Find mistake
+# Debug: Actual Execution Record
 
-Because in the original MATLAB code, the title of Figure 2 was hard-coded as:
+The saved figures were not produced by running the documented Julia program end to end. They were produced only after the test harness bypassed the script's workbook-loading and signal-extraction path, manually constructed the required arrays, called the original plotting functions, and added explicit PNG export. The complete execution record is documented below.
 
+## 1. Initial Script and Runtime Inspection
+
+The original script defines:
+
+```julia
+const DATA_FILE = "Tensile-processed.xlsx"
+const SHEET_NAME = "CT-07"
 ```
+
+Those names match the MATLAB source and the original translation prompt, but they do not match the workbook later supplied for testing:
+
+```text
+Commercial Tensile Tests.xlsx
+CT07
+```
+
+The system shell also had no `julia` executable on `PATH`. A Juliaup launcher was found at:
+
+```text
+/Users/vangogh/.juliaup/bin/julia
+```
+
+It reported Julia 1.12.6. Juliaup initially could not create its lock file under `~/.julia` inside the restricted sandbox. That lock-file restriction was an execution-environment issue, not a defect in the translated Julia code, and the launcher was subsequently run with the required external permission.
+
+## 2. First Attempt: Missing Julia Packages
+
+The first test used `include(...)` and explicitly called `main` with the supplied workbook path and the prompt's `CT-07` sheet name. The returned output was initially truncated to `LoadError`; a second capture exposed the complete cause:
+
+```text
+ArgumentError: Package XLSX not found in current path.
+```
+
+The runtime did not have the script's three external dependencies installed:
+
+```julia
+using XLSX
+using DataFrames
+using Plots
+```
+
+This was partly an environment-provisioning issue. However, the response also provided no `Project.toml` or `Manifest.toml`, so the translation was not independently reproducible from a declared Julia project.
+
+## 3. Isolated Dependency Environment
+
+To avoid adding `Project.toml` and `Manifest.toml` files to the working directory, an isolated environment was created at:
+
+```text
+/tmp/codex-julia-test3-env
+```
+
+The following packages were installed and precompiled:
+
+```text
+XLSX 0.11.10
+DataFrames 1.8.2
+Plots 1.41.6
+```
+
+This step made the dependencies available but did not alter the translated script or its data-loading logic.
+
+## 4. Second Attempt: Worksheet Name Mismatch
+
+After dependency installation, the test reached workbook access but failed with:
+
+```text
+XLSXError: Commercial Tensile Tests.xlsx does not have a Worksheet named `CT-07`.
+```
+
+Inspection of the workbook returned two worksheet names:
+
+```text
+CT07
+CT09
+```
+
+The test was then repeated with `CT07`. The name mismatch should be distinguished from a translation error: `CT-07` was faithful to the original prompt, whereas the supplied test workbook used a different sheet name.
+
+## 5. Third Attempt: `readtable` Returned Only Nine Columns
+
+With the correct workbook and `CT07` sheet, `DataFrame(XLSX.readtable(path, sheet))` completed, but the resulting DataFrame contained only nine columns. `extract_signals` then failed at its first request beyond that range:
+
+```text
+AssertionError: Column 10 not found; sheet has 9 columns.
+```
+
+The assertion was raised while evaluating `cumrms = numeric_column(df, 10)`. Requests for columns 12 and 14 were never reached. More importantly, the earlier requests for columns 1, 3, 4, 5, and 9 were already semantically wrong because DataFrame positional columns no longer represented physical Excel columns A, C, D, E, and I.
+
+## 6. Physical Worksheet Layout Investigation
+
+A raw inspection of Excel columns A:N showed that all fourteen physical columns required by MATLAB exist, but they form two adjacent regions with different header and data starting rows:
+
+```text
+Mechanical region: A:D, numeric rows 4:1810, 1,807 records
+AE region:         E:N, numeric rows 2:5851, 5,850 records
+```
+
+The first row has blank cells in A:D, headers in much of E:M, a numeric normalisation value in H1, and a blank header in N1. Because this is not a conventional rectangular table with one complete header row, `XLSX.readtable` inferred only the E:M region. Its nine DataFrame columns therefore corresponded to physical Excel columns E:M rather than A:I, and physical column N was omitted.
+
+This table-inference mismatch is the primary code-level cause of the end-to-end failure.
+
+## 7. Manual Bypass Used to Produce the Figures
+
+To determine whether the plotting functions themselves could operate on correctly prepared data, the test harness stopped using `load_ct07`, `extract_signals`, and `main`. It loaded the physical range directly:
+
+```julia
+a = XLSX.readdata(
+    "Commercial Tensile Tests.xlsx",
+    "CT07",
+    "A1:N5851",
+)
+```
+
+It then manually constructed the signal tuple with the verified row domains:
+
+```julia
+s = (
+    t1        = Float64.(a[4:1810, 1]),
+    stress    = Float64.(a[4:1810, 4]),
+    strain    = Float64.(a[4:1810, 3]),
+    time      = Float64.(a[2:5851, 5]),
+    rms       = Float64.(a[2:5851, 9]),
+    cumrms    = Float64.(a[2:5851, 10]),
+    energy    = Float64.(a[2:5851, 12]),
+    cumenergy = Float64.(a[2:5851, 14]),
+)
+```
+
+Only the original plotting entry point was then called:
+
+```julia
+figs = make_plots(s)
+```
+
+This successfully created five Plots.jl figure objects from 1,807 mechanical records and 5,850 AE records. It did not demonstrate that the original loader, extractor, or `main()` function worked.
+
+## 8. Additional Headless Rendering and PNG Export
+
+The translated script only calls:
+
+```julia
+foreach(display, values(figs))
+```
+
+It does not save PNG files. This is not automatically a translation defect because the original MATLAB script also creates figure windows without calling a file-export function. Nevertheless, producing inspectable artifacts in the test environment required additional harness code that was not present in the answer:
+
+```julia
+ENV["GKSwstype"] = "100"
+
+for (name, fig) in pairs(figs)
+    savefig(fig, joinpath("Test 3 outputs", string(name) * ".png"))
+end
+```
+
+The harness generated five 600 x 400 PNG files and visually inspected all five. These files prove only that the plotting functions can render when supplied with manually corrected arrays.
+
+## 9. Later Strict Direct-Run Tests
+
+Two later tests isolated the actual script status without using the manual bypass.
+
+### Original script, unchanged
+
+Direct execution ended with exit code 1:
+
+```text
+XLSXError: File Tensile-processed.xlsx not found.
+```
+
+No plotting function was reached and no image was generated.
+
+### Copied script with only lines 7-8 changed
+
+A copy was made with only these behavioural changes:
+
+```julia
+const DATA_FILE = "Commercial Tensile Tests.xlsx"
+const SHEET_NAME = "CT07"
+```
+
+Direct execution again ended with exit code 1:
+
+```text
+AssertionError: Column 10 not found; sheet has 9 columns.
+```
+
+This second test confirms that correcting the file and sheet constants removes the first failure but does not fix the `readtable`/worksheet-layout incompatibility. No plotting function was reached and no image was generated.
+
+## 10. Inherited Figure 2 Title
+
+The title below is inconsistent with CT07 data:
+
+```julia
 title_text = "T09 Commercial Normalised RMS Profile"
 ```
-But it reads CT-07/CT07 data, so this should be a typo in the original script. The Julia version retains it for faithful translation. The correct title should be changed to:
 
-```
-title_text = "T07 Commercial Normalised RMS Profile"
-```
-*So this isn't an LLM problem, it's the original script's problem.*
+However, the same `T09` title is hard-coded in the original MATLAB source. Preserving it is faithful translation behaviour and should not be counted as an LLM translation error, although the source title itself is likely a typo.
 
 ---
-# Run and results:
+# Results:
 Figure 1:
 ![[T3gptjlfig1.png]]
 Figure 2:
@@ -297,122 +483,156 @@ Figure 5 :
 ![[T3gptjlfig5.png]]
 
 ---
-# Evaluation: Objective Assessment of the MATLAB-to-Julia Translation
+# Evaluation: Evidence-Based Assessment of the MATLAB-to-Julia Translation
 
-## 1. Indexing Logic - **Good in Isolation / Blocked by the Data Model**
+## 1. Indexing Logic - **Correct Mapping / Invalid Loaded Table**
 
-* **Assessment**: The translation correctly recognised that MATLAB and Julia are both 1-based. The requested physical-column mappings were transcribed accurately:
+* **Assessment**: The response correctly recognised that MATLAB and Julia are both 1-based. Every requested column number was transcribed without an off-by-one error:
   * MATLAB `data(:, 1)` -> Julia column 1 (`t1`)
   * MATLAB `data(:, 3)` -> Julia column 3 (`strain`)
   * MATLAB `data(:, 4)` -> Julia column 4 (`stress`)
   * MATLAB `data(:, 5)` -> Julia column 5 (`time`)
   * MATLAB columns 9, 10, 12, and 14 -> Julia columns 9, 10, 12, and 14
-* **Important distinction**: The index numbers are not the source of the failure. The failure occurs because `DataFrame(XLSX.readtable(path, sheet))` does not preserve the worksheet as the same physical A:N matrix returned by MATLAB's `xlsread`.
-* **Observed behaviour**: For the supplied `Commercial Tensile Tests.xlsx` workbook and its actual `CT07` sheet, `XLSX.readtable` identifies only a nine-column table corresponding to Excel columns E:M. Consequently, `df[!, 1]` represents Excel column E rather than A, and `extract_signals` terminates when it requests DataFrame column 10:
+* **Execution evidence**: Correct index numbers were applied to a DataFrame that no longer represented physical Excel columns A:N. For the supplied workbook, `readtable` returned only E:M as nine positional columns. Thus DataFrame column 1 was Excel E rather than A, and DataFrame column 9 was Excel M rather than I.
+* **Failure point**:
 
   ```text
   AssertionError: Column 10 not found; sheet has 9 columns.
   ```
 
-* **Conclusion**: The 1-based indexing conversion is correct as written, but it is applied to an incorrectly constructed table. The unmodified loading and extraction pipeline is therefore not functionally equivalent to the MATLAB code.
+* **Conclusion**: The translation of indexing syntax is correct, but end-to-end indexing semantics are incorrect because the loader changes the positional meaning of the columns. This is not an off-by-one error; it is a data-model error.
 
-## 2. XLSX and DataFrame Usage - **Poor / Blocking Defect**
+## 2. Execution Environment and Data Loading - **Environment Issues Separable / Loader Poor and Blocking**
 
-* **Assessment**: The chosen packages are appropriate, but `XLSX.readtable` is the wrong abstraction for this particular worksheet layout.
-* **Worksheet structure**:
-  * Mechanical-test data occupy columns A:D and begin on row 4, providing 1,807 numeric records.
-  * AE data occupy columns E:N and begin on row 2, providing 5,850 numeric records.
-  * The top rows contain blanks, text labels, units, and a numeric normalisation value; column N also has a blank header.
-* Because the worksheet contains two adjacent regions with different header rows and different valid lengths, it is not a conventional rectangular table. `readtable` selects the E:M region and omits the other physical columns required by the MATLAB script.
-* The default constants also refer to `Tensile-processed.xlsx` and `CT-07`, whereas the supplied workbook is `Commercial Tensile Tests.xlsx` and the actual sheet name is `CT07`. Runtime overrides can work around the names, but not the table-shape problem.
-* **Conclusion**: This is the primary blocking defect. With the supplied workbook, the original Julia `main()` cannot reach the plotting stage.
-* **Required approach**: Read an explicit physical range with the available XLSX.jl API, for example `XLSX.readdata(path, sheet, "A1:N5851")`, then parse the mechanical and AE regions independently while preserving their separate valid-row domains. Recommendations should be limited to APIs that exist in the tested XLSX.jl version.
+* **Environment findings that are not translation-logic defects**:
+  * `julia` was not on the shell `PATH`, although Juliaup 1.12.6 was installed.
+  * Juliaup required permission to create a lock file under `~/.julia` outside the restricted sandbox.
+  * These are properties of the test environment and should not reduce the score for MATLAB-to-Julia semantics.
+* **Reproducibility limitation**:
+  * The active Julia environment initially lacked `XLSX`, `DataFrames`, and `Plots`.
+  * External packages normally require installation, so their absence alone is not a code defect. However, the answer did not supply a `Project.toml` or `Manifest.toml`, leaving exact dependency recreation unspecified.
+* **Input-name distinction**:
+  * `Tensile-processed.xlsx` and `CT-07` match the original MATLAB source and prompt.
+  * The later test fixture was `Commercial Tensile Tests.xlsx` with sheet `CT07`.
+  * The resulting file-not-found and sheet-name errors demonstrate that the script could not run unchanged against the later fixture, but the name difference should not be treated entirely as an LLM translation mistake.
+* **Primary code-level defect**: `DataFrame(XLSX.readtable(path, sheet))` assumes a conventional rectangular table. The actual `CT07` worksheet contains two regions:
+  * Mechanical data: A:D, rows 4:1810, 1,807 numeric records.
+  * AE data: E:N, rows 2:5851, 5,850 numeric records.
+* Blank leading headers, a numeric value in H1, and a blank N1 header cause `readtable` to infer only E:M. The script therefore receives nine columns instead of the physical A:N matrix expected by the MATLAB positional indexing.
+* **Strict execution status**:
+  * Original script: exit code 1, `File Tensile-processed.xlsx not found`.
+  * Copy with only file and sheet constants corrected: exit code 1, `Column 10 not found; sheet has 9 columns`.
+  * Neither strict run reached a plotting function or produced an image.
+* **Conclusion**: The environment required setup, but the decisive end-to-end failure after setup is caused by the loader's incompatibility with the supplied worksheet structure.
 
 ## 3. Broadcasting and Type Handling - **Good / Limited Robustness**
 
-* **Assessment**: The code uses Julia broadcasting correctly:
+* **Assessment**: The code uses Julia broadcasting correctly and idiomatically:
 
   ```julia
   Float64.(coalesce.(df[!, j], NaN))
   ```
 
-  This is concise and correctly maps `missing` values to `NaN` when the remaining entries are already numeric.
-* **Limitation**: `coalesce` does not convert strings. A mixed-type column containing labels or units would still cause `Float64.(...)` to fail. This matters for the supplied worksheet, whose upper rows contain text.
-* **Conclusion**: The broadcasting syntax is idiomatic, but the conversion function is not a general equivalent of MATLAB `xlsread` or Python's `pd.to_numeric(..., errors="coerce")`.
+  This correctly maps `missing` values to `NaN` when all non-missing entries are numeric.
+* **Limitation**: `coalesce` does not coerce strings. If a selected column contains a text label or unit in its data vector, `Float64.(...)` will still fail. The supplied worksheet contains mixed metadata in its upper rows, although the strict run fails on the column-count assertion before all such conversion behaviour can be exercised.
+* **Conclusion**: Broadcasting quality is good, but the conversion helper is narrower than MATLAB `xlsread` and does not provide general mixed-cell coercion.
 
 ## 4. Plot Object Management - **Good Structure / Partial Visual Equivalence**
 
 * **Strengths**:
   * `plot_stress_with_signal` removes repeated dual-axis plotting code.
-  * Colours, labels, Y limits, titles, grid settings, and the Figure 4 scatter/line distinction follow the MATLAB script.
+  * Signal assignments, colours, labels, Y limits, titles, grid settings, and the Figure 4 scatter/line distinction follow the MATLAB script.
   * Preserving the `T09` title in Figure 2 is faithful to the supplied MATLAB source; the title inconsistency originates in that source.
-* **Critical plotting defect**: `xlims = (0, xmax)` is applied only to the left subplot. In Plots.jl, the subplot created by `twinx()` retains its own X range unless it is set explicitly. The measured limits were:
+* **Evidence boundary**: The plotting functions were reached only after the test harness bypassed `load_ct07`, `extract_signals`, and `main`, manually created the signal arrays, and called `make_plots(s)`. Their successful execution is component-level evidence, not end-to-end evidence.
+* **Critical plotting defect**: `xlims = (0, xmax)` is applied only to the left subplot. The subplot created by `twinx()` retained an independently autoscaled X range. Measured limits were:
   * Figure 2: left `(0, 250)`, right approximately `(-7.66, 263.00)`
   * Figures 3-5: left `(0, 300)`, right approximately `(-7.66, 263.00)`
-* The AE time series actually ends at approximately 254.588 s. Because the right subplot autoscales independently, its final point is drawn at the right edge of the overlay. On Figures 3-5 this makes the red signal appear to end near 300 s and horizontally stretches all AE events relative to the blue stress curve.
-* Figure 2 is affected by the same independent-axis issue, although the distortion is less visually obvious because its left limit ends at 250 s.
+* The AE time series ends at approximately 254.588 s. Independent right-axis scaling draws its final point at the right edge and horizontally stretches AE events relative to stress. Figure 2 is affected as well, although the distortion is less obvious because its left limit ends at 250 s.
 * Figure 4 also uses visibly larger points than the Python/MATLAB-style output because Plots.jl `markersize` and MATLAB/Matplotlib scatter-area arguments do not have identical semantics.
-* **Conclusion**: The plotting architecture is clean, but the output is not an exact dual-axis reproduction. The right subplot must receive the same X limits as the left subplot, and the marker size should be calibrated separately.
+* **Conclusion**: Plot structure and signal selection are good, but visual equivalence is only partial because the two overlaid X scales are not coordinated and the scatter-size semantics differ.
 
-## 5. Modularity and Performance - **Good**
+## 5. Modularity and Reproducibility - **Good Structure / Incomplete Execution Contract**
 
-* **Assessment**: The separation into `load_ct07`, `numeric_column`, `extract_signals`, `make_plots`, and `main` is clear and maintainable. The named tuple returned by `extract_signals`, constants, keyword arguments, and standard Julia entry-point guard are all appropriate.
-* **Performance**: Vectorised column conversion and direct array plotting are suitable for this data volume. No performance benchmark was provided, so an "excellent performance" claim would be stronger than the available evidence.
-* **Limitations**: The design assumes a single rectangular DataFrame and therefore does not model the two independent row domains present in the actual workbook. `finite_max` also assumes that at least one finite stress value exists.
-* **Conclusion**: The code is well organised, but modularity does not compensate for the incorrect ingestion model.
+* **Assessment**: The separation into `load_ct07`, `numeric_column`, `extract_signals`, `make_plots`, and `main` is clear and maintainable. Constants, keyword arguments, a named tuple, and the standard Julia entry-point guard are appropriate choices.
+* **Performance**: Vectorised conversion and direct array plotting are reasonable for this data volume, but no benchmark was performed. Performance should therefore be described as suitable rather than excellent.
+* **Reproducibility limitations**:
+  * No Julia project files declare package versions.
+  * No validation confirms the workbook path, sheet name, physical range, finite-value counts, or time ranges.
+  * The design assumes a single rectangular DataFrame and cannot represent the worksheet's two independent row domains.
+  * `finite_max` assumes that at least one finite stress value exists.
+* **Output distinction**: The script's `display` calls are faithful to MATLAB's creation of interactive figures. The absence of `savefig` should not be treated as a translation error by itself. However, the PNG files in this record were generated by additional headless-rendering and export code in the test harness, not by the translated script.
+* **Conclusion**: The internal organisation is good, but the execution contract is incomplete and the script is not reproducible or verifiable as an end-to-end analysis for the supplied workbook.
 
 ---
 
 ## 6. Evaluation of the Generated Figures
 
-**Important provenance note**: With the supplied workbook and the original `load_ct07` implementation, the Julia program fails before producing figures. The saved Julia images can only be evaluated as outputs generated after bypassing or replacing the documented loader with explicit physical-range extraction; they do not prove that the original `main()` works.
+**Provenance**: The original strict run and the constants-only corrected copy both terminated before plotting. The five saved PNG files were generated only after the harness used `XLSX.readdata("A1:N5851")`, manually built arrays from A4:D1810 and E2:N5851, called `make_plots(s)`, enabled headless GR rendering, and added `savefig`. The images therefore evaluate the plotting component under manually corrected inputs, not the original program's end-to-end behaviour.
 
 ### Figure 1 - Strain vs Stress: **Correct after explicit extraction**
 
-* The Julia and Python curves contain the same mechanical data and agree in shape, peak stress, fracture drop, labels, and Y range.
-* Differences are limited to plotting-library styling.
+* The manually extracted Julia and Python curves contain the same mechanical data and agree in shape, peak stress, fracture drop, labels, and Y range.
+* The plotting function is correct for these inputs; remaining differences are library styling.
 
 ### Figure 2 - Stress vs Normalised RMS: **Correct Y Data / Misaligned X Scale**
 
-* The RMS amplitudes and event pattern agree with the Python result after correct extraction.
+* RMS amplitudes and event patterns agree with the Python result after manual extraction.
 * The independently autoscaled right X axis shifts the red events horizontally relative to stress.
 * The `T09` title is inherited faithfully from the original MATLAB script and should not be counted as a translation error.
 
 ### Figure 3 - Stress vs Normalised Cumulative RMS: **Correct Y Data / Misaligned X Scale**
 
-* The red cumulative-RMS staircase is the correct signal, not an unrelated or incorrectly indexed column.
+* The manually supplied red cumulative-RMS staircase is the correct signal, not an unrelated column.
 * Its step positions are stretched towards the right edge because the right subplot uses a different X range.
 
 ### Figure 4 - Stress vs Normalised AE Energy: **Correct Y Data / Misaligned X Scale and Marker Size**
 
-* The energy events and their relative amplitudes agree with the Python result.
+* The manually supplied energy events and their relative amplitudes agree with the Python result.
 * Horizontal positions are distorted by the independent right-axis limits, and the Julia markers are substantially larger.
 
 ### Figure 5 - Stress vs Normalised Cumulative AE Energy: **Correct Y Data / Misaligned X Scale**
 
-* The cumulative-energy staircase agrees with the Python data after explicit extraction.
+* The manually supplied cumulative-energy staircase agrees with the Python data.
 * As in Figure 3, the curve is horizontally stretched; this is an axis-coordination problem rather than a wrong-column problem.
 
 ---
 
 ## 7. Overall Assessment
 
-**GPT-5.5 (xhigh) MATLAB-to-Julia migration result: Partial Failure**
+**GPT-5.5 (xhigh) MATLAB-to-Julia migration result: End-to-End Failure / Partial Component Success**
 
-* **Index mapping**: Good. The MATLAB-to-Julia column numbers were transcribed correctly.
-* **Data loading**: Poor and blocking. The selected table loader does not represent the supplied worksheet's physical layout, so the original program terminates before plotting.
-* **Broadcasting and Julia style**: Good, but mixed text values are not safely coerced.
-* **Visualisation structure**: Good, with reusable plotting functions and correct signal assignments.
-* **Visual equivalence**: Partial. After the loading defect is bypassed, the Y data agree with Python, but Figures 2-5 have inconsistent left/right X scales and Figure 4 has a marker-size mismatch.
-* **Methodological compliance**: Partial. The response demonstrates competent Julia syntax and organisation, but it does not validate the actual workbook structure or verify that the two axes share the same physical time scale. Both checks are essential in a scientific-computing migration.
+### Prompt-Level Translation Fidelity
 
-The result should therefore not be described as a successful end-to-end translation. It is a strong structural draft with one blocking ingestion defect and one material plotting-equivalence defect.
+* **File and sheet constants**: Faithful to the original MATLAB source and prompt. Their mismatch with the later workbook fixture is not entirely attributable to the model.
+* **Index mapping**: Correctly preserves MATLAB's 1-based column numbers.
+* **Julia style**: Good use of functions, broadcasting, named tuples, keyword arguments, and a normal entry-point guard.
+* **Plot decomposition**: Clear and reusable, with correct intended signal assignments.
+
+### Actual-Workbook End-to-End Result
+
+* **Original direct run**: Failed before workbook loading because the prompted file was absent from the test workspace.
+* **Constants-only corrected run**: Found the supplied workbook and sheet, then failed during extraction because `readtable` returned nine columns while the program required fourteen physical positions.
+* **Image generation**: Succeeded only after the test harness bypassed the original loader, extractor, and `main`, manually prepared arrays, and added headless PNG export.
+* **Visual equivalence after bypass**: Figure 1 is correct; Figures 2-5 contain correct manually supplied Y data but use inconsistent overlaid X scales, and Figure 4 has a marker-size mismatch.
+
+### Final Judgement
+
+* **Data loading**: Poor and blocking for the supplied workbook.
+* **Broadcasting and type handling**: Good syntax with limited mixed-cell robustness.
+* **Plotting component**: Partially successful when supplied with corrected arrays.
+* **Reproducibility**: Incomplete because dependencies and input invariants are not declared or validated.
+* **Scientific-computing methodology**: Partial. The response translated visible MATLAB syntax competently but did not verify workbook semantics or axis equivalence.
+
+The result is not a functioning end-to-end migration for the tested data source. It is a structurally competent draft whose plotting functions are usable at component level, but only after external code replaces the failed ingestion path. The saved images must not be presented as evidence that the original Julia program ran successfully.
 
 ## 8. Recommendations
 
-1. Read the required physical worksheet range explicitly with `XLSX.readdata`, rather than asking `readtable` to infer a table from a non-rectangular layout.
-2. Parse A:D from their mechanical-data start row and E:N from their AE-data start row; keep the two valid row counts independent.
-3. Validate the workbook path, sheet name, physical column count, finite-value counts, and time ranges before plotting.
-4. Apply `xlims = (0, xmax)` to the right subplot as well as the left subplot, then verify both subplot limits programmatically.
-5. Calibrate the Figure 4 marker size against the MATLAB output instead of assuming identical size semantics across plotting libraries.
-6. Add regression checks comparing the extracted arrays and key plot limits with a trusted MATLAB or Python baseline.
+1. Provide a Julia project with declared package dependencies and versions.
+2. Accept or validate the actual workbook path and worksheet name rather than relying only on prompt-era constants.
+3. Read the required physical range explicitly with `XLSX.readdata` instead of inferring one table from the non-rectangular sheet.
+4. Parse mechanical A:D and AE E:N from their separate starting rows and preserve their independent record counts.
+5. Validate physical column availability, finite-value counts, time ranges, and signal maxima before plotting.
+6. Apply identical X limits to both the left and right subplots and verify those limits programmatically.
+7. Calibrate Figure 4 marker size against a trusted MATLAB output.
+8. Add regression tests comparing extracted arrays and plot limits with MATLAB or the validated Python implementation.
+9. Keep interactive `display` behaviour if MATLAB-style windows are the goal; add explicit export only when saved image artifacts are part of the requirement.

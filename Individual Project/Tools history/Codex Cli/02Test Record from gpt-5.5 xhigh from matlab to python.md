@@ -272,19 +272,85 @@ pip install pandas matplotlib numpy openpyxl
 The original figure-2 title says `T09` despite loading sheet `CT-07`; this translation preserves it exactly. Change it to `T07` if that was a MATLAB typo.
 
 ---
-# Find problem: 
-```
+# Debug
+
+## 1. Execution issues and resolutions
+
+### A. Python environment and dependencies
+
+**Evidence**: The first environment check identified Homebrew Python 3.14.6 at `/opt/homebrew/opt/python@3.14/bin/python3.14`. Importing the translated script's dependencies failed at `numpy` with `ModuleNotFoundError`. The available system Python 3.9.6 also did not contain NumPy.
+
+**Resolution**: A project-local `.venv` was created to avoid modifying the system Python installation. The first package installation attempt could not reach PyPI because network access was unavailable in the restricted execution environment. After network access was approved, the following requested versions were installed in `.venv`:
+
+* `numpy==2.4.6`
+* `pandas==3.0.3`
+* `matplotlib==3.11.0`
+* `openpyxl==3.1.5`
+
+The installation also added required transitive dependencies, including `contourpy`, `cycler`, `fonttools`, `kiwisolver`, `packaging`, `Pillow`, `pyparsing`, `python-dateutil`, `six`, and `et-xmlfile`.
+
+**Finding**: The initial import failure was caused by the selected Python environment, not by the translation's import statements. Subsequent runs used `.venv/bin/python` rather than the unconfigured Homebrew or system interpreter.
+
+### B. Workbook and worksheet identifiers
+
+**Evidence**: The translated script initially expected:
+
+```python
 DATA_FILE = Path("Tensile-processed.xlsx")
 SHEET_NAME = "CT-07"
 ```
-should be changed to
-```
+
+The supplied workbook was actually named `Commercial Tensile Tests.xlsx`. Workbook inspection reported the worksheet names `CT07` and `CT09`; there was no worksheet named `CT-07`.
+
+**Resolution**: Only the two input constants were changed:
+
+```python
 DATA_FILE = Path("Commercial Tensile Tests.xlsx")
 SHEET_NAME = "CT07"
 ```
 
+**Finding**: These corrections adapt the translated script to the supplied data source. They do not alter the column mapping or plotting logic.
+
+### C. Non-interactive and interactive plotting runs
+
+**Evidence**: The first complete execution used `MPLBACKEND=Agg` so that Excel loading and all plotting calls could be tested without opening graphical windows. The process exited with code 0. Because `Agg` is non-interactive, `plt.show()` emitted the expected warning that the figures could not be shown.
+
+Matplotlib also reported that the restricted environment could not create `/Users/vangogh/.matplotlib`, so it temporarily placed its cache under the system temporary directory.
+
+**Resolution**: A writable project-local `.mplconfig` directory was used for Matplotlib's configuration and font cache. The script was then run with the macOS graphical backend, and `plt.show()` opened five interactive figure windows.
+
+**Finding**: The non-interactive run verified execution; the interactive run provided the displayed figures. The backend and cache messages were environment-specific and did not require changes to the plotting functions.
+
+### D. Execution verification and image-output boundary
+
+**Evidence**: A separate verification run confirmed:
+
+* All eight extracted arrays contained 5,851 entries.
+* Five Matplotlib `Figure` objects were created.
+* The axes counts were `[1, 2, 2, 2, 2]`, corresponding to one single-axis figure followed by four dual-axis figures.
+
+**Finding**: The script successfully loaded the supplied CT07 worksheet and constructed the five intended plots. However, the script contains `plt.show()` and no `savefig()` call. It displays the figures but does not automatically write PNG files.
+
+**Output boundary**: The five PNG files shown in the record were saved manually from the Matplotlib figure windows after the plotting run. Manual saving is not part of the script execution assessed here.
+
+### E. Figure 2 title inconsistency
+
+**Evidence**: The original MATLAB code hard-codes:
+
+```matlab
+title('T09 Commercial Normalised RMS Profile');
+```
+
+The data source used for the run was CT07. The Python translation retained the source title as:
+
+```python
+title="T09 Commercial Normalised RMS Profile"
+```
+
+**Finding**: The `T09` label is inconsistent with the CT07 dataset, but it was inherited directly from the supplied MATLAB code. It is therefore a source-script inconsistency rather than an indexing or plotting translation error. If the title is intended to identify the dataset, it should be changed to `T07 Commercial Normalised RMS Profile`.
+
 ---
-# Run and results:
+# Results:
 Figure 1:
 ![[Figure_1.png]]
 Figure 2:
@@ -295,80 +361,120 @@ Figure 4:
 ![[Figure_4.png]]
 Figure 5:![[Figure_5.png]]
 
+---
+# Evidence-based evaluation of the Python translation
+
+### A. Array indexing
+
+**Evidence**: The required MATLAB-to-Python column mappings are:
+
+* MATLAB `data(:, 1)` (`t1`) -> Python `data.iloc[:, 0]`
+* MATLAB `data(:, 4)` (`stress`) -> Python `data.iloc[:, 3]`
+* MATLAB `data(:, 3)` (`strain`) -> Python `data.iloc[:, 2]`
+* MATLAB `data(:, 5)` (`time`) -> Python `data.iloc[:, 4]`
+* MATLAB `data(:, 9)` (`rms`) -> Python `data.iloc[:, 8]`
+* MATLAB `data(:, 10)` (`cumrms`) -> Python `data.iloc[:, 9]`
+* MATLAB `data(:, 12)` (`energy`) -> Python `data.iloc[:, 11]`
+* MATLAB `data(:, 14)` (`cumenergy`) -> Python `data.iloc[:, 13]`
+
+**Finding**: Each specified MATLAB column index was reduced by one, which is the required conversion from MATLAB's 1-based indexing to pandas' zero-based positional indexing.
+
+**Limitation**: The correctness of these mappings assumes that the worksheet retains the same physical column layout as the supplied workbook.
+
+**Conclusion**: The column mappings are correct for the stated MATLAB inputs and the tested CT07 worksheet.
+
+### B. pandas data loading
+
+**Evidence**:
+
+```python
+raw_data = pd.read_excel(..., header=None, ...)
+data = raw_data.apply(pd.to_numeric, errors="coerce").dropna(how="all")
+```
+
+For `Commercial Tensile Tests.xlsx`, both the raw DataFrame and the DataFrame after `dropna(how="all")` measured `5851 x 15`; zero rows were removed. The selected mechanical fields (`t1`, `stress`, and `strain`) each contained 1,807 finite values. The selected AE fields (`time`, `rms`, `cum_rms`, `energy`, and `cum_energy`) each contained 5,850 finite values.
+
+The first worksheet row contains the numeric value `0.4242` in physical column 8. It is therefore not entirely `NaN` after numeric coercion and is not removed by `dropna(how="all")`.
+
+**Finding**: `header=None` preserves the worksheet's physical column positions, while numeric coercion converts text and unavailable entries to `NaN` without shifting the data. This behaviour preserves the offset between the mechanical and AE regions in the supplied worksheet. Matplotlib omits non-finite plotting points.
+
+**Limitation**: The code comment stating that text-only rows are subsequently removed is not demonstrated by this workbook because no complete row is removed. The approach also depends on the expected physical column layout and should not be treated as a general parser for arbitrary header or metadata structures. The code checks for at least 14 columns but does not validate expected finite-value counts or time ranges.
+
+**Conclusion**: The loading method is suitable for the supplied workbook, but its robustness is dataset-specific.
+
+### C. Matplotlib plotting interface and code structure
+
+**Evidence**: The implementation creates axes with:
+
+```python
+figure, left_axis = plt.subplots()
+right_axis = left_axis.twinx()
+```
+
+The repeated dual-axis logic is contained in `plot_dual_axis_profile`, and minor-grid configuration is contained in `enable_minor_grid`.
+
+**Finding**: The code uses Matplotlib's object-oriented plotting interface because plotting operations are performed through explicit `Axes` objects. The overall program remains a procedural, function-based design rather than a class-based object-oriented architecture.
+
+**Limitation**: The helper functions create figures but do not return their `Figure` or `Axes` objects, which limits direct programmatic saving or further composition by a caller.
+
+**Conclusion**: The structure reduces repetition and implements the four dual-axis figures through a shared plotting function.
+
+### D. Plotting fidelity and robustness
+
+**Evidence**:
+
+* Blue is used for stress and red for the AE quantities, matching the MATLAB colour specifications.
+* The requested labels and axis limits are represented in the Python calls.
+* Figure 2 uses `plot(time, rms, ...)`, matching the MATLAB command. Although the MATLAB comment calls it a scatter plot, the executable MATLAB statement is a line plot.
+* Figure 4 maps MATLAB `scatter(time, energy, 5, 'filled', 'r')` to Matplotlib `scatter(..., s=5, color="red", edgecolors="none")`.
+* `minorticks_on()` and `grid(which="both")` provide an approximation of MATLAB's minor-grid presentation.
+
+**Finding**: The Python implementation reproduces the requested plot types, axis roles, colours, labels, and numerical limits for the tested data.
+
+**Limitation**: Matplotlib and MATLAB use different rendering engines and default styles, so the grid appearance and other visual details are not guaranteed to be pixel-identical. The workbook path is relative to the current working directory. The script has no automatic image export, and the inherited Figure 2 title remains inconsistent with CT07.
+
+**Conclusion**: Functional plotting equivalence is supported for this run; exact visual equivalence cannot be established without corresponding MATLAB reference images.
 
 ---
-# Find mistake
+# Evaluation of the resulting images
 
-Because in the original MATLAB code, the title of Figure 2 was hard-coded as:
+All five manually saved PNG files are `640 x 480` pixels.
 
-```
-title('T09 Commercial Normalised RMS Profile');
-```
+### Figure 1: Strain versus stress
 
-But it reads CT-07/CT07 data, so this should be a typo in the original script. The Python version retains it for faithful translation. The correct title should be changed to:
+**Evidence**: The image contains a blue strain-stress line, the labels `Strain (%)` and `Stress (MPa)`, the title `T07 Strain vs. Stress`, and a stress-axis range from 0 to 520 MPa. Major and minor grid lines are visible.
 
-```
-title="T07 Commercial Normalised RMS Profile"
-```
-*So this isn't an LLM problem, it's the original script's problem.*
+**Finding**: The observable labels, colour, plot type, title, and Y-axis limit correspond to the translated plotting instructions.
+
+### Figure 2: Stress and normalised RMS versus time
+
+**Evidence**: The image contains two Y-axes, a blue stress line on the left axis, and a red RMS line on the right axis. The displayed time range is 0 to 250 seconds, and the right-axis range extends to approximately 1.05. The title is `T09 Commercial Normalised RMS Profile`.
+
+**Finding**: The dual-axis structure and line types correspond to the executable MATLAB and Python plotting commands. The title exposes the inherited T09/CT07 inconsistency described above.
+
+### Figure 3: Stress and normalised cumulative RMS versus time
+
+**Evidence**: The image contains a blue stress line and a red cumulative RMS line on separate Y-axes over a displayed time range of 0 to 300 seconds. The cumulative series rises in steps toward its normalised upper range.
+
+**Finding**: The dual-axis structure, cumulative line representation, labels, colours, and limits correspond to the translated plotting instructions.
+
+### Figure 4: Stress and normalised AE energy versus time
+
+**Evidence**: The image contains a blue stress line and red AE-energy scatter markers on separate Y-axes. The displayed time range is 0 to 300 seconds, and the energy markers use the scatter representation requested by the MATLAB command.
+
+**Finding**: This is the only AE panel that uses scatter markers; Figure 2 uses a line.
+
+### Figure 5: Stress and normalised cumulative AE energy versus time
+
+**Evidence**: The image contains a blue stress line and a red cumulative AE-energy line on separate Y-axes over a displayed time range of 0 to 300 seconds. The cumulative series increases in steps toward its normalised upper range.
+
+**Finding**: The dual-axis structure, cumulative line representation, labels, colours, and limits correspond to the translated plotting instructions.
+
+**Comparison limitation**: These observations establish consistency between the Python code and the saved Python figures. They do not establish pixel-level equivalence with MATLAB because no corresponding MATLAB-rendered reference images were supplied for direct comparison.
 
 ---
-## 1. An objective evaluation of `01Test Record from gpt-5.5 max`
-### A. Indexing - **Excellent**
-**Evaluation**: GPT-5.5 Max perfectly handled the conversion from 1-based to 0-based indexing. 
-**Evidence**: 
-* MATLAB `data(:, 1)` (t1) -> Python `data.iloc[:, 0]`
-* MATLAB `data(:, 3)` (strain) -> Python `data.iloc[:, 2]`
-* MATLAB `data(:, 4)` (stress) -> Python `data.iloc[:, 3]`
-* MATLAB `data(:, 9)` (rms) -> Python `data.iloc[:, 8]`
-* ... and so on, all column indices are correctly decreased by 1.
-**Conclusion**: Meets the strict standard of "checking if the index changes," with no points deducted.
-#### B. Pandas Usage (Data Loading) - **Good / Effective for This Workbook**
-* **Evaluation**: Using `header=None` is an appropriate choice for this worksheet because it preserves the physical Excel column positions required by the MATLAB script. Applying `pd.to_numeric(..., errors="coerce")` then converts text in the selected signal columns to `NaN` without shifting those columns.
-* **Evidence**:
-```python  
-raw_data = pd.read_excel(..., header=None, ...)  
-data = raw_data.apply(pd.to_numeric, errors="coerce").dropna(how="all")  
-```
-* **Observed behaviour with `Commercial Tensile Tests.xlsx`**:
-  * The raw worksheet and the post-`dropna` DataFrame are both `5851 x 15`; `dropna(how="all")` removes zero rows.
-  * The first row contains one numeric value (`0.4242`), while the second and third rows contain AE values in the right-hand columns. These rows are therefore not entirely `NaN` after coercion and are retained.
-  * The mechanical columns contain 1,807 finite records, whereas the AE time column contains 5,850. The leading text or unavailable cells in each selected plotting pair become `NaN`, and Matplotlib ignores those non-finite points while preserving the physical row and column alignment.
-* **Strength**: For this workbook, the approach produces the intended arrays and closely approximates MATLAB `xlsread` behaviour without losing the offset between the mechanical and AE regions.
-* **Limitation**: The code does not actually remove every header or metadata row, and its correctness depends on the relevant text cells coercing to `NaN` and the selected columns remaining in their expected physical positions. It should not be described as universally robust for arbitrary Excel header structures.
-* **Conclusion**: The loading strategy is effective for the supplied workbook and avoids type errors in the selected columns, but it would benefit from explicit validation of column count, finite-value counts, and time ranges.
-  
-#### C. Plotting Object Management (Plotting API) - **Excellent** 
-**Evaluation**: The code fully adheres to the Object-Oriented Programming (OOP) style and elegantly reuses the dual-axis plotting logic. 
-**Evidence**: 
-* Used the `fig, axis = plt.subplots()` and `ax1, ax2 = plt.subplots()` patterns. 
-* Correctly used `ax2 = ax1.twinx()` to create a secondary Y-axis sharing the same X-axis. 
-**Highlight**: Encapsulated the repetitive `yyaxis` logic into the `plot_dual_axis_profile` function, demonstrating a "Senior Engineer's" modular thinking, making it more maintainable than MATLAB scripts. 
-**Conclusion**: Proficient in the plotting API, with correct dual-axis binding. 
-#### D. Details & Robustness - **Good/Excellent**  
-* **Evaluation**:  
-  * **Grid lines**: MATLAB's `grid('minor')` in Matplotlib requires manually enabling `minorticks_on()` and setting `grid(which='both')`. The code implements the `enable_minor_grid` function to restore the visual effect.  
-  * **Scatter plot**: The `5` in MATLAB's `scatter(..., 5, ...)` represents marker size. The code correctly maps it to `s=5`.  
-  * **Hard-coded correction**: The code retains potential typos (e.g., Fig 2 title as T09) from the MATLAB script and reminds users in comments. This is an honest and professional approach.  
-  * **File path**: The user later corrected the file name and sheet name, and the code structure supports such parameterized modifications.
-  * **Data-loading robustness**: The conversion succeeds for the supplied workbook because `NaN` values preserve the worksheet's physical alignment and Matplotlib tolerates them. The implementation does not validate the expected finite record counts or detect an unexpected worksheet layout, so its robustness is dataset-specific rather than universal.
-## 2. Evaluation of the Resulting Images Based on the Provided Image Links: 
+# Overall conclusion
 
-**Figure 1 (Strain vs Stress)**: 
-* The curve is smooth, the axis labels are correct, and the Y-axis limit [0, 520] is effective. 
-* The grid lines are displayed normally. 
-**Figure 2 (Stress vs RMS)**: 
-* The dual Y-axes are correctly displayed. The left axis is the blue stress curve, and the right axis is the red RMS scatter plot/curve. 
-* The X-axis limit [0, 250] is effective. 
-* The title "T09 Commercial..." matches the original MATLAB code (although it might be a typo, but it remains faithful to the input). 
-**Figure 3, 4, 5**: 
-* All correctly show the dual Y-axis structure. 
-* Figure 4 correctly uses a scatter plot (`scatter`) instead of a line plot, aligning with the MATLAB `scatter` command. 
-* The X-axis range (250s or 300s) is correctly applied to all figures. 
+The translation satisfies the requested MATLAB-to-Python index conversion, pandas-based Excel loading, modular Matplotlib plotting, and `twinx()` dual-axis construction for the supplied CT07 workbook after correcting the external file and worksheet identifiers. The execution produced five interactive figures, which were subsequently saved manually.
 
-## 3. Summary **GPT-5.5 Max's performance: Very Good**
-
-* **Index conversion**: 100% correct. 
-* **Data loading**: Effective for the supplied workbook and faithful to its physical column positions, but dependent on this worksheet's structure and not universally robust to arbitrary headers or metadata rows.
-* **Visualization**: Correctly reproduces the MATLAB plotting logic for the tested data, with a clearer and more reusable modular structure.
-* **Compliance with methodology**: Largely complies with the "Senior Scientific Computing Engineer" persona set in [[01Prompt_Methodology_Overview]], achieving functional equivalence for the supplied dataset while leaving room for stronger input validation.
+The result is verified for the tested workbook rather than for arbitrary AE spreadsheets. Its main remaining limitations are dependence on fixed physical column positions, limited input validation, a relative workbook path, no automatic image export, and the inherited T09 title in Figure 2.
