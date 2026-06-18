@@ -1,0 +1,243 @@
+=========================================
+📚 M.Sc. Materials Science and Engineering Notes
+🎓 Course: Individual Project - Acoustic Emission Framework Migration
+📅 Date:   2026-05-26 12:55:00
+=========================================
+
+And he just asked me for some questions about why you want to choose this project and do you have any backgrounds. Okay. Yeah, and if you want, I can say it again, but you just I don't think there's any other people choose this project. Okay, okay, okay. No, it's fine, it's fine. But I really like the artificial intelligence. No, it's okay, it's fine. Just
+他只是问了我一些问题，比如你为什么要选择这个项目，你有什么背景吗？ 好的。 是的，如果你愿意，我可以再说一遍，但你只是我认为没有其他人选择这个项目。 好吧，好吧，好吧。 不，没关系，没关系。 但我真的很喜欢人工智能。 不，没关系，没关系。 只是
+
+Just one question. You are supposed to do some paperwork by 5th of June. You need to submit some paperwork for the interim reporting. Yeah, because there's some assignment ordered. Yeah, which thing did you do? Which myth remind me?.
+只有一个问题。 您应该在 6 月 5 日之前完成一些文书工作。 您需要提交一些临时报告的文件。 是的，因为有一些任务被安排了。 是啊，你做了哪件事？ 哪个神话让我想起？
+
+When do you need to submit? By the 5th of June or when is the deadline for the assignments? I will check it now
+需要什么时候提交？ 6 月 5 日之前或者作业截止日期是什么时候？ 我现在检查一下
+
+I'm just trying to find the key as well
+我也只是想找到钥匙
+
+But I think it's okay for me. I have already written for about 14 notes, and I have a lot of content to write. Assignments
+但我认为这对我来说没问题。 我已经写了大概14篇笔记了，还有很多内容要写。 作业
+
+Uh
+呃
+
+It's project preparation risk assignment form. Yeah available until August 7th
+这是项目准备风险分配表。 是的，有效期至 8 月 7 日
+
+So the project preparation is but you need to submit the aims and objectives by 1st of June right?.
+所以项目准备工作是，但你需要在 6 月 1 日之前提交目的和目标，对吧？
+
+First of two.
+两个中的第一个。
+
+Oh, yeah. Have you done anything on the Yeah, of course, I have already submitted that. But it's based on the first version of our project. Ah, okay, so it's no, this is by yeah, by 24 yeah, yeah, I know, I know. Yeah, yeah, yeah, okay, okay, okay, so it's done, yeah, yeah
+哦，是的。 你在上面做了什么吗？是的，当然，我已经提交了。 但它是基于我们项目的第一个版本。 啊，好吧，所以不，这是在 24 之前，是的，是的，我知道，我知道。 啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+
+Okay.
+好的。
+
+Yeah.
+是的。
+
+Okay.
+好的。
+
+So the next one is the The risk form, I think
+我认为下一个是风险表
+
+Oh, no, no, the project, the prior report is July 17th
+哦不不，这个项目，之前的报道是7月17日
+
+So this is not the
+所以这不是
+
+Not all the assignments I have to you
+我给你的任务并不是全部
+
+So, it has the word maximum, introduction, literature, view, objectives. I think it's okay for me. Yeah, okay, okay. And I will see it as well. Sure. And the editor will see it as well. Maybe I can write a later part and send to you and you can check. Yeah, we have later. The submission is 19th of June, not July
+所以，它有“最大”、“引言”、“文献”、“观点”、“目标”等词。 我觉得这对我来说没问题。 是啊，好吧，好吧。 我也会看到它。 当然。 编辑也会看到它。 也许我可以写一个稍后的部分并发送给你，你可以检查一下。 是的，我们以后还有。 提交日期为 6 月 19 日，而非 7 月
+
+Oh, yeah. Yeah, yeah, yeah. I got that
+哦，是的。 是啊，是啊，是啊。 我明白了
+
+Okay.
+好的。
+
+I think I am just completely, completely, completely.
+我想我就是完全、完全、完全。
+
+So, tell me what you have discussed with Vicenzo? Oh yeah, he changed a little bit the goal of this project from the beginning. When you say changed, what has changed? It's still about acoustic emission and AI, right? So what is the difference from the original scope? What has changed?.
+那么，告诉我你和维琴佐讨论了什么？ 哦，是的，他从一开始就改变了这个项目的目标。 当你说改变时，改变了什么？ 仍然是关于声发射和人工智能，对吧？ 那么和原来的范围有什么区别呢？ 发生了什么变化？
+
+The change that the asus hmm.
+华硕的变化嗯。
+
+At the beginning, in the project file, it said that I have to use SMOP, which is not linked to the artificial intelligence. It's like an app or something in the CLI. And it's an offline tool to change the MATLAB file to a Python
+一开始，在项目文件中，它说我必须使用SMOP，它与人工智能没有联系。 它就像 CLI 中的应用程序或其他东西。 它是一个将 MATLAB 文件转换为 Python 的离线工具
+
+A python or julia a python not julia yeah yeah but but um uh when i checked with um with vincenzo he said that maybe we will not use that tools because but this is okay so you're not using that tool but uh the rest of the scope is the same right Yeah, that's not a real change, you're just not using.
+一个 python 或 julia 一个 python 不是 julia 是的，但是，嗯，当我和 vincenzo 核实时，他说也许我们不会使用那个工具，因为但这没关系，所以你没有使用那个工具，但是呃，其余的范围是一样的，是的，这不是真正的改变，你只是没有使用。
+
+Using the same tool that you were planning originally. Oh, yeah. So that's not considered as a fundamental change to the work. But I have already downloaded that in my computer. If it is necessary, I can do it. No, no, you don't need to. As I said, it doesn't affect your The project is still on the same topic, computational framework
+使用您最初计划的相同工具。 哦，是的。 所以这不被认为是对工作的根本性改变。 但我已经把它下载到我的电脑里了。 如果有必要，我可以做到。 不，不，你不需要。 正如我所说，它不会影响你的项目仍然是同一主题，计算框架
+
+Basically the tools that you were originally planning to use did not fulfill the criteria that you needed for qualifying it as artificial intelligence. So that means you are just adjusting your approach. The scope is still the same. So it's not a problem, you don't need to do anything. Yeah, but there's another change I think is more important. And our first, our like, our.
+基本上，您最初计划使用的工具不符合将其认定为人工智能所需的标准。 所以这意味着你只是在调整你的方法。 范围还是一样的。 所以这不是问题，你不需要做任何事情。 是的，但我认为还有另一个更重要的变化。 还有我们的第一个，我们的喜欢，我们的。
+
+Original goal is to change the software used for the sonic to detect the steel right yeah but I think Vincent Zhou tells me he wants me to change that to generate a new software it's not use old old old fracture or just a little bit to not.
+最初的目标是更改用于声波检测钢材的软件，是的，但我认为 Vincent Zhou 告诉我他希望我更改它以生成新软件，而不是使用旧的旧断裂或只是一点点不使用。
+
+So create your own tool, basically make your own tool, right? Create your own tool, your own Open Access tool. Like new software, used only in Python or Julia, and not related to the MATLAB original software. Is that okay? Yeah, as I said, the scope is still the same, so you're still aiming to do the same thing. What the
+所以创建你自己的工具，基本上是制作你自己的工具，对吧？ 创建您自己的工具，您自己的开放访问工具。 与新软件一样，仅在Python或Julia中使用，与MATLAB原始软件无关。 可以吗？ 是的，正如我所说，范围仍然相同，所以你的目标仍然是做同样的事情。 什么是
+
+Actually is the case here is that it's actually something that you're gonna build which is even more interesting because you're gonna make your own let's say code you will put together the.
+实际上这里的情况是，它实际上是您要构建的东西，这更有趣，因为您将制作自己的代码，比如说您将组合在一起的代码。
+
+Analysis software for what you need. So from my sense you're not deviating from the scope, but in reality you are improving the means by which you are going to do the work because it's something you will build. So it's better. But it's not considered a fundamental change. So a fundamental change would be, okay, you said that you're going to do computational analysis of acoustic emission, and instead of acoustic emission we are going now to do, So that would be a fundamental thing
+满足您需求的分析软件。 因此，从我的角度来看，您并没有偏离范围，但实际上您正在改进完成工作的方法，因为这是您将要构建的东西。 所以这样更好。 但这并不被认为是根本性的改变。 所以根本性的改变是，好吧，你说过你要对声发射进行计算分析，而我们现在要做的不是声发射，所以这将是一件基本的事情
+
+Would be a fundamental change because the project was not viable or because you couldn't do it for different reasons. The project is still valid, so it's still the same title. How you're going to do it exactly, this is subject to adaptation as you move forward. So it's fine, it's not a real change. Yeah, and he said that this project is very reliant on the developer of the the artificial intelligence
+这将是一个根本性的改变，因为该项目不可行，或者因为不同的原因你无法做到这一点。 该项目仍然有效，因此名称仍然相同。 您将如何准确地做到这一点，这取决于您前进时的适应。 所以没关系，这不是真正的改变。 是的，他说这个项目非常依赖人工智能的开发者
+
+Pea we can we can make some some change by the time it's my first time but i'm interested in it but from a when out when i come to britain from from china and i found there's no such kind of interesting things for me like er like dancing urged singing or ye e in tinies we can easily to get to to.
+豌豆，我们可以，我们可以在这是我第一次的时候做出一些改变，但我对此很感兴趣，但是从我从中国来到英国的时候起，我发现对我来说没有这样有趣的事情，比如跳舞、催促唱歌或者是的，我们可以很容易地接触到。
+
+To play with. So I'm focused on the Python because I really like computer science. What was your first degree? First degree? What's my subject in the undergraduate? I graduated from Nottingham, Ningbo, China. Yeah, and my subject is material, mechanical and manufacturing engineering
+一起玩。 所以我专注于Python，因为我真的很喜欢计算机科学。 你的第一个学位是什么？ 第一学位？ 我本科的专业是什么？ 我毕业于中国宁波诺丁汉。 是的，我的专业是材料、机械和制造工程
+
+For your degree, right? For yeah. Yeah, yeah, yeah. Okay, okay. And have you started looking at Python since you met with Vicent or did he give you some guidelines on what He gave some topic in the email and I have already finished that. So you have already Finished the goals he arranged me this week. Okay, excellent. So you met Okay, good, good. because it's important that you develop your learning of this subject a little bit.
+为了你的学位，对吗？ 是的。 是啊，是啊，是啊。 好吧，好吧。 自从你见到 Vicent 以来，你是否开始研究 Python？或者他是否给了你一些关于他在电子邮件中给出的某些主题的指导方针，我已经完成了。 那么你这周给我安排的目标你已经完成了。 好的，非常好。 于是你们就遇见了 好吧，很好，很好。 因为稍微加深对这门学科的学习很重要。
+
+A little bit fast uh this change will help you yeah it will guide you yeah maybe maybe i think uh i think due to my speed to to to finish the to finish the okay okay make some extra things let's see if you're moving fast yeah you can ask me to push things a little bit more yes and i'm interested in the.
+有点快呃这个改变会帮助你是的它会引导你是的也许我想呃我想由于我的速度来完成完成好吧好吧做一些额外的事情让我们看看你是否进展得很快是的你可以要求我把事情推得更远一点是的，我对此很感兴趣。
+
+But be careful because have you finished with the exams for the masters?.
+但要小心，因为你已经完成硕士考试了吗？
+
+Have you had all your exams yet? All the exams are finished, but there's one, only one for modeling exam. I have to receive, I don't have to, I want to receive because my score is 48. No, I And I want to get the distinction and make And others score of mine is, I think it's high enough to get the distinction. Will they allow you to receive the, will you be allowed to receive?.
+您已经完成所有考试了吗？ 所有的考试都结束了，但是还有一场，只有一场模特考试。 我必须收到，我不必收到，我想收到，因为我的分数是 48。 不，我 我想获得区别并做出 我的其他人的分数是，我认为它足够高以获得区别。 他们会允许您接收吗？您会被允许接收吗？
+
+Will you be allowed to receive it if it's 48? Yeah, I can have a chance to receive it, but the first score, like 48th of the first score will be removed. And yeah, whatever you score the second time. So if you don't score high enough, then I think I can afford this risk. And I really want to ask him and he said that if I pass.
+如果是48的话可以收到吗？ 是的，我有机会收到它，但是第一个分数，比如第一个分数的第 48 分将被删除。 是的，无论你第二次得分如何。 所以如果你的分数不够高，那么我想我可以承担这个风险。 我真的很想问他，他说如果我通过了。
+
+I pass this 48 project and I have the ability to get the migratory But this will happen after you submit the project?.
+我通过了这个48项目，我有能力获得迁移但是你提交项目后会出现这种情况吗？
+
+I think it is August. August? Yeah, yeah, yeah. So after you submit the project, because you submit the Sure. In August you submit as well, isn't it? The submission is in August. What is September? It's For the final report on the new model. For the final. For the final. Yeah. Yeah. Yeah
+我想现在是八月。 八月？ 是啊，是啊，是啊。 所以你提交项目之后，因为你提交了Sure。 8月份你也提交了，不是吗？ 提交时间是八月。 九月是什么？ 这是关于新模型的最终报告。 为了决赛。 为了决赛。 是的。 是的。 是的
+
+Maybe for our students we cannot see the final deadline. I should be able to see
+也许对于我们的学生来说，我们看不到最终的截止日期。 我应该能看到
+
+Because my upcoming assignments only three and the deadline is all at June 19th
+因为我即将完成的作业只有三项，而且截止日期都是在 6 月 19 日
+
+So the sofa might be a little bit more
+所以沙发可能会多一点
+
+Maybe it's not there yet
+也许还没有到
+
+I'm gonna see you.
+我会见到你。
+
+Thank you.
+谢谢。
+
+Thank you.
+谢谢。
+
+Maybe it's in the original file of the individual project. I will check it in my NAS. September. September? Yes, September. Oh, okay. But I think it's okay. Due to that time, I think I have already, I can already finish all the other things, almost all the things. Is it the 7th, though? I'm not sure. No, the project presentation is the 7th of September. Oh, yeah. But I'm not sure if it's correct here. I will check
+也许它在单个项目的原始文件中。 我会在我的 NAS 中检查它。 九月。 九月？ 是的，九月。 哦好的。 但我认为没关系。 因为那个时候,我想我已经,我已经可以完成所有其他的事情了,几乎所有的事情。 不过是第七号吗？ 我不知道。 不，项目演示是在 9 月 7 日。 哦，是的。 但我不确定这里是否正确。 我会检查
+
+Uh master so because this is from 2023.
+嗯，主人，因为这是 2023 年的。
+
+MSC project oh no, individual research. This one
+MSC项目哦不，个人研究。 这个
+
+Here. Yes. Sir. The guide is end of August, final project presentation. Oh, you have it over there. Okay, okay. Okay. And 21st, about 21st of June, you have the project preparation interview. Let me fix this here, because it's not correct
+这里。 是的。 先生。 该指南是八月底的最终项目演示。 哦，你那里有。 好吧，好吧。 好的。 21号，大约6月21号，你有项目准备面试。 让我在这里解决这个问题，因为它不正确
+
+Thank you.
+谢谢。
+
+End of August. But not dated yet? Not dated yet. And September 14th is the final project report to be submitted. Because it's showing the 23rd so I have dated for a different year. Okay. So it's correct year as well. But I think the time is not for me. Yes, yes, yes. So what, I mean, so, okay, do work on the report, the interim report, actually
+八月底。 但还没有约会？ 还没有约会。 9月14日是最终提交的项目报告。 因为显示的是 23 号，所以我约会的年份不同。 好的。 所以这也是正确的年份。 但我认为时机不适合我。 是的，是的，是的。 那又怎样，我的意思是，好吧，实际上，做一下报告，临时报告
+
+You have it ready for us, Vicenzo and myself to see it. Okay. We will have a chat tomorrow as well, all the three of us, and see how we can push forward. Yeah. But if you are finished with the exam, we can start pushing things specifically only for the project and move faster. Yeah. So yeah, let's have a meeting, the three of us, and we will decide the way forward tomorrow. Okay. Okay. Okay
+您已准备好供我们、维琴佐和我自己观看。 好的。 明天我们三个人也会聊聊，看看我们如何推进。 是的。 但如果您完成了考试，我们就可以开始专门针对该项目推出一些东西，并且进展得更快。 是的。 所以，是的，我们三个人开个会，我们将决定明天的前进方向。 好的。 好的。 好的
+
+Okay, and do you want to see my notes right now? Because I want you to check if it is official or not, or have some problems to fix. Okay. Yeah, I know how to
+好的，你现在想看我的笔记吗？ 因为我想让你检查一下它是否是官方的，或者有一些问题需要修复。 好的。 是的，我知道怎么做
+
+Thank you.
+谢谢。
+
+Yeah, here you can see I use Obsidian. Yeah. You know that? No. Oh, okay. All the notes are Markdown version
+是的，在这里你可以看到我使用黑曜石。 是的。 你知道吗？ 不，哦，好吧。 所有笔记均为Markdown版本
+
+Here's an individual project and here's my AI history. I use, for example, Codex. You know Codex? Yeah. Yeah. Here's my history. I have already, sorry, this is the stage of install the SMOP and Rookie Gathering. the first is is my methodology.
+这是一个个人项目，这是我的人工智能历史。 例如，我使用 Codex。 你知道法典吗？ 是的。 是的。 这是我的历史。 我已经，抱歉，现在是安装SMOP和新秀聚会的阶段。 第一个是我的方法论。
+
+Methodology and here's my same prompt for the different sections. Here's the prompt and I have a copy and paste to the kind of CRI codec. But for cloud code, I think it needs Pro and Max to use the the official model and I use CC Suite.
+方法论，这是我对不同部分的相同提示。 这是提示，我复制并粘贴到 CRI 编解码器类型。 但是对于云代码，我认为需要Pro和Max才能使用官方模型，我使用CC Suite。
+
+CC switch to change to the deep seek. Okay. Okay. Okay. And like here. So, but we also can use like the app of cloud, not cloud code, the cloud desktop app and to chat with, but it's chat mode, it's not code mode. Okay. Yeah. And here's like the answers. Okay. and the original.
+CC切换改为深寻。 好的。 好的。 好的。 就像这里一样。 所以，但是我们也可以使用像云应用程序，而不是云代码，云桌面应用程序来聊天，但它是聊天模式，它不是代码模式。 好的。 是的。 这就是答案。 好的。 和原来的。
+
+Original of this is from here. It's a MATLAB file. Vincent sent me. Okay. Let's see in here. Here is the full result from four different. Here you can see that the strengths, the weaknesses, and the functional check is indexing is right, or exploding it.
+这篇文章的原文出自这里。 这是一个 MATLAB 文件。 文森特派我来的。 好的。 我们进去看看吧。 这是四个不同的完整结果。 在这里您可以看到优点、缺点以及功能检查是索引正确还是爆炸。
+
+Plotting is right and I have already done four of this and make his in the matrix is that is that is that right what you need to also do as we move forward you need to take ownership of the project so you can you know once you have gather pace you can decide which direction you're gonna take the project as well so you believe someone of the criteria that we mark as well. So you have.
+绘图是正确的，我已经完成了其中的四项，并将其纳入矩阵中，这就是您需要做的，随着我们前进，您需要拥有该项目的所有权，这样您就可以知道，一旦您加快步伐，您也可以决定您将采取该项目的方向，以便您也相信我们标记的标准。 所以你有。
+
+So you have to start seeing what direction you can take for the project, not just wait for Vechange or myself to But this is early, so it's still not the time to do this, but with time you should try and take your own initiative. Of course Like the conclusion? No, not the conclusion, which way the project can move further. Move further? Yeah. But it's early still, okay? is still the early days of.
+所以你必须开始看看你可以为这个项目采取什么方向，而不是仅仅等待Vechange或我自己。但是现在还为时过早，所以现在还不是这样做的时候，但随着时间的推移，你应该尝试采取自己的主动行动。 当然喜欢结论吗？ 不，不是结论，项目可以以哪种方式进一步推进。 进一步行动？ 是的。 但现在还早，好吗？ 现在还是初期的。
+
+Days of the project so okay of course in discussion with us because it's a short project so it's not a PhD it's a short project but do with time start you know discussing your own ideas as well and see what what kind of forward direction you come up with as well because it's one of the criteria yeah because I need to know the acceptance of the yeah now it's the learning so it's not possible to get to that point but with time as you move forward it's.
+当然，与我们讨论的项目天数很好，因为这是一个简短的项目，所以它不是一个博士项目，它是一个简短的项目，但随着时间的推移，你也知道讨论你自己的想法，看看你想出了什么样的前进方向，因为这是标准之一，是的，因为我需要知道接受是的，现在这是学习，所以不可能达到这一点，但随着时间的推移，你会前进。
+
+It's one of the things that you can let's say work on as well yeah okay okay and this kind of for reading those what is I mentioned in the in the project list and this to fall four kinds of four kinds of like paper yeah yeah and and I add in this and there's Chinese version and I'll translate it into English version and there's my notes and and and the SMO as an.
+这是你可以说的工作之一，是的，好吧，这是为了阅读我在项目列表中提到的内容，这四种四种像纸一样的东西，是的，我在其中添加，有中文版本，我会将其翻译成英文版本，还有我的笔记和 SMO。
+
+So, and the cookie cast is from the link attached on the project file, and I found from Where? Shit. Oh, yeah
+那么，cookie 转换来自项目文件上附加的链接，我从哪里找到的？ 拉屎。 哦，是的
+
+It is from In this paper I cannot see that
+它来自在这篇论文中我看不到
+
+Oh, here, Rukicaster. So, before the first meeting, and I have already done this, and I don't even know what kind of change. So I don't know this. If it is needed or not. So what is needed where? In the report or where? Report or like every week I have to submit it. into the Rukikata is kind of like
+哦，这里，鲁基卡斯特。 所以，在第一次见面之前，我就已经做到了这一点，而且我什至不知道是什么样的改变。 所以我不知道这个。 不管需要还是不需要。 那么哪里需要什么？ 在报告中还是在哪里？ 报告或者类似的每周我都必须提交。 进入 Rukikata 有点像
+
+Like format No, no, you don't need to do that. And I just use this and here's the four tasks that Vincent gave me for 2022-2027 and I have already done this four and this read first reading notes and project over two sets overview and prefer AI platforms and model use and and there's a plan compared to.
+就像格式不，不，你不需要这样做。 我只是使用这个，这是文森特给我的 2022-2027 年的四项任务，我已经完成了这四项任务，这阅读了第一本阅读笔记和项目超过两套概述，并且更喜欢人工智能平台和模型的使用，并且有一个计划进行比较。
+
+His authority and the cumberry anxious show you ha ha we will discuss you more detail all this sir to morrow as well i'll come but the yet i think you are a a fooling the right that action ah let sir have it up the field us to morrow i can see to hear that thing ha ha because i think is a sir the very new topic for me young my boy my a master my subject sir my maine mean your project or for of my.
+他的权威和坎伯里的焦虑告诉你，哈哈，我们将与你讨论更多细节，先生，明天我也会来，但我认为你是一个傻瓜，行动的权利啊，让先生把它带到现场，我们明天我可以看到听到那件事，哈哈，因为我认为先生，对我来说，这是一个非常新的话题，我的孩子，我的主人，我的主题，先生，我的缅因州意味着你的项目或我的项目。
+
+Undergraduate is a AR, AR, VR gloves, you know that? Yes, I know. Forced by the micro fluid. Yeah, yeah, yeah. And we electric the, the, the, the, the, the, opposite, opposite and negative, and the, the, the fluid, fluid will come up and we membrane, and we cover the membrane, and the fluid will, will put the membrane up, And we can feel that
+本科是AR、AR、VR手套，你知道吗？ 是的，我知道。 受微流体的强制。 是啊，是啊，是啊。 And we electric the, the, the, the, the, the, opposite, opposite and negative, and the, the, the fluid, fluid will come up and we membrane, and we cover the membrane, and the fluid will, will put the membrane up, And we can feel that
+
+Feel that in our fingertips. Right, I understand. Yeah, and I have already bring that, my toolbox here. If you are interested in, we can maybe we can chat it sometimes. If you have time. I think you are busy enough. Let's have a chat tomorrow. So we will meet all together tomorrow and we will discuss the way forward. For now, work on the stuff that we change or give you and.
+在我们的指尖感受它。 是的，我明白了。 是的，我已经把我的工具箱带来了。 如果你有兴趣的话，我们也许有时可以聊聊。 如果你有时间的话。 我想你已经够忙了。 明天我们再聊吧。 因此，我们明天将齐聚一堂，讨论前进的方向。 现在，请处理我们更改或提供给您的内容。
+
+And also start building your interim report and we will decide the next step tomorrow. Okay. So we will sit down tomorrow and discuss what the next steps will be. Yeah. And this meeting for my another, I want you to know that I want you to know I'm really interested in it. No, no, no. My speed maybe is faster than you. No, no, no. It's fine. We will take that into account. so I'm going to give you a hand to.
+并开始编写您的中期报告，我们将在明天决定下一步。 好的。 因此，我们明天将坐下来讨论接下来的步骤。 是的。 这次会议是我的另一次会议，我想让你知道我真的对此很感兴趣。 不，不，不。 我的速度也许比你快。 不，不，不。 没关系。 我们会考虑到这一点。 所以我会帮你的。
+
+Maybe we can do it more further, bigger. The main concern was that you had the exams. Yeah. So we cannot overload. Oh yeah, I have already finished. If you have finished the exam then we can focus on it. Focus on it completely. Yeah, yeah, yeah. Because there is a risk, you know, if we overload you, then that would not have been correct because you would have the exam still. Oh no, I have already finished it. When did you finish? Last week? Yeah, last week from Friday? which happens.
+也许我们可以做得更远、更大。 主要担心的是你参加了考试。 是的。 所以我们不能超载。 哦，是的，我已经完成了。 如果你已经完成了考试，那么我们就可以专注于它。 完全专注于它。 是啊，是啊，是啊。 因为存在风险，你知道，如果我们让你超负荷，那么那将是不正确的，因为你仍然要参加考试。 哦不，我已经完成了。 你什么时候完成的？ 上星期？ 是啊，上周从周五开始？ 发生这种情况。
+
+I will check my, sorry, wait a minute, it's in my, it's about 15th. 15th? But my full exam is continuous. Okay, that's a little bit. I finished a little bit earlier. So maybe the last exam is for the whole, all our subjects is about 20, 21st. Okay. 21st all the but for me I just finished.
+我会查一下我的，抱歉，等一下，在我的里，大约是 15 号。 15号？ 但我的全面考试是连续的。 好吧，就这么一点点。 我提前完成了一点。 所以可能最后一次考试是为了整体，我们所有的科目都是20、21左右。 好的。 21 号，但对我来说，我刚刚完成。
+
+Finish so I focus on the project a little bit earlier so let's meet tomorrow and we'll discuss the next steps okay okay and I will let the Vincenzo know that you finished with the exam so he take that he takes that into account yeah in our tomorrow's meeting okay okay okay good good so I'll email you with the change okay.
+完成，这样我就可以早一点专注于这个项目，所以我们明天见面，我们将讨论接下来的步骤，好吧，我会让 Vincenzo 知道你已经完成了考试，这样他就会在我们明天的会议上考虑到这一点，好吧，好吧，好的，所以我会通过电子邮件给您发送更改，好的。
+
+O kate thank you can plan ahead therefore to morrow or game but maybe i i didn't tell po that you and there's another thing er to do we have a little bit lamp room or.
+噢，凯特，谢谢你，所以你可以提前计划明天或比赛，但也许我没有告诉po，你还有另一件事要做，我们有一点灯室或。
+
+Do we have a lab room that I can put my computer in for, say, their work for holding? We, yes. Because the weather is so hot and my dormitory don't have the air conditioner. And I really want you to focus on the hot weather. Let me show you. You can, but take your time. Okay
+我们是否有一个实验室，我可以把我的电脑放进去，比如说，保存他们的工作？ 我们，是的。 因为天气太热了，我的宿舍没有空调。 我真的希望你能关注炎热的天气。 让我告诉你。 可以，但要慢慢来。 好的
+
