@@ -33,7 +33,7 @@ The script `CT07.m` was selected as the initial benchmark because it contains se
 
 ---
 **Status**: This methodology will be applied to all subsequent translation experiments to maintain the validity of the comparison.
-![[CT07.m]]![[Commercial Tensile Tests.xlsx]]
+![[CT07.m]]![[99_attachments/Commercial Tensile Tests.xlsx]]
 
 ---
  Prompt：

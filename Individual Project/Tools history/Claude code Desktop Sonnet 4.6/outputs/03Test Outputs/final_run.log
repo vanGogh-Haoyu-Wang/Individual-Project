@@ -1,0 +1,13 @@
+─── CT-07 AE Analysis ─────────────────────────────────────
+  File  : /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/Commercial Tensile Tests.xlsx
+  Sheet : CT07
+  Output: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/outputs/03Test Outputs
+  Loaded 5848 data points.
+
+  Saved: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/outputs/03Test Outputs/01_ct07_strain_stress.png
+  Saved: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/outputs/03Test Outputs/02_ct07_normalised_rms.png
+  Saved: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/outputs/03Test Outputs/03_ct07_normalised_cumulative_rms.png
+  Saved: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/outputs/03Test Outputs/04_ct07_normalised_ae_energy.png
+  Saved: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Claude code Desktop Sonnet 4.6/outputs/03Test Outputs/05_ct07_normalised_cumulative_ae_energy.png
+All five figures saved successfully.
+PASS: generated exactly 5 non-empty PNG files.
