@@ -427,3 +427,26 @@ fig1_strain_vs_stress(d.strain, d.stress)   # single figure
 ```
 
 The file paths assume `Tensile-processed.xlsx` lives in the working directory — adjust `main(filepath = "...")` if it's elsewhere.
+
+---
+# Debug
+
+
+---
+# Results
+Figure 1
+![[fig1_strain_vs_stress.png]]
+Figure 2
+![[fig2_stress_rms.png]]
+Figure 3
+![[fig3_stress_cumrms.png]]
+Figure 4
+![[fig4_stress_energy.png]]
+Figure 5
+![[fig5_stress_cumenergy.png]]
+
+---
+# Evaluation:
+
+---
+# Summary
