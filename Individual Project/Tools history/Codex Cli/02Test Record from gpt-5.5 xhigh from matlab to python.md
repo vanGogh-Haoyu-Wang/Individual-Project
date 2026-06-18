@@ -293,8 +293,8 @@ Figure 3:
 ![[Figure_3.png]]
 Figure 4:
 ![[Figure_4.png]]
-Figure 5:
-![[Figure_5.png]]
+Figure 5:![[Figure_5.png]]
+
 
 ---
 # Find mistake

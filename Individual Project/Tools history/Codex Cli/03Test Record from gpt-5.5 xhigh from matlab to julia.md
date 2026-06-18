@@ -267,3 +267,31 @@ end
 ```
 
 If the Excel sheet has no header row, `XLSX.readtable` may treat the first data row as headers. In that case, use a raw matrix read instead; but for a processed Excel table with column headers, this version is the closest Julia analogue. XLSX.jl’s `readtable` to `DataFrame` pattern is documented in the XLSX.jl tutorial: 【0†source】([felipenoris.github.io](https://felipenoris.github.io/XLSX.jl/stable/tutorial/)).
+
+---
+# Find mistake
+
+Because in the original MATLAB code, the title of Figure 2 was hard-coded as:
+
+```
+title_text = "T09 Commercial Normalised RMS Profile"
+```
+But it reads CT-07/CT07 data, so this should be a typo in the original script. The Julia version retains it for faithful translation. The correct title should be changed to:
+
+```
+title_text="T07 Commercial Normalised RMS Profile"
+```
+*So this isn't an LLM problem, it's the original script's problem.*
+
+---
+# Run and results:
+Figure 1:
+![[T3gptjlfig1.png]]
+Figure 2:
+![[T3gptjlfig2.png]]
+Figure 3:
+![[T3gptjlfig3.png]]
+Figure 4:
+![[T3gptjlfig4.png]]
+Figure 5 :
+![[T3gptjlfig5.png]]
