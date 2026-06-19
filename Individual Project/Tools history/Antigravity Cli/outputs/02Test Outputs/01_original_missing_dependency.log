@@ -1,0 +1,15 @@
+Run date: 2026-06-19
+Original script SHA-256 before run: 76c5fc095e4829f00970f6958a0d6c4d335f33714f7bdb676126948bc3d66f88
+Exit code: 1
+
+Command environment:
+- Python: bundled Python 3.12.13
+- No extra PYTHONPATH
+- MPLBACKEND=Agg
+- MPLCONFIGDIR=outputs/02Test Outputs/.matplotlib
+
+Traceback (most recent call last):
+  File "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/Test2 by Gemini 3.1pro high.py", line 2, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+
