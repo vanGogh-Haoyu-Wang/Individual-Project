@@ -1,0 +1,41 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/julia_depot/compiled/v1.12/MbedTLS/bf9T0_Hfh5Y.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_CipherKind_792, symObjAddr: 0xB0, symBinAddr: 0x7A8, symSize: 0x3C }
+  - { offset: 0x2B, size: 0x8, addend: 0x0, symName: _julia_CipherKind_792, symObjAddr: 0xB0, symBinAddr: 0x7A8, symSize: 0x3C }
+  - { offset: 0x6D9, size: 0x8, addend: 0x0, symName: _julia_stat_708, symObjAddr: 0xFF4, symBinAddr: 0x16EC, symSize: 0x40 }
+  - { offset: 0x6E6, size: 0x8, addend: 0x0, symName: _julia_stat_708, symObjAddr: 0xFF4, symBinAddr: 0x16EC, symSize: 0x40 }
+  - { offset: 0x1CD, size: 0x8, addend: 0x0, symName: _julia_YY.2_671, symObjAddr: 0xA8C, symBinAddr: 0x1184, symSize: 0x2A8 }
+  - { offset: 0x2A2, size: 0x8, addend: 0x0, symName: _julia_YY.2_671, symObjAddr: 0xA8C, symBinAddr: 0x1184, symSize: 0x2A8 }
+  - { offset: 0x62, size: 0x8, addend: 0x0, symName: _julia_MDKind_796, symObjAddr: 0x19C, symBinAddr: 0x894, symSize: 0x3C }
+  - { offset: 0x6F, size: 0x8, addend: 0x0, symName: _julia_MDKind_796, symObjAddr: 0x19C, symBinAddr: 0x894, symSize: 0x3C }
+  - { offset: 0x71D, size: 0x8, addend: 0x0, symName: _julia_DebugThreshold_812, symObjAddr: 0x105C, symBinAddr: 0x1754, symSize: 0x3C }
+  - { offset: 0x72A, size: 0x8, addend: 0x0, symName: _julia_DebugThreshold_812, symObjAddr: 0x105C, symBinAddr: 0x1754, symSize: 0x3C }
+  - { offset: 0x4CA, size: 0x8, addend: 0x0, symName: _julia_iterate_668, symObjAddr: 0xD34, symBinAddr: 0x142C, symSize: 0xD4 }
+  - { offset: 0x4EB, size: 0x8, addend: 0x0, symName: _julia_iterate_668, symObjAddr: 0xD34, symBinAddr: 0x142C, symSize: 0xD4 }
+  - { offset: 0x54C, size: 0x8, addend: 0x0, symName: _julia__ca_roots_700, symObjAddr: 0xE08, symBinAddr: 0x1500, symSize: 0x1EC }
+  - { offset: 0x5B3, size: 0x8, addend: 0x0, symName: _julia__ca_roots_700, symObjAddr: 0xE08, symBinAddr: 0x1500, symSize: 0x1EC }
+  - { offset: 0xA6, size: 0x8, addend: 0x0, symName: _julia___init___765, symObjAddr: 0x210, symBinAddr: 0x908, symSize: 0x44 }
+  - { offset: 0xDB, size: 0x8, addend: 0x0, symName: _julia___init___765, symObjAddr: 0x210, symBinAddr: 0x908, symSize: 0x44 }
+  - { offset: 0x7A6, size: 0x8, addend: 0x0, symName: _julia_Padding_800, symObjAddr: 0x115C, symBinAddr: 0x1854, symSize: 0x3C }
+  - { offset: 0x7B3, size: 0x8, addend: 0x0, symName: _julia_Padding_800, symObjAddr: 0x115C, symBinAddr: 0x1854, symSize: 0x3C }
+  - { offset: 0x761, size: 0x8, addend: 0x0, symName: _julia_isfile_711, symObjAddr: 0x1148, symBinAddr: 0x1840, symSize: 0x14 }
+  - { offset: 0x76E, size: 0x8, addend: 0x0, symName: _julia_isfile_711, symObjAddr: 0x1148, symBinAddr: 0x1840, symSize: 0x14 }
+  - { offset: 0x189, size: 0x8, addend: 0x0, symName: _julia_f_send_778, symObjAddr: 0x784, symBinAddr: 0xE7C, symSize: 0x2B0 }
+  - { offset: 0x196, size: 0x8, addend: 0x0, symName: _julia_f_send_778, symObjAddr: 0x784, symBinAddr: 0xE7C, symSize: 0x2B0 }
+  - { offset: 0x7EA, size: 0x8, addend: 0x0, symName: _julia_Operation_788, symObjAddr: 0x0, symBinAddr: 0x1A00, symSize: 0x40 }
+  - { offset: 0x7F7, size: 0x8, addend: 0x0, symName: _julia_Operation_788, symObjAddr: 0x0, symBinAddr: 0x1A00, symSize: 0x40 }
+  - { offset: 0xF0B, size: 0x8, addend: 0x0, symName: _julia_init_perprocesss_685, symObjAddr: 0x133C, symBinAddr: 0x2D3C, symSize: 0x3B0 }
+  - { offset: 0xF68, size: 0x8, addend: 0x0, symName: _julia_init_perprocesss_685, symObjAddr: 0x133C, symBinAddr: 0x2D3C, symSize: 0x3B0 }
+  - { offset: 0x93F, size: 0x8, addend: 0x0, symName: _julia___sslinit___730, symObjAddr: 0x798, symBinAddr: 0x2198, symSize: 0x5E0 }
+  - { offset: 0xA1E, size: 0x8, addend: 0x0, symName: _julia___sslinit___730, symObjAddr: 0x798, symBinAddr: 0x2198, symSize: 0x5E0 }
+  - { offset: 0x8FA, size: 0x8, addend: 0x0, symName: _julia_f_recv_714, symObjAddr: 0x30C, symBinAddr: 0x1D0C, symSize: 0x338 }
+  - { offset: 0x907, size: 0x8, addend: 0x0, symName: _julia_f_recv_714, symObjAddr: 0x30C, symBinAddr: 0x1D0C, symSize: 0x338 }
+  - { offset: 0x82E, size: 0x8, addend: 0x0, symName: _julia_CipherID_804, symObjAddr: 0xF0, symBinAddr: 0x1AF0, symSize: 0x3C }
+  - { offset: 0x83B, size: 0x8, addend: 0x0, symName: _julia_CipherID_804, symObjAddr: 0xF0, symBinAddr: 0x1AF0, symSize: 0x3C }
+  - { offset: 0x872, size: 0x8, addend: 0x0, symName: _julia_mbed_err_775, symObjAddr: 0x1DC, symBinAddr: 0x1BDC, symSize: 0x44 }
+  - { offset: 0x87F, size: 0x8, addend: 0x0, symName: _julia_mbed_err_775, symObjAddr: 0x1DC, symBinAddr: 0x1BDC, symSize: 0x44 }
+  - { offset: 0x8B6, size: 0x8, addend: 0x0, symName: _julia_CipherMode_808, symObjAddr: 0x220, symBinAddr: 0x1C20, symSize: 0x3C }
+  - { offset: 0x8C3, size: 0x8, addend: 0x0, symName: _julia_CipherMode_808, symObjAddr: 0x220, symBinAddr: 0x1C20, symSize: 0x3C }
+...

@@ -1,0 +1,23 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/julia_depot/compiled/v1.12/StatsBase/EZjIG_Hfh5Y.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_YY.setprecisionYY.29_974, symObjAddr: 0x0, symBinAddr: 0x750, symSize: 0x27C }
+  - { offset: 0xE9, size: 0x8, addend: 0x0, symName: _julia_YY.setprecisionYY.29_974, symObjAddr: 0x0, symBinAddr: 0x750, symSize: 0x27C }
+  - { offset: 0x15A0, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_929, symObjAddr: 0x12A4, symBinAddr: 0x19F4, symSize: 0x5A0 }
+  - { offset: 0x17C9, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_929, symObjAddr: 0x12A4, symBinAddr: 0x19F4, symSize: 0x5A0 }
+  - { offset: 0xE27, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_954, symObjAddr: 0xDD0, symBinAddr: 0x1520, symSize: 0x460 }
+  - { offset: 0x100A, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_954, symObjAddr: 0xDD0, symBinAddr: 0x1520, symSize: 0x460 }
+  - { offset: 0x21A9, size: 0x8, addend: 0x0, symName: _julia_tryparse_917, symObjAddr: 0x1D34, symBinAddr: 0x2484, symSize: 0x378 }
+  - { offset: 0x2206, size: 0x8, addend: 0x0, symName: _julia_tryparse_917, symObjAddr: 0x1D34, symBinAddr: 0x2484, symSize: 0x378 }
+  - { offset: 0x2D8, size: 0x8, addend: 0x0, symName: _julia__parse_failure_960, symObjAddr: 0x344, symBinAddr: 0xA94, symSize: 0x2E8 }
+  - { offset: 0x411, size: 0x8, addend: 0x0, symName: _julia__parse_failure_960, symObjAddr: 0x344, symBinAddr: 0xA94, symSize: 0x2E8 }
+  - { offset: 0x71F, size: 0x8, addend: 0x0, symName: _julia_big_982, symObjAddr: 0x674, symBinAddr: 0xDC4, symSize: 0x1B0 }
+  - { offset: 0x7AE, size: 0x8, addend: 0x0, symName: _julia_big_982, symObjAddr: 0x674, symBinAddr: 0xDC4, symSize: 0x1B0 }
+  - { offset: 0x1E93, size: 0x8, addend: 0x0, symName: _julia_BigFloat_970, symObjAddr: 0x1914, symBinAddr: 0x2064, symSize: 0x37C }
+  - { offset: 0x1F36, size: 0x8, addend: 0x0, symName: _julia_BigFloat_970, symObjAddr: 0x1914, symBinAddr: 0x2064, symSize: 0x37C }
+  - { offset: 0x936, size: 0x8, addend: 0x0, symName: _julia_rstrip_910, symObjAddr: 0x8C0, symBinAddr: 0x1010, symSize: 0x368 }
+  - { offset: 0xA33, size: 0x8, addend: 0x0, symName: _julia_rstrip_910, symObjAddr: 0x8C0, symBinAddr: 0x1010, symSize: 0x368 }
+  - { offset: 0xD6A, size: 0x8, addend: 0x0, symName: _julia__parse_failure_967, symObjAddr: 0xD28, symBinAddr: 0x1478, symSize: 0x70 }
+  - { offset: 0xD9F, size: 0x8, addend: 0x0, symName: _julia__parse_failure_967, symObjAddr: 0xD28, symBinAddr: 0x1478, symSize: 0x70 }
+...

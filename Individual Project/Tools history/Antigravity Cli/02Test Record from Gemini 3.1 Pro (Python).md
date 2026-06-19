@@ -361,3 +361,27 @@ Here is an overview of how the translation addresses your constraints:
 4. **Readability:** The code uses explicit definitions, structured axes variables (like `ax_left`, `ax_right`), and `PEP-8` naming conventions. I've also peppered in comments that explain Python-specific idioms related directly back to their MATLAB counterparts.
 
 Let me know if you'd like any modifications, or if you want me to help you run the code and verify the output!
+
+---
+# Debug
+
+  
+---
+# Results
+Figure 1  
+  
+Figure 2  
+  
+Figure 3  
+  
+Figure 4  
+  
+Figure 5  
+
+  
+---
+# Evaluation:
+
+  
+
+# Summary

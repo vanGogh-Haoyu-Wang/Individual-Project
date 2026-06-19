@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/julia_depot/compiled/v1.12/Ogg_jll/gOU2R_Hfh5Y.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia___init___498, symObjAddr: 0x0, symBinAddr: 0x748, symSize: 0x1064 }
+  - { offset: 0x3F, size: 0x8, addend: 0x0, symName: _julia___init___498, symObjAddr: 0x0, symBinAddr: 0x748, symSize: 0x1064 }
+  - { offset: 0x8D, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_471, symObjAddr: 0x109C, symBinAddr: 0x17E4, symSize: 0xC8 }
+  - { offset: 0x9A, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_471, symObjAddr: 0x109C, symBinAddr: 0x17E4, symSize: 0xC8 }
+  - { offset: 0xD1, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_479, symObjAddr: 0x11A8, symBinAddr: 0x18F0, symSize: 0x1E0 }
+  - { offset: 0xE8, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_479, symObjAddr: 0x11A8, symBinAddr: 0x18F0, symSize: 0x1E0 }
+  - { offset: 0x12B, size: 0x8, addend: 0x0, symName: _julia_eager_mode_475, symObjAddr: 0x13C0, symBinAddr: 0x1B08, symSize: 0x3C }
+  - { offset: 0x138, size: 0x8, addend: 0x0, symName: _julia_eager_mode_475, symObjAddr: 0x13C0, symBinAddr: 0x1B08, symSize: 0x3C }
+  - { offset: 0x16F, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_430, symObjAddr: 0x1434, symBinAddr: 0x1B7C, symSize: 0x6A8 }
+  - { offset: 0x17C, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_430, symObjAddr: 0x1434, symBinAddr: 0x1B7C, symSize: 0x6A8 }
+...

@@ -233,3 +233,27 @@ end
 2. **Broadcasting**: I used `Float64.(...)` to cast your extracted columns into strict floating-point numbers. In Julia, keeping types strict eliminates overhead and enhances computation performance (as well as preventing `Any` type errors inside the `Plots` library).
 3. **`twinx()` instead of `yyaxis`**: Unlike MATLAB which tracks the state natively, `Plots.jl` creates a second axis layer tightly coupled to your first plot (passed as `twinx(fig)`). Any new series plotted on the right side uses a bang function (`plot!` or `scatter!`) mutating that specific twin axis to keep everything in one figure.
 4. **DRY code (Don't Repeat Yourself)**: Because 4 out of 5 of your plots use the exact same Stress vs. Time left-axis format, I created an internal helper function called `plot_stress_base(x_data, x_limit)`.
+
+---
+# Debug
+
+  
+---
+# Results
+Figure 1  
+  
+Figure 2  
+  
+Figure 3  
+  
+Figure 4  
+  
+Figure 5  
+
+  
+---
+# Evaluation:
+
+  
+---
+# Summary

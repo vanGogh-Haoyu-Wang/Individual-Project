@@ -1,0 +1,9 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/julia_depot/compiled/v1.12/Xorg_libxkbfile_jll/PAhQT_Hfh5Y.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_288, symObjAddr: 0x0, symBinAddr: 0x758, symSize: 0x694 }
+  - { offset: 0x2B, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_288, symObjAddr: 0x0, symBinAddr: 0x758, symSize: 0x694 }
+  - { offset: 0x62, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_329, symObjAddr: 0x6DC, symBinAddr: 0xE34, symSize: 0xC4 }
+  - { offset: 0x6F, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_329, symObjAddr: 0x6DC, symBinAddr: 0xE34, symSize: 0xC4 }
+...

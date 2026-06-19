@@ -1,0 +1,39 @@
+Workbook
+========
+Path: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/Commercial Tensile Tests.xlsx
+Size: 1,777,107 bytes (approximately 1.7 MB)
+
+XLSX.jl targeted inspection
+===========================
+Sheets: CT07 | CT09
+CT07 dimension: A1:O6020
+CT09 dimension: A1:O9851
+
+CT07 layout relevant to the Julia script
+=========================================
+Row 1 contains AE headings in columns E:O and blanks in several mechanical columns.
+Row 2 contains mechanical headings in A:D but numeric AE data in E:O.
+Row 3 contains mechanical units in A:D but numeric AE data in E:O.
+Row 4 is the first complete numeric mechanical row.
+
+All eight selected DataFrame columns have eltype Any because the worksheet mixes text,
+numbers, and missing cells. Direct Float64 broadcasting therefore cannot work on the
+unfiltered columns.
+
+Numeric-row selection
+=====================
+Mechanical columns (1, 3, 4): 1,807 complete rows; worksheet rows 4:1810.
+AE columns (5, 9, 10, 12, 14): 5,850 complete rows; worksheet rows 2:5851.
+Maximum stress: 505.2147990130693 MPa.
+Tensile time range: 0.0 to 255.33995056152344 s.
+AE time range: 20.3734047 to 254.5882182 s.
+
+Whole-workbook JavaScript inspection attempt
+============================================
+The bundled artifact-tool importer expanded memory to the default Node heap limit
+(approximately 4 GB) and exited with code 134:
+"FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed -
+JavaScript heap out of memory".
+
+Resolution: inspect only the necessary workbook metadata and CT07 cells with XLSX.jl.
+This completed in about two seconds and avoided expanding the entire workbook model.

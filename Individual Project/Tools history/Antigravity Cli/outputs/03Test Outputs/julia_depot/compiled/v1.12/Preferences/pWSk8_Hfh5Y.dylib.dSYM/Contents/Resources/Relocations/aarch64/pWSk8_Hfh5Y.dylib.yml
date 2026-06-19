@@ -1,0 +1,33 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/julia_depot/compiled/v1.12/Preferences/pWSk8_Hfh5Y.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _japi1_setpropertyNOT._128, symObjAddr: 0x0, symBinAddr: 0x750, symSize: 0x100 }
+  - { offset: 0x2B, size: 0x8, addend: 0x0, symName: _japi1_setpropertyNOT._128, symObjAddr: 0x0, symBinAddr: 0x750, symSize: 0x100 }
+  - { offset: 0xD0B, size: 0x8, addend: 0x0, symName: _julia_setpropertyNOT._121, symObjAddr: 0xB1C, symBinAddr: 0x126C, symSize: 0x110 }
+  - { offset: 0xD18, size: 0x8, addend: 0x0, symName: _julia_setpropertyNOT._121, symObjAddr: 0xB1C, symBinAddr: 0x126C, symSize: 0x110 }
+  - { offset: 0x1A7, size: 0x8, addend: 0x0, symName: _julia_setindexNOT._143, symObjAddr: 0x38C, symBinAddr: 0xADC, symSize: 0x190 }
+  - { offset: 0x240, size: 0x8, addend: 0x0, symName: _julia_setindexNOT._143, symObjAddr: 0x38C, symBinAddr: 0xADC, symSize: 0x190 }
+  - { offset: 0x1414, size: 0x8, addend: 0x0, symName: _julia_YY.load_preferenceYY.3_151, symObjAddr: 0x1114, symBinAddr: 0x1864, symSize: 0x104 }
+  - { offset: 0x143F, size: 0x8, addend: 0x0, symName: _julia_YY.load_preferenceYY.3_151, symObjAddr: 0x1114, symBinAddr: 0x1864, symSize: 0x104 }
+  - { offset: 0x62, size: 0x8, addend: 0x0, symName: _julia_get_uuid_165, symObjAddr: 0x100, symBinAddr: 0x850, symSize: 0x1C4 }
+  - { offset: 0xB5, size: 0x8, addend: 0x0, symName: _julia_get_uuid_165, symObjAddr: 0x100, symBinAddr: 0x850, symSize: 0x1C4 }
+  - { offset: 0xD4F, size: 0x8, addend: 0x0, symName: _japi1_setpropertyNOT._129, symObjAddr: 0xC7C, symBinAddr: 0x13CC, symSize: 0x100 }
+  - { offset: 0xD5C, size: 0x8, addend: 0x0, symName: _japi1_setpropertyNOT._129, symObjAddr: 0xC7C, symBinAddr: 0x13CC, symSize: 0x100 }
+  - { offset: 0x14B2, size: 0x8, addend: 0x0, symName: _japi1_setpropertyNOT._127, symObjAddr: 0x129C, symBinAddr: 0x19EC, symSize: 0x100 }
+  - { offset: 0x14BF, size: 0x8, addend: 0x0, symName: _japi1_setpropertyNOT._127, symObjAddr: 0x129C, symBinAddr: 0x19EC, symSize: 0x100 }
+  - { offset: 0xD93, size: 0x8, addend: 0x0, symName: _julia_load_preference_181, symObjAddr: 0xD7C, symBinAddr: 0x14CC, symSize: 0x28 }
+  - { offset: 0xDA0, size: 0x8, addend: 0x0, symName: _julia_load_preference_181, symObjAddr: 0xD7C, symBinAddr: 0x14CC, symSize: 0x28 }
+  - { offset: 0x1B2D, size: 0x8, addend: 0x0, symName: _julia_setpropertyNOT._125, symObjAddr: 0x1944, symBinAddr: 0x2094, symSize: 0x110 }
+  - { offset: 0x1B3A, size: 0x8, addend: 0x0, symName: _julia_setpropertyNOT._125, symObjAddr: 0x1944, symBinAddr: 0x2094, symSize: 0x110 }
+  - { offset: 0x8DA, size: 0x8, addend: 0x0, symName: _julia_currently_compiling_147, symObjAddr: 0x8C0, symBinAddr: 0x1010, symSize: 0x2C }
+  - { offset: 0x905, size: 0x8, addend: 0x0, symName: _julia_currently_compiling_147, symObjAddr: 0x8C0, symBinAddr: 0x1010, symSize: 0x2C }
+  - { offset: 0x5B4, size: 0x8, addend: 0x0, symName: _julia_drop_clears_159, symObjAddr: 0x56C, symBinAddr: 0xCBC, symSize: 0x30C }
+  - { offset: 0x643, size: 0x8, addend: 0x0, symName: _julia_drop_clears_159, symObjAddr: 0x56C, symBinAddr: 0xCBC, symSize: 0x30C }
+  - { offset: 0x98E, size: 0x8, addend: 0x0, symName: _julia_ht_keyindex_115, symObjAddr: 0x944, symBinAddr: 0x1094, symSize: 0x18C }
+  - { offset: 0xA59, size: 0x8, addend: 0x0, symName: _julia_ht_keyindex_115, symObjAddr: 0x944, symBinAddr: 0x1094, symSize: 0x18C }
+  - { offset: 0x14F6, size: 0x8, addend: 0x0, symName: _julia_rehashNOT._130, symObjAddr: 0x139C, symBinAddr: 0x1AEC, symSize: 0x558 }
+  - { offset: 0x1607, size: 0x8, addend: 0x0, symName: _julia_rehashNOT._130, symObjAddr: 0x139C, symBinAddr: 0x1AEC, symSize: 0x558 }
+  - { offset: 0xDD7, size: 0x8, addend: 0x0, symName: _julia_ht_keyindex2_shorthashNOT._139, symObjAddr: 0xDEC, symBinAddr: 0x153C, symSize: 0x274 }
+  - { offset: 0xEB6, size: 0x8, addend: 0x0, symName: _julia_ht_keyindex2_shorthashNOT._139, symObjAddr: 0xDEC, symBinAddr: 0x153C, symSize: 0x274 }
+...

@@ -1,0 +1,18 @@
+STARTED: 2026-06-18T23:09:25.078Z
+FINISHED: 2026-06-18T23:09:36.159Z
+CWD: /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli
+COMMAND: "/Users/vangogh/.julia/juliaup/julia-1.12.6+0.aarch64.apple.darwin14/Julia-1.12.app/Contents/Resources/julia/bin/julia" "--project=/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs" "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/Test3_fixed.jl" "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/Commercial Tensile Tests.xlsx" "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs"
+EXIT_STATUS: 0
+
+----- STDOUT -----
+SAVED /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/figure_1_strain_stress.png
+SAVED /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/figure_2_rms.png
+SAVED /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/figure_3_cumulative_rms.png
+SAVED /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/figure_4_ae_energy.png
+SAVED /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/Tools history/Antigravity Cli/outputs/03Test Outputs/figure_5_cumulative_ae_energy.png
+MECHANICAL_ROWS 1807
+AE_ROWS 5850
+MAX_STRESS 505.2147990130693
+
+----- STDERR -----
+
