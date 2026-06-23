@@ -202,6 +202,39 @@ Sibil 等人[32]也使用了类似的技术，将材料的冷却过程与其声�
 
 最后，本文中提到的各种工具和技术在表 3 中列出，并按照不同的类别进行了分类。
 
+表 3 讨论过的工具汇总
+
+| 分解       | 准备         | 特征选择   | 受监督的分类      | 聚类                      | 结果验证   |
+| -------- | ---------- | ------ | ----------- | ----------------------- | ------ |
+| EMD      | 基于特征的过滤器   | 反向淘汰法  | KNN         | DBSCAN                  | 聚类度量指标 |
+| STFT 缩放器 | 标量 Scalers | 相关性    | Naive Bayes | 模糊 C 均值算法               | 特征分布   |
+| 传统参数     | 源重建        | 无限特征选择 | 随机森林        | Gustafson Kessel        | 文献关联研究 |
+| WPT/CWT  |            | 拉普拉斯分数 | SVM         | 层级式                     | 多模型相关性 |
+|          |            | MCFS   |             | k 均值算法                  | PCA    |
+|          |            | PCA    |             | Optics                  | SOM    |
+|          |            | 香农熵    |             | PCA                     | 时间分布   |
+|          |            |        |             | SOM                     |        |
+|          |            |        |             | Spectral Clustering 谱聚类 |        |
+
+附录：Traore 特征选择算法
+```
+Algorithm 1 Selection of least dependent variables
+Require: T ∈ (0, 1)
+ Let p be the number of variables
+ Let x1, . . . , x p be the variables
+ a ← 1
+ while a ≥ T do
+   Calculate all R^2 a, j = R^2 a, j of the models x^j i = ∑ l = j αl x l i + epcilone i , j = 1, . . . , p
+   a ← max j (R^2 a, j )
+   k ← arg max j (R^2 a, j )
+   if a ≥ T then
+      Remove x k
+      p ← p − 1
+      Re-index x1 to x p
+   end if
+end while
+```
+
 ___
 
 # Reading Notes
