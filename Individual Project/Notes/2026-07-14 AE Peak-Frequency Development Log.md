@@ -473,3 +473,11 @@ The magnitude difference is normal double-precision rounding, not a behavioral d
 - Python: 19 tests passed.
 - Julia: all five test groups passed, including the MATLAB buffer-framing test.
 - MATLAB: the original unmodified script completed successfully and the retained export contains 3,098 rows.
+
+## 2026-07-15 - T02, T03 and T04 Legacy vs Adaptive Comparison
+
+The validated MATLAB legacy workflow and the adaptive Python workflow were run on the complete T02 (43 MAT files), T03 (42 MAT files), and T04 (47 MAT files) groups. A complete English report is stored separately as `2026-07-15 T02-T04 Legacy vs Adaptive Comparison.md`.
+
+The central result is consistent across all three datasets: every legacy-selected window was also selected by the adaptive workflow. The adaptive workflow additionally selected 55,040 windows in T02, 51,843 in T03, and 55,645 in T04. The legacy method selected events in only 27/43 T02 files, 27/42 T03 files, and 32/47 T04 files; the adaptive method selected events in every file.
+
+Both methods retained the same dominant Top-1 frequency region below 200 kHz. The interpretation is therefore that adaptive selection substantially increases detection density without changing the central spectral character of the detections. This demonstrates increased sensitivity and transferability, but does not by itself prove that every adaptive-only event is physical AE rather than noise. The next validation should align adaptive-only detections with tensile load/displacement and representative waveform inspection.
