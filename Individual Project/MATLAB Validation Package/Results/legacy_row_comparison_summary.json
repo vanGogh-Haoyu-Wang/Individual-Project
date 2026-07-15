@@ -1,0 +1,24 @@
+{
+  "input_file_count": 42,
+  "matlab_rows": 3098,
+  "python_rows": 3098,
+  "julia_rows": 3098,
+  "event_indices_identical": true,
+  "max_abs_error_vs_matlab": {
+    "python": {
+      "time_s": 0.0,
+      "peak_frequency_khz": 0.0,
+      "peak_magnitude": 5.684341886080801e-13
+    },
+    "julia": {
+      "time_s": 0.0,
+      "peak_frequency_khz": 0.0,
+      "peak_magnitude": 5.684341886080801e-13
+    }
+  },
+  "tolerance": {
+    "relative": 1e-12,
+    "absolute": 1e-12
+  },
+  "all_numeric_rows_match_within_tolerance": true
+}
