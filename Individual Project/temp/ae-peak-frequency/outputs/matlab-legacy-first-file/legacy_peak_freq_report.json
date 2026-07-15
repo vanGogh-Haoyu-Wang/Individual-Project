@@ -1,0 +1,15 @@
+{
+  "input_file": "/Users/vangogh/Desktop/毕设/Haoyu Wang/T01/20221018_140051.mat",
+  "sample_count_before_padding": 5.0E+6,
+  "sample_count_after_padding": 6.0E+6,
+  "first_file_mean": 0.45901687983319478,
+  "upper_extreme": 0.0288162451668052,
+  "lower_extreme": -0.027787329833194707,
+  "moving_rms_max": [],
+  "max_possible_moving_rms": 0.0288162451668052,
+  "legacy_threshold": 0.1,
+  "legacy_event_count": 0,
+  "dsp_moving_rms_available": false,
+  "status": "verified_without_dsp_toolbox",
+  "note": "No events exceed the literal legacy threshold. The original Peak_Freq.m would later fail when plotting max(times) on empty data."
+}

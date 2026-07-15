@@ -1,0 +1,7 @@
+pyproject.toml
+src/ae_peak_frequency.egg-info/PKG-INFO
+src/ae_peak_frequency.egg-info/SOURCES.txt
+src/ae_peak_frequency.egg-info/dependency_links.txt
+src/ae_peak_frequency.egg-info/requires.txt
+src/ae_peak_frequency.egg-info/top_level.txt
+tests/test_io.py

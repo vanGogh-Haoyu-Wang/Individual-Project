@@ -1,0 +1,47 @@
+<h2>方案 B：迁移 + 小改进</h2>
+<p class="subtitle">目标不是立刻做复杂材料分类，而是做一条你能理解、能运行、能比较的 AE 分析流程。</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">两阶段实验</div>
+    <div class="mockup-body" style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center">
+      <div style="border:1px solid #a7c7e7;padding:16px;border-radius:8px">
+        <div class="label">阶段 1：忠实迁移</div>
+        <h3>基础 Peak Frequency</h3>
+        <p>.mat 原始波形 → 事件检测 → FFT → 每事件 1 个最强频率 → 原有三张图</p>
+        <p><strong>目的：</strong>确认 Python / Julia 都能复现现有 MATLAB 方法。</p>
+      </div>
+      <strong style="font-size:28px">→</strong>
+      <div style="border:1px solid #99c99c;padding:16px;border-radius:8px">
+        <div class="label">阶段 2：小改进</div>
+        <h3>Top-3 Frequency</h3>
+        <p>同一个事件不只保留最强频率，而是保留最强的 3 个、且彼此至少相隔 20 kHz 的频率。</p>
+        <p><strong>目的：</strong>检查单一峰值是否会掩盖次要频率成分。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>每个原型的输入与输出</h3>
+  <div class="split">
+    <div class="mockup"><div class="mockup-header">输入</div><div class="mockup-body"><ul><li><strong>.mat</strong>：原始 AE 波形，是真正做 FFT 的来源</li><li><strong>.xlsx / .csv</strong>：机械应力、应变和已有 AE 摘要，用来画对照图和核对时间</li></ul></div></div>
+    <div class="mockup"><div class="mockup-header">输出</div><div class="mockup-body"><ul><li>事件表：事件时间、Top-1 / Top-2 / Top-3 频率及幅值</li><li>基础图：时间 vs Top-1 峰值频率</li><li>改进图：时间 vs Top-3 峰值频率</li><li>可复现结果：CSV、PNG、运行说明</li></ul></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>不在本轮声称的事情</h3>
+  <p>不把频带自动说成钢的裂纹类型；不先做机器学习；不假装 Top-3 一定“更准确”。本轮只检验：它是否保留了 Top-1 忽略的频率信息。</p>
+</div>
+
+<div class="options">
+  <div class="option" data-choice="approve-design" onclick="toggleSelect(this)">
+    <div class="letter">✓</div>
+    <div class="content"><h3>这个设计正确</h3><p>下一步写一页实验计划，再制定实现步骤。</p></div>
+  </div>
+  <div class="option" data-choice="adjust-design" onclick="toggleSelect(this)">
+    <div class="letter">↺</div>
+    <div class="content"><h3>需要改</h3><p>告诉我哪一点不符合你的想法。</p></div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "mode": "adaptive",
+  "sampling_rate_hz": 1000000,
+  "event_window_samples": 200,
+  "window_overlap_samples": 1,
+  "adaptive_sigma_multiplier": 8.0,
+  "thresholds": {
+    "20221018_140051.mat": 0.0009363933078584744
+  }
+}
