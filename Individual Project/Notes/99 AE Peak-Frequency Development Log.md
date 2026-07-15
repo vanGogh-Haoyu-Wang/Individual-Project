@@ -481,3 +481,14 @@ The validated MATLAB legacy workflow and the adaptive Python workflow were run o
 The central result is consistent across all three datasets: every legacy-selected window was also selected by the adaptive workflow. The adaptive workflow additionally selected 55,040 windows in T02, 51,843 in T03, and 55,645 in T04. The legacy method selected events in only 27/43 T02 files, 27/42 T03 files, and 32/47 T04 files; the adaptive method selected events in every file.
 
 Both methods retained the same dominant Top-1 frequency region below 200 kHz. The interpretation is therefore that adaptive selection substantially increases detection density without changing the central spectral character of the detections. This demonstrates increased sensitivity and transferability, but does not by itself prove that every adaptive-only event is physical AE rather than noise. The next validation should align adaptive-only detections with tensile load/displacement and representative waveform inspection.
+
+## 2026-07-15 - Relationship Between CT07.m and Peak_Freq.m
+
+`CT07.m` and `Peak_Freq.m` are complementary analysis layers, not duplicate algorithms and not scripts that should be merged line by line.
+
+- `CT07.m` reads the processed `CT-07` Excel sheet and plots experiment-scale mechanical and AE-summary quantities: stress versus strain/time, normalised RMS, cumulative RMS, AE energy, and cumulative AE energy.
+- `Peak_Freq.m` reads raw MAT waveform blocks, selects short high-RMS windows, calculates FFTs, and reports the dominant frequency of each selected waveform event.
+
+The correct future integration is a third analysis step: retain `Peak_Freq` event frequency/time information, align it to a confirmed mechanical test timebase, then overlay or join it with stress, strain, RMS, and energy from the processed workbook. This is necessary to test whether adaptive-only events occur during mechanically meaningful stages.
+
+The scripts must not yet be joined automatically because their time coordinates are not proven to be the same. `Peak_Freq.m` constructs a frame-index time after concatenating files and inserting artificial zero gaps; it does not use the workbook's experiment clock. In addition, every T01–T04 workbook contains a `CT-07` sheet, so the sheet name alone does not establish which raw Txx file group corresponds to the CT07 processed trace. A specimen/group mapping and trigger/start-time alignment must be confirmed before any physical time-series conclusion is made.
