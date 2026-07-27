@@ -3,10 +3,6 @@
 Translating an existing
 AEWin/Mistras DTA reader into Julia 1.12.
 
-Read every implementation file under `source/`. Produce one self-contained
-Julia module named `MistrasDTAJulia` and output only the raw Julia source,
-without Markdown fences or explanation. 
-
 Required public interface:
 
 ```julia
