@@ -13,9 +13,10 @@ The reader implements the format path exercised by the pinned Python
 - Msg-173 Int16 waveform samples and voltage scaling;
 - bounded little-endian frame parsing and explicit format errors.
 
-It intentionally does not support WFS, GUI/plotting, MAT/HDF5 export, absolute
-wall-clock timestamps, or automatic DTA-dialect guessing. The included MATLAB
-example uses a different feature layout and is rejected explicitly.
+It intentionally does not support WFS, a GUI or plotting inside the reader,
+MAT/HDF5 export, absolute wall-clock timestamps, or automatic DTA-dialect
+guessing. The included MATLAB example uses a different feature layout and is
+rejected explicitly.
 
 ## Usage
 
@@ -53,6 +54,16 @@ Run the Julia validation:
 ```sh
 julia --project=. -e 'using Pkg; Pkg.test()'
 ```
+
+Generate the optional waveform figures without adding a Julia dependency:
+
+```sh
+uv run tools/plot_waveforms.py
+```
+
+This writes `results/waveform_01_julia_vs_python.png` and
+`results/all_8_waveforms.png`. The script calls the Julia reader, compares its
+arrays with the frozen Python oracle, and stops before plotting if they differ.
 
 The test run writes `results/comparison_summary.toml`. The verified reference
 result is:
