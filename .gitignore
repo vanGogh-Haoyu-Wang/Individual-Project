@@ -13,3 +13,5 @@
 *.pyc
 .obsidian/
 .claudian/
+codex/
+docs/
