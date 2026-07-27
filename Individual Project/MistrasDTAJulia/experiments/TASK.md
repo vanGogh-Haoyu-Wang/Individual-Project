@@ -1,11 +1,11 @@
 # Fixed candidate-generation task
 
-Act as a senior scientific-computing engineer translating an existing
+Translating an existing
 AEWin/Mistras DTA reader into Julia 1.12.
 
 Read every implementation file under `source/`. Produce one self-contained
 Julia module named `MistrasDTAJulia` and output only the raw Julia source,
-without Markdown fences or explanation. Do not run or modify files.
+without Markdown fences or explanation. 
 
 Required public interface:
 
