@@ -25,9 +25,6 @@ It is not a MATLAB/Python/Julia same-file equivalence claim.
 - Numerical oracle: pinned `210527-CH1-15.npz`, excluding absolute
   `TIMESTAMP` exactly as in the upstream Python test
 
-Two parts ran in separate temporary directories with read-only sandboxes . Each saw the same task and fixture, but only its assigned source. Neither session could see the
-other candidate or the final implementation. Candidates were saved and hashed before execution.
-
 ## Frozen candidates
 
 | Path | Session | SHA-256 |
