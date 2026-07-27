@@ -1,0 +1,12 @@
+name = "MistrasDTAJulia"
+uuid = "a9469b2c-9005-4d24-bb54-ef44ad8a03e4"
+version = "0.1.0"
+
+[compat]
+julia = "1.12"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

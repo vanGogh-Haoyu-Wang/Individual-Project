@@ -1,0 +1,5 @@
+python=3.14.6
+numpy=2.5.1
+python_upstream_commit=6c7dfb6f43f812dccff0c9219bd2c5c82bd98e85
+matlab_upstream_commit=43dd5300844f9f6d9be289a25ead319b47800041
+absolute_timestamp_excluded=true

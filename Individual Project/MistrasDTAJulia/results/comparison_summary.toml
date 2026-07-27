@@ -1,0 +1,13 @@
+fixture = "210527-CH1-15.DTA"
+python_upstream_commit = "6c7dfb6f43f812dccff0c9219bd2c5c82bd98e85"
+hits = 8
+waveforms = 8
+missing_in_julia = 0
+extra_in_julia = 0
+field_mismatches = 0
+waveform_length_mismatches = 0
+max_hit_time_error_s = 0.0
+max_feature_error = 0.0
+max_waveform_time_error_s = 0.0
+max_waveform_voltage_error_v = 0.0
+status = "numerically validated against the Python reference"
