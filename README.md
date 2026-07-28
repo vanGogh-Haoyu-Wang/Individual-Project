@@ -1,6 +1,9 @@
 University of Birmingham – School of Metallurgy and Materials
 MSci project P 15 – UoB-NDT group
 
+> Current implementation scope and validated results:
+> [Individual Project overview](Individual%20Project/README.md)
+
 **Title:** ‘Migration to an Open-Source Computational Framework for Acoustic Emission Analysis applied to Steel Structures’
 
 **Supervisor**: Prof. Mayorkinos Papaelias ([m.papaelias@bham.ac.uk](mailto:m.papaelias@bham.ac.uk))

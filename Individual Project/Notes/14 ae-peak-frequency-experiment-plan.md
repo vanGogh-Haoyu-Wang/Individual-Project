@@ -1,5 +1,7 @@
 # Experimental Plan: Migration and Improvement of AE Peak-Frequency Analysis
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 ## Aim
 
 To migrate an existing MATLAB acoustic-emission (AE) peak-frequency workflow into reproducible Python and Julia prototypes, then test a small improvement that retains the three strongest frequency peaks from each detected AE event rather than only the strongest peak.

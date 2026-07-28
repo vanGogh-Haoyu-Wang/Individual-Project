@@ -1,3 +1,8 @@
+> [!warning] Early scope exploration
+> Suggestions such as crack classification, severity estimation, source
+> localisation and broad steel-damage prediction are not part of the final
+> project boundary. See [[Individual Project/README|Canonical Project Overview]].
+
 In this project, new algorithms should not mean inventing an entirely new mathematical theory from scratch. A more realistic and valuable interpretation is to develop reproducible, material-aware AE analysis modules in Python and Julia. This would move the work beyond MATLAB translation and toward validated scientific workflows: data preparation, event detection, signal cleaning, feature extraction, clustering, damage-stage interpretation, and comparison against physical evidence. The novelty would lie in making the AE pipeline transparent, testable, open-source, and adaptable to different materials.
 
 For steel structures, the strongest direction is an algorithmic pipeline for corrosion, cracking, fatigue, and stress-corrosion damage. This could include adaptive noise filtering, robust AE event detection, extraction of time-domain and frequency-domain features, and clustering methods that do not assume simple spherical groups. Instead of relying only on k-means, methods such as DBSCAN, Gaussian mixture models, OPTICS, or SOM could be compared. A further algorithm could track damage progression over time by linking AE event rate, cumulative energy, frequency shifts, and load or inspection history.

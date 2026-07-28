@@ -1,5 +1,8 @@
 # R260_2 supplementary analysis
 
+> Project-level scope and defensible claims:
+> [Individual Project overview](../README.md)
+
 This directory contains a read-only, streaming analysis of:
 
 `/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx`

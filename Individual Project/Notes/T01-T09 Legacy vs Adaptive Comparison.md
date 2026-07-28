@@ -1,5 +1,7 @@
 # T01-T09 Legacy vs Adaptive Comparison
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 **Date:** 2026-07-15  
 **Purpose:** Independent repeat validation of the Legacy MATLAB-style AE peak-frequency workflow against the Adaptive Python workflow across every available T01-T09 raw-waveform group.
 

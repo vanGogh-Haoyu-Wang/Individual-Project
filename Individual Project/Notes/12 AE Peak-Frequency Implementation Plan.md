@@ -1,5 +1,7 @@
 # AE Peak-Frequency Implementation Plan
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 ## Confirmed Scope
 
 This work will migrate the existing `Peak_Freq.m` workflow into Python first, then Julia. The baseline records one strongest FFT frequency peak for each selected AE event. The improvement records up to three separated frequency peaks for the same events.

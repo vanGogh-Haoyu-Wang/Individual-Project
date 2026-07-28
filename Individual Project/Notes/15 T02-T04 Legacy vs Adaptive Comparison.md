@@ -1,5 +1,7 @@
 # T02, T03 and T04: Legacy MATLAB vs Adaptive AE Peak-Frequency Comparison
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 ## Purpose
 
 This note compares the existing legacy `Peak_Freq.m` workflow with the adaptive Python AE workflow on the complete T02, T03 and T04 datasets. The aim is not to claim that the adaptive method is automatically better. The aim is to measure exactly how its event selection and peak-frequency output differ from the validated old MATLAB baseline.

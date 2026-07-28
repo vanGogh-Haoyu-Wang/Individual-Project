@@ -1,4 +1,6 @@
 # SMOP
+
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
 ## 1. Check Python version
 ```
 // vangogh@vangoghs-MacBook-Pro ~ % python3 --version

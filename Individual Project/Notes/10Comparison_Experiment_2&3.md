@@ -1,5 +1,10 @@
 # Cross-Language Comparison of Experiments 2 and 3: MATLAB-to-Python versus MATLAB-to-Julia
 
+> [!warning] Pre-oracle experiment record
+> This report evaluates original-generation evidence available at that stage.
+> It does not replace the final MATLAB-oracle validation or support a general
+> ranking of model families. See [[Individual Project/README|Canonical Project Overview]].
+
 ## 1. Scope and basis of comparison
 
 This report compares the paired Test 02 (MATLAB-to-Python) and Test 03 (MATLAB-to-Julia) outputs produced by Gemini 3.1 Pro High, Claude Sonnet 4.6 High, DeepSeek V4 Pro, and GPT-5.5 XHigh. SMOP is excluded. The comparison uses the submitted scripts, their execution and evaluation records, and the two horizontal reports, `02Prompt_Output_Comparison_Experiment_2.md` and `03Prompt_Output_Comparison_Experiment_3.md`.

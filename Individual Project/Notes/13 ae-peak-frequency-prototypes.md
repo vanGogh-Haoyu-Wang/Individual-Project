@@ -1,5 +1,7 @@
 # AE Peak-Frequency Prototypes Implementation Plan
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 **Goal:** Build reproducible Python and Julia prototypes that read the available AE waveform and experiment-summary data, reproduce the existing single-peak frequency workflow, and compare it with a Top-3 peak extension.
 
 **Architecture:** Create a new standalone project beside the original MATLAB files; never modify `Peak_Freq.m`, `.mat`, or the original workbook. Both implementations consume one shared JSON parameter file and produce the same CSV event-table schema. Python is implemented first and becomes the readable reference; Julia is then implemented against the same synthetic fixtures and output contract.

@@ -1,5 +1,8 @@
 # MistrasWFSJulia
 
+> Project-level scope and defensible claims:
+> [Individual Project overview](../README.md)
+
 Minimal Julia 1.12 reader for the public `ExampleWFSdata.wfs` layout from the
 pinned Mistras AE MATLAB Library. The Julia runtime uses Base only.
 

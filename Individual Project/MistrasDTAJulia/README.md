@@ -1,5 +1,8 @@
 # MistrasDTAJulia
 
+> Project-level scope and defensible claims:
+> [Individual Project overview](../README.md)
+
 Minimal Julia 1.12 reader for the tested AEWin/Mistras DTA variant. The
 runtime uses Julia Base only.
 

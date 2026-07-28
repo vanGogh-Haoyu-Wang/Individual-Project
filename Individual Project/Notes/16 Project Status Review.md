@@ -1,5 +1,9 @@
 # Project Status Review
 
+> [!warning] Superseded project status
+> This document is a historical snapshot. It is not the current project status.
+> See [[Individual Project/README|Canonical Project Overview]].
+
 ## Current Position
 
 The project has moved beyond a purely prompt-comparison exercise. It now has one genuinely validated AE analysis case study: the legacy MATLAB peak-frequency workflow has been executed, reproduced, and compared against Python and Julia. The broader MSc objective, however, is larger than this one workflow, so the project is partially complete rather than finished.

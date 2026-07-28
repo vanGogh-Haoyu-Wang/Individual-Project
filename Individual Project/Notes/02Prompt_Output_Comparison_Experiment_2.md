@@ -1,5 +1,10 @@
 # Prompt Output Comparison: Experiment #2 (MATLAB to Python)
 
+> [!warning] Pre-oracle experiment record
+> This report evaluates original-generation evidence available at that stage.
+> It does not replace the final MATLAB-oracle validation or support a general
+> ranking of model families. See [[Individual Project/README|Canonical Project Overview]].
+
 ## 1. Experiment Metadata and Scope
 
 This report compares four observed MATLAB-to-Python translation runs for the same Acoustic Emission (AE) plotting task. It follows the horizontal-comparison structure used in [[01Prompt_Output_Comparison_Experiment_1]], while adding separate comparisons of the debugging process and the recorded evaluation evidence.

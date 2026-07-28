@@ -1,5 +1,8 @@
 # CT07–Peak_Freq Validation Package
 
+> Project-level scope and defensible claims:
+> [Individual Project overview](../README.md)
+
 This is the canonical validation and scientific-interpretation package for the
 CT07 summary workflow and the Peak_Freq waveform workflow. The two algorithms
 remain independent. Their outputs are joined only by the result-layer

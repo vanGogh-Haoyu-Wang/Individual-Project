@@ -1,5 +1,7 @@
 # Mistras DTA/WFS 与钢轨 AE 适用性核查
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 > 核查日期：2026-07-27  
 > 资料范围：导师邮件所列论文、MathWorks File Exchange、PyPI，以及两者链接的官方源码仓库。  
 > 结论：最小且可辩护的新增案例是 **只迁移 `.DTA` 的共同核心到 Julia**。它可以证明框架适用于铁路 AE 所涉及的 AEWin/Mistras 文件工作流；没有真实钢数据时，不能称为钢材裂纹检测的实验验证。
@@ -146,4 +148,3 @@
 - 背景：2012 年钢轨 AE 论文说明铁路应用价值；
 - 扩展：WFS Julia reader；
 - 排除：重新研究钢轨裂纹阈值、聚类算法、现场监测系统和完整 Mistras 替代软件。
-

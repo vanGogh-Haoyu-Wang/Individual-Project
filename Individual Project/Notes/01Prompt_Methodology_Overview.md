@@ -1,5 +1,7 @@
 # Overview of Initial Prompting Methodology
 
+> Project-level current status: [[Individual Project/README|Canonical Project Overview]]
+
 ## 1. Objectives of Prompt Engineering
 The primary goal of the prompting strategy is to ensure a high-fidelity translation of MATLAB scientific code to Python, adhering to the principle of **functional equivalence**. The strategy focuses on:
 - Minimising human intervention during the initial translation phase.

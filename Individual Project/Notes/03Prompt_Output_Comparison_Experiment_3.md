@@ -1,5 +1,10 @@
 # Prompt Output Comparison: Experiment #3 (MATLAB to Julia)
 
+> [!warning] Pre-oracle experiment record
+> This report evaluates original-generation evidence available at that stage.
+> It does not replace the final MATLAB-oracle validation or support a general
+> ranking of model families. See [[Individual Project/README|Canonical Project Overview]].
+
 ## 1. Scope and comparison method
 
 This comparison covers the four non-SMOP `03 Test` folders:

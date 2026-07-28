@@ -1,4 +1,10 @@
 以下是 MSc_project_P15_2026_VB的详细内容介绍：
+
+> [!warning] Early scope exploration
+> Suggestions such as crack classification, severity estimation, source
+> localisation and broad steel-damage prediction are not part of the final
+> project boundary. See [[Individual Project/README|Canonical Project Overview]].
+
 ###  **1. 项目基本信息** 
 - **标题**：Migration to an Open-Source Computational Framework for Acoustic Emission Analysis applied to Steel Structures （钢结构声发射分析开源计算框架迁移） 
 - **所属机构**：University of Birmingham – School of Metallurgy and Materials 

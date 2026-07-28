@@ -1,5 +1,9 @@
 # AE Peak-Frequency Development Log
 
+> [!note] Historical development log
+> Entries describe the state at their recorded dates. Current validated scope
+> and conclusions are maintained in [[Individual Project/README|Canonical Project Overview]].
+
 ## 2026-07-14 - Scope Decision
 
 ### Confirmed objective
