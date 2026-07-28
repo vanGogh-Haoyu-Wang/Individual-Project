@@ -1,0 +1,14 @@
+Raw py_compile:
+  exit code 1
+  IndentationError: unexpected indent at CT07_smop_raw.py line 5
+
+Syntax-only normalization:
+  output SHA-256 0d1c4be906477d9750f26455d8812fdd843d4b2f8ddd47fb92aeb905a20c814b
+  py_compile exit code 0
+
+Normalized direct run:
+  exit code 1
+  ModuleNotFoundError: No module named 'libsmop'
+
+Raw script SHA-256 after all probes:
+  f76ea90e77ec31612019d27ef5f12a6c683f12fc73bb316f0d224dee0d6d0993

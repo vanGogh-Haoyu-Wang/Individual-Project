@@ -1,0 +1,5 @@
+--- networkx/algorithms/dag.py
++++ networkx/algorithms/dag.py
+@@
+-from fractions import gcd
++from math import gcd

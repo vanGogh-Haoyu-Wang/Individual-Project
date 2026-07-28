@@ -1,0 +1,35 @@
+{
+  "candidate_id": "smop_python_raw",
+  "generator_type": "deterministic_transpiler",
+  "generator": "SMOP 0.41",
+  "source_sha256": "23b0b5948faa13dd8ffa340b5741bcfb0aaa741ffa400912890fd9ce0416b784",
+  "raw_sha256": "f76ea90e77ec31612019d27ef5f12a6c683f12fc73bb316f0d224dee0d6d0993",
+  "syntax_normalized_sha256": "0d1c4be906477d9750f26455d8812fdd843d4b2f8ddd47fb92aeb905a20c814b",
+  "raw_compiled": false,
+  "raw_imported": false,
+  "raw_completed_end_to_end": false,
+  "raw_png_count": 0,
+  "raw_csv_count": 0,
+  "first_failure": "IndentationError: unexpected indent at generated line 5",
+  "failure_category": "generator_syntax",
+  "next_failures_after_syntax_only_normalization": [
+    "ModuleNotFoundError: No module named 'libsmop'",
+    "ModuleNotFoundError: No module named '__builtin__' when the packaged runtime directory is exposed",
+    "AttributeError: np.NaN was removed in NumPy 2.0",
+    "NameError: xlsread is not defined"
+  ],
+  "static_runtime_gaps": [
+    "xlsread",
+    "figure",
+    "plot",
+    "scatter",
+    "yyaxis",
+    "xlabel",
+    "ylabel",
+    "xlim",
+    "ylim",
+    "title",
+    "grid"
+  ],
+  "conclusion": "SMOP generated structurally recognisable Python text, but the unmodified output was not executable."
+}

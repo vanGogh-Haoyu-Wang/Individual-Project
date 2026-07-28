@@ -1,0 +1,53 @@
+{
+  "purpose": "Audit manual intervention; not a ranking metric",
+  "raw": {
+    "lines": 90,
+    "sha256": "f76ea90e77ec31612019d27ef5f12a6c683f12fc73bb316f0d224dee0d6d0993"
+  },
+  "syntax_normalized_probe": {
+    "lines": 90,
+    "sha256": "0d1c4be906477d9750f26455d8812fdd843d4b2f8ddd47fb92aeb905a20c814b",
+    "change": "remove exactly one four-space prefix from SMOP-generated top-level lines"
+  },
+  "script_fixed": {
+    "lines": 146,
+    "sha256": "8f68df429e6605cde4043d846eb382ed65faf57142f143e30ff9ffce37e8a81b",
+    "diff_vs_syntax_normalized": {
+      "added_lines": 143,
+      "deleted_lines": 88
+    },
+    "repair_categories": [
+      "replace unavailable libsmop IO and plotting",
+      "safe mixed-cell numeric conversion",
+      "independent mechanical and AE masks",
+      "callable CLI and standard output contract"
+    ]
+  },
+  "runtime_compatible": {
+    "runtime_lines": 151,
+    "runner_lines": 101,
+    "runtime_sha256": "12c0bd8fa9db9beb2790fa2dd50b158f72053372e2c2ac2723cb1d07e44446f2",
+    "runner_sha256": "d447b7555d5bb564c3c741c2f75b70b813bf4fe0b3eb7fc446efae2c34e6e0a1",
+    "repair_categories": [
+      "syntax-only top-level indentation normalization",
+      "CT07-scoped Excel and 1-based indexing adapter",
+      "CT07-scoped plotting and yyaxis adapter",
+      "runner-owned masks and output contract"
+    ],
+    "scope": "CT07 only; not a general libsmop replacement"
+  },
+  "shared_output_helper": {
+    "lines": 60,
+    "sha256": "43daa7fba204e409f58ab69253b21a0da33aae49c3e23b3a9e2cf89adcf808a0",
+    "scope": "CSV, metadata and figure writing only; no loading or masking"
+  },
+  "validated_outputs": {
+    "mechanical_rows_per_path": 1807,
+    "ae_rows_per_path": 5850,
+    "png_count_per_path": 5,
+    "script_and_runtime_mechanical_csv_identical": true,
+    "script_and_runtime_ae_csv_identical": true,
+    "mechanical_csv_sha256": "91b9fc409717939078f38cbdf4d9279a019916f73922e2f90d5635bc7a39ea17",
+    "ae_csv_sha256": "de3f36a9ab715553a50a6a6081995c394657ba0aa462c9b1d49e72923bcf7c15"
+  }
+}

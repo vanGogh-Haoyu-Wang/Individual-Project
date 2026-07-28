@@ -1,0 +1,23 @@
+Script-fixed run:
+  exit code 0
+  mechanical rows 1807
+  AE rows 5850
+  PNG files 5
+
+Runtime-compatible run:
+  exit code 0
+  mechanical rows 1807
+  AE rows 5850
+  PNG files 5
+
+MATLAB oracle comparator:
+  candidate_count 2
+  passed_candidates 2
+  missing/extra 0 for both domains and both paths
+  record order matches true
+  matrix-row mismatches 0
+  numeric field mismatches 0
+  all 10 PNG files non-empty and decodable
+
+Regression tests:
+  4 passed

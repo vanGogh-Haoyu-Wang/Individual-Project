@@ -962,3 +962,12 @@ vangogh@vangoghs-MacBook-Pro ~ % cookiecutter https://github.com/neuroinformatic
 
   [1/9] full_name **(Python developer)**:
 ```
+
+## 2026-07-28 后续状态
+
+历史 `~/smop-test` environment 和 `smop-working-env.tar.gz` 已不在本机。
+本次依据上述版本重新建立了可复现 translator，并完成 CT07 raw 输出、
+两条修复路径和 MATLAB 数值验证。环境版本、补丁和完整 debug 记录见：
+
+- [SMOP CT07 运行问题与解决记录](../Tools%20history/SMOP/outputs/01Test%20Outputs/运行问题与解决记录.md)
+- [SMOP environment metadata](../Tools%20history/SMOP/outputs/01Test%20Outputs/environment_metadata.json)

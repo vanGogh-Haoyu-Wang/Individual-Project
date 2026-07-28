@@ -1,0 +1,14 @@
+Command:
+  .venv/bin/smop -o smoke.py smoke.m
+
+Translator exit code: 0
+Translator result: smoke.py generated.
+Compiler command:
+  python -m py_compile smoke.py
+
+Compiler exit code: 1
+Observed failure:
+  IndentationError: unexpected indent (smoke.py, line 5)
+
+The three-line smoke test therefore proved that translation text generation
+worked, while the generated Python was not syntactically executable.

@@ -1,0 +1,12 @@
+Command:
+  smop -o raw/CT07_smop_raw.py CT07.m
+
+Translator exit code: 0
+Source CT07.m SHA-256:
+  23b0b5948faa13dd8ffa340b5741bcfb0aaa741ffa400912890fd9ce0416b784
+Raw output SHA-256:
+  f76ea90e77ec31612019d27ef5f12a6c683f12fc73bb316f0d224dee0d6d0993
+
+SMOP emitted 90 lines and preserved the workbook, worksheet, physical column
+indices, plot sequence, axis limits, titles, line/scatter choices and colours.
+It also emitted invalid four-space indentation at module scope.
