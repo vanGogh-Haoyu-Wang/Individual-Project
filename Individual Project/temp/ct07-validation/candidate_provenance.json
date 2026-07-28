@@ -1,0 +1,24 @@
+{
+  "input": {
+    "path": "/Users/vangogh/Documents/毕设/初始数据&Matlab脚本/Commercial Tensile Tests.xlsx",
+    "sheet": "CT07",
+    "sha256": "89033ea6af74f0b99cfe44a1dcda4e59e4fea709d1f4e4c4acba3745edc33b2d"
+  },
+  "raw_candidates_are_not_modified_by_this_validation": true,
+  "fixture_normalization_is_not_counted_as_a_model_error": true,
+  "gpt55_julia": {
+    "raw_source": "Individual Project/Tools history/Codex Cli/Test 3 by gpt-5.5 xhigh.jl",
+    "raw_sha256": "f412a103418f8a5a631f7d039496cc7a716a2ceaaa251ce73cf42f65186becad",
+    "fixture_normalized_source": "Individual Project/Tools history/Codex Cli/Test 3 by gpt-5.5 xhigh - Commercial CT07.jl",
+    "fixture_normalized_sha256": "4b320191fb2500da3be7f9222eb1f0625e9f8b34f60865eaa1f94142358f2bd8",
+    "normalization": [
+      "Tensile-processed.xlsx -> Commercial Tensile Tests.xlsx",
+      "CT-07 -> CT07"
+    ]
+  },
+  "notes": [
+    "Raw-run classifications reuse the existing immutable execution logs cited in raw_candidate_scores.csv.",
+    "Environment failures such as initially missing plotting packages are not counted as model failures once the dependency was supplied.",
+    "Each final candidate uses its own data-loading and masking code; only standardized CSV/PNG writing is shared within a language."
+  ]
+}

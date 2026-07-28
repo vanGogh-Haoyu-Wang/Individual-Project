@@ -1,0 +1,19 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/HDF5_jll/w9xrx_HdUOO.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia___init___556, symObjAddr: 0x0, symBinAddr: 0x6E0, symSize: 0x8C08 }
+  - { offset: 0x49, size: 0x8, addend: 0x0, symName: _julia___init___556, symObjAddr: 0x0, symBinAddr: 0x6E0, symSize: 0x8C08 }
+  - { offset: 0x189, size: 0x8, addend: 0x0, symName: _julia_augment_platformNOT._493, symObjAddr: 0x0, symBinAddr: 0x9358, symSize: 0xCC }
+  - { offset: 0x196, size: 0x8, addend: 0x0, symName: _julia_augment_platformNOT._493, symObjAddr: 0x0, symBinAddr: 0x9358, symSize: 0xCC }
+  - { offset: 0x299, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_498, symObjAddr: 0x1180, symBinAddr: 0xA4D8, symSize: 0x200 }
+  - { offset: 0x2B0, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_498, symObjAddr: 0x1180, symBinAddr: 0xA4D8, symSize: 0x200 }
+  - { offset: 0x1CD, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_452, symObjAddr: 0x110, symBinAddr: 0x9468, symSize: 0x6D4 }
+  - { offset: 0x1DA, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_452, symObjAddr: 0x110, symBinAddr: 0x9468, symSize: 0x6D4 }
+  - { offset: 0x211, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_517, symObjAddr: 0x82C, symBinAddr: 0x9B84, symSize: 0xC8 }
+  - { offset: 0x21E, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_517, symObjAddr: 0x82C, symBinAddr: 0x9B84, symSize: 0xC8 }
+  - { offset: 0x2FB, size: 0x8, addend: 0x0, symName: _julia_eager_mode_521, symObjAddr: 0x13F0, symBinAddr: 0xA748, symSize: 0x3C }
+  - { offset: 0x308, size: 0x8, addend: 0x0, symName: _julia_eager_mode_521, symObjAddr: 0x13F0, symBinAddr: 0xA748, symSize: 0x3C }
+  - { offset: 0x255, size: 0x8, addend: 0x0, symName: _julia_augment_mpiNOT._525, symObjAddr: 0x938, symBinAddr: 0x9C90, symSize: 0x804 }
+  - { offset: 0x262, size: 0x8, addend: 0x0, symName: _julia_augment_mpiNOT._525, symObjAddr: 0x938, symBinAddr: 0x9C90, symSize: 0x804 }
+...

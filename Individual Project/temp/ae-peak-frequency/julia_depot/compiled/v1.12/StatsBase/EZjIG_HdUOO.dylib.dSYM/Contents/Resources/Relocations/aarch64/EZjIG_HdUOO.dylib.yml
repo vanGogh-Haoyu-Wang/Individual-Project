@@ -1,0 +1,23 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/StatsBase/EZjIG_HdUOO.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_rstrip_900, symObjAddr: 0x0, symBinAddr: 0x730, symSize: 0x370 }
+  - { offset: 0x11B, size: 0x8, addend: 0x0, symName: _julia_rstrip_900, symObjAddr: 0x0, symBinAddr: 0x730, symSize: 0x370 }
+  - { offset: 0x452, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_919, symObjAddr: 0x470, symBinAddr: 0xBA0, symSize: 0x5AC }
+  - { offset: 0x67B, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_919, symObjAddr: 0x470, symBinAddr: 0xBA0, symSize: 0x5AC }
+  - { offset: 0x1927, size: 0x8, addend: 0x0, symName: _julia_YY.setprecisionYY.29_964, symObjAddr: 0x18A4, symBinAddr: 0x1FD4, symSize: 0x27C }
+  - { offset: 0x19F2, size: 0x8, addend: 0x0, symName: _julia_YY.setprecisionYY.29_964, symObjAddr: 0x18A4, symBinAddr: 0x1FD4, symSize: 0x27C }
+  - { offset: 0x14A2, size: 0x8, addend: 0x0, symName: _julia_tryparse_907, symObjAddr: 0x123C, symBinAddr: 0x196C, symSize: 0x378 }
+  - { offset: 0x14FF, size: 0x8, addend: 0x0, symName: _julia_tryparse_907, symObjAddr: 0x123C, symBinAddr: 0x196C, symSize: 0x378 }
+  - { offset: 0xD45, size: 0x8, addend: 0x0, symName: _julia__parse_failure_950, symObjAddr: 0xAEC, symBinAddr: 0x121C, symSize: 0x2E8 }
+  - { offset: 0xE7E, size: 0x8, addend: 0x0, symName: _julia__parse_failure_950, symObjAddr: 0xAEC, symBinAddr: 0x121C, symSize: 0x2E8 }
+  - { offset: 0x118C, size: 0x8, addend: 0x0, symName: _julia_BigFloat_960, symObjAddr: 0xE1C, symBinAddr: 0x154C, symSize: 0x37C }
+  - { offset: 0x122F, size: 0x8, addend: 0x0, symName: _julia_BigFloat_960, symObjAddr: 0xE1C, symBinAddr: 0x154C, symSize: 0x37C }
+  - { offset: 0x235A, size: 0x8, addend: 0x0, symName: _julia__parse_failure_957, symObjAddr: 0x20BC, symBinAddr: 0x27EC, symSize: 0x70 }
+  - { offset: 0x238F, size: 0x8, addend: 0x0, symName: _julia__parse_failure_957, symObjAddr: 0x20BC, symBinAddr: 0x27EC, symSize: 0x70 }
+  - { offset: 0x1BE1, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_944, symObjAddr: 0x1BE8, symBinAddr: 0x2318, symSize: 0x460 }
+  - { offset: 0x1DC4, size: 0x8, addend: 0x0, symName: _julia_YY.tryparseYY.21_944, symObjAddr: 0x1BE8, symBinAddr: 0x2318, symSize: 0x460 }
+  - { offset: 0x1710, size: 0x8, addend: 0x0, symName: _julia_big_972, symObjAddr: 0x1658, symBinAddr: 0x1D88, symSize: 0x1B0 }
+  - { offset: 0x179F, size: 0x8, addend: 0x0, symName: _julia_big_972, symObjAddr: 0x1658, symBinAddr: 0x1D88, symSize: 0x1B0 }
+...

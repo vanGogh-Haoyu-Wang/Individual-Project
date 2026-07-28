@@ -11,6 +11,7 @@ from .config import AnalysisConfig
 class Event:
     start_sample: int
     samples: np.ndarray
+    rms: float
 
 
 def legacy_extrema_filter(signal: np.ndarray) -> np.ndarray:
@@ -58,11 +59,13 @@ def detect_events(
         raise ValueError("mode must be 'legacy' or 'adaptive'")
 
     selected_starts = starts[rms > threshold]
+    selected_rms = rms[rms > threshold]
     events = [
         Event(
             start_sample=int(start),
             samples=working[start : start + config.event_window_samples],
+            rms=float(value),
         )
-        for start in selected_starts
+        for start, value in zip(selected_starts, selected_rms)
     ]
     return events, threshold

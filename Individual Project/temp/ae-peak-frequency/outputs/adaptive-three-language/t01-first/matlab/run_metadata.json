@@ -1,0 +1,16 @@
+{
+  "mode": "adaptive_matlab_reference",
+  "input_dir": "/private/tmp/peak-first-fixture",
+  "input_files": "/private/tmp/peak-first-fixture/20221018_140051.mat",
+  "file_count": 1,
+  "sampling_rate_hz": 1.0E+6,
+  "window_samples": 200,
+  "overlap_samples": 1,
+  "hop_samples": 199,
+  "adaptive_sigma_multiplier": 8,
+  "min_peak_distance_khz": 20,
+  "selected_event_count": 125,
+  "top1_row_count": 125,
+  "top3_row_count": 375,
+  "matlab_version": "26.1.0.3276743 (R2026a) Update 3"
+}

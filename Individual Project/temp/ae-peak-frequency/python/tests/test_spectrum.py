@@ -49,3 +49,21 @@ def test_ranked_peaks_returns_no_peak_for_zero_waveform() -> None:
     )
 
     assert peaks == []
+
+
+def test_minimum_peak_distance_matches_matlab_strict_boundary() -> None:
+    samples = np.arange(200) / 1_000_000
+    waveform = (
+        np.sin(2 * np.pi * 100_000 * samples)
+        + 0.8 * np.sin(2 * np.pi * 120_000 * samples)
+        + 0.6 * np.sin(2 * np.pi * 160_000 * samples)
+    )
+    peaks = ranked_peaks(
+        waveform,
+        sampling_rate_hz=1_000_000,
+        min_peak_distance_khz=20.0,
+        count=3,
+    )
+    frequencies = [peak.frequency_khz for peak in peaks]
+    assert frequencies[:2] == pytest.approx([100.0, 160.0])
+    assert 120.0 not in frequencies

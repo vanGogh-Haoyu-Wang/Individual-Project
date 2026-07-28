@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/Xorg_xkeyboard_config_jll/Os86B_Nc6gD.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia___init___432, symObjAddr: 0x0, symBinAddr: 0x740, symSize: 0xB98 }
+  - { offset: 0x35, size: 0x8, addend: 0x0, symName: _julia___init___432, symObjAddr: 0x0, symBinAddr: 0x740, symSize: 0xB98 }
+  - { offset: 0x78, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_411, symObjAddr: 0xBD0, symBinAddr: 0x1310, symSize: 0x1E0 }
+  - { offset: 0x8F, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_411, symObjAddr: 0xBD0, symBinAddr: 0x1310, symSize: 0x1E0 }
+  - { offset: 0xD2, size: 0x8, addend: 0x0, symName: _julia_eager_mode_406, symObjAddr: 0xDE8, symBinAddr: 0x1528, symSize: 0x3C }
+  - { offset: 0xDF, size: 0x8, addend: 0x0, symName: _julia_eager_mode_406, symObjAddr: 0xDE8, symBinAddr: 0x1528, symSize: 0x3C }
+...

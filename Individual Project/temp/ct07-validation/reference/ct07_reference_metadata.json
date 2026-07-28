@@ -1,0 +1,12 @@
+{
+  "script_path": "/Users/vangogh/Documents/毕设/初始数据&Matlab脚本/CT07.m",
+  "script_sha256": "23b0b5948faa13dd8ffa340b5741bcfb0aaa741ffa400912890fd9ce0416b784",
+  "workbook_path": "/Users/vangogh/Documents/毕设/初始数据&Matlab脚本/Commercial Tensile Tests.xlsx",
+  "workbook_sha256": "89033ea6af74f0b99cfe44a1dcda4e59e4fea709d1f4e4c4acba3745edc33b2d",
+  "sheet_name": "CT07",
+  "data_rows": 5851,
+  "data_columns": 15,
+  "mechanical_rows": 1807,
+  "ae_rows": 5850,
+  "matlab_version": "26.1.0.3276743 (R2026a) Update 3"
+}

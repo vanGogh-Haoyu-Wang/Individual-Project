@@ -24,6 +24,7 @@ end
 struct Event
     start_sample::Int
     samples::Vector{Float64}
+    rms::Float64
 end
 
 struct Peak
@@ -74,7 +75,7 @@ function detect_events(signal::Vector{Float64}, config::AnalysisConfig, mode::Sy
     threshold = mode == :legacy ? config.legacy_rms_threshold :
         mode == :adaptive ? adaptive_threshold(rms, config.adaptive_sigma_multiplier) :
         throw(ArgumentError("mode must be :legacy or :adaptive"))
-    events = [Event(start, working[start + 1:start + config.event_window_samples]) for (start, value) in zip(starts, rms) if value > threshold]
+    events = [Event(start, working[start + 1:start + config.event_window_samples], value) for (start, value) in zip(starts, rms) if value > threshold]
     return events, threshold
 end
 
@@ -85,7 +86,7 @@ function ranked_peaks(samples::Vector{Float64}, sampling_rate_hz::Int, min_peak_
     sort!(candidates; by=i -> magnitudes[i], rev=true)
     selected = Int[]
     for index in candidates
-        all(abs(frequencies[index] - frequencies[chosen]) >= min_peak_distance_khz for chosen in selected) || continue
+        all(abs(frequencies[index] - frequencies[chosen]) > min_peak_distance_khz for chosen in selected) || continue
         push!(selected, index)
         length(selected) == count && break
     end
@@ -145,20 +146,25 @@ function run_matlab_legacy(mat_paths::Vector{String}, output_dir::Union{Nothing,
     return events, metadata
 end
 
-const EVENT_COLUMNS = [:event_id, :file_name, :event_time_s, :peak_rank, :frequency_khz, :magnitude]
+const EVENT_COLUMNS = [:event_id, :file_name, :start_sample, :event_time_s, :peak_rank, :frequency_khz, :magnitude]
 
 function _rows(events, path, config, peak_count, first_id)
     rows = NamedTuple[]
     for (offset, event) in enumerate(events)
         for (rank, peak) in enumerate(ranked_peaks(event.samples, config.sampling_rate_hz, 20.0, peak_count))
-            push!(rows, (event_id=first_id + offset - 1, file_name=basename(path), event_time_s=event.start_sample / config.sampling_rate_hz, peak_rank=rank, frequency_khz=peak.frequency_khz, magnitude=peak.magnitude))
+            push!(rows, (event_id=first_id + offset - 1, file_name=basename(path), start_sample=event.start_sample, event_time_s=event.start_sample / config.sampling_rate_hz, peak_rank=rank, frequency_khz=peak.frequency_khz, magnitude=peak.magnitude))
         end
     end
     return rows
 end
 
 function _event_frame(rows)
-    isempty(rows) && return DataFrame(event_id=Int[], file_name=String[], event_time_s=Float64[], peak_rank=Int[], frequency_khz=Float64[], magnitude=Float64[])
+    isempty(rows) && return DataFrame(event_id=Int[], file_name=String[], start_sample=Int[], event_time_s=Float64[], peak_rank=Int[], frequency_khz=Float64[], magnitude=Float64[])
+    return DataFrame(rows)
+end
+
+function _selected_frame(rows)
+    isempty(rows) && return DataFrame(event_id=Int[], file_name=String[], start_sample=Int[], event_time_s=Float64[], rms=Float64[], threshold=Float64[], valid_peak_count=Int[])
     return DataFrame(rows)
 end
 
@@ -167,9 +173,10 @@ function _plot_events(frame, title, path)
     savefig(path)
 end
 
-function run_analysis(mat_paths::Vector{String}, output_dir::String, config::AnalysisConfig; summary_path::Union{Nothing,String}=nothing, summary_sheet::Union{Nothing,String}=nothing)
+function run_analysis(mat_paths::Vector{String}, output_dir::String, config::AnalysisConfig; summary_path::Union{Nothing,String}=nothing, summary_sheet::Union{Nothing,String}=nothing, write_plots::Bool=true)
     mkpath(output_dir)
     baseline_rows, top3_rows = NamedTuple[], NamedTuple[]
+    selected_rows, threshold_rows = NamedTuple[], NamedTuple[]
     thresholds, legacy_counts = Dict{String,Float64}(), Dict{String,Int}()
     next_id = 1
     for path in mat_paths
@@ -178,11 +185,33 @@ function run_analysis(mat_paths::Vector{String}, output_dir::String, config::Ana
         events, threshold = detect_events(signal, config, :adaptive)
         legacy_counts[basename(path)] = length(legacy_events)
         thresholds[basename(path)] = threshold
+        for (offset, event) in enumerate(events)
+            push!(selected_rows, (
+                event_id=next_id + offset - 1,
+                file_name=basename(path),
+                start_sample=event.start_sample,
+                event_time_s=event.start_sample / config.sampling_rate_hz,
+                rms=event.rms,
+                threshold=threshold,
+                valid_peak_count=length(ranked_peaks(event.samples, config.sampling_rate_hz, 20.0, 3)),
+            ))
+        end
+        hop = config.event_window_samples - config.window_overlap_samples
+        push!(threshold_rows, (
+            file_name=basename(path),
+            candidate_window_count=max(0, fld(length(signal) - config.event_window_samples, hop) + 1),
+            selected_event_count=length(events),
+            threshold=threshold,
+        ))
         append!(baseline_rows, _rows(events, path, config, 1, next_id)); append!(top3_rows, _rows(events, path, config, 3, next_id)); next_id += length(events)
     end
     baseline, top3 = _event_frame(baseline_rows), _event_frame(top3_rows)
     CSV.write(joinpath(output_dir, "baseline_events.csv"), baseline); CSV.write(joinpath(output_dir, "top3_events.csv"), top3)
-    gr(); _plot_events(baseline, "AE Peak Frequency: Top-1", joinpath(output_dir, "baseline_peak_frequency.png")); _plot_events(top3, "AE Peak Frequency: Top-3", joinpath(output_dir, "top3_peak_frequency.png"))
+    CSV.write(joinpath(output_dir, "selected_events.csv"), _selected_frame(selected_rows))
+    CSV.write(joinpath(output_dir, "thresholds.csv"), DataFrame(threshold_rows))
+    if write_plots
+        gr(); _plot_events(baseline, "AE Peak Frequency: Top-1", joinpath(output_dir, "baseline_peak_frequency.png")); _plot_events(top3, "AE Peak Frequency: Top-3", joinpath(output_dir, "top3_peak_frequency.png"))
+    end
     summary = isnothing(summary_path) ? nothing : let table=load_summary(summary_path; sheet_name=summary_sheet); Dict("path"=>summary_path, "rows"=>nrow(table), "columns"=>ncol(table), "sheet_name"=>summary_sheet) end
     open(joinpath(output_dir, "run_metadata.json"), "w") do io
         JSON3.write(io, Dict("mode"=>"adaptive", "sampling_rate_hz"=>config.sampling_rate_hz, "event_window_samples"=>config.event_window_samples, "window_overlap_samples"=>config.window_overlap_samples, "adaptive_sigma_multiplier"=>config.adaptive_sigma_multiplier, "thresholds"=>thresholds, "legacy"=>Dict("rms_threshold"=>config.legacy_rms_threshold, "event_counts"=>legacy_counts), "summary"=>summary))

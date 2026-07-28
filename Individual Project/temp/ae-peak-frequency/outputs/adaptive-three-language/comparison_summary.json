@@ -1,0 +1,120 @@
+{
+  "rtol": 1e-12,
+  "atol": 1e-12,
+  "totals": {
+    "files": 377,
+    "candidate_windows": 9472125,
+    "selected_events": 522216,
+    "baseline_rows": 522216,
+    "top3_rows": 1566634
+  },
+  "max_abs_error": {
+    "python": {
+      "threshold": 1.4200012693477149e-14,
+      "rms": 8.881784197001252e-15,
+      "event_time_s": 0.0,
+      "frequency_khz": 0.0,
+      "magnitude": 3.637978807091713e-12
+    },
+    "julia": {
+      "threshold": 1.4900190456468287e-14,
+      "rms": 7.105427357601002e-15,
+      "event_time_s": 0.0,
+      "frequency_khz": 0.0,
+      "magnitude": 3.637978807091713e-12
+    }
+  },
+  "groups": {
+    "T01": {
+      "files": 42,
+      "candidate_windows": 1055250,
+      "selected_events": 78317,
+      "baseline_rows": 78317,
+      "top3_rows": 234949,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T02": {
+      "files": 43,
+      "candidate_windows": 1080375,
+      "selected_events": 57445,
+      "baseline_rows": 57445,
+      "top3_rows": 172334,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T03": {
+      "files": 42,
+      "candidate_windows": 1055250,
+      "selected_events": 52984,
+      "baseline_rows": 52984,
+      "top3_rows": 158951,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T04": {
+      "files": 47,
+      "candidate_windows": 1180875,
+      "selected_events": 57117,
+      "baseline_rows": 57117,
+      "top3_rows": 171348,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T05": {
+      "files": 41,
+      "candidate_windows": 1030125,
+      "selected_events": 73692,
+      "baseline_rows": 73692,
+      "top3_rows": 221073,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T06": {
+      "files": 42,
+      "candidate_windows": 1055250,
+      "selected_events": 68417,
+      "baseline_rows": 68417,
+      "top3_rows": 205250,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T07": {
+      "files": 44,
+      "candidate_windows": 1105500,
+      "selected_events": 55795,
+      "baseline_rows": 55795,
+      "top3_rows": 167385,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T08": {
+      "files": 38,
+      "candidate_windows": 954750,
+      "selected_events": 9943,
+      "baseline_rows": 9943,
+      "top3_rows": 29828,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    },
+    "T09": {
+      "files": 38,
+      "candidate_windows": 954750,
+      "selected_events": 68506,
+      "baseline_rows": 68506,
+      "top3_rows": 205516,
+      "python_passed": true,
+      "julia_passed": true,
+      "passed": true
+    }
+  },
+  "all_groups_passed": true
+}

@@ -33,6 +33,8 @@ def test_run_analysis_writes_top1_and_top3_outputs(tmp_path: Path) -> None:
     assert {path.name for path in output_dir.iterdir()} == {
         "baseline_events.csv",
         "top3_events.csv",
+        "selected_events.csv",
+        "thresholds.csv",
         "baseline_peak_frequency.png",
         "top3_peak_frequency.png",
         "run_metadata.json",
@@ -42,6 +44,7 @@ def test_run_analysis_writes_top1_and_top3_outputs(tmp_path: Path) -> None:
     assert baseline.columns.tolist() == [
         "event_id",
         "file_name",
+        "start_sample",
         "event_time_s",
         "peak_rank",
         "frequency_khz",
@@ -50,5 +53,8 @@ def test_run_analysis_writes_top1_and_top3_outputs(tmp_path: Path) -> None:
     assert set(baseline["peak_rank"]) == {1}
     assert top3["peak_rank"].max() <= 3
     assert len(top3) >= len(baseline)
+    selected = pd.read_csv(output_dir / "selected_events.csv")
+    assert selected["start_sample"].tolist() == baseline["start_sample"].tolist()
+    assert baseline.equals(top3.loc[top3["peak_rank"] == 1, baseline.columns].reset_index(drop=True))
     metadata = json.loads((output_dir / "run_metadata.json").read_text())
     assert metadata["legacy"]["event_counts"] == {"synthetic.mat": 0}

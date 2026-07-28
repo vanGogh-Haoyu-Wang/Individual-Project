@@ -1,0 +1,13 @@
+{
+  "candidate_id": "deepseek_python",
+  "mechanical_rows": 1807,
+  "ae_rows": 5850,
+  "png_count": 5,
+  "repairs": [
+    "mixed-cell conversion",
+    "independent complete-case masks",
+    "CLI/output contract",
+    "headless rendering"
+  ],
+  "source_inherited_issue": "Figure 2 title says T09"
+}

@@ -1,0 +1,173 @@
+{
+  "rtol": 1e-12,
+  "atol": 1e-12,
+  "python": {
+    "input_order_matches": true,
+    "thresholds": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "candidate_window_count": 0,
+        "selected_event_count": 0,
+        "threshold": 0
+      },
+      "max_abs_error": {
+        "candidate_window_count": 0.0,
+        "selected_event_count": 0.0,
+        "threshold": 4.300162656512008e-15
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "selected_events": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "event_time_s": 0,
+        "rms": 0,
+        "threshold": 0,
+        "valid_peak_count": 0
+      },
+      "max_abs_error": {
+        "event_time_s": 0.0,
+        "rms": 5.329070518200751e-15,
+        "threshold": 4.300162656512008e-15,
+        "valid_peak_count": 0.0
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "baseline_events": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "event_time_s": 0,
+        "frequency_khz": 0,
+        "magnitude": 0
+      },
+      "max_abs_error": {
+        "event_time_s": 0.0,
+        "frequency_khz": 0.0,
+        "magnitude": 6.821210263296962e-13
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "top3_events": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "event_time_s": 0,
+        "frequency_khz": 0,
+        "magnitude": 0
+      },
+      "max_abs_error": {
+        "event_time_s": 0.0,
+        "frequency_khz": 0.0,
+        "magnitude": 6.821210263296962e-13
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "top1_equals_top3_rank1": true,
+    "no_peak_status_mismatches": 0,
+    "missing_total": 0,
+    "extra_total": 0,
+    "threshold_mismatches": 0,
+    "event_field_mismatches": 0,
+    "peak_field_mismatches": 0,
+    "passed": true
+  },
+  "julia": {
+    "input_order_matches": true,
+    "thresholds": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "candidate_window_count": 0,
+        "selected_event_count": 0,
+        "threshold": 0
+      },
+      "max_abs_error": {
+        "candidate_window_count": 0.0,
+        "selected_event_count": 0.0,
+        "threshold": 4.300162656512008e-15
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "selected_events": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "event_time_s": 0,
+        "rms": 0,
+        "threshold": 0,
+        "valid_peak_count": 0
+      },
+      "max_abs_error": {
+        "event_time_s": 0.0,
+        "rms": 6.217248937900877e-15,
+        "threshold": 4.300162656512008e-15,
+        "valid_peak_count": 0.0
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "baseline_events": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "event_time_s": 0,
+        "frequency_khz": 0,
+        "magnitude": 0
+      },
+      "max_abs_error": {
+        "event_time_s": 0.0,
+        "frequency_khz": 0.0,
+        "magnitude": 5.684341886080801e-13
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "top3_events": {
+      "missing_in_candidate": 0,
+      "extra_in_candidate": 0,
+      "field_mismatches": {
+        "event_time_s": 0,
+        "frequency_khz": 0,
+        "magnitude": 0
+      },
+      "max_abs_error": {
+        "event_time_s": 0.0,
+        "frequency_khz": 0.0,
+        "magnitude": 5.684341886080801e-13
+      },
+      "key_order_matches": true,
+      "passed": true
+    },
+    "top1_equals_top3_rank1": true,
+    "no_peak_status_mismatches": 0,
+    "missing_total": 0,
+    "extra_total": 0,
+    "threshold_mismatches": 0,
+    "event_field_mismatches": 0,
+    "peak_field_mismatches": 0,
+    "passed": true
+  },
+  "reported_metrics": {
+    "missing_in_python": 0,
+    "extra_in_python": 0,
+    "missing_in_julia": 0,
+    "extra_in_julia": 0,
+    "python_threshold_mismatches": 0,
+    "julia_threshold_mismatches": 0,
+    "python_event_field_mismatches": 0,
+    "julia_event_field_mismatches": 0,
+    "python_peak_field_mismatches": 0,
+    "julia_peak_field_mismatches": 0,
+    "python_no_peak_status_mismatches": 0,
+    "julia_no_peak_status_mismatches": 0
+  },
+  "passed": true
+}

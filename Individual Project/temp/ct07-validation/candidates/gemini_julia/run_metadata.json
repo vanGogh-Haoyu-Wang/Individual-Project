@@ -1,0 +1,13 @@
+{
+    "repairs": [
+        "enable callable entry point",
+        "safe mixed-cell conversion",
+        "independent complete-case masks",
+        "headless output contract"
+    ],
+    "mechanical_rows": 1807,
+    "candidate_id": "gemini_julia",
+    "source_inherited_issue": "Figure 2 title says T09",
+    "ae_rows": 5850,
+    "png_count": 5
+}

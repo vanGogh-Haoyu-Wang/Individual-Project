@@ -17,10 +17,20 @@ from .spectrum import ranked_peaks
 EVENT_COLUMNS = [
     "event_id",
     "file_name",
+    "start_sample",
     "event_time_s",
     "peak_rank",
     "frequency_khz",
     "magnitude",
+]
+SELECTED_EVENT_COLUMNS = [
+    "event_id",
+    "file_name",
+    "start_sample",
+    "event_time_s",
+    "rms",
+    "threshold",
+    "valid_peak_count",
 ]
 
 
@@ -41,6 +51,7 @@ def _event_rows(
                 {
                     "event_id": event_id,
                     "file_name": source_path.name,
+                    "start_sample": event.start_sample,
                     "event_time_s": event.start_sample / config.sampling_rate_hz,
                     "peak_rank": rank,
                     "frequency_khz": peak.frequency_khz,
@@ -71,12 +82,15 @@ def _write_plot(events: pd.DataFrame, title: str, path: Path) -> None:
 
 def run_analysis(
     mat_paths: list[Path], *, output_dir: Path, config: AnalysisConfig,
-    summary_path: Path | None = None, summary_sheet: str | None = None
+    summary_path: Path | None = None, summary_sheet: str | None = None,
+    write_plots: bool = True,
 ) -> None:
     """Analyse selected waveform files and export Top-1 and Top-3 results."""
     output_dir.mkdir(parents=True, exist_ok=True)
     baseline_rows: list[dict[str, float | int | str]] = []
     top3_rows: list[dict[str, float | int | str]] = []
+    selected_rows: list[dict[str, float | int | str]] = []
+    threshold_rows: list[dict[str, float | int | str]] = []
     thresholds: dict[str, float] = {}
     legacy_thresholds: dict[str, float] = {}
     legacy_event_counts: dict[str, int] = {}
@@ -98,16 +112,63 @@ def run_analysis(
         thresholds[path.name] = threshold
         legacy_thresholds[path.name] = legacy_threshold
         legacy_event_counts[path.name] = len(legacy_events)
+        for offset, event in enumerate(events):
+            peak_count = len(
+                ranked_peaks(
+                    event.samples,
+                    sampling_rate_hz=config.sampling_rate_hz,
+                    min_peak_distance_khz=20.0,
+                    count=3,
+                )
+            )
+            selected_rows.append(
+                {
+                    "event_id": next_event_id + offset,
+                    "file_name": path.name,
+                    "start_sample": event.start_sample,
+                    "event_time_s": event.start_sample / config.sampling_rate_hz,
+                    "rms": event.rms,
+                    "threshold": threshold,
+                    "valid_peak_count": peak_count,
+                }
+            )
+        candidate_count = max(
+            0,
+            (len(waveform) - config.event_window_samples)
+            // (config.event_window_samples - config.window_overlap_samples)
+            + 1,
+        )
+        threshold_rows.append(
+            {
+                "file_name": path.name,
+                "candidate_window_count": candidate_count,
+                "selected_event_count": len(events),
+                "threshold": threshold,
+            }
+        )
         baseline_rows.extend(_event_rows(events, path, config, peak_count=1, event_id_start=next_event_id))
         top3_rows.extend(_event_rows(events, path, config, peak_count=3, event_id_start=next_event_id))
         next_event_id += len(events)
 
     baseline = pd.DataFrame(baseline_rows, columns=EVENT_COLUMNS)
     top3 = pd.DataFrame(top3_rows, columns=EVENT_COLUMNS)
+    selected = pd.DataFrame(selected_rows, columns=SELECTED_EVENT_COLUMNS)
+    threshold_table = pd.DataFrame(
+        threshold_rows,
+        columns=[
+            "file_name",
+            "candidate_window_count",
+            "selected_event_count",
+            "threshold",
+        ],
+    )
     baseline.to_csv(output_dir / "baseline_events.csv", index=False)
     top3.to_csv(output_dir / "top3_events.csv", index=False)
-    _write_plot(baseline, "AE Peak Frequency: Top-1", output_dir / "baseline_peak_frequency.png")
-    _write_plot(top3, "AE Peak Frequency: Top-3", output_dir / "top3_peak_frequency.png")
+    selected.to_csv(output_dir / "selected_events.csv", index=False)
+    threshold_table.to_csv(output_dir / "thresholds.csv", index=False)
+    if write_plots:
+        _write_plot(baseline, "AE Peak Frequency: Top-1", output_dir / "baseline_peak_frequency.png")
+        _write_plot(top3, "AE Peak Frequency: Top-3", output_dir / "top3_peak_frequency.png")
     (output_dir / "run_metadata.json").write_text(
         json.dumps(
             {

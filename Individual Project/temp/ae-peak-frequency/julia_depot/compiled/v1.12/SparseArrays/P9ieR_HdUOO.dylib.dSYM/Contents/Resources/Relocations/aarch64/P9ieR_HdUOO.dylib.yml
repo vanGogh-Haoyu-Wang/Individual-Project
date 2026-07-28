@@ -1,0 +1,37 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/SparseArrays/P9ieR_HdUOO.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_UMFPACK_VER_CODE_1471, symObjAddr: 0x84, symBinAddr: 0x764, symSize: 0x18 }
+  - { offset: 0x3F, size: 0x8, addend: 0x0, symName: _julia_UMFPACK_VER_CODE_1471, symObjAddr: 0x84, symBinAddr: 0x764, symSize: 0x18 }
+  - { offset: 0x67A, size: 0x8, addend: 0x0, symName: _julia_AMD_VERSION_CODE_1380, symObjAddr: 0x15E8, symBinAddr: 0x1CC8, symSize: 0x18 }
+  - { offset: 0x69B, size: 0x8, addend: 0x0, symName: _julia_AMD_VERSION_CODE_1380, symObjAddr: 0x15E8, symBinAddr: 0x1CC8, symSize: 0x18 }
+  - { offset: 0xA1, size: 0x8, addend: 0x0, symName: _julia___init___1390, symObjAddr: 0xD8, symBinAddr: 0x7B8, symSize: 0x1424 }
+  - { offset: 0x20C, size: 0x8, addend: 0x0, symName: _julia___init___1390, symObjAddr: 0xD8, symBinAddr: 0x7B8, symSize: 0x1424 }
+  - { offset: 0x636, size: 0x8, addend: 0x0, symName: _julia_SuiteSparse_time_1384, symObjAddr: 0x1588, symBinAddr: 0x1C68, symSize: 0x24 }
+  - { offset: 0x643, size: 0x8, addend: 0x0, symName: _julia_SuiteSparse_time_1384, symObjAddr: 0x1588, symBinAddr: 0x1C68, symSize: 0x24 }
+  - { offset: 0x6FD, size: 0x8, addend: 0x0, symName: _julia_cholname_1372, symObjAddr: 0x0, symBinAddr: 0x1DA4, symSize: 0x130 }
+  - { offset: 0x71E, size: 0x8, addend: 0x0, symName: _julia_cholname_1372, symObjAddr: 0x0, symBinAddr: 0x1DA4, symSize: 0x130 }
+  - { offset: 0xFBD, size: 0x8, addend: 0x0, symName: _julia__findfirst_rec_1482, symObjAddr: 0xFC0, symBinAddr: 0x2D64, symSize: 0x38 }
+  - { offset: 0xFDE, size: 0x8, addend: 0x0, symName: _julia__findfirst_rec_1482, symObjAddr: 0xFC0, symBinAddr: 0x2D64, symSize: 0x38 }
+  - { offset: 0xF44, size: 0x8, addend: 0x0, symName: _julia_SUITESPARSE__VERCODE_1370, symObjAddr: 0xF48, symBinAddr: 0x2CEC, symSize: 0x1C }
+  - { offset: 0xF5B, size: 0x8, addend: 0x0, symName: _julia_SUITESPARSE__VERCODE_1370, symObjAddr: 0xF48, symBinAddr: 0x2CEC, symSize: 0x1C }
+  - { offset: 0x80B, size: 0x8, addend: 0x0, symName: _japi1_umf_nm_1360, symObjAddr: 0x190, symBinAddr: 0x1F34, symSize: 0xE4 }
+  - { offset: 0x82C, size: 0x8, addend: 0x0, symName: _japi1_umf_nm_1360, symObjAddr: 0x190, symBinAddr: 0x1F34, symSize: 0xE4 }
+  - { offset: 0xD4B, size: 0x8, addend: 0x0, symName: _julia__findfirst_rec_1341, symObjAddr: 0xC10, symBinAddr: 0x29B4, symSize: 0x1DC }
+  - { offset: 0xD8A, size: 0x8, addend: 0x0, symName: _julia__findfirst_rec_1341, symObjAddr: 0xC10, symBinAddr: 0x29B4, symSize: 0x1DC }
+  - { offset: 0xEFF, size: 0x8, addend: 0x0, symName: _julia_YY.5_1469, symObjAddr: 0xE84, symBinAddr: 0x2C28, symSize: 0x20 }
+  - { offset: 0xF0C, size: 0x8, addend: 0x0, symName: _julia_YY.5_1469, symObjAddr: 0xE84, symBinAddr: 0x2C28, symSize: 0x20 }
+  - { offset: 0x92C, size: 0x8, addend: 0x0, symName: _julia_print_to_string_1344, symObjAddr: 0x5FC, symBinAddr: 0x23A0, symSize: 0x524 }
+  - { offset: 0xA3D, size: 0x8, addend: 0x0, symName: _julia_print_to_string_1344, symObjAddr: 0x5FC, symBinAddr: 0x23A0, symSize: 0x524 }
+  - { offset: 0x788, size: 0x8, addend: 0x0, symName: _julia_SPQR_VER_CODE_1382, symObjAddr: 0x178, symBinAddr: 0x1F1C, symSize: 0x18 }
+  - { offset: 0x7A9, size: 0x8, addend: 0x0, symName: _julia_SPQR_VER_CODE_1382, symObjAddr: 0x178, symBinAddr: 0x1F1C, symSize: 0x18 }
+  - { offset: 0x10C3, size: 0x8, addend: 0x0, symName: _julia_SUITESPARSE_VER_CODE_1475, symObjAddr: 0x1064, symBinAddr: 0x2E08, symSize: 0x18 }
+  - { offset: 0x10DA, size: 0x8, addend: 0x0, symName: _julia_SUITESPARSE_VER_CODE_1475, symObjAddr: 0x1064, symBinAddr: 0x2E08, symSize: 0x18 }
+  - { offset: 0x1040, size: 0x8, addend: 0x0, symName: _julia_CHOLMOD_VER_CODE_1473, symObjAddr: 0xFF8, symBinAddr: 0x2D9C, symSize: 0x18 }
+  - { offset: 0x1061, size: 0x8, addend: 0x0, symName: _julia_CHOLMOD_VER_CODE_1473, symObjAddr: 0xFF8, symBinAddr: 0x2D9C, symSize: 0x18 }
+  - { offset: 0x88E, size: 0x8, addend: 0x0, symName: _julia_enum_argument_error_1334, symObjAddr: 0x2E0, symBinAddr: 0x2084, symSize: 0x114 }
+  - { offset: 0x8A5, size: 0x8, addend: 0x0, symName: _julia_enum_argument_error_1334, symObjAddr: 0x2E0, symBinAddr: 0x2084, symSize: 0x114 }
+  - { offset: 0x8E8, size: 0x8, addend: 0x0, symName: _julia_cholmod_query_t_1477, symObjAddr: 0x518, symBinAddr: 0x22BC, symSize: 0x34 }
+  - { offset: 0x8F5, size: 0x8, addend: 0x0, symName: _julia_cholmod_query_t_1477, symObjAddr: 0x518, symBinAddr: 0x22BC, symSize: 0x34 }
+...

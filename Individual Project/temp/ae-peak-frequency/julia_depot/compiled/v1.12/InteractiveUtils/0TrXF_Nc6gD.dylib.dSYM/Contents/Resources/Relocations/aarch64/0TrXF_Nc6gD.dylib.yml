@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/InteractiveUtils/0TrXF_Nc6gD.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_YY._growbegNOT.YY.YY.0_627, symObjAddr: 0x0, symBinAddr: 0x738, symSize: 0x6F4 }
+  - { offset: 0xFD, size: 0x8, addend: 0x0, symName: _julia_YY._growbegNOT.YY.YY.0_627, symObjAddr: 0x0, symBinAddr: 0x738, symSize: 0x6F4 }
+  - { offset: 0xFD4, size: 0x8, addend: 0x0, symName: _julia_define_editor_637, symObjAddr: 0x4058, symBinAddr: 0x4790, symSize: 0x278 }
+  - { offset: 0x104F, size: 0x8, addend: 0x0, symName: _julia_define_editor_637, symObjAddr: 0x4058, symBinAddr: 0x4790, symSize: 0x278 }
+  - { offset: 0x114A, size: 0x8, addend: 0x0, symName: _julia_define_editor_643, symObjAddr: 0x431C, symBinAddr: 0x4A54, symSize: 0x278 }
+  - { offset: 0x11C5, size: 0x8, addend: 0x0, symName: _julia_define_editor_643, symObjAddr: 0x431C, symBinAddr: 0x4A54, symSize: 0x278 }
+  - { offset: 0x402, size: 0x8, addend: 0x0, symName: _julia_define_default_editors_647, symObjAddr: 0x810, symBinAddr: 0xF48, symSize: 0x3810 }
+  - { offset: 0x4E1, size: 0x8, addend: 0x0, symName: _julia_define_default_editors_647, symObjAddr: 0x810, symBinAddr: 0xF48, symSize: 0x3810 }
+...

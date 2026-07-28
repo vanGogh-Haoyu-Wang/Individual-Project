@@ -1,0 +1,1 @@
+{"summary":null,"adaptive_sigma_multiplier":8.0,"sampling_rate_hz":1000000,"mode":"adaptive","event_window_samples":200,"legacy":{"rms_threshold":0.1,"event_counts":{"20221018_140051.mat":0}},"thresholds":{"20221018_140051.mat":0.0009363933078584757},"window_overlap_samples":1}

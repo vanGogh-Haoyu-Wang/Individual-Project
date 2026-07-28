@@ -1,0 +1,13 @@
+{
+    "repairs": [
+        "replace readtable with physical worksheet matrix",
+        "mixed-cell conversion",
+        "independent complete-case masks",
+        "CLI/headless export"
+    ],
+    "mechanical_rows": 1807,
+    "candidate_id": "deepseek_julia",
+    "source_inherited_issue": "Figure 2 title says T09",
+    "ae_rows": 5850,
+    "png_count": 5
+}

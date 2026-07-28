@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/Qt6Base_jll/Lg7vK_HdUOO.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia___init___502, symObjAddr: 0x0, symBinAddr: 0x6E0, symSize: 0x96FC }
+  - { offset: 0x3F, size: 0x8, addend: 0x0, symName: _julia___init___502, symObjAddr: 0x0, symBinAddr: 0x6E0, symSize: 0x96FC }
+  - { offset: 0x106, size: 0x8, addend: 0x0, symName: _julia_eager_mode_475, symObjAddr: 0x38, symBinAddr: 0x9E84, symSize: 0x3C }
+  - { offset: 0x113, size: 0x8, addend: 0x0, symName: _julia_eager_mode_475, symObjAddr: 0x38, symBinAddr: 0x9E84, symSize: 0x3C }
+  - { offset: 0x14A, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_483, symObjAddr: 0xAC, symBinAddr: 0x9EF8, symSize: 0x200 }
+  - { offset: 0x161, size: 0x8, addend: 0x0, symName: _julia_find_artifact_dir_483, symObjAddr: 0xAC, symBinAddr: 0x9EF8, symSize: 0x200 }
+  - { offset: 0x1A4, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_434, symObjAddr: 0x2E4, symBinAddr: 0xA130, symSize: 0x6D4 }
+  - { offset: 0x1B1, size: 0x8, addend: 0x0, symName: _julia_make_wrapper_dict_434, symObjAddr: 0x2E4, symBinAddr: 0xA130, symSize: 0x6D4 }
+  - { offset: 0x1E8, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_479, symObjAddr: 0xA00, symBinAddr: 0xA84C, symSize: 0xC8 }
+  - { offset: 0x1F5, size: 0x8, addend: 0x0, symName: _julia_parse_wrapper_platform_479, symObjAddr: 0xA00, symBinAddr: 0xA84C, symSize: 0xC8 }
+...

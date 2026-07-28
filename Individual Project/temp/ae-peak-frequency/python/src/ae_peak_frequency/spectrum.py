@@ -24,7 +24,10 @@ def ranked_peaks(
     magnitudes = np.abs(np.fft.rfft(waveform))
     frequencies_khz = np.fft.rfftfreq(len(waveform), d=1 / sampling_rate_hz) / 1000.0
     bin_spacing_khz = sampling_rate_hz / len(waveform) / 1000.0
-    minimum_distance_bins = max(1, round(min_peak_distance_khz / bin_spacing_khz))
+    # MATLAB findpeaks treats MinPeakDistance as a strict separation boundary.
+    minimum_distance_bins = max(
+        1, int(np.floor(min_peak_distance_khz / bin_spacing_khz)) + 1
+    )
 
     indices, _ = find_peaks(magnitudes, distance=minimum_distance_bins)
     ordered_indices = indices[np.argsort(magnitudes[indices])[::-1]]

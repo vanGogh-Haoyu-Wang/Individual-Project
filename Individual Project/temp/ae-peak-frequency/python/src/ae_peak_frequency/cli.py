@@ -32,6 +32,7 @@ def main(argv: list[str] | None = None) -> int:
         help="reproduce the legacy Peak_Freq.m multi-file export contract",
     )
     parser.add_argument("--output-dir", required=True, type=Path, help="directory for CSV, PNG, and JSON outputs")
+    parser.add_argument("--no-plots", action="store_true", help="skip PNG output for batch validation")
     args = parser.parse_args(argv)
 
     if args.legacy_matlab_multifile:
@@ -45,6 +46,7 @@ def main(argv: list[str] | None = None) -> int:
             config=_default_config(),
             summary_path=args.summary,
             summary_sheet=args.summary_sheet,
+            write_plots=not args.no_plots,
         )
     return 0
 

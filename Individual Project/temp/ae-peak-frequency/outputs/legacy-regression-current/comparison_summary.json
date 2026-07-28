@@ -1,0 +1,38 @@
+{
+  "matlab_rows": 3098,
+  "python": {
+    "rows": 3098,
+    "missing_in_candidate": 0,
+    "extra_in_candidate": 0,
+    "field_mismatches": {
+      "time_s": 0,
+      "peak_frequency_khz": 0,
+      "peak_magnitude": 0
+    },
+    "max_abs_error": {
+      "time_s": 0.0,
+      "peak_frequency_khz": 0.0,
+      "peak_magnitude": 5.684341886080801e-13
+    },
+    "passed": true
+  },
+  "julia": {
+    "rows": 3098,
+    "missing_in_candidate": 0,
+    "extra_in_candidate": 0,
+    "field_mismatches": {
+      "time_s": 0,
+      "peak_frequency_khz": 0,
+      "peak_magnitude": 0
+    },
+    "max_abs_error": {
+      "time_s": 0.0,
+      "peak_frequency_khz": 0.0,
+      "peak_magnitude": 5.684341886080801e-13
+    },
+    "passed": true
+  },
+  "rtol": 1e-12,
+  "atol": 1e-12,
+  "passed": true
+}

@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/temp/ae-peak-frequency/julia_depot/compiled/v1.12/Base64/D7K0n_Nc6gD.dylib'
+relocations:
+  - { offset: 0x1E, size: 0x8, addend: 0x0, symName: _julia_Generator_104, symObjAddr: 0x0, symBinAddr: 0x730, symSize: 0x14 }
+  - { offset: 0x2B, size: 0x8, addend: 0x0, symName: _julia_Generator_104, symObjAddr: 0x0, symBinAddr: 0x730, symSize: 0x14 }
+  - { offset: 0x62, size: 0x8, addend: 0x0, symName: _julia_collect_107, symObjAddr: 0xC0, symBinAddr: 0x7F0, symSize: 0x32C }
+  - { offset: 0x169, size: 0x8, addend: 0x0, symName: _julia_collect_107, symObjAddr: 0xC0, symBinAddr: 0x7F0, symSize: 0x32C }
+  - { offset: 0x4C4, size: 0x8, addend: 0x0, symName: _julia_collect_115, symObjAddr: 0x430, symBinAddr: 0xB60, symSize: 0x114 }
+  - { offset: 0x553, size: 0x8, addend: 0x0, symName: _julia_collect_115, symObjAddr: 0x430, symBinAddr: 0xB60, symSize: 0x114 }
+...
