@@ -1,0 +1,9 @@
+-------------------------------------------
+MATLAB 版本: 26.1.0.3276743 (R2026a) Update 3
+MATLAB 许可证编号: 40472096
+操作系统: macOS  Version: 26.5.2 Build: 25F84 
+Java 版本: Java is not loaded
+-------------------------------------------
+MATLAB                                                版本 26.1             (R2026a)
+DSP_LICENSE=0
+DSP_CLASS=0

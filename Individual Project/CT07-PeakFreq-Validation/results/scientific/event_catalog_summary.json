@@ -1,0 +1,11 @@
+{
+  "rows": 522216,
+  "legacy_matched": 16240,
+  "adaptive_only": 505976,
+  "valid_peak_count": {
+    "1": 2,
+    "2": 10,
+    "3": 522204
+  },
+  "classification_is_complete_and_exclusive": true
+}

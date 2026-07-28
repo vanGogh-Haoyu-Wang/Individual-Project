@@ -1,0 +1,33 @@
+[paths]
+waveform_root = "/Users/vangogh/Documents/毕设/Haoyu Wang"
+commercial_ct07_workbook = "/Users/vangogh/Documents/毕设/初始数据&Matlab脚本/Commercial Tensile Tests.xlsx"
+ct07_script = "/Users/vangogh/Documents/毕设/初始数据&Matlab脚本/CT07.m"
+peak_freq_script = "/Users/vangogh/Documents/毕设/Haoyu Wang/Peak_Freq.m"
+processed_workbook_pattern = "{waveform_root}/{group}/Tensile-processed.xlsx"
+adaptive_results = "results/peak-frequency/adaptive-three-language"
+legacy_group_results = "results/peak-frequency/legacy-matlab-t01-t09"
+ct07_results = "results/ct07/llm-validation"
+smop_results = "results/ct07/smop"
+scientific_results = "results/scientific"
+mat_metadata = "results/input/mat_metadata.csv"
+
+[executables]
+python = "../temp/ae-peak-frequency/python/.venv/bin/python"
+julia = "/Users/vangogh/.julia/juliaup/julia-1.12.6+0.aarch64.apple.darwin14/Julia-1.12.app/Contents/Resources/julia/bin/julia"
+matlab = "/Applications/MATLAB_R2026a.app/bin/matlab"
+
+[analysis]
+groups = ["T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09"]
+sampling_rate_hz = 1000000
+window_samples = 200
+hop_samples = 199
+legacy_windows_per_file = 30150
+random_seed = 20260728
+rtol = 1e-12
+atol = 1e-12
+permutations = 1000
+bootstraps = 1000
+offset_min_s = -120
+offset_max_s = 120
+alignment_bin_widths_s = [0.5, 1.0, 2.0]
+

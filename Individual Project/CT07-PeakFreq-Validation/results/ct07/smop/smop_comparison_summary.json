@@ -1,0 +1,110 @@
+{
+  "rtol": 1e-12,
+  "atol": 1e-12,
+  "candidate_count": 2,
+  "passed_candidates": 2,
+  "candidates": [
+    {
+      "candidate_id": "runtime_compatible",
+      "mechanical": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "record_order_matches": true,
+        "field_mismatches": {
+          "t1_s": 0,
+          "strain_pct": 0,
+          "stress_mpa": 0
+        },
+        "max_abs_error": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13
+        },
+        "passed": true
+      },
+      "ae": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "record_order_matches": true,
+        "field_mismatches": {
+          "time_s": 0,
+          "rms_norm": 0,
+          "cumrms_norm": 0,
+          "energy_norm": 0,
+          "cumenergy_norm": 0
+        },
+        "max_abs_error": {
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        },
+        "passed": true
+      },
+      "png_count": 5,
+      "png_set_matches": true,
+      "png_parseable": {
+        "01_strain_stress.png": true,
+        "02_rms.png": true,
+        "03_cumulative_rms.png": true,
+        "04_energy.png": true,
+        "05_cumulative_energy.png": true
+      },
+      "fixed_run_passed": true
+    },
+    {
+      "candidate_id": "script_fixed",
+      "mechanical": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "record_order_matches": true,
+        "field_mismatches": {
+          "t1_s": 0,
+          "strain_pct": 0,
+          "stress_mpa": 0
+        },
+        "max_abs_error": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13
+        },
+        "passed": true
+      },
+      "ae": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "record_order_matches": true,
+        "field_mismatches": {
+          "time_s": 0,
+          "rms_norm": 0,
+          "cumrms_norm": 0,
+          "energy_norm": 0,
+          "cumenergy_norm": 0
+        },
+        "max_abs_error": {
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        },
+        "passed": true
+      },
+      "png_count": 5,
+      "png_set_matches": true,
+      "png_parseable": {
+        "01_strain_stress.png": true,
+        "02_rms.png": true,
+        "03_cumulative_rms.png": true,
+        "04_energy.png": true,
+        "05_cumulative_energy.png": true
+      },
+      "fixed_run_passed": true
+    }
+  ]
+}

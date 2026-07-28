@@ -1,0 +1,12 @@
+Probe 1: expose smop/site-packages/smop as PYTHONPATH
+  ModuleNotFoundError: No module named '__builtin__'
+
+Probe 2: alias __builtin__ to Python 3 builtins
+  AttributeError: np.NaN was removed in NumPy 2.0
+
+Probe 3: additionally alias numpy.NaN to numpy.nan
+  NameError: name 'xlsread' is not defined
+
+Static inspection of SMOP 0.41 libsmop.py confirmed that it also does not
+implement the CT07 plotting surface (figure, plot, scatter, yyaxis, labels,
+limits, title and grid). Its concat implementation contains pdb.set_trace().

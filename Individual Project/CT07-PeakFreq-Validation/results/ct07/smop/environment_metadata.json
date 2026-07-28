@@ -1,0 +1,35 @@
+{
+  "execution_date": "2026-07-28",
+  "operating_system": "macOS 26.5.2 (25F84), arm64",
+  "historical_environment_status": "/Users/vangogh/smop-test and smop-working-env.tar.gz were not present",
+  "translator": {
+    "python": "3.11.15",
+    "smop": "0.41",
+    "smop_release_date": "2018-06-20",
+    "smop_license": "MIT",
+    "smop_source_sha256": "594188a25dc346e27fdd5507a6a0a3cced1cc3defaf02d7e236e41e8714558d4",
+    "networkx": "1.11",
+    "networkx_dag_sha256_before_patch": "8ef19e39815917831712f5968100461dd6e43d30608152e15c0baa9af6ce6c66",
+    "networkx_dag_sha256_after_patch": "4ef5bd3970518b455e7ef25f43e409146a5055e4ae108226f49b8576adddeb57",
+    "patch": "from fractions import gcd -> from math import gcd",
+    "venv_location": "Individual Project/temp/smop-ct07/.venv (rebuildable; not an evidence artifact)"
+  },
+  "validation_runtime": {
+    "python": "3.14.6",
+    "pandas": "3.0.3",
+    "numpy": "2.5.1",
+    "matplotlib": "3.11.0",
+    "openpyxl": "3.1.5",
+    "pillow": "12.3.0"
+  },
+  "input": {
+    "ct07_m_sha256": "23b0b5948faa13dd8ffa340b5741bcfb0aaa741ffa400912890fd9ce0416b784",
+    "workbook_sha256": "89033ea6af74f0b99cfe44a1dcda4e59e4fea709d1f4e4c4acba3745edc33b2d",
+    "sheet": "CT07"
+  },
+  "matlab_oracle": {
+    "matlab_version": "R2026a Update 3",
+    "mechanical_reference_sha256": "e7823eb5577dd283bc383b1cbafaa47a00532f0b164169db26a130bc2800a049",
+    "ae_reference_sha256": "0ee8315dcfa1e76c9f8a7910add34af6409e02abb53bcdc2ad63260b16716fc7"
+  }
+}

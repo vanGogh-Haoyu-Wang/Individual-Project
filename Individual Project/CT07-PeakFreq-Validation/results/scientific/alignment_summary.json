@@ -1,0 +1,112 @@
+{
+  "candidate_mapping": {
+    "T01": "CT-01",
+    "T02": "CT-02",
+    "T03": "CT-03",
+    "T04": "CT-04",
+    "T05": "CT-05",
+    "T06": "CT-06",
+    "T07": "CT-07",
+    "T08": "CT-08",
+    "T09": "CT-09"
+  },
+  "global_assignment": {
+    "T01": "T04",
+    "T02": "T07",
+    "T03": "T05",
+    "T04": "T02",
+    "T05": "T06",
+    "T06": "T09",
+    "T07": "T03",
+    "T08": "T08",
+    "T09": "T01"
+  },
+  "identity_assignment_is_optimal": false,
+  "groups": {
+    "T01": {
+      "status": "unresolved",
+      "offset_s": 51.0,
+      "bootstrap_ci_s": [
+        51.0,
+        52.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T02": {
+      "status": "unresolved",
+      "offset_s": 29.0,
+      "bootstrap_ci_s": [
+        29.0,
+        29.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T03": {
+      "status": "unresolved",
+      "offset_s": 74.0,
+      "bootstrap_ci_s": [
+        74.0,
+        74.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T04": {
+      "status": "unresolved",
+      "offset_s": 46.0,
+      "bootstrap_ci_s": [
+        46.0,
+        46.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T05": {
+      "status": "unresolved",
+      "offset_s": 58.0,
+      "bootstrap_ci_s": [
+        58.0,
+        58.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T06": {
+      "status": "unresolved",
+      "offset_s": 67.0,
+      "bootstrap_ci_s": [
+        67.0,
+        67.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T07": {
+      "status": "unresolved",
+      "offset_s": 44.0,
+      "bootstrap_ci_s": [
+        44.0,
+        44.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T08": {
+      "status": "unresolved",
+      "offset_s": 118.0,
+      "bootstrap_ci_s": [
+        118.0,
+        118.0
+      ],
+      "supervisor_confirmed": false
+    },
+    "T09": {
+      "status": "unresolved",
+      "offset_s": 40.0,
+      "bootstrap_ci_s": [
+        40.0,
+        40.0
+      ],
+      "supervisor_confirmed": false
+    }
+  },
+  "supported_group_count": 0,
+  "unresolved_group_count": 9,
+  "stage_boundaries": {},
+  "interpretation": "Every data-supported mapping remains provisional until independently confirmed."
+}

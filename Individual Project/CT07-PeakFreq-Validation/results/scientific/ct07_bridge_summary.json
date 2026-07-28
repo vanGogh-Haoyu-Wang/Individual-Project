@@ -1,0 +1,7 @@
+{
+  "mechanical_rows": 1807,
+  "ae_rows": 5850,
+  "mechanical_matches_matlab_oracle": true,
+  "ae_matches_matlab_oracle": true,
+  "proves_waveform_specimen_mapping": false
+}

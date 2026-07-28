@@ -1,0 +1,7 @@
+decorator==5.3.1
+networkx==1.11
+numpy==2.4.6
+packaging==26.2
+ply==3.11
+scipy==1.17.1
+smop==0.41

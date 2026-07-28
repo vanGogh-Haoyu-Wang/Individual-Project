@@ -1,0 +1,2486 @@
+{
+  "sample_count": 413,
+  "rms_mismatch_count": 0,
+  "peak_mismatch_count": 0,
+  "all_png_written": true,
+  "checks": [
+    {
+      "sample_id": "S0001",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0001.png"
+    },
+    {
+      "sample_id": "S0002",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0002.png"
+    },
+    {
+      "sample_id": "S0003",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0003.png"
+    },
+    {
+      "sample_id": "S0004",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0004.png"
+    },
+    {
+      "sample_id": "S0005",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0005.png"
+    },
+    {
+      "sample_id": "S0006",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0006.png"
+    },
+    {
+      "sample_id": "S0007",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0007.png"
+    },
+    {
+      "sample_id": "S0008",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0008.png"
+    },
+    {
+      "sample_id": "S0009",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0009.png"
+    },
+    {
+      "sample_id": "S0010",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0010.png"
+    },
+    {
+      "sample_id": "S0011",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0011.png"
+    },
+    {
+      "sample_id": "S0012",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0012.png"
+    },
+    {
+      "sample_id": "S0013",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0013.png"
+    },
+    {
+      "sample_id": "S0014",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0014.png"
+    },
+    {
+      "sample_id": "S0015",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0015.png"
+    },
+    {
+      "sample_id": "S0016",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0016.png"
+    },
+    {
+      "sample_id": "S0017",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0017.png"
+    },
+    {
+      "sample_id": "S0018",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0018.png"
+    },
+    {
+      "sample_id": "S0019",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0019.png"
+    },
+    {
+      "sample_id": "S0020",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0020.png"
+    },
+    {
+      "sample_id": "S0021",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0021.png"
+    },
+    {
+      "sample_id": "S0022",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0022.png"
+    },
+    {
+      "sample_id": "S0023",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0023.png"
+    },
+    {
+      "sample_id": "S0024",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0024.png"
+    },
+    {
+      "sample_id": "S0025",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0025.png"
+    },
+    {
+      "sample_id": "S0026",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0026.png"
+    },
+    {
+      "sample_id": "S0027",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0027.png"
+    },
+    {
+      "sample_id": "S0028",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0028.png"
+    },
+    {
+      "sample_id": "S0029",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0029.png"
+    },
+    {
+      "sample_id": "S0030",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0030.png"
+    },
+    {
+      "sample_id": "S0031",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0031.png"
+    },
+    {
+      "sample_id": "S0032",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0032.png"
+    },
+    {
+      "sample_id": "S0033",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0033.png"
+    },
+    {
+      "sample_id": "S0034",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0034.png"
+    },
+    {
+      "sample_id": "S0035",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0035.png"
+    },
+    {
+      "sample_id": "S0036",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0036.png"
+    },
+    {
+      "sample_id": "S0037",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0037.png"
+    },
+    {
+      "sample_id": "S0038",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0038.png"
+    },
+    {
+      "sample_id": "S0039",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0039.png"
+    },
+    {
+      "sample_id": "S0040",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0040.png"
+    },
+    {
+      "sample_id": "S0041",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0041.png"
+    },
+    {
+      "sample_id": "S0042",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0042.png"
+    },
+    {
+      "sample_id": "S0043",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0043.png"
+    },
+    {
+      "sample_id": "S0044",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0044.png"
+    },
+    {
+      "sample_id": "S0045",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0045.png"
+    },
+    {
+      "sample_id": "S0046",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0046.png"
+    },
+    {
+      "sample_id": "S0047",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0047.png"
+    },
+    {
+      "sample_id": "S0048",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0048.png"
+    },
+    {
+      "sample_id": "S0049",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0049.png"
+    },
+    {
+      "sample_id": "S0050",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0050.png"
+    },
+    {
+      "sample_id": "S0051",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0051.png"
+    },
+    {
+      "sample_id": "S0052",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0052.png"
+    },
+    {
+      "sample_id": "S0053",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0053.png"
+    },
+    {
+      "sample_id": "S0054",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0054.png"
+    },
+    {
+      "sample_id": "S0055",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0055.png"
+    },
+    {
+      "sample_id": "S0056",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0056.png"
+    },
+    {
+      "sample_id": "S0057",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0057.png"
+    },
+    {
+      "sample_id": "S0058",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0058.png"
+    },
+    {
+      "sample_id": "S0059",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0059.png"
+    },
+    {
+      "sample_id": "S0060",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0060.png"
+    },
+    {
+      "sample_id": "S0061",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0061.png"
+    },
+    {
+      "sample_id": "S0062",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0062.png"
+    },
+    {
+      "sample_id": "S0063",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0063.png"
+    },
+    {
+      "sample_id": "S0064",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0064.png"
+    },
+    {
+      "sample_id": "S0065",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0065.png"
+    },
+    {
+      "sample_id": "S0066",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0066.png"
+    },
+    {
+      "sample_id": "S0067",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0067.png"
+    },
+    {
+      "sample_id": "S0068",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0068.png"
+    },
+    {
+      "sample_id": "S0069",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0069.png"
+    },
+    {
+      "sample_id": "S0070",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0070.png"
+    },
+    {
+      "sample_id": "S0071",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0071.png"
+    },
+    {
+      "sample_id": "S0072",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0072.png"
+    },
+    {
+      "sample_id": "S0073",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0073.png"
+    },
+    {
+      "sample_id": "S0074",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0074.png"
+    },
+    {
+      "sample_id": "S0075",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0075.png"
+    },
+    {
+      "sample_id": "S0076",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0076.png"
+    },
+    {
+      "sample_id": "S0077",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0077.png"
+    },
+    {
+      "sample_id": "S0078",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0078.png"
+    },
+    {
+      "sample_id": "S0079",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0079.png"
+    },
+    {
+      "sample_id": "S0080",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0080.png"
+    },
+    {
+      "sample_id": "S0081",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0081.png"
+    },
+    {
+      "sample_id": "S0082",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0082.png"
+    },
+    {
+      "sample_id": "S0083",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0083.png"
+    },
+    {
+      "sample_id": "S0084",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0084.png"
+    },
+    {
+      "sample_id": "S0085",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0085.png"
+    },
+    {
+      "sample_id": "S0086",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0086.png"
+    },
+    {
+      "sample_id": "S0087",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0087.png"
+    },
+    {
+      "sample_id": "S0088",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0088.png"
+    },
+    {
+      "sample_id": "S0089",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0089.png"
+    },
+    {
+      "sample_id": "S0090",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0090.png"
+    },
+    {
+      "sample_id": "S0091",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0091.png"
+    },
+    {
+      "sample_id": "S0092",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0092.png"
+    },
+    {
+      "sample_id": "S0093",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0093.png"
+    },
+    {
+      "sample_id": "S0094",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0094.png"
+    },
+    {
+      "sample_id": "S0095",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0095.png"
+    },
+    {
+      "sample_id": "S0096",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0096.png"
+    },
+    {
+      "sample_id": "S0097",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0097.png"
+    },
+    {
+      "sample_id": "S0098",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0098.png"
+    },
+    {
+      "sample_id": "S0099",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0099.png"
+    },
+    {
+      "sample_id": "S0100",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0100.png"
+    },
+    {
+      "sample_id": "S0101",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0101.png"
+    },
+    {
+      "sample_id": "S0102",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0102.png"
+    },
+    {
+      "sample_id": "S0103",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0103.png"
+    },
+    {
+      "sample_id": "S0104",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0104.png"
+    },
+    {
+      "sample_id": "S0105",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0105.png"
+    },
+    {
+      "sample_id": "S0106",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0106.png"
+    },
+    {
+      "sample_id": "S0107",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0107.png"
+    },
+    {
+      "sample_id": "S0108",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0108.png"
+    },
+    {
+      "sample_id": "S0109",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0109.png"
+    },
+    {
+      "sample_id": "S0110",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0110.png"
+    },
+    {
+      "sample_id": "S0111",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0111.png"
+    },
+    {
+      "sample_id": "S0112",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0112.png"
+    },
+    {
+      "sample_id": "S0113",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0113.png"
+    },
+    {
+      "sample_id": "S0114",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0114.png"
+    },
+    {
+      "sample_id": "S0115",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0115.png"
+    },
+    {
+      "sample_id": "S0116",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0116.png"
+    },
+    {
+      "sample_id": "S0117",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0117.png"
+    },
+    {
+      "sample_id": "S0118",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0118.png"
+    },
+    {
+      "sample_id": "S0119",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0119.png"
+    },
+    {
+      "sample_id": "S0120",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0120.png"
+    },
+    {
+      "sample_id": "S0121",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0121.png"
+    },
+    {
+      "sample_id": "S0122",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0122.png"
+    },
+    {
+      "sample_id": "S0123",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0123.png"
+    },
+    {
+      "sample_id": "S0124",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0124.png"
+    },
+    {
+      "sample_id": "S0125",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0125.png"
+    },
+    {
+      "sample_id": "S0126",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0126.png"
+    },
+    {
+      "sample_id": "S0127",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0127.png"
+    },
+    {
+      "sample_id": "S0128",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0128.png"
+    },
+    {
+      "sample_id": "S0129",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0129.png"
+    },
+    {
+      "sample_id": "S0130",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0130.png"
+    },
+    {
+      "sample_id": "S0131",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0131.png"
+    },
+    {
+      "sample_id": "S0132",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0132.png"
+    },
+    {
+      "sample_id": "S0133",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0133.png"
+    },
+    {
+      "sample_id": "S0134",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0134.png"
+    },
+    {
+      "sample_id": "S0135",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0135.png"
+    },
+    {
+      "sample_id": "S0136",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0136.png"
+    },
+    {
+      "sample_id": "S0137",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0137.png"
+    },
+    {
+      "sample_id": "S0138",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0138.png"
+    },
+    {
+      "sample_id": "S0139",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0139.png"
+    },
+    {
+      "sample_id": "S0140",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0140.png"
+    },
+    {
+      "sample_id": "S0141",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0141.png"
+    },
+    {
+      "sample_id": "S0142",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0142.png"
+    },
+    {
+      "sample_id": "S0143",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0143.png"
+    },
+    {
+      "sample_id": "S0144",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0144.png"
+    },
+    {
+      "sample_id": "S0145",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0145.png"
+    },
+    {
+      "sample_id": "S0146",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0146.png"
+    },
+    {
+      "sample_id": "S0147",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0147.png"
+    },
+    {
+      "sample_id": "S0148",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0148.png"
+    },
+    {
+      "sample_id": "S0149",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0149.png"
+    },
+    {
+      "sample_id": "S0150",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0150.png"
+    },
+    {
+      "sample_id": "S0151",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0151.png"
+    },
+    {
+      "sample_id": "S0152",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0152.png"
+    },
+    {
+      "sample_id": "S0153",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0153.png"
+    },
+    {
+      "sample_id": "S0154",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0154.png"
+    },
+    {
+      "sample_id": "S0155",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0155.png"
+    },
+    {
+      "sample_id": "S0156",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0156.png"
+    },
+    {
+      "sample_id": "S0157",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0157.png"
+    },
+    {
+      "sample_id": "S0158",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0158.png"
+    },
+    {
+      "sample_id": "S0159",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0159.png"
+    },
+    {
+      "sample_id": "S0160",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0160.png"
+    },
+    {
+      "sample_id": "S0161",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0161.png"
+    },
+    {
+      "sample_id": "S0162",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0162.png"
+    },
+    {
+      "sample_id": "S0163",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0163.png"
+    },
+    {
+      "sample_id": "S0164",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0164.png"
+    },
+    {
+      "sample_id": "S0165",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0165.png"
+    },
+    {
+      "sample_id": "S0166",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0166.png"
+    },
+    {
+      "sample_id": "S0167",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0167.png"
+    },
+    {
+      "sample_id": "S0168",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0168.png"
+    },
+    {
+      "sample_id": "S0169",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0169.png"
+    },
+    {
+      "sample_id": "S0170",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0170.png"
+    },
+    {
+      "sample_id": "S0171",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0171.png"
+    },
+    {
+      "sample_id": "S0172",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0172.png"
+    },
+    {
+      "sample_id": "S0173",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0173.png"
+    },
+    {
+      "sample_id": "S0174",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0174.png"
+    },
+    {
+      "sample_id": "S0175",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0175.png"
+    },
+    {
+      "sample_id": "S0176",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0176.png"
+    },
+    {
+      "sample_id": "S0177",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0177.png"
+    },
+    {
+      "sample_id": "S0178",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0178.png"
+    },
+    {
+      "sample_id": "S0179",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0179.png"
+    },
+    {
+      "sample_id": "S0180",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0180.png"
+    },
+    {
+      "sample_id": "S0181",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0181.png"
+    },
+    {
+      "sample_id": "S0182",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0182.png"
+    },
+    {
+      "sample_id": "S0183",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0183.png"
+    },
+    {
+      "sample_id": "S0184",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0184.png"
+    },
+    {
+      "sample_id": "S0185",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0185.png"
+    },
+    {
+      "sample_id": "S0186",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0186.png"
+    },
+    {
+      "sample_id": "S0187",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0187.png"
+    },
+    {
+      "sample_id": "S0188",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0188.png"
+    },
+    {
+      "sample_id": "S0189",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0189.png"
+    },
+    {
+      "sample_id": "S0190",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0190.png"
+    },
+    {
+      "sample_id": "S0191",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0191.png"
+    },
+    {
+      "sample_id": "S0192",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0192.png"
+    },
+    {
+      "sample_id": "S0193",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0193.png"
+    },
+    {
+      "sample_id": "S0194",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0194.png"
+    },
+    {
+      "sample_id": "S0195",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0195.png"
+    },
+    {
+      "sample_id": "S0196",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0196.png"
+    },
+    {
+      "sample_id": "S0197",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0197.png"
+    },
+    {
+      "sample_id": "S0198",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0198.png"
+    },
+    {
+      "sample_id": "S0199",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0199.png"
+    },
+    {
+      "sample_id": "S0200",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0200.png"
+    },
+    {
+      "sample_id": "S0201",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0201.png"
+    },
+    {
+      "sample_id": "S0202",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0202.png"
+    },
+    {
+      "sample_id": "S0203",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0203.png"
+    },
+    {
+      "sample_id": "S0204",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0204.png"
+    },
+    {
+      "sample_id": "S0205",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0205.png"
+    },
+    {
+      "sample_id": "S0206",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0206.png"
+    },
+    {
+      "sample_id": "S0207",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0207.png"
+    },
+    {
+      "sample_id": "S0208",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0208.png"
+    },
+    {
+      "sample_id": "S0209",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0209.png"
+    },
+    {
+      "sample_id": "S0210",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0210.png"
+    },
+    {
+      "sample_id": "S0211",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0211.png"
+    },
+    {
+      "sample_id": "S0212",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0212.png"
+    },
+    {
+      "sample_id": "S0213",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0213.png"
+    },
+    {
+      "sample_id": "S0214",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0214.png"
+    },
+    {
+      "sample_id": "S0215",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0215.png"
+    },
+    {
+      "sample_id": "S0216",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0216.png"
+    },
+    {
+      "sample_id": "S0217",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0217.png"
+    },
+    {
+      "sample_id": "S0218",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0218.png"
+    },
+    {
+      "sample_id": "S0219",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0219.png"
+    },
+    {
+      "sample_id": "S0220",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0220.png"
+    },
+    {
+      "sample_id": "S0221",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0221.png"
+    },
+    {
+      "sample_id": "S0222",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0222.png"
+    },
+    {
+      "sample_id": "S0223",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0223.png"
+    },
+    {
+      "sample_id": "S0224",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0224.png"
+    },
+    {
+      "sample_id": "S0225",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0225.png"
+    },
+    {
+      "sample_id": "S0226",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0226.png"
+    },
+    {
+      "sample_id": "S0227",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0227.png"
+    },
+    {
+      "sample_id": "S0228",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0228.png"
+    },
+    {
+      "sample_id": "S0229",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0229.png"
+    },
+    {
+      "sample_id": "S0230",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0230.png"
+    },
+    {
+      "sample_id": "S0231",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0231.png"
+    },
+    {
+      "sample_id": "S0232",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0232.png"
+    },
+    {
+      "sample_id": "S0233",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0233.png"
+    },
+    {
+      "sample_id": "S0234",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0234.png"
+    },
+    {
+      "sample_id": "S0235",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0235.png"
+    },
+    {
+      "sample_id": "S0236",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0236.png"
+    },
+    {
+      "sample_id": "S0237",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0237.png"
+    },
+    {
+      "sample_id": "S0238",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0238.png"
+    },
+    {
+      "sample_id": "S0239",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0239.png"
+    },
+    {
+      "sample_id": "S0240",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0240.png"
+    },
+    {
+      "sample_id": "S0241",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0241.png"
+    },
+    {
+      "sample_id": "S0242",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0242.png"
+    },
+    {
+      "sample_id": "S0243",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0243.png"
+    },
+    {
+      "sample_id": "S0244",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0244.png"
+    },
+    {
+      "sample_id": "S0245",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0245.png"
+    },
+    {
+      "sample_id": "S0246",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0246.png"
+    },
+    {
+      "sample_id": "S0247",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0247.png"
+    },
+    {
+      "sample_id": "S0248",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0248.png"
+    },
+    {
+      "sample_id": "S0249",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0249.png"
+    },
+    {
+      "sample_id": "S0250",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0250.png"
+    },
+    {
+      "sample_id": "S0251",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0251.png"
+    },
+    {
+      "sample_id": "S0252",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0252.png"
+    },
+    {
+      "sample_id": "S0253",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0253.png"
+    },
+    {
+      "sample_id": "S0254",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0254.png"
+    },
+    {
+      "sample_id": "S0255",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0255.png"
+    },
+    {
+      "sample_id": "S0256",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0256.png"
+    },
+    {
+      "sample_id": "S0257",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0257.png"
+    },
+    {
+      "sample_id": "S0258",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0258.png"
+    },
+    {
+      "sample_id": "S0259",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0259.png"
+    },
+    {
+      "sample_id": "S0260",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0260.png"
+    },
+    {
+      "sample_id": "S0261",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0261.png"
+    },
+    {
+      "sample_id": "S0262",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0262.png"
+    },
+    {
+      "sample_id": "S0263",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0263.png"
+    },
+    {
+      "sample_id": "S0264",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0264.png"
+    },
+    {
+      "sample_id": "S0265",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0265.png"
+    },
+    {
+      "sample_id": "S0266",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0266.png"
+    },
+    {
+      "sample_id": "S0267",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0267.png"
+    },
+    {
+      "sample_id": "S0268",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0268.png"
+    },
+    {
+      "sample_id": "S0269",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0269.png"
+    },
+    {
+      "sample_id": "S0270",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0270.png"
+    },
+    {
+      "sample_id": "S0271",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0271.png"
+    },
+    {
+      "sample_id": "S0272",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0272.png"
+    },
+    {
+      "sample_id": "S0273",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0273.png"
+    },
+    {
+      "sample_id": "S0274",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0274.png"
+    },
+    {
+      "sample_id": "S0275",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0275.png"
+    },
+    {
+      "sample_id": "S0276",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0276.png"
+    },
+    {
+      "sample_id": "S0277",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0277.png"
+    },
+    {
+      "sample_id": "S0278",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0278.png"
+    },
+    {
+      "sample_id": "S0279",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0279.png"
+    },
+    {
+      "sample_id": "S0280",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0280.png"
+    },
+    {
+      "sample_id": "S0281",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0281.png"
+    },
+    {
+      "sample_id": "S0282",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0282.png"
+    },
+    {
+      "sample_id": "S0283",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0283.png"
+    },
+    {
+      "sample_id": "S0284",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0284.png"
+    },
+    {
+      "sample_id": "S0285",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0285.png"
+    },
+    {
+      "sample_id": "S0286",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0286.png"
+    },
+    {
+      "sample_id": "S0287",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0287.png"
+    },
+    {
+      "sample_id": "S0288",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0288.png"
+    },
+    {
+      "sample_id": "S0289",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0289.png"
+    },
+    {
+      "sample_id": "S0290",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0290.png"
+    },
+    {
+      "sample_id": "S0291",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0291.png"
+    },
+    {
+      "sample_id": "S0292",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0292.png"
+    },
+    {
+      "sample_id": "S0293",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0293.png"
+    },
+    {
+      "sample_id": "S0294",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0294.png"
+    },
+    {
+      "sample_id": "S0295",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0295.png"
+    },
+    {
+      "sample_id": "S0296",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0296.png"
+    },
+    {
+      "sample_id": "S0297",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0297.png"
+    },
+    {
+      "sample_id": "S0298",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0298.png"
+    },
+    {
+      "sample_id": "S0299",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0299.png"
+    },
+    {
+      "sample_id": "S0300",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0300.png"
+    },
+    {
+      "sample_id": "S0301",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0301.png"
+    },
+    {
+      "sample_id": "S0302",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0302.png"
+    },
+    {
+      "sample_id": "S0303",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0303.png"
+    },
+    {
+      "sample_id": "S0304",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0304.png"
+    },
+    {
+      "sample_id": "S0305",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0305.png"
+    },
+    {
+      "sample_id": "S0306",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0306.png"
+    },
+    {
+      "sample_id": "S0307",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0307.png"
+    },
+    {
+      "sample_id": "S0308",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0308.png"
+    },
+    {
+      "sample_id": "S0309",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0309.png"
+    },
+    {
+      "sample_id": "S0310",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0310.png"
+    },
+    {
+      "sample_id": "S0311",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0311.png"
+    },
+    {
+      "sample_id": "S0312",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0312.png"
+    },
+    {
+      "sample_id": "S0313",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0313.png"
+    },
+    {
+      "sample_id": "S0314",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0314.png"
+    },
+    {
+      "sample_id": "S0315",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0315.png"
+    },
+    {
+      "sample_id": "S0316",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0316.png"
+    },
+    {
+      "sample_id": "S0317",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0317.png"
+    },
+    {
+      "sample_id": "S0318",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0318.png"
+    },
+    {
+      "sample_id": "S0319",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0319.png"
+    },
+    {
+      "sample_id": "S0320",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0320.png"
+    },
+    {
+      "sample_id": "S0321",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0321.png"
+    },
+    {
+      "sample_id": "S0322",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0322.png"
+    },
+    {
+      "sample_id": "S0323",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0323.png"
+    },
+    {
+      "sample_id": "S0324",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0324.png"
+    },
+    {
+      "sample_id": "S0325",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0325.png"
+    },
+    {
+      "sample_id": "S0326",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0326.png"
+    },
+    {
+      "sample_id": "S0327",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0327.png"
+    },
+    {
+      "sample_id": "S0328",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0328.png"
+    },
+    {
+      "sample_id": "S0329",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0329.png"
+    },
+    {
+      "sample_id": "S0330",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0330.png"
+    },
+    {
+      "sample_id": "S0331",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0331.png"
+    },
+    {
+      "sample_id": "S0332",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0332.png"
+    },
+    {
+      "sample_id": "S0333",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0333.png"
+    },
+    {
+      "sample_id": "S0334",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0334.png"
+    },
+    {
+      "sample_id": "S0335",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0335.png"
+    },
+    {
+      "sample_id": "S0336",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0336.png"
+    },
+    {
+      "sample_id": "S0337",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0337.png"
+    },
+    {
+      "sample_id": "S0338",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0338.png"
+    },
+    {
+      "sample_id": "S0339",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0339.png"
+    },
+    {
+      "sample_id": "S0340",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0340.png"
+    },
+    {
+      "sample_id": "S0341",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0341.png"
+    },
+    {
+      "sample_id": "S0342",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0342.png"
+    },
+    {
+      "sample_id": "S0343",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0343.png"
+    },
+    {
+      "sample_id": "S0344",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0344.png"
+    },
+    {
+      "sample_id": "S0345",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0345.png"
+    },
+    {
+      "sample_id": "S0346",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0346.png"
+    },
+    {
+      "sample_id": "S0347",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0347.png"
+    },
+    {
+      "sample_id": "S0348",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0348.png"
+    },
+    {
+      "sample_id": "S0349",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0349.png"
+    },
+    {
+      "sample_id": "S0350",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0350.png"
+    },
+    {
+      "sample_id": "S0351",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0351.png"
+    },
+    {
+      "sample_id": "S0352",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0352.png"
+    },
+    {
+      "sample_id": "S0353",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0353.png"
+    },
+    {
+      "sample_id": "S0354",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0354.png"
+    },
+    {
+      "sample_id": "S0355",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0355.png"
+    },
+    {
+      "sample_id": "S0356",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0356.png"
+    },
+    {
+      "sample_id": "S0357",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0357.png"
+    },
+    {
+      "sample_id": "S0358",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0358.png"
+    },
+    {
+      "sample_id": "S0359",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0359.png"
+    },
+    {
+      "sample_id": "S0360",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0360.png"
+    },
+    {
+      "sample_id": "S0361",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0361.png"
+    },
+    {
+      "sample_id": "S0362",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0362.png"
+    },
+    {
+      "sample_id": "S0363",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0363.png"
+    },
+    {
+      "sample_id": "S0364",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0364.png"
+    },
+    {
+      "sample_id": "S0365",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0365.png"
+    },
+    {
+      "sample_id": "S0366",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0366.png"
+    },
+    {
+      "sample_id": "S0367",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0367.png"
+    },
+    {
+      "sample_id": "S0368",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0368.png"
+    },
+    {
+      "sample_id": "S0369",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0369.png"
+    },
+    {
+      "sample_id": "S0370",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0370.png"
+    },
+    {
+      "sample_id": "S0371",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0371.png"
+    },
+    {
+      "sample_id": "S0372",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0372.png"
+    },
+    {
+      "sample_id": "S0373",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0373.png"
+    },
+    {
+      "sample_id": "S0374",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0374.png"
+    },
+    {
+      "sample_id": "S0375",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0375.png"
+    },
+    {
+      "sample_id": "S0376",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0376.png"
+    },
+    {
+      "sample_id": "S0377",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0377.png"
+    },
+    {
+      "sample_id": "S0378",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0378.png"
+    },
+    {
+      "sample_id": "S0379",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0379.png"
+    },
+    {
+      "sample_id": "S0380",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0380.png"
+    },
+    {
+      "sample_id": "S0381",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0381.png"
+    },
+    {
+      "sample_id": "S0382",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0382.png"
+    },
+    {
+      "sample_id": "S0383",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0383.png"
+    },
+    {
+      "sample_id": "S0384",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0384.png"
+    },
+    {
+      "sample_id": "S0385",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0385.png"
+    },
+    {
+      "sample_id": "S0386",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0386.png"
+    },
+    {
+      "sample_id": "S0387",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0387.png"
+    },
+    {
+      "sample_id": "S0388",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0388.png"
+    },
+    {
+      "sample_id": "S0389",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0389.png"
+    },
+    {
+      "sample_id": "S0390",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0390.png"
+    },
+    {
+      "sample_id": "S0391",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0391.png"
+    },
+    {
+      "sample_id": "S0392",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0392.png"
+    },
+    {
+      "sample_id": "S0393",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0393.png"
+    },
+    {
+      "sample_id": "S0394",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0394.png"
+    },
+    {
+      "sample_id": "S0395",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0395.png"
+    },
+    {
+      "sample_id": "S0396",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0396.png"
+    },
+    {
+      "sample_id": "S0397",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0397.png"
+    },
+    {
+      "sample_id": "S0398",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0398.png"
+    },
+    {
+      "sample_id": "S0399",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0399.png"
+    },
+    {
+      "sample_id": "S0400",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0400.png"
+    },
+    {
+      "sample_id": "S0401",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0401.png"
+    },
+    {
+      "sample_id": "S0402",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0402.png"
+    },
+    {
+      "sample_id": "S0403",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0403.png"
+    },
+    {
+      "sample_id": "S0404",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0404.png"
+    },
+    {
+      "sample_id": "S0405",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0405.png"
+    },
+    {
+      "sample_id": "S0406",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0406.png"
+    },
+    {
+      "sample_id": "S0407",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0407.png"
+    },
+    {
+      "sample_id": "S0408",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0408.png"
+    },
+    {
+      "sample_id": "S0409",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0409.png"
+    },
+    {
+      "sample_id": "S0410",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0410.png"
+    },
+    {
+      "sample_id": "S0411",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0411.png"
+    },
+    {
+      "sample_id": "S0412",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0412.png"
+    },
+    {
+      "sample_id": "S0413",
+      "rms_matches": true,
+      "all_stored_peak_magnitudes_match": true,
+      "png": "waveform_figures/S0413.png"
+    }
+  ]
+}

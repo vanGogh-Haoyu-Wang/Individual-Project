@@ -1,0 +1,21 @@
+{
+  "decision": "retained",
+  "criteria": {
+    "availability_pass_groups": 9,
+    "magnitude_pass_groups": 9,
+    "cross_band_pass_groups": 9
+  },
+  "burst_clustering_counts": {
+    "1": 281114,
+    "2": 258993,
+    "5": 213334
+  },
+  "burst_clustering_conclusions_stable": true,
+  "leave_one_group_out_stable": true,
+  "blind_audit_complete": true,
+  "blind_audit_noise_like_fraction": 0.09200968523002422,
+  "blind_audit_pass": true,
+  "numerical_gate_pass": true,
+  "reason_if_appendix_only": null,
+  "claim_boundary": "Secondary peaks are descriptive spectral information, not crack-type labels or detection-accuracy evidence."
+}

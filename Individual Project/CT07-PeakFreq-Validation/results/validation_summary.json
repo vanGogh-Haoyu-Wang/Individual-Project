@@ -1,0 +1,263 @@
+{
+  "tolerances": {
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "ct07": {
+    "candidate_count": 8,
+    "passed_candidates": 8,
+    "candidates": {
+      "deepseek_julia": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "deepseek_python": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "gemini_julia": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "gemini_python": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "gpt55_julia": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "gpt55_python": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "sonnet_julia": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      },
+      "sonnet_python": {
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "field_mismatches": 0,
+        "passed": true
+      }
+    },
+    "smop": {
+      "candidate_count": 2,
+      "passed_candidates": 2,
+      "counted_as_llm_candidate": false
+    }
+  },
+  "legacy_top1_t01": {
+    "matlab_rows": 3098,
+    "missing_in_python": 0,
+    "extra_in_python": 0,
+    "missing_in_julia": 0,
+    "extra_in_julia": 0,
+    "python_field_mismatches": 0,
+    "julia_field_mismatches": 0,
+    "passed": true
+  },
+  "adaptive_top3_t01_t09": {
+    "totals": {
+      "missing_in_python": 0,
+      "extra_in_python": 0,
+      "missing_in_julia": 0,
+      "extra_in_julia": 0,
+      "python_field_mismatches": 0,
+      "julia_field_mismatches": 0
+    },
+    "groups": {
+      "T01": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T02": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T03": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T04": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T05": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T06": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T07": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T08": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      },
+      "T09": {
+        "missing_in_python": 0,
+        "extra_in_python": 0,
+        "missing_in_julia": 0,
+        "extra_in_julia": 0,
+        "python_threshold_mismatches": 0,
+        "julia_threshold_mismatches": 0,
+        "python_event_field_mismatches": 0,
+        "julia_event_field_mismatches": 0,
+        "python_peak_field_mismatches": 0,
+        "julia_peak_field_mismatches": 0,
+        "python_no_peak_status_mismatches": 0,
+        "julia_no_peak_status_mismatches": 0,
+        "passed": true
+      }
+    },
+    "passed": true
+  },
+  "scientific": {
+    "event_catalog": {
+      "rows": 522216,
+      "legacy_matched": 16240,
+      "adaptive_only": 505976,
+      "valid_peak_count": {
+        "1": 2,
+        "2": 10,
+        "3": 522204
+      },
+      "classification_is_complete_and_exclusive": true
+    },
+    "alignment": {
+      "supported_group_count": 0,
+      "unresolved_group_count": 9,
+      "identity_assignment_is_optimal": false,
+      "claim_level": "provisional_or_unresolved"
+    },
+    "top3": {
+      "decision": "retained",
+      "criteria": {
+        "availability_pass_groups": 9,
+        "magnitude_pass_groups": 9,
+        "cross_band_pass_groups": 9
+      },
+      "burst_clustering_counts": {
+        "1": 281114,
+        "2": 258993,
+        "5": 213334
+      },
+      "burst_clustering_conclusions_stable": true,
+      "leave_one_group_out_stable": true,
+      "blind_audit_complete": true,
+      "blind_audit_noise_like_fraction": 0.09200968523002422,
+      "blind_audit_pass": true,
+      "numerical_gate_pass": true,
+      "reason_if_appendix_only": null,
+      "claim_boundary": "Secondary peaks are descriptive spectral information, not crack-type labels or detection-accuracy evidence."
+    }
+  }
+}

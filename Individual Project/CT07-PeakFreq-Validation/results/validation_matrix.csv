@@ -1,0 +1,5 @@
+workflow,numerical_validation,scientific_interpretation
+Legacy Top-1,"MATLAB/Python/Julia full T01; 3,098 rows",waveform-audited; mechanical stage unresolved unless mapping passes
+Adaptive threshold,MATLAB/Python/Julia full T01-T09,waveform-audited; time alignment provisional or unresolved
+Top-3,MATLAB/Python/Julia full T01-T09,retained; descriptive spectral information only
+CT07,MATLAB oracle plus 8 LLM candidates; SMOP reported separately,mechanical/AE summary validated; raw-waveform mapping unresolved

@@ -1,0 +1,10 @@
+group,candidate_ct_sheet,best_scoring_ct_group,offset_0_5s,offset_1s,offset_2s,bootstrap_ci_low_s,bootstrap_ci_high_s,overlap_ratio,significant_metric_count,mapping_status,supervisor_confirmed
+T01,CT-01,T06,45.5,51.0,48.0,51.0,52.0,0.8930232558139535,6,unresolved,False
+T02,CT-02,T07,29.0,29.0,36.0,29.0,29.0,0.9454545454545454,6,unresolved,False
+T03,CT-03,T03,74.5,74.0,74.0,74.0,74.0,0.8,6,unresolved,False
+T04,CT-04,T03,46.0,46.0,46.0,46.0,46.0,0.95,6,unresolved,False
+T05,CT-05,T06,63.5,58.0,64.0,58.0,58.0,0.8523809523809524,6,unresolved,False
+T06,CT-06,T06,67.0,67.0,60.0,67.0,67.0,0.8372093023255814,6,unresolved,False
+T07,CT-07,T03,44.0,44.0,44.0,44.0,44.0,0.9377777777777778,6,unresolved,False
+T08,CT-08,T08,117.5,118.0,108.0,118.0,118.0,0.020512820512820513,0,unresolved,False
+T09,CT-09,T06,44.0,40.0,40.0,40.0,40.0,0.9487179487179487,5,unresolved,False

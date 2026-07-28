@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-07-28T02:34:45.968860+00:00",
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "input_file_count": 389,
+  "code_file_count": 57,
+  "result_file_count": 798,
+  "frozen_totals": {
+    "ct07_candidates": 8,
+    "legacy_t01_rows": 3098,
+    "adaptive_files": 377,
+    "adaptive_events": 522216,
+    "adaptive_top3_rows": 1566634
+  }
+}
