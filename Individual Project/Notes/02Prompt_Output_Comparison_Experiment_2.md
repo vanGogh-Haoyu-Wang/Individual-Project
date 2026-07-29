@@ -1,9 +1,11 @@
 # Prompt Output Comparison: Experiment #2 (MATLAB to Python)
 
-> [!warning] Pre-oracle experiment record
-> This report evaluates original-generation evidence available at that stage.
-> It does not replace the final MATLAB-oracle validation or support a general
-> ranking of model families. See [[Individual Project/README|Canonical Project Overview]].
+> [!warning] Pre-oracle original-generation assessment
+> This historical report evaluates the original-generation evidence available
+> at that stage. It does not replace the final candidate-derived runner
+> validation against the MATLAB oracle or support a general ranking of model
+> families or target languages. See
+> [[Individual Project/README|Canonical Project Overview]].
 
 ## 1. Experiment Metadata and Scope
 

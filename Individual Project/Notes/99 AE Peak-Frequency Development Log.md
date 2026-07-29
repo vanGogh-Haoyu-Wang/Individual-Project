@@ -496,3 +496,42 @@ Both methods retained the same dominant Top-1 frequency region below 200 kHz. Th
 The correct future integration is a third analysis step: retain `Peak_Freq` event frequency/time information, align it to a confirmed mechanical test timebase, then overlay or join it with stress, strain, RMS, and energy from the processed workbook. This is necessary to test whether adaptive-only events occur during mechanically meaningful stages.
 
 The scripts must not yet be joined automatically because their time coordinates are not proven to be the same. `Peak_Freq.m` constructs a frame-index time after concatenating files and inserting artificial zero gaps; it does not use the workbook's experiment clock. In addition, every T01–T04 workbook contains a `CT-07` sheet, so the sheet name alone does not establish which raw Txx file group corresponds to the CT07 processed trace. A specimen/group mapping and trigger/start-time alignment must be confirmed before any physical time-series conclusion is made.
+
+## 2026-07-29 - Final Numerical Closure and Scientific Interpretation Status
+
+The final evidence separates three Peak_Freq result scopes:
+
+1. **Legacy MATLAB T01-T09 context:** 377 MAT files produced 11,366,550
+   Legacy logical frames, 16,240 selected windows and 16,239 valid Top-1
+   rows. These nine-group Legacy totals are descriptive MATLAB context, not a
+   nine-group three-language validation.
+2. **Legacy Top-1 numerical validation:** the complete T01 dataset produced
+   3,098 rows that matched across MATLAB, Python and Julia within
+   `rtol=1e-12`, `atol=1e-12`.
+3. **Adaptive/Top-3 numerical validation:** the complete T01-T09 dataset
+   comprised 377 files and 9,472,125 Adaptive complete windows. MATLAB,
+   Python and Julia matched for 522,216 selected events and 1,566,634 Top-3
+   rows.
+
+The Legacy and Adaptive framing totals are not interchangeable. The Adaptive
+selection rate is `522,216 / 9,472,125 = 5.513%`; the Legacy rate is
+`16,240 / 11,366,550 = 0.143%`. The ratio `522,216 / 16,240 = 32.16x`
+describes selected-window counts, not rates calculated from one shared
+denominator.
+
+The scientific follow-on does not raise the validation level:
+
+- a deterministic class-hidden morphology screen was completed for 413
+  fixed samples; it is not expert human blind review and does not provide
+  damage ground truth;
+- the T01-T09 waveform-to-workbook alignment returned `0` supported and `9`
+  unresolved groups, so no load, stress, yield or crack-stage result is
+  reported;
+- Top-3 is retained only as secondary descriptive spectral information under
+  a pre-specified follow-on decision rule; no formal preregistration is
+  claimed;
+- adaptive-only events are not treated as confirmed physical AE damage
+  events, and no damage-classification or accuracy-improvement claim is made.
+
+Current project-level scope and defensible claims are maintained in
+[[Individual Project/README|Canonical Project Overview]].

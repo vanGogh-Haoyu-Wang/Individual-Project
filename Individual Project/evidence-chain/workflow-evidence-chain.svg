@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Acoustic-emission migration project workflow and evidence chain</title>
+  <desc id="desc">Seven project cases flow from inputs through migration or analysis, numerical verification, and bounded thesis claims. SHA-256 manifests, session records, and symmetric comparisons support the evidence chain.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52616b"/>
+    </marker>
+    <style>
+      .title { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17202a; }
+      .subtitle { font: 400 16px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #52616b; }
+      .head { font: 700 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #ffffff; }
+      .case { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #17202a; }
+      .body { font: 400 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #273746; }
+      .small { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #273746; }
+      .arrow { stroke: #52616b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .input { fill: #eaf2f8; stroke: #2874a6; stroke-width: 1.5; }
+      .work { fill: #f4ecf7; stroke: #7d3c98; stroke-width: 1.5; }
+      .verify { fill: #e8f8f5; stroke: #148f77; stroke-width: 1.5; }
+      .claim { fill: #fef5e7; stroke: #ca6f1e; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1080" fill="#ffffff"/>
+  <text x="70" y="58" class="title">Workflow and Evidence Chain</text>
+  <text x="70" y="88" class="subtitle">MATLAB-to-Python/Julia migration, bounded format readers, and symmetric numerical verification</text>
+
+  <rect x="70" y="120" width="280" height="48" rx="8" fill="#2874a6"/>
+  <rect x="400" y="120" width="360" height="48" rx="8" fill="#7d3c98"/>
+  <rect x="810" y="120" width="300" height="48" rx="8" fill="#148f77"/>
+  <rect x="1160" y="120" width="370" height="48" rx="8" fill="#ca6f1e"/>
+  <text x="210" y="151" text-anchor="middle" class="head">Input / Reference</text>
+  <text x="580" y="151" text-anchor="middle" class="head">Migration / Analysis</text>
+  <text x="960" y="151" text-anchor="middle" class="head">Verification</text>
+  <text x="1345" y="151" text-anchor="middle" class="head">Defensible Thesis Claim</text>
+
+  <!-- CT07 -->
+  <text x="24" y="230" class="case">CT07</text>
+  <rect x="70" y="188" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="220" class="body"><tspan>Commercial workbook / CT07</tspan><tspan x="90" dy="23">and CT07.m</tspan></text>
+  <rect x="400" y="188" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="214" class="body"><tspan>8 original generations</tspan><tspan x="420" dy="21">→ normalized probes</tspan><tspan x="420" dy="21">→ candidate-derived runners</tspan></text>
+  <rect x="810" y="188" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="220" class="body"><tspan>MATLAB oracle</tspan><tspan x="830" dy="23">1,807 mechanical + 5,850 AE</tspan></text>
+  <rect x="1160" y="188" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="214" class="body"><tspan>Numerically validated runners;</tspan><tspan x="1180" dy="21">not eight unchanged successes</tspan><tspan x="1180" dy="21">and not a general model ranking</tspan></text>
+
+  <!-- SMOP -->
+  <text x="16" y="337" class="case">SMOP</text>
+  <rect x="70" y="295" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="327" class="body"><tspan>CT07.m and the</tspan><tspan x="90" dy="23">same workbook</tspan></text>
+  <rect x="400" y="295" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="321" class="body"><tspan>SMOP 0.41 raw translation</tspan><tspan x="420" dy="21">→ script-fixed path</tspan><tspan x="420" dy="21">→ CT07-scoped runtime path</tspan></text>
+  <rect x="810" y="295" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="327" class="body"><tspan>Same MATLAB oracle</tspan><tspan x="830" dy="23">2/2 recovery paths pass</tspan></text>
+  <rect x="1160" y="295" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="327" class="body"><tspan>Deterministic baseline:</tspan><tspan x="1180" dy="23">recoverable, not automatic</tspan></text>
+
+  <!-- Legacy -->
+  <text x="7" y="444" class="case">Legacy</text>
+  <rect x="70" y="402" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="434" class="body"><tspan>Complete T01 MAT files</tspan><tspan x="90" dy="23">and Peak_Freq.m</tspan></text>
+  <rect x="400" y="402" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="434" class="body"><tspan>MATLAB workflow</tspan><tspan x="420" dy="23">→ Python / Julia</tspan></text>
+  <rect x="810" y="402" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="434" class="body"><tspan>MATLAB Top-1 oracle</tspan><tspan x="830" dy="23">3,098 matching rows</tspan></text>
+  <rect x="1160" y="402" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="434" class="body"><tspan>Three-language validation</tspan><tspan x="1180" dy="23">for complete T01 only</tspan></text>
+
+  <!-- Adaptive -->
+  <text x="3" y="551" class="case">Adaptive</text>
+  <rect x="70" y="509" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="541" class="body"><tspan>T01–T09 / 377 MAT files</tspan><tspan x="90" dy="23">9,472,125 complete windows</tspan></text>
+  <rect x="400" y="509" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="541" class="body"><tspan>MATLAB adaptive / Top-3</tspan><tspan x="420" dy="23">→ Python / Julia</tspan></text>
+  <rect x="810" y="509" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="535" class="body"><tspan>522,216 events</tspan><tspan x="830" dy="21">1,566,634 Top-3 rows</tspan><tspan x="830" dy="21">0/9 mappings supported</tspan></text>
+  <rect x="1160" y="509" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="535" class="body"><tspan>Numerical agreement;</tspan><tspan x="1180" dy="21">Top-3 is secondary/descriptive;</tspan><tspan x="1180" dy="21">no mechanical-stage claim</tspan></text>
+
+  <!-- DTA -->
+  <text x="27" y="658" class="case">DTA</text>
+  <rect x="70" y="616" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="648" class="body"><tspan>Public DTA fixture</tspan><tspan x="90" dy="23">MATLAB / Python source paths</tspan></text>
+  <rect x="400" y="616" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="642" class="body"><tspan>2 isolated GPT-5.5 sessions</tspan><tspan x="420" dy="21">→ frozen candidates</tspan><tspan x="420" dy="21">→ audited Julia reader</tspan></text>
+  <rect x="810" y="616" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="648" class="body"><tspan>Public Python oracle</tspan><tspan x="830" dy="23">8 hits + 8 waveforms; 56/56</tspan></text>
+  <rect x="1160" y="616" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="648" class="body"><tspan>Format/workflow applicability</tspan><tspan x="1180" dy="23">for one tested DTA variant</tspan></text>
+
+  <!-- WFS -->
+  <text x="24" y="765" class="case">WFS</text>
+  <rect x="70" y="723" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="755" class="body"><tspan>Public WFS fixture</tspan><tspan x="90" dy="23">material provenance unavailable</tspan></text>
+  <rect x="400" y="723" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="755" class="body"><tspan>MATLAB fixture exporter</tspan><tspan x="420" dy="23">→ Julia reader</tspan></text>
+  <rect x="810" y="723" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="755" class="body"><tspan>Exact 2 × 103,424 matrix</tspan><tspan x="830" dy="23">26/26 Julia tests</tspan></text>
+  <rect x="1160" y="723" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="755" class="body"><tspan>Single-fixture validation;</tspan><tspan x="1180" dy="23">not complete WFS support</tspan></text>
+
+  <!-- R260 -->
+  <text x="3" y="872" class="case">R260_2</text>
+  <rect x="70" y="830" width="280" height="82" rx="10" class="input"/>
+  <text x="90" y="862" class="body"><tspan>Processed hit-level workbook</tspan><tspan x="90" dy="23">no raw ADC waveform</tspan></text>
+  <rect x="400" y="830" width="360" height="82" rx="10" class="work"/>
+  <text x="420" y="862" class="body"><tspan>Streaming ZIP/XML</tspan><tspan x="420" dy="23">exploratory analysis</tspan></text>
+  <rect x="810" y="830" width="300" height="82" rx="10" class="verify"/>
+  <text x="830" y="856" class="body"><tspan>Input hash + schema checks</tspan><tspan x="830" dy="21">S3: 3,553 exact pairs</tspan><tspan x="830" dy="21">no raw-waveform oracle</tspan></text>
+  <rect x="1160" y="830" width="370" height="82" rx="10" class="claim"/>
+  <text x="1180" y="856" class="body"><tspan>Exploratory hit-level case;</tspan><tspan x="1180" dy="21">grade, units and specimen</tspan><tspan x="1180" dy="21">provenance remain unresolved</tspan></text>
+
+  <!-- arrows -->
+  <g>
+    <path class="arrow" d="M350 229 H400"/><path class="arrow" d="M760 229 H810"/><path class="arrow" d="M1110 229 H1160"/>
+    <path class="arrow" d="M350 336 H400"/><path class="arrow" d="M760 336 H810"/><path class="arrow" d="M1110 336 H1160"/>
+    <path class="arrow" d="M350 443 H400"/><path class="arrow" d="M760 443 H810"/><path class="arrow" d="M1110 443 H1160"/>
+    <path class="arrow" d="M350 550 H400"/><path class="arrow" d="M760 550 H810"/><path class="arrow" d="M1110 550 H1160"/>
+    <path class="arrow" d="M350 657 H400"/><path class="arrow" d="M760 657 H810"/><path class="arrow" d="M1110 657 H1160"/>
+    <path class="arrow" d="M350 764 H400"/><path class="arrow" d="M760 764 H810"/><path class="arrow" d="M1110 764 H1160"/>
+    <path class="arrow" d="M350 871 H400"/><path class="arrow" d="M760 871 H810"/><path class="arrow" d="M1110 871 H1160"/>
+  </g>
+
+  <rect x="220" y="960" width="1160" height="76" rx="12" fill="#fdedec" stroke="#b03a2e" stroke-width="1.8"/>
+  <text x="800" y="991" text-anchor="middle" class="case">Audit layer shared by every case</text>
+  <text x="800" y="1018" text-anchor="middle" class="body">SHA-256 manifests • prompt / response / session registry • symmetric missing / extra comparison • explicit claim boundaries</text>
+</svg>

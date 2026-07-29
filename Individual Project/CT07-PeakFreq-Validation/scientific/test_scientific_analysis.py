@@ -92,3 +92,21 @@ def test_bh_adjust_and_frequency_bands() -> None:
     bands = analysis.frequency_band(pd.Series([0, 199.999, 200, 500]))
     assert bands.astype(str).tolist() == ["0-200", "0-200", "200-250", "400-500"]
 
+
+def test_morphology_screen_has_no_event_class_input() -> None:
+    baseline = analysis.classify_morphology(3.0, 1.0, 0.05, 0.0, 1.1)
+    assert baseline == "noise_like"
+    assert "legacy_matched" not in analysis.classify_morphology.__annotations__
+
+
+def test_top3_follow_on_decision_requires_every_condition() -> None:
+    criteria = {
+        "availability_pass_groups": 9,
+        "magnitude_pass_groups": 9,
+        "cross_band_pass_groups": 9,
+    }
+    assert analysis.top3_follow_on_decision(criteria, True, True, True)
+    assert not analysis.top3_follow_on_decision(criteria, True, True, False)
+    assert not analysis.top3_follow_on_decision(
+        {**criteria, "cross_band_pass_groups": 5}, True, True, True
+    )

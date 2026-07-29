@@ -10,6 +10,7 @@
 
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import math
@@ -20,10 +21,9 @@ import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RESULTS = ROOT / "results"
 
 
-def timing_and_frequency(s3: dict) -> Path:
+def timing_and_frequency(s3: dict, results: Path) -> Path:
     figure, axes = plt.subplots(1, 2, figsize=(12, 5))
     figure.subplots_adjust(left=0.07, right=0.98, top=0.82, bottom=0.27, wspace=0.25)
 
@@ -63,14 +63,14 @@ def timing_and_frequency(s3: dict) -> Path:
         fontsize=9,
         color="#555555",
     )
-    output = RESULTS / "s3_hit_timing_and_pfrq.png"
+    output = results / "s3_hit_timing_and_pfrq.png"
     figure.savefig(output, dpi=300)
     plt.close(figure)
     return output
 
 
-def crack_growth(s3: dict) -> Path:
-    with (RESULTS / "s3_crack_growth.tsv").open(newline="") as source:
+def crack_growth(s3: dict, results: Path) -> Path:
+    with (results / "s3_crack_growth.tsv").open(newline="") as source:
         rows = [
             row
             for row in csv.DictReader(source, delimiter="\t")
@@ -121,20 +121,29 @@ def crack_growth(s3: dict) -> Path:
         fontsize=9,
         color="#555555",
     )
-    output = RESULTS / "s3_crack_growth_exploratory.png"
+    output = results / "s3_crack_growth_exploratory.png"
     figure.savefig(output, dpi=300)
     plt.close(figure)
     return output
 
 
 def main() -> None:
-    with (RESULTS / "analysis.json").open() as source:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--results", type=Path, default=ROOT / "results")
+    parser.add_argument("--versions", action="store_true")
+    args = parser.parse_args()
+    if args.versions:
+        print(json.dumps({"matplotlib": plt.matplotlib.__version__, "numpy": np.__version__}))
+        return
+
+    results = args.results.resolve()
+    with (results / "analysis.json").open() as source:
         s3 = json.load(source)["sheets"]["S3"]
-    outputs = [timing_and_frequency(s3), crack_growth(s3)]
+    outputs = [timing_and_frequency(s3, results), crack_growth(s3, results)]
     for output in outputs:
         if not output.is_file() or output.stat().st_size == 0:
             raise RuntimeError(f"figure was not written: {output}")
-        print(output.relative_to(ROOT))
+        print(output)
 
 
 if __name__ == "__main__":

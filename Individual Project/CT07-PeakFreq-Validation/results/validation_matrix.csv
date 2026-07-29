@@ -1,5 +1,6 @@
-workflow,numerical_validation,scientific_interpretation
-Legacy Top-1,"MATLAB/Python/Julia full T01; 3,098 rows",waveform-audited; mechanical stage unresolved unless mapping passes
-Adaptive threshold,MATLAB/Python/Julia full T01-T09,waveform-audited; time alignment provisional or unresolved
-Top-3,MATLAB/Python/Julia full T01-T09,retained; descriptive spectral information only
-CT07,MATLAB oracle plus 8 LLM candidates; SMOP reported separately,mechanical/AE summary validated; raw-waveform mapping unresolved
+workflow,research_role,dataset_scope,framing_count,numerical_validation,scientific_interpretation
+Legacy T01-T09 context,descriptive baseline context,T01-T09,"11,366,550 logical frames",MATLAB only; not a three-language validation,selection context only
+Legacy Top-1 T01,primary numerical baseline,complete T01,"1,266,300 logical frames","MATLAB/Python/Julia; 3,098 matching rows",deterministic class-hidden morphology screen; mechanical mapping unresolved
+Adaptive threshold,secondary numerical extension,T01-T09,"9,472,125 complete windows",MATLAB/Python/Julia full dataset,deterministic class-hidden morphology screen; 9/9 mappings unresolved
+Top-3,secondary descriptive spectral extension,T01-T09,"522,216 selected events","MATLAB/Python/Julia; 1,566,634 rows",retained; descriptive spectral information only; no damage classification
+CT07,LLM-assisted migration case,CT07 workbook,"1,807 mechanical; 5,850 AE rows",MATLAB oracle plus 8 candidate-derived validation runners; SMOP reported separately,mechanical/AE summary validated; raw-waveform mapping unresolved

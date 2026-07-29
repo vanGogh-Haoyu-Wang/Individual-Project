@@ -1,0 +1,180 @@
+schema_version = 1
+experiment_date = "2026-07-27"
+evidence_closed_date = "2026-07-29"
+model = "gpt-5.5"
+reasoning_effort = "xhigh"
+codex_cli_version = "0.140.0"
+target_julia_version = "1.12"
+first_run_julia_version = "1.12.6"
+generation_os = "not_available"
+generation_method = "two isolated ephemeral Codex CLI sessions"
+oracle_visibility_during_generation = false
+
+[parent_rollout]
+id = "019fa0fb-8468-7f30-8c6e-0b827f0e13e1"
+sha256 = "60116cc1731310cdfbe36ea5fa881fcc87c7b21c574e2ed5d49dbd263d38386a"
+sha_scope = "complete local rollout JSONL at evidence recovery time"
+
+[task_prompt]
+path = "experiments/frozen_prompt.md"
+historical_path = "Individual Project/MistrasDTAJulia/experiments/TASK.md"
+git_commit = "824374e98f7791ff46bd4447724da95e70fe2d66"
+git_blob = "7388fde51c43d5ebf9a61ef3b738a079aa9d0f11"
+sha256 = "70c8dcbd741c0ecdbbf9d1b4e3625843260e4060c97bb68e79b19893dc73fd81"
+ends_with_newline = true
+platform_system_instructions_recovered = false
+
+[invocation_prompt]
+path = "experiments/invocation_prompt.txt"
+sha256 = "d1dc99fe5e3b6bbed9e0c4265e22bd0e920e7ca0738cadbb6391cb63d78edcf3"
+ends_with_newline = false
+
+[descriptive_summary]
+path = "experiments/task_summary.md"
+former_path = "experiments/TASK.md"
+sha256_before_rename = "3b041b95a64b4eb43942e68f896099134c8a2cad4d97a8af5cdd6ca8057e37d3"
+generation_prompt = false
+
+[generation_controls]
+ephemeral = true
+sandbox = "read-only"
+ignore_user_config = true
+ignore_rules = true
+skip_git_repo_check = true
+approval = "never"
+
+[sessions.matlab_source]
+session_id = "019fa582-f69b-7061-878e-afb14d409ac4"
+generation_started_utc = "2026-07-27T21:37:31Z"
+staging_directory = "/tmp/mistras-candidate-m"
+visible_files = [
+  "TASK.md",
+  "source/AE_readHits_noPara.m",
+  "source/AE_listWaveforms.m",
+  "source/AE_plotWaveformByIndex.m",
+  "test/210527-CH1-15.DTA",
+]
+not_visible = [
+  "test/reference/210527-CH1-15.npz",
+  "Python implementation source",
+  "Python-source candidate or response",
+  "final Julia reader",
+]
+raw_response_path = "experiments/matlab_source_raw_response.txt"
+candidate_path = "experiments/matlab_source_candidate.jl"
+raw_response_sha256 = "268988d6a80836f839676b70d24cb500b13bde15cd39d089bebe895136bfd6ec"
+candidate_sha256 = "268988d6a80836f839676b70d24cb500b13bde15cd39d089bebe895136bfd6ec"
+candidate_line_count = 371
+raw_response_byte_identical_to_candidate = true
+frozen_before_first_run = true
+frozen_utc = "2026-07-27T21:53:36Z"
+
+[sessions.python_source]
+session_id = "019fa58b-67a9-7f83-9bd1-34b4e6336a87"
+generation_started_utc = "2026-07-27T21:46:44Z"
+staging_directory = "/tmp/mistras-candidate-p"
+visible_files = [
+  "TASK.md",
+  "source/MistrasDTA.py",
+  "test/210527-CH1-15.DTA",
+]
+not_visible = [
+  "test/reference/210527-CH1-15.npz",
+  "MATLAB implementation sources",
+  "MATLAB-source candidate or response",
+  "final Julia reader",
+]
+raw_response_path = "experiments/python_source_raw_response.txt"
+candidate_path = "experiments/python_source_candidate.jl"
+raw_response_sha256 = "fa0bbe3c33d3752406ae719d0adc745a4d5a51a820a4612a8d576920522dddf1"
+candidate_sha256 = "fa0bbe3c33d3752406ae719d0adc745a4d5a51a820a4612a8d576920522dddf1"
+candidate_line_count = 475
+raw_response_byte_identical_to_candidate = true
+frozen_before_first_run = true
+frozen_utc = "2026-07-27T21:55:28Z"
+
+[first_runs.matlab_source]
+tool_call_id = "call_iSSKPgPkHSgfEMsPCoI6bjOc"
+tool_call_utc = "2026-07-27T21:53:44Z"
+tool_result_utc = "2026-07-27T21:53:52Z"
+exit_code = 1
+capture_path = "experiments/matlab_source_first_run_combined.txt"
+capture_sha256 = "78291c2cfce4b90779869b0e9107953c7cb0232c746d717f54f0fa95aaa1a464"
+capture_kind = "verbatim_combined_tool_output"
+stream_separation = "not_available"
+summary_path = "experiments/matlab_source_first_run_summary.md"
+compiled = true
+fixture_read_completed = false
+first_error = "MethodError: objects of type Int64 are not callable"
+failure_category = "llm_added_julia_defect"
+
+[first_runs.python_source]
+tool_call_id = "call_ZBwP4TXIQRlF8IhpYgKcyPxE"
+tool_call_utc = "2026-07-27T21:55:36Z"
+tool_result_utc = "2026-07-27T21:55:45Z"
+exit_code = 0
+capture_path = "experiments/python_source_first_run_combined.txt"
+capture_sha256 = "cc74afe4d21f4422439c03031e29058a033464deda9219d87dfba51de6237d75"
+capture_kind = "verbatim_combined_tool_output"
+stream_separation = "not_available"
+summary_path = "experiments/python_source_first_run_summary.md"
+compiled = true
+fixture_read_completed = true
+hits = 8
+waveforms = 8
+first_defect = "seven known but unused message IDs counted as unknown"
+failure_category = "message_classification_defect"
+
+[verification_harness]
+path = "experiments/score_python_source_candidate.jl"
+first_call_id = "call_NLOfOdDXADdC6BWQpB7mA9BT"
+first_tool_call_utc = "2026-07-27T21:56:59Z"
+first_tool_result_utc = "2026-07-27T21:57:04Z"
+first_exit_code = 1
+first_error = "UndefVarError: max_hit_time_error_s not defined in local scope"
+first_capture_path = "experiments/python_source_scorer_initial_failure_combined.txt"
+first_capture_sha256 = "a45786371f08cb8f90d959c8c442368591696960281b819b82989eb27c29e2d7"
+first_capture_kind = "verbatim_combined_tool_output"
+first_stream_separation = "not_available"
+fixed_call_id = "call_1stt8Cyyxb5zFS0qVIxfOU3v"
+fixed_tool_call_utc = "2026-07-27T21:57:26Z"
+fixed_tool_result_utc = "2026-07-27T21:57:29Z"
+fixed_exit_code = 0
+fixed_capture_path = "experiments/python_source_scorer_fixed_run_combined.txt"
+fixed_capture_sha256 = "90f4ca6277fc390797dad673c66ab5c6ba891a868af1eeaeaf13f040e539456b"
+fixed_capture_kind = "verbatim_combined_tool_output"
+fixed_stream_separation = "not_available"
+classification = "verification_harness_failure"
+candidate_failure = false
+
+[diffs.matlab_source_to_final]
+path = "experiments/diffs/matlab_source_candidate_to_final.diff"
+sha256 = "89c1b03b335abf0c43ed2e5cbe8052a66d82c107fdb2086dc3807f361061aca9"
+added_lines = 261
+deleted_lines = 301
+role = "diagnostic comparison only"
+selected_as_starting_point = false
+repaired_to_pass = false
+
+[diffs.python_source_to_final]
+path = "experiments/diffs/python_source_candidate_to_final.diff"
+sha256 = "333d2c7304ba6a23b36000e32dd727bd52b03d0f1f2265da0ca7bb53d6d7bad3"
+added_lines = 267
+deleted_lines = 411
+role = "selected parsing-route starting point; final is a separate audited implementation"
+selected_as_starting_point = true
+minimal_repair = false
+
+[final_reader]
+path = "src/MistrasDTAJulia.jl"
+sha256 = "f7b6f4ace21386782c57c97b7fc59a1af37d3b84722f8a2c3583a96ed5c6fbc4"
+starting_candidate = "python_source"
+intervention_categories = [
+  "typed public data contract",
+  "byte-offset format errors",
+  "frame, setup, and dialect boundary checks",
+  "known-skipped versus unknown message separation",
+  "waveform metadata and API contract",
+  "unsupported MATLAB fixture explicit rejection",
+  "negative tests and oracle validation",
+]

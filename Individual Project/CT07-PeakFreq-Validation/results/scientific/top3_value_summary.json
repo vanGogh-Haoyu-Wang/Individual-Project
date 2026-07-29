@@ -1,5 +1,8 @@
 {
   "decision": "retained",
+  "research_role": "secondary_descriptive_extension",
+  "decision_rule_label": "pre-specified follow-on decision rule",
+  "formal_preregistration": false,
   "criteria": {
     "availability_pass_groups": 9,
     "magnitude_pass_groups": 9,
@@ -12,10 +15,11 @@
   },
   "burst_clustering_conclusions_stable": true,
   "leave_one_group_out_stable": true,
-  "blind_audit_complete": true,
-  "blind_audit_noise_like_fraction": 0.09200968523002422,
-  "blind_audit_pass": true,
-  "numerical_gate_pass": true,
+  "morphology_screen_complete": true,
+  "morphology_screen_noise_like_fraction": 0.09200968523002422,
+  "morphology_screen_pass": true,
+  "numerical_criteria_pass": true,
+  "follow_on_decision_rule_pass": true,
   "reason_if_appendix_only": null,
   "claim_boundary": "Secondary peaks are descriptive spectral information, not crack-type labels or detection-accuracy evidence."
 }

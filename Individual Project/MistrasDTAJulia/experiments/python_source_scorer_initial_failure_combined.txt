@@ -1,0 +1,23 @@
+Chunk ID: 781e4c
+Wall time: 1.8553 seconds
+Process exited with code 1
+Original token count: 497
+Output:
+┌ Warning: Assignment to `max_hit_time_error_s` in soft scope is ambiguous because a global variable by the same name exists: `max_hit_time_error_s` will be treated as a new local. Disambiguate by using `local max_hit_time_error_s` to suppress this warning or `global max_hit_time_error_s` to assign to the existing global variable.
+└ @ ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/score_python_source_candidate.jl:30
+┌ Warning: Assignment to `field_mismatches` in soft scope is ambiguous because a global variable by the same name exists: `field_mismatches` will be treated as a new local. Disambiguate by using `local field_mismatches` to suppress this warning or `global field_mismatches` to assign to the existing global variable.
+└ @ ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/score_python_source_candidate.jl:34
+┌ Warning: Assignment to `max_feature_error` in soft scope is ambiguous because a global variable by the same name exists: `max_feature_error` will be treated as a new local. Disambiguate by using `local max_feature_error` to suppress this warning or `global max_feature_error` to assign to the existing global variable.
+└ @ ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/score_python_source_candidate.jl:38
+ERROR: LoadError: UndefVarError: `max_hit_time_error_s` not defined in local scope
+Suggestion: check for an assignment to a local variable that shadows a global of the same name.
+Stacktrace:
+ [1] top-level scope
+   @ ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/score_python_source_candidate.jl:30
+ [2] include(mod::Module, _path::String)
+   @ Base ./Base.jl:306
+ [3] exec_options(opts::Base.JLOptions)
+   @ Base ./client.jl:317
+ [4] _start()
+   @ Base ./client.jl:550
+in expression starting at /Users/vangogh/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/score_python_source_candidate.jl:29

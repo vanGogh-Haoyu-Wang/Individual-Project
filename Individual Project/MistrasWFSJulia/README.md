@@ -6,6 +6,13 @@
 Minimal Julia 1.12 reader for the public `ExampleWFSdata.wfs` layout from the
 pinned Mistras AE MATLAB Library. The Julia runtime uses Base only.
 
+Case-level status: evidence closed for the tested public fixture.
+
+Dissertation role: a secondary format/workflow extension within the bounded
+applicability discussion. Because the fixture has no documented material or
+experiment provenance, this case is not direct steel evidence and is not a
+second crack-detection experiment.
+
 ## Supported scope
 
 The reader implements the branch exercised by the fixture:
@@ -50,8 +57,29 @@ Run the Julia regression:
 julia --project=. test/runtests.jl
 ```
 
+Regenerate the symmetric machine comparison:
+
+```sh
+julia --project=. tools/write_comparison_summary.jl
+```
+
+Verify the frozen project evidence:
+
+```sh
+shasum -a 256 -c test/reference/reference.sha256
+shasum -a 256 -c MANIFEST.sha256
+```
+
 The full two-channel Julia voltage matrix is compared with the MATLAB output,
 not merely with plotted images or summary statistics.
+
+Canonical case evidence:
+
+- `results/comparison_summary.toml`: symmetric channel/sample comparison and
+  full-matrix numerical errors;
+- `results/final_run.log`: final 26/26 Julia test capture and exit code;
+- `environment/versions.txt`: final runtime and oracle-environment record;
+- `MANIFEST.sha256`: complete case-package integrity manifest.
 
 ## Interpretation boundary
 

@@ -2,6 +2,10 @@
 
 ## Scope and frozen algorithm
 
+This record covers Adaptive threshold and Top-3 validation over T01–T09. The
+separate Legacy three-language result covers complete T01 only; it must not be
+generalised to a Legacy T01–T09 three-language validation claim.
+
 The manually written MATLAB exporter is the oracle. Each MAT file is centred
 independently, divided into complete 200-sample windows with a 199-sample hop,
 and selected with `median(RMS) + 8 * 1.4826 * MAD`. FFT peaks use MATLAB
@@ -19,10 +23,10 @@ tests preserve this behaviour.
 
 ## Final result
 
-T01–T09 contain 377 MAT files and 9,472,125 candidate windows. MATLAB selected
-522,216 events, producing 522,216 Top-1 rows and 1,566,634 Top-3 rows. No
-selected event in this public batch lacked a valid peak; the zero/no-peak path
-is instead covered by synthetic tests.
+T01–T09 contain 377 MAT files and 9,472,125 complete candidate windows. MATLAB
+selected 522,216 events, producing 522,216 Top-1 rows and 1,566,634 Top-3 rows.
+No selected event in the tested collection lacked a valid peak; the
+zero/no-peak path is instead covered by synthetic tests.
 
 All nine groups passed for Python and Julia:
 
@@ -48,4 +52,22 @@ agreement only; they are not evidence of physical damage or improved detection
 accuracy.
 
 The current legacy regression also remains closed: MATLAB, Python and Julia
-each produce 3,098 Top-1 rows with zero missing, extra or field mismatches.
+each produce 3,098 Top-1 rows for complete T01 with zero missing, extra or
+field mismatches. This is the full extent of the Legacy three-language
+validation.
+
+## Scientific interpretation boundary
+
+Numerical agreement does not establish that adaptive-only events are physical
+damage events. A deterministic class-hidden morphology screen was completed
+without using matched/adaptive-only class labels and is not expert review or
+damage ground truth.
+
+The waveform-to-mechanical analysis produced zero supported and nine unresolved
+mappings. Consequently, no load, displacement, strain, stress, yield or crack
+stage is assigned to these events.
+
+Top-3 passed a pre-specified follow-on decision rule and is retained only as a
+secondary descriptive spectral extension. This result does not support damage
+classification, crack-type identification or an improvement in detection
+accuracy.

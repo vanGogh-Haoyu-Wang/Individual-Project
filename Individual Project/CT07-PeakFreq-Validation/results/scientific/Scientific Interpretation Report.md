@@ -15,25 +15,27 @@ interpretation.
 
 These facts describe the output population. They do not identify damage.
 
-## Waveform audit
+## Deterministic class-hidden morphology screen
 
 The fixed sample contains 413 events:
 
-- 108 preregistered group/class/RMS-quantile samples;
+- 108 pre-specified group/class/RMS-quantile samples;
 - 12 events with fewer than three valid peaks;
 - the one Legacy-selected event without a valid local FFT peak;
 - 292 file-boundary events.
 
-The blind audit uses only waveform shape, RMS/threshold ratio and burst
-membership. It does not use the matched/adaptive-only class. The deterministic
-rubric labelled 54 samples impulsive, 26 oscillatory, 38 noise-like and 295
-ambiguous; none met the clipping definition after quantisation was correctly
-distinguished from clipping. The plots were also visually spot-checked across
-the fixed classes.
+The deterministic screen uses only waveform shape, RMS/threshold ratio and
+burst membership. It does not use the matched/adaptive-only class. The rubric
+labelled 54 samples impulsive, 26 oscillatory, 38 noise-like and 295 ambiguous;
+none met the clipping definition after quantisation was correctly
+distinguished from clipping. The plots were visually spot-checked only for
+rendering and annotation quality; that check did not supply labels or decision
+evidence.
 
-The audit is a reproducible morphology screen, not expert damage labelling.
-Because boundary and edge cases are deliberately over-sampled, its percentages
-must not be presented as prevalence estimates for the 522,216-event population.
+This is a reproducible class-hidden morphology screen, not expert review or
+expert damage labelling. Because boundary and edge cases are deliberately
+over-sampled, its percentages must not be presented as prevalence estimates for
+the 522,216-event population.
 
 ## Mechanical time alignment
 
@@ -51,8 +53,8 @@ For each of the 81 waveform/CT combinations, the analysis searched offsets at
 file-jackknife bootstrap offsets. The globally optimal one-to-one assignment
 was not the identity mapping. T01, T02, T04, T05, T07 and T09 each scored a
 different CT group above their same-number candidate; the remaining diagonal
-pairs also failed at least one preregistered gate. All nine mappings are
-therefore `unresolved`.
+pairs also failed at least one pre-specified support criterion. The result is
+zero supported and nine `unresolved` mappings.
 
 Consequences:
 
@@ -74,21 +76,22 @@ At the 2-hop burst level:
 - the availability, magnitude and cross-band criteria pass in all nine groups;
 - the pass/fail conclusion is unchanged for 1-hop, 2-hop and 5-hop clustering
   and leave-one-group-out analysis;
-- the blind morphology screen is not dominated by noise-like or clipped cases.
+- the deterministic class-hidden morphology screen is not dominated by
+  noise-like or clipped cases.
 
-The preregistered decision is therefore `retained`: Top-3 may remain in the main
-method as stable additional spectral information. It must not be described as
-crack-type identification, improved detection accuracy, or physical damage
-validation.
+The pre-specified follow-on decision rule therefore returns `retained`. Top-3
+is retained only as a secondary descriptive spectral extension. It must not be
+described as a main damage-analysis method, crack-type identification, improved
+detection accuracy or physical damage validation.
 
 ## Conservative dissertation wording
 
 > Adaptive thresholding and ranked spectral peaks were numerically consistent
 > across MATLAB, Python and Julia for the tested T01–T09 waveform collection.
-> A deterministic waveform audit and file-level sensitivity analysis supported
-> retaining Top-3 as additional descriptive spectral information. However, a
-> nine-by-nine data-driven alignment did not uniquely support the presumed
-> T01–T09 to CT-01–CT-09 mapping. The added adaptive detections therefore
-> cannot yet be assigned to mechanical loading stages or interpreted as
-> confirmed damage events.
-
+> A deterministic class-hidden morphology screen and file-level sensitivity
+> analysis supported retaining Top-3 as a secondary descriptive spectral
+> extension under a pre-specified follow-on decision rule. However, the
+> nine-by-nine data-driven alignment produced zero supported and nine
+> unresolved mappings. The added adaptive detections therefore cannot be
+> assigned to mechanical loading stages or interpreted as confirmed damage
+> events.

@@ -1,5 +1,11 @@
 # Mistras DTA/WFS 与钢轨 AE 适用性核查
 
+> [!note] Historical research and scope record
+> This note records the evidence and decisions available at its dated stages.
+> The current DTA validation status is maintained in
+> [[Individual Project/MistrasDTAJulia/README|MistrasDTAJulia]] and the
+> [[Individual Project/README|Canonical Project Overview]].
+
 > Project-level current status: [[Individual Project/README|Canonical Project Overview]]
 
 > 核查日期：2026-07-27  
@@ -105,7 +111,10 @@
 - 记录首次运行错误、解析差异、人工修复和测试发现的问题。
 - 最后只维护**一个**经验证的 Julia 实现；两份候选代码是实验过程，不是两个长期交付包。
 
-### 3.3 先做兼容性 gate
+### 3.3 历史提案：兼容性 gate（未执行）
+
+> [!warning] Historical proposal — not executed
+> 本节记录实施前提出的三方兼容性 gate，但该 gate 最终没有执行。已完成的 Julia 数值验证只使用固定的公开 Python fixture/reference 作为 oracle；MATLAB 源码只用于独立的 LLM 翻译路径，不构成同一 fixture 的数值基准。
 
 在写 Julia 结论前，先让 MATLAB 与 Python reader 读取同一批公开 DTA fixture：
 
@@ -128,9 +137,9 @@
 
 ## 4. 最终可写与不可写的结论
 
-完成上述 DTA 案例后，可以写：
+当前可辩护的结论是：
 
-> LLM 辅助方法把 AEWin/Mistras DTA 读取工作流迁移到了 Julia，并通过公开 fixture 与既有 Python/MATLAB 实现进行了数值核对。这说明该数值框架能够扩展到铁路 AE 研究所使用的文件工作流。
+> LLM 辅助方法把受测试的 AEWin/Mistras DTA 读取工作流迁移到了 Julia，并针对公开 Python fixture/reference 完成数值验证。MATLAB 和 Python 源码用于比较两条独立的翻译路径；只有 Python fixture 是数值 oracle。该结果证明的是与铁路钢 AE 研究相关的 **format/workflow-level applicability**，而不是真实钢材裂纹检测验证。
 
 没有真实钢 DTA/WFS 和独立 crack-growth ground truth 时，不能写：
 

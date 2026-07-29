@@ -1,0 +1,13 @@
+--- original_generation.jl
++++ fixture_normalized_probe.jl
+@@ -4,8 +4,8 @@
+ 
+ gr()  # Use the GR backend, matching the requested Plots.jl setup.
+ 
+-const DATA_FILE = "Tensile-processed.xlsx"
+-const SHEET_NAME = "CT-07"
++const DATA_FILE = "Commercial Tensile Tests.xlsx"
++const SHEET_NAME = "CT07"
+ 
+ function load_ct07(path::AbstractString=DATA_FILE; sheet::AbstractString=SHEET_NAME)
+     # XLSX.readtable reads the named worksheet as tabular data; DataFrame gives

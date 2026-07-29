@@ -1,0 +1,13 @@
+--- original_generation.py
++++ fixture_normalized_probe.py
+@@ -5,8 +5,8 @@
+ import pandas as pd
+ 
+ 
+-DATA_FILE = Path("Tensile-processed.xlsx")
+-SHEET_NAME = "CT-07"
++DATA_FILE = Path("Commercial Tensile Tests.xlsx")
++SHEET_NAME = "CT07"
+ 
+ 
+ def load_ae_data(file_path: Path, sheet_name: str) -> dict[str, np.ndarray]:

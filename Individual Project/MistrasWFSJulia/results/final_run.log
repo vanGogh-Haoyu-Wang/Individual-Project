@@ -1,0 +1,17 @@
+capture_kind=combined_process_output
+stream_separation=not_available
+working_directory=/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/MistrasWFSJulia
+command=env JULIA_DEPOT_PATH=/private/tmp/mistras_wfs_julia_final_depot /Users/vangogh/.juliaup/bin/julia --project=. --startup-file=no test/runtests.jl
+start_utc=2026-07-29T08:39:04Z
+Precompiling packages...
+  18801.2 ms  ✓ Test (serial)
+  1 dependency successfully precompiled in 19 seconds
+Precompiling packages...
+    334.9 ms  ✓ MistrasWFSJulia (serial)
+  1 dependency successfully precompiled in 0 seconds
+Test Summary:               | Pass  Total  Time
+low-level bounds and errors |    6      6  0.7s
+Test Summary:             | Pass  Total  Time
+MATLAB fixture regression |   20     20  0.4s
+end_utc=2026-07-29T08:39:26Z
+exit_code=0

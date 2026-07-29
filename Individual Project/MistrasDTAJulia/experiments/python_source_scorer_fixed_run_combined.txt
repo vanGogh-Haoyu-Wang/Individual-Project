@@ -1,0 +1,14 @@
+Chunk ID: f82b66
+Wall time: 0.9184 seconds
+Process exited with code 0
+Original token count: 51
+Output:
+hits=8
+waveforms=8
+field_mismatches=0
+max_hit_time_error_s=0.0
+max_feature_error=0.0
+max_waveform_time_error_s=0.0
+max_waveform_voltage_error_v=0.0
+unknown_message_entries=7
+unknown_message_total=26732

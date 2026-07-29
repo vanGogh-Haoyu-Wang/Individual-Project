@@ -1,0 +1,733 @@
+{
+  "source": "/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx",
+  "sha256": "2bf80527130a7eab326297a2dc1c17974dbae45cf3840217378169d227f8ea64",
+  "sheets": {
+    "S1": {
+      "dimension": "A1:BB493743",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "Current": 10.1,
+        "Chart Velocity": 1,
+        "V in": 200,
+        "Initial Crack length": 6564.185,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.945,
+        "Cycles to failure": 7322
+      },
+      "formula_count": 987702,
+      "error_counts": {},
+      "error_examples": [],
+      "hit_header_row": null,
+      "message_1_count": 0,
+      "message_173_count": 0,
+      "matched_173_1_pairs": 0,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {},
+      "recognised_schema": false
+    },
+    "S2": {
+      "dimension": "A1:BW50231",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "Current": 11.1,
+        "Chart Velocity": 1,
+        "V in": 100,
+        "Initial Crack length": 2708.29,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.43,
+        "Cycles to failure": 64476
+      },
+      "formula_count": 201088,
+      "error_counts": {},
+      "error_examples": [],
+      "hit_header_row": 8,
+      "message_1_count": 25110,
+      "message_173_count": 25110,
+      "matched_173_1_pairs": 25110,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {
+        "1": 25110
+      },
+      "recognised_schema": true
+    },
+    "S3": {
+      "dimension": "A1:BC8560",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "Current": 8.6,
+        "Chart Velocity": 1,
+        "V in": 10,
+        "Initial Crack length": 2831.655,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.445,
+        "Cycles to failure": 33212
+      },
+      "formula_count": 15860,
+      "error_counts": {
+        "#NUM!": 1,
+        "#DIV/0!": 3
+      },
+      "error_examples": [
+        {
+          "cell": "P16",
+          "error": "#NUM!",
+          "formula": "LOG(N16)"
+        },
+        {
+          "cell": "U16",
+          "error": "#DIV/0!",
+          "formula": "R16/K16"
+        },
+        {
+          "cell": "V16",
+          "error": "#DIV/0!",
+          "formula": "S16/K16"
+        },
+        {
+          "cell": "W16",
+          "error": "#DIV/0!",
+          "formula": "T16/K16"
+        }
+      ],
+      "hit_header_row": 8,
+      "message_1_count": 3553,
+      "message_173_count": 3553,
+      "matched_173_1_pairs": 3553,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {
+        "1": 3553
+      },
+      "recognised_schema": true,
+      "features": {
+        "COUN": {
+          "count": 3553,
+          "min": 1.0,
+          "mean": 19.73290177314945,
+          "median": 9.0,
+          "p90": 42.0,
+          "p95": 53.0,
+          "max": 2200.0
+        },
+        "ENER": {
+          "count": 3553,
+          "min": 0.0,
+          "mean": 36.17675204052913,
+          "median": 5.0,
+          "p90": 23.0,
+          "p95": 32.0,
+          "max": 24829.0
+        },
+        "DURATION": {
+          "count": 3553,
+          "min": 0.0,
+          "mean": 279.37236138474526,
+          "median": 211.0,
+          "p90": 594.0,
+          "p95": 804.0,
+          "max": 19143.0
+        },
+        "AMP": {
+          "count": 3553,
+          "min": 51.0,
+          "mean": 56.44666479031804,
+          "median": 56.0,
+          "p90": 63.0,
+          "p95": 65.0,
+          "max": 99.0
+        },
+        "RMS": {
+          "count": 3553,
+          "min": 0.0024,
+          "mean": 0.003418125527723051,
+          "median": 0.0026,
+          "p90": 0.0032,
+          "p95": 0.0034,
+          "max": 0.3416
+        },
+        "SIG STRNGTH": {
+          "count": 3553,
+          "min": 0.0,
+          "mean": 228566.03934703066,
+          "median": 32309.0,
+          "p90": 143992.40000000002,
+          "p95": 201811.8,
+          "max": 155095000.0
+        },
+        "ABS-ENERGY": {
+          "count": 3553,
+          "min": 2575.0,
+          "mean": 647624.1328454827,
+          "median": 21138.0,
+          "p90": 120968.2000000001,
+          "p95": 188837.1999999996,
+          "max": 586915000.0
+        },
+        "P-FRQ": {
+          "count": 3553,
+          "min": 87.0,
+          "mean": 128.44216155361667,
+          "median": 131.0,
+          "p90": 175.0,
+          "p95": 175.0,
+          "max": 351.0
+        }
+      },
+      "crack_growth_rows": [
+        {
+          "row": 16,
+          "label": 0,
+          "cycles": 0,
+          "crack_size_m": 0.0028316550000000015,
+          "delta_k": 15.747681073723463,
+          "da_dn": 0,
+          "ae_count": 0,
+          "ae_energy": 0,
+          "ae_duration": 0,
+          "cycle_interval": 0,
+          "ae_count_formula": null
+        },
+        {
+          "row": 17,
+          "label": 19.4,
+          "cycles": 11640,
+          "crack_size_m": 0.003176118593242979,
+          "delta_k": 16.668956545054893,
+          "da_dn": 2.9593092203004937e-08,
+          "ae_count": 2971,
+          "ae_energy": 452,
+          "ae_duration": 17863,
+          "cycle_interval": 11640,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">0\",Y:Y,\"<=11640\")"
+        },
+        {
+          "row": 18,
+          "label": 32.2,
+          "cycles": 19320,
+          "crack_size_m": 0.003511957628591381,
+          "delta_k": 17.557454365982416,
+          "da_dn": 4.3729041060989877e-08,
+          "ae_count": 1517,
+          "ae_energy": 83,
+          "ae_duration": 6815,
+          "cycle_interval": 7680,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">11640\",Y:Y,\"<=19320\")"
+        },
+        {
+          "row": 19,
+          "label": 37.9,
+          "cycles": 22740,
+          "crack_size_m": 0.0038407536056875163,
+          "delta_k": 18.427332645674614,
+          "da_dn": 9.61391745895132e-08,
+          "ae_count": 4356,
+          "ae_energy": 46748,
+          "ae_duration": 40791,
+          "cycle_interval": 3420,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">19320\",Y:Y,\"<=22740\")"
+        },
+        {
+          "row": 20,
+          "label": 41.1,
+          "cycles": 24660,
+          "crack_size_m": 0.004163508863385573,
+          "delta_k": 19.288418576552765,
+          "da_dn": 1.681016967177378e-07,
+          "ae_count": 124,
+          "ae_energy": 2,
+          "ae_duration": 706,
+          "cycle_interval": 1920,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">22740\",Y:Y,\"<=24660\")"
+        },
+        {
+          "row": 21,
+          "label": 44.55,
+          "cycles": 26730,
+          "crack_size_m": 0.004480877709548522,
+          "delta_k": 20.147941377235128,
+          "da_dn": 1.5331828317050672e-07,
+          "ae_count": 69,
+          "ae_energy": 7,
+          "ae_duration": 558,
+          "cycle_interval": 2070,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">24660\",Y:Y,\"<=26730\")"
+        },
+        {
+          "row": 22,
+          "label": 48.8,
+          "cycles": 29280,
+          "crack_size_m": 0.004793294844849351,
+          "delta_k": 21.01151216276071,
+          "da_dn": 1.2251652364738403e-07,
+          "ae_count": 25853,
+          "ae_energy": 24108,
+          "ae_duration": 393862,
+          "cycle_interval": 2550,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">26730\",Y:Y,\"<=29280\")"
+        },
+        {
+          "row": 23,
+          "label": 51.34,
+          "cycles": 30804.000000000004,
+          "crack_size_m": 0.005101051239281358,
+          "delta_k": 21.88371467901058,
+          "da_dn": 2.019398913595843e-07,
+          "ae_count": 2275,
+          "ae_energy": 1614,
+          "ae_duration": 47866,
+          "cycle_interval": 1524.0000000000036,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">29280\",Y:Y,\"<=30804\")"
+        },
+        {
+          "row": 24,
+          "label": 53.55,
+          "cycles": 32130,
+          "crack_size_m": 0.005404341207683805,
+          "delta_k": 22.76847786510404,
+          "da_dn": 2.2872546636685339e-07,
+          "ae_count": 8354,
+          "ae_energy": 4803,
+          "ae_duration": 121446,
+          "cycle_interval": 1325.9999999999964,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">30804\",Y:Y,\"<=32130\")"
+        },
+        {
+          "row": 25,
+          "label": 55.1,
+          "cycles": 33060,
+          "crack_size_m": 0.00570329280237271,
+          "delta_k": 23.66931758195856,
+          "da_dn": 3.2145332762247886e-07,
+          "ae_count": 25896,
+          "ae_energy": 25847,
+          "ae_duration": 350218,
+          "cycle_interval": 930,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\">32130\",Y:Y,\"<=33060\")"
+        },
+        {
+          "row": 26,
+          "label": "failure",
+          "cycles": 33140,
+          "crack_size_m": 0.0062884770665833705,
+          "delta_k": 25.532122054197384,
+          "da_dn": null,
+          "ae_count": 71416,
+          "ae_energy": 103664,
+          "ae_duration": 980125,
+          "cycle_interval": 80,
+          "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\"<=33060\")"
+        }
+      ],
+      "time_start_s": 9.779999999999998,
+      "time_end_s": 11940.380000000001,
+      "duration_s": 11930.6,
+      "ten_equal_time_bin_hit_counts": [
+        21,
+        43,
+        81,
+        54,
+        2,
+        626,
+        711,
+        272,
+        253,
+        1490
+      ],
+      "amplitude_bin_counts": {
+        "<50": 0,
+        "50-59": 2590,
+        "60-69": 947,
+        "70-79": 2,
+        "80-89": 6,
+        ">=90": 8
+      },
+      "pfrq_top_values": [
+        {
+          "value": 131.0,
+          "count": 1299
+        },
+        {
+          "value": 107.0,
+          "count": 575
+        },
+        {
+          "value": 175.0,
+          "count": 447
+        },
+        {
+          "value": 92.0,
+          "count": 417
+        },
+        {
+          "value": 112.0,
+          "count": 360
+        },
+        {
+          "value": 170.0,
+          "count": 147
+        },
+        {
+          "value": 136.0,
+          "count": 108
+        },
+        {
+          "value": 126.0,
+          "count": 80
+        },
+        {
+          "value": 166.0,
+          "count": 29
+        },
+        {
+          "value": 161.0,
+          "count": 22
+        }
+      ],
+      "exploratory_correlations": {
+        "n_intervals": 9,
+        "paris_log10_slope": 6.070320118705839,
+        "paris_log10_intercept": -14.816744819736662,
+        "paris_log10_pearson_r": 0.9295634983964074,
+        "da_dn_vs_ae_count_per_cycle_r": 0.7209025537309856,
+        "da_dn_vs_ae_energy_per_cycle_r": 0.5730034745483024,
+        "da_dn_vs_ae_duration_per_cycle_r": 0.7261468319370892
+      },
+      "failure_row_audit": {
+        "row": 26,
+        "cycles_in_failure_row": 33140,
+        "cycles_to_failure_config": 33212,
+        "cycle_difference": 72,
+        "ae_count_formula": "SUMIFS(Z:Z,Y:Y,\"<=33060\")",
+        "formula_lacks_lower_bound": true,
+        "exclude_from_interval_analysis": true
+      }
+    },
+    "S4": {
+      "dimension": "A1:BC140611",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "Current": 17.5,
+        "Chart Velocity": 1,
+        "V in": 17,
+        "Initial Crack length": 2298.845,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 2.065,
+        "Cycles to failure": 49325
+      },
+      "formula_count": 177667,
+      "error_counts": {
+        "#DIV/0!": 2
+      },
+      "error_examples": [
+        {
+          "cell": "N16",
+          "error": "#DIV/0!",
+          "formula": "M16/K16"
+        },
+        {
+          "cell": "P16",
+          "error": "#DIV/0!",
+          "formula": "LOG(N16)"
+        }
+      ],
+      "hit_header_row": 8,
+      "message_1_count": 70301,
+      "message_173_count": 70302,
+      "matched_173_1_pairs": 70301,
+      "pair_mismatches": 1,
+      "pair_mismatch_examples": [
+        {
+          "row": null,
+          "reason": "unmatched final waveform marker"
+        }
+      ],
+      "channel_counts": {
+        "1": 70301
+      },
+      "recognised_schema": true
+    },
+    "S5": {
+      "dimension": "A1:BB107154",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "Current": 18.6,
+        "Chart Velocity": 1,
+        "V in": 20,
+        "Initial Crack length": 1601.12,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.49,
+        "Cycles to failure": 55022
+      },
+      "formula_count": 107463,
+      "error_counts": {
+        "#DIV/0!": 2
+      },
+      "error_examples": [
+        {
+          "cell": "N16",
+          "error": "#DIV/0!",
+          "formula": "M16/K16"
+        },
+        {
+          "cell": "P16",
+          "error": "#DIV/0!",
+          "formula": "LOG(N16)"
+        }
+      ],
+      "hit_header_row": 8,
+      "message_1_count": 53573,
+      "message_173_count": 53573,
+      "matched_173_1_pairs": 53573,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {
+        "1": 53573
+      },
+      "recognised_schema": true
+    },
+    "S6": {
+      "dimension": "A1:AK421183",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "Current": 10.6,
+        "Chart Velocity": 1,
+        "V in": 10,
+        "Initial Crack length": 2666.78,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.35,
+        "Cycles to failure": 90349
+      },
+      "formula_count": 858413,
+      "error_counts": {
+        "#DIV/0!": 2
+      },
+      "error_examples": [
+        {
+          "cell": "L16",
+          "error": "#DIV/0!",
+          "formula": "K16/I16"
+        },
+        {
+          "cell": "N16",
+          "error": "#DIV/0!",
+          "formula": "LOG(L16)"
+        }
+      ],
+      "hit_header_row": null,
+      "message_1_count": 0,
+      "message_173_count": 0,
+      "matched_173_1_pairs": 0,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {},
+      "recognised_schema": false
+    },
+    "S7": {
+      "dimension": "A1:AV38982",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "V in": 10,
+        "Initial Crack length": 2856.395,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.275,
+        "Cycles to failure": 72694
+      },
+      "formula_count": 116746,
+      "error_counts": {
+        "#DIV/0!": 7
+      },
+      "error_examples": [
+        {
+          "cell": "N16",
+          "error": "#DIV/0!",
+          "formula": "M16/K16"
+        },
+        {
+          "cell": "P16",
+          "error": "#DIV/0!",
+          "formula": "LOG(N16)"
+        },
+        {
+          "cell": "N28",
+          "error": "#DIV/0!",
+          "formula": null
+        },
+        {
+          "cell": "P28",
+          "error": "#DIV/0!",
+          "formula": null
+        },
+        {
+          "cell": "U28",
+          "error": "#DIV/0!",
+          "formula": null
+        },
+        {
+          "cell": "V28",
+          "error": "#DIV/0!",
+          "formula": null
+        },
+        {
+          "cell": "W28",
+          "error": "#DIV/0!",
+          "formula": null
+        }
+      ],
+      "hit_header_row": null,
+      "message_1_count": 0,
+      "message_173_count": 0,
+      "matched_173_1_pairs": 0,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {},
+      "recognised_schema": false
+    },
+    "S8": {
+      "dimension": "A1:AE130590",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "V in": 10,
+        "Initial Crack length": 2730.275,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 0.985,
+        "Cycles to failure": 67152
+      },
+      "formula_count": 261535,
+      "error_counts": {
+        "#NUM!": 3
+      },
+      "error_examples": [
+        {
+          "cell": "P16",
+          "error": "#NUM!",
+          "formula": "LOG(N16)"
+        },
+        {
+          "cell": "P27",
+          "error": "#NUM!",
+          "formula": null
+        },
+        {
+          "cell": "P28",
+          "error": "#NUM!",
+          "formula": null
+        }
+      ],
+      "hit_header_row": null,
+      "message_1_count": 0,
+      "message_173_count": 0,
+      "matched_173_1_pairs": 0,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {},
+      "recognised_schema": false
+    },
+    "S9": {
+      "dimension": "A1:AD109428",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "V in": 10,
+        "Initial Crack length": 2694.64,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.395,
+        "Cycles to failure": 77991
+      },
+      "formula_count": 219163,
+      "error_counts": {
+        "#DIV/0!": 2
+      },
+      "error_examples": [
+        {
+          "cell": "N16",
+          "error": "#DIV/0!",
+          "formula": "M16/K16"
+        },
+        {
+          "cell": "P16",
+          "error": "#DIV/0!",
+          "formula": "LOG(N16)"
+        }
+      ],
+      "hit_header_row": null,
+      "message_1_count": 0,
+      "message_173_count": 0,
+      "matched_173_1_pairs": 0,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {},
+      "recognised_schema": false
+    },
+    "S10": {
+      "dimension": "A1:AK72149",
+      "config": {
+        "Max Load": 6.5,
+        "Min Load": 0.65,
+        "R": 0.1,
+        "Frequency": 1,
+        "V in": 10,
+        "Initial Crack length": 2971.875,
+        "Width": 20,
+        "Thickness": 10,
+        "Half of sensors distance": 1.01,
+        "Cycles to failure": 61436
+      },
+      "formula_count": 144569,
+      "error_counts": {
+        "#NUM!": 1
+      },
+      "error_examples": [
+        {
+          "cell": "O16",
+          "error": "#NUM!",
+          "formula": "LOG(M16)"
+        }
+      ],
+      "hit_header_row": null,
+      "message_1_count": 0,
+      "message_173_count": 0,
+      "matched_173_1_pairs": 0,
+      "pair_mismatches": 0,
+      "pair_mismatch_examples": [],
+      "channel_counts": {},
+      "recognised_schema": false
+    }
+  }
+}

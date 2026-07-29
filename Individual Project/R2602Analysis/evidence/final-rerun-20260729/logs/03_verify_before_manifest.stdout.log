@@ -1,0 +1,49 @@
+{
+  "correlation_interval_count": 9,
+  "failures": [],
+  "input": {
+    "actual_sha256": "2bf80527130a7eab326297a2dc1c17974dbae45cf3840217378169d227f8ea64",
+    "expected_sha256": "2bf80527130a7eab326297a2dc1c17974dbae45cf3840217378169d227f8ea64",
+    "logical_name": "Copy of current R260_2.xlsx",
+    "matched": true
+  },
+  "invalid_failure_row_excluded": true,
+  "package_manifest": {
+    "reason": "explicitly skipped",
+    "status": "not_checked"
+  },
+  "pngs": [
+    {
+      "bytes": 209709,
+      "height": 1500,
+      "path": "s3_hit_timing_and_pfrq.png",
+      "valid": true,
+      "width": 3600
+    },
+    {
+      "bytes": 201766,
+      "height": 1500,
+      "path": "s3_crack_growth_exploratory.png",
+      "valid": true,
+      "width": 3600
+    }
+  ],
+  "s3_records": {
+    "actual_hits": 3553,
+    "actual_pairs": 3553,
+    "actual_waveform_markers": 3553,
+    "expected_hits": 3553,
+    "expected_pairs": 3553,
+    "expected_waveform_markers": 3553,
+    "extra_hits": 0,
+    "extra_pairs": 0,
+    "extra_waveform_markers": 0,
+    "missing_hits": 0,
+    "missing_pairs": 0,
+    "missing_waveform_markers": 0,
+    "order_mismatches": 0
+  },
+  "scope": "processed_hit_level_s3_exploratory_audit",
+  "status": "passed",
+  "time_bin_total": 3553
+}

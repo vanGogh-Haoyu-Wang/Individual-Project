@@ -1,8 +1,11 @@
-"""Build reproducible T01--T09 legacy-versus-adaptive comparison artifacts."""
+#!/usr/bin/env python3
+"""Build the formal T01--T09 Legacy/Adaptive framing comparison."""
 
 from __future__ import annotations
 
+import argparse
 import json
+import tomllib
 from pathlib import Path
 
 import numpy as np
@@ -10,178 +13,202 @@ import pandas as pd
 from scipy.io import loadmat
 
 
-ROOT = Path(__file__).resolve().parents[1] / "outputs" / "t01-t09-revalidation"
-SUMMARY_DIR = ROOT / "summary"
-REPORT_PATH = SUMMARY_DIR / "T01-T09 Legacy vs Adaptive Comparison.md"
+PACKAGE = Path(__file__).resolve().parents[3]
+GROUPS = [f"T{index:02d}" for index in range(1, 10)]
+OUTPUT_COLUMNS = [
+    "group",
+    "files",
+    "legacy_logical_frames",
+    "adaptive_complete_windows",
+    "legacy_selected_windows",
+    "legacy_top1_rows",
+    "adaptive_selected_events",
+    "adaptive_top1_rows",
+    "adaptive_top3_rows",
+    "legacy_selection_rate",
+    "adaptive_selection_rate",
+    "selected_count_ratio",
+    "legacy_matched_by_adaptive",
+    "legacy_missing_from_adaptive",
+]
 
 
-def percentage(numerator: int, denominator: int) -> str:
-    return f"{100 * numerator / denominator:.3f}%"
+def selection_metrics(
+    legacy_selected: int,
+    legacy_frames: int,
+    adaptive_selected: int,
+    adaptive_windows: int,
+) -> dict[str, float]:
+    if min(legacy_selected, legacy_frames, adaptive_selected, adaptive_windows) < 0:
+        raise ValueError("framing counts cannot be negative")
+    if not legacy_frames or not adaptive_windows or not legacy_selected:
+        raise ValueError("framing denominators and Legacy selected count must be non-zero")
+    return {
+        "legacy_selection_rate": legacy_selected / legacy_frames,
+        "adaptive_selection_rate": adaptive_selected / adaptive_windows,
+        "selected_count_ratio": adaptive_selected / legacy_selected,
+    }
 
 
-def describe_frequency(values: pd.Series) -> tuple[float, float, float]:
-    return float(values.median()), float(values.quantile(0.25)), float(values.quantile(0.75))
+def load_config(path: Path) -> dict:
+    config = tomllib.loads(path.read_text())
+    package = path.resolve().parent
+
+    def resolve(value: str) -> Path:
+        candidate = Path(value).expanduser()
+        return candidate if candidate.is_absolute() else (package / candidate).resolve()
+
+    return {
+        "legacy_root": resolve(config["paths"]["legacy_group_results"]),
+        "adaptive_root": resolve(config["paths"]["adaptive_results"]),
+        "output": package
+        / "results/peak-frequency/legacy-adaptive-framing",
+        "windows_per_legacy_file": int(config["analysis"]["legacy_windows_per_file"]),
+        "hop_samples": int(config["analysis"]["hop_samples"]),
+    }
 
 
-def main() -> None:
-    SUMMARY_DIR.mkdir(parents=True, exist_ok=True)
+def build_rows(config: dict) -> pd.DataFrame:
     rows: list[dict[str, object]] = []
-
-    for group_number in range(1, 10):
-        group = f"T{group_number:02d}"
-        tag = group.lower()
-        legacy_dir = ROOT / f"{tag}-matlab-legacy"
-        adaptive_dir = ROOT / f"{tag}-python-adaptive"
-
+    for group in GROUPS:
+        legacy_dir = config["legacy_root"] / group
+        adaptive_dir = config["adaptive_root"] / group.lower() / "matlab"
         legacy_meta = json.loads((legacy_dir / "legacy_run_metadata.json").read_text())
-        adaptive_meta = json.loads((adaptive_dir / "run_metadata.json").read_text())
+        legacy_files = [Path(path).name for path in legacy_meta["input_files"]]
         legacy_top1 = pd.read_csv(legacy_dir / "legacy_top1_events.csv")
+        selected = np.atleast_1d(
+            loadmat(
+                legacy_dir / "legacy_peak_freq_export.mat",
+                variable_names=["event_index"],
+                squeeze_me=True,
+            )["event_index"]
+        ).astype(np.int64)
+
+        thresholds = pd.read_csv(adaptive_dir / "thresholds.csv")
+        adaptive_selected = pd.read_csv(adaptive_dir / "selected_events.csv")
         adaptive_top1 = pd.read_csv(adaptive_dir / "baseline_events.csv")
-        legacy_mat = loadmat(legacy_dir / "legacy_peak_freq_export.mat", squeeze_me=True)
+        adaptive_top3 = pd.read_csv(adaptive_dir / "top3_events.csv")
+        adaptive_files = thresholds["file_name"].tolist()
+        if legacy_files != adaptive_files:
+            raise ValueError(f"{group}: Legacy and Adaptive file order differs")
 
-        selected_indices = np.atleast_1d(legacy_mat["event_index"]).astype(int)
-        candidate_windows = int(np.atleast_1d(legacy_mat["P"]).size)
-        file_names = [Path(path).name for path in legacy_meta["input_files"]]
-        windows_per_file = candidate_windows // len(file_names)
-        if candidate_windows % len(file_names):
-            raise ValueError(f"{group}: candidate windows do not divide into files")
+        windows_per_file = config["windows_per_legacy_file"]
+        legacy_frames = len(legacy_files) * windows_per_file
+        adaptive_windows = int(thresholds["candidate_window_count"].sum())
+        if int(thresholds["selected_event_count"].sum()) != len(adaptive_selected):
+            raise ValueError(f"{group}: Adaptive threshold and event counts differ")
 
-        # MATLAB's buffer(..., 200, 1) produces logical frames with a 199-sample
-        # hop. Its first frame includes an initial zero, so logical frame i maps
-        # to the Adaptive raw-waveform start sample (i - 1) * 199.
         legacy_keys = {
-            (file_names[(index - 1) // windows_per_file], ((index - 1) % windows_per_file) * 199)
-            for index in selected_indices
+            (
+                legacy_files[(index - 1) // windows_per_file],
+                ((index - 1) % windows_per_file) * config["hop_samples"],
+            )
+            for index in selected
         }
-        adaptive_keys = {
-            (row.file_name, int(round(row.event_time_s * 1_000_000)))
-            for row in adaptive_top1.itertuples(index=False)
-        }
-        matched_windows = len(legacy_keys & adaptive_keys)
-        missing_windows = len(legacy_keys - adaptive_keys)
-
-        legacy_median, legacy_q1, legacy_q3 = describe_frequency(legacy_top1["peak_frequency_khz"])
-        adaptive_median, adaptive_q1, adaptive_q3 = describe_frequency(adaptive_top1["frequency_khz"])
-        thresholds = list(adaptive_meta["thresholds"].values())
+        adaptive_keys = set(
+            zip(
+                adaptive_selected["file_name"],
+                adaptive_selected["start_sample"].astype(int),
+            )
+        )
+        metrics = selection_metrics(
+            len(selected), legacy_frames, len(adaptive_selected), adaptive_windows
+        )
         rows.append(
             {
                 "group": group,
-                "files": len(file_names),
-                "candidate_windows": candidate_windows,
-                "legacy_selected_windows": len(selected_indices),
+                "files": len(legacy_files),
+                "legacy_logical_frames": legacy_frames,
+                "adaptive_complete_windows": adaptive_windows,
+                "legacy_selected_windows": len(selected),
                 "legacy_top1_rows": len(legacy_top1),
-                "legacy_no_peak_windows": int(legacy_meta.get("events_without_valid_peak", 0)),
+                "adaptive_selected_events": len(adaptive_selected),
                 "adaptive_top1_rows": len(adaptive_top1),
-                "legacy_active_files": len({file_name for file_name, _ in legacy_keys}),
-                "adaptive_active_files": int(adaptive_top1["file_name"].nunique()),
-                "adaptive_only_windows": len(adaptive_keys - legacy_keys),
-                "legacy_selection_rate": 100 * len(selected_indices) / candidate_windows,
-                "adaptive_selection_rate": 100 * len(adaptive_top1) / candidate_windows,
-                "adaptive_to_legacy_ratio": len(adaptive_top1) / len(selected_indices),
-                "legacy_windows_matched_by_adaptive": matched_windows,
-                "legacy_windows_missing_from_adaptive": missing_windows,
-                "legacy_median_khz": legacy_median,
-                "legacy_iqr_low_khz": legacy_q1,
-                "legacy_iqr_high_khz": legacy_q3,
-                "adaptive_median_khz": adaptive_median,
-                "adaptive_iqr_low_khz": adaptive_q1,
-                "adaptive_iqr_high_khz": adaptive_q3,
-                "adaptive_threshold_min": min(thresholds),
-                "adaptive_threshold_max": max(thresholds),
+                "adaptive_top3_rows": len(adaptive_top3),
+                **metrics,
+                "legacy_matched_by_adaptive": len(legacy_keys & adaptive_keys),
+                "legacy_missing_from_adaptive": len(legacy_keys - adaptive_keys),
             }
         )
 
-    summary = pd.DataFrame(rows)
-    summary.to_csv(SUMMARY_DIR / "t01_t09_comparison_summary.csv", index=False)
+    table = pd.DataFrame(rows, columns=OUTPUT_COLUMNS)
+    totals = {
+        column: int(table[column].sum())
+        for column in OUTPUT_COLUMNS
+        if column
+        not in {
+            "group",
+            "legacy_selection_rate",
+            "adaptive_selection_rate",
+            "selected_count_ratio",
+        }
+    }
+    totals["group"] = "TOTAL"
+    totals.update(
+        selection_metrics(
+            totals["legacy_selected_windows"],
+            totals["legacy_logical_frames"],
+            totals["adaptive_selected_events"],
+            totals["adaptive_complete_windows"],
+        )
+    )
+    return pd.concat([table, pd.DataFrame([totals])], ignore_index=True)[OUTPUT_COLUMNS]
 
-    total_candidates = int(summary.candidate_windows.sum())
-    total_legacy = int(summary.legacy_selected_windows.sum())
-    total_legacy_top1 = int(summary.legacy_top1_rows.sum())
-    total_adaptive = int(summary.adaptive_top1_rows.sum())
-    total_missing_peaks = int(summary.legacy_no_peak_windows.sum())
-    all_matched = int(summary.legacy_windows_matched_by_adaptive.sum())
-    missing_from_adaptive = int(summary.legacy_windows_missing_from_adaptive.sum())
 
+def write_outputs(table: pd.DataFrame, output: Path) -> None:
+    output.mkdir(parents=True, exist_ok=True)
+    table.to_csv(output / "t01_t09_comparison_summary.csv", index=False)
+    total = table.loc[table["group"] == "TOTAL"].iloc[0]
+    shortfall = int(total["adaptive_selected_events"] * 3 - total["adaptive_top3_rows"])
     lines = [
-        "# T01-T09 Legacy vs Adaptive Comparison",
+        "# T01–T09 Legacy and Adaptive Framing Comparison",
         "",
-        "**Date:** 2026-07-15  ",
-        "**Purpose:** Independent repeat validation of the Legacy MATLAB-style AE peak-frequency workflow against the Adaptive Python workflow across every available T01-T09 raw-waveform group.",
+        "This table separates the framing domains. Legacy T01–T09 is MATLAB-only",
+        "descriptive context; Adaptive/Top-3 T01–T09 is the three-language result.",
         "",
-        "## Scope and Reproducibility",
+        "| Workflow | Files | Framing count | Selected | Rate | Output rows |",
+        "|---|---:|---:|---:|---:|---:|",
+        (
+            f"| Legacy MATLAB context | {int(total['files']):,} | "
+            f"{int(total['legacy_logical_frames']):,} logical frames | "
+            f"{int(total['legacy_selected_windows']):,} | "
+            f"{100 * total['legacy_selection_rate']:.3f}% | "
+            f"{int(total['legacy_top1_rows']):,} valid Top-1 |"
+        ),
+        (
+            f"| Adaptive/Top-3 | {int(total['files']):,} | "
+            f"{int(total['adaptive_complete_windows']):,} complete windows | "
+            f"{int(total['adaptive_selected_events']):,} | "
+            f"{100 * total['adaptive_selection_rate']:.3f}% | "
+            f"{int(total['adaptive_top3_rows']):,} Top-3 |"
+        ),
         "",
-        f"- Input: {int(summary.files.sum())} MAT waveform files in T01-T09.",
-        "- Outputs: one Legacy export and one Adaptive export per group, stored in `ae-peak-frequency/outputs/t01-t09-revalidation/`.",
-        "- The original `Peak_Freq.m` was not edited. A companion MATLAB exporter reproduces its computational path and writes machine-readable CSV/MAT/JSON outputs.",
-        "- The comparison uses the same method as the earlier T02-T04 note, extended to all nine groups.",
+        (
+            f"Adaptive selected {total['selected_count_ratio']:.2f}× as many windows "
+            "as Legacy. This is a selected-count ratio, not a same-denominator rate ratio."
+        ),
+        (
+            f"The Top-3 table is {shortfall} rows below three rows per selected event: "
+            "two events have one valid peak and ten have two."
+        ),
         "",
-        "## Methods Compared",
-        "",
-        "### Legacy MATLAB-style workflow",
-        "",
-        "1. Sort MAT files by filename; use the mean and extreme values of the first file for the complete group.",
-        "2. Subtract that mean, append the original 1,000,000-sample zero padding, and retain only samples at or beyond the first-file extrema.",
-        "3. Compute a 200-sample moving RMS and select 200-sample frames with one-sample overlap (199-sample hop) above the fixed threshold 0.1.",
-        "4. Calculate a 200-point FFT for each selected window; retain the strongest detected peak with a 20 kHz minimum peak distance.",
-        "",
-        "### Adaptive Python workflow",
-        "",
-        "1. Process each MAT file independently and subtract its own mean.",
-        "2. Keep the raw centred waveform, without the first-file-extrema filter or appended padding.",
-        "3. Use the same 200-sample window and one-sample overlap (199-sample hop), but set the RMS threshold per file as `median + 8 x 1.4826 x MAD`.",
-        "4. Use the same FFT length, frequency range, Top-1 peak output, and 20 kHz minimum peak distance.",
-        "",
-        "The raw threshold numbers are not directly comparable: Legacy RMS is calculated after an extreme-value filter and zero padding, while Adaptive RMS is calculated on the original centred waveform.",
-        "",
-        "## Results Summary",
-        "",
-        "| Group | Files | Candidate windows | Legacy selected (active files) | Adaptive Top-1 (active files) | Adaptive-only | Legacy rate | Adaptive rate | Adaptive/Legacy | Legacy windows also adaptive |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "The additional Adaptive selections are not confirmed physical AE damage events.",
     ]
-    for row in rows:
-        lines.append(
-            f"| {row['group']} | {row['files']} | {row['candidate_windows']:,} | {row['legacy_selected_windows']:,} ({row['legacy_active_files']}/{row['files']}) | {row['adaptive_top1_rows']:,} ({row['adaptive_active_files']}/{row['files']}) | {row['adaptive_only_windows']:,} | {row['legacy_selection_rate']:.3f}% | {row['adaptive_selection_rate']:.3f}% | {row['adaptive_to_legacy_ratio']:.1f}x | {row['legacy_windows_matched_by_adaptive']:,}/{row['legacy_selected_windows']:,} |"
-        )
+    (output / "T01-T09 Legacy vs Adaptive Comparison.md").write_text(
+        "\n".join(lines) + "\n"
+    )
 
-    lines += [
-        "",
-        "## Per-group Frequency Results",
-        "",
-        "Frequency values below are Top-1 peak frequencies in kHz. IQR gives the middle 50% of results.",
-        "",
-        "| Group | Legacy median (IQR) | Adaptive median (IQR) | Adaptive threshold range | Result |",
-        "|---|---:|---:|---:|---|",
-    ]
-    for row in rows:
-        issue = "All Legacy-selected windows were also selected by Adaptive."
-        if row["legacy_no_peak_windows"]:
-            issue += f" {row['legacy_no_peak_windows']} Legacy-selected window had no valid FFT peak."
-        lines.append(
-            f"| {row['group']} | {row['legacy_median_khz']:.1f} ({row['legacy_iqr_low_khz']:.1f}-{row['legacy_iqr_high_khz']:.1f}) | {row['adaptive_median_khz']:.1f} ({row['adaptive_iqr_low_khz']:.1f}-{row['adaptive_iqr_high_khz']:.1f}) | {row['adaptive_threshold_min']:.6f}-{row['adaptive_threshold_max']:.6f} | {issue} |"
-        )
 
-    lines += [
-        "",
-        "## Interpretation",
-        "",
-        f"1. **The repeated result is consistent across all nine groups.** Adaptive selected {total_adaptive:,} Top-1 windows from {total_candidates:,} candidates ({percentage(total_adaptive, total_candidates)}), compared with {total_legacy:,} Legacy-selected windows ({percentage(total_legacy, total_candidates)}). Adaptive therefore returned {total_adaptive / total_legacy:.1f} times as many candidate events.",
-        f"2. **Adaptive retained the Legacy selections.** {all_matched:,} of {total_legacy:,} Legacy-selected windows mapped exactly to an Adaptive selected window; {missing_from_adaptive:,} were absent. This is an event-selection containment result, not proof that every added Adaptive window is real AE.",
-        "3. **The difference is caused by selection logic, not by using a different FFT.** Both methods use the same 200-sample FFT, Top-1 peak representation, and 20 kHz spacing. The major change is the gate before the FFT: a fixed, group-level and strongly filtered Legacy gate versus a per-file, robust and unfiltered Adaptive gate.",
-        "4. **Adaptive frequencies are not expected to be numerically identical to Legacy frequencies.** Adaptive includes many lower-amplitude windows that Legacy discarded, so its median and IQR describe a broader population. The appropriate next comparison is matched-window frequency agreement, followed by waveform and mechanical-data checks.",
-        f"5. **T09 exposed one Legacy robustness limitation.** {total_missing_peaks} of {total_legacy:,} Legacy-selected windows had no valid local FFT peak. The original `Peak_Freq.m` assumes that every selected window yields a peak and would form unequal output vectors here. The companion exporter recorded this case and excluded it only from the frequency table; the selected window remains counted. This is not evidence of a bad raw file.",
-        "",
-        "## Conclusion",
-        "",
-        "The T01-T09 repeat validation supports the earlier T02-T04 conclusion: the Adaptive workflow is a reproducible superset of the Legacy selection on these nine datasets, while producing substantially more candidate windows. That is a useful algorithmic improvement because it removes dependence on one fixed threshold and one first-file extreme-value setting. It is not yet a claim that the extra Adaptive windows are all genuine AE events or that the method is better for a particular material. Those claims require checking representative raw waveforms and aligning event times with tensile load/displacement or other experiment labels.",
-        "",
-        "## Next Validation Step",
-        "",
-        "For each group, sample matched Legacy/Adaptive windows and Adaptive-only windows from low, middle, and high test activity. Plot their raw waveform, RMS, and FFT, then align them with the mechanical record once the correct specimen/time mapping is confirmed. This will test whether the added Adaptive detections are physical AE, background noise, or repeated windows from the same burst.",
-    ]
-    REPORT_PATH.write_text("\n".join(lines) + "\n")
-    print(summary.to_string(index=False))
-    print(f"\nWrote {REPORT_PATH}")
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", type=Path, required=True)
+    args = parser.parse_args()
+    config = load_config(args.config)
+    table = build_rows(config)
+    write_outputs(table, config["output"])
+    print(table.to_string(index=False))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

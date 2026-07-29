@@ -1,0 +1,25 @@
+Chunk ID: 5ab940
+Wall time: 1.6727 seconds
+Process exited with code 1
+Original token count: 302
+Output:
+ERROR: MethodError: objects of type Int64 are not callable
+The object of type `Int64` exists, but no method is defined for this combination of argument types when trying to treat it as a callable object.
+Maybe you forgot to use an operator such as *, ^, %, / etc. ?
+Stacktrace:
+ [1] find_feature_chids(body::Vector{UInt8}, body_offset::Int64)
+   @ Main.MistrasDTAJulia ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/matlab_source_candidate.jl:161
+ [2] parse_setup(body::Vector{UInt8}, body_offset::Int64)
+   @ Main.MistrasDTAJulia ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/matlab_source_candidate.jl:142
+ [3] read_dta(path::String; read_waveforms::Bool)
+   @ Main.MistrasDTAJulia ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/matlab_source_candidate.jl:102
+ [4] read_dta(path::String)
+   @ Main.MistrasDTAJulia ~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia/experiments/matlab_source_candidate.jl:70
+ [5] top-level scope
+   @ none:1
+ [6] eval(m::Module, e::Any)
+   @ Core ./boot.jl:489
+ [7] exec_options(opts::Base.JLOptions)
+   @ Base ./client.jl:283
+ [8] _start()
+   @ Base ./client.jl:550

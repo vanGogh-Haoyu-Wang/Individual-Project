@@ -1,0 +1,30 @@
+COMMAND:
+julia --project=. -e 'using Pkg; Pkg.test()'
+
+EXIT CODE: 0
+
+COMBINED OUTPUT:
+     Testing MistrasDTAJulia
+      Status `/private/var/folders/1m/zcbwdr_x7mn3nz0hct3jfw1m0000gn/T/jl_8ocVIP/Project.toml`
+  [a9469b2c] MistrasDTAJulia v0.1.0 `~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia`
+  [8dfed614] Test v1.11.0
+      Status `/private/var/folders/1m/zcbwdr_x7mn3nz0hct3jfw1m0000gn/T/jl_8ocVIP/Manifest.toml`
+  [a9469b2c] MistrasDTAJulia v0.1.0 `~/Documents/Obsidian/brainmse/Individual Project/MistrasDTAJulia`
+  [2a0f44e3] Base64 v1.11.0
+  [b77e0a4c] InteractiveUtils v1.11.0
+  [ac6e5ff7] JuliaSyntaxHighlighting v1.12.0
+  [56ddb016] Logging v1.11.0
+  [d6f4376e] Markdown v1.11.0
+  [9a3f8284] Random v1.11.0
+  [ea8e919c] SHA v0.7.0
+  [9e88b42a] Serialization v1.11.0
+  [f489334b] StyledStrings v1.11.0
+  [8dfed614] Test v1.11.0
+     Testing Running tests...
+Test Summary:      | Pass  Total  Time
+low-level decoding |   10     10  1.0s
+Test Summary:                          | Pass  Total  Time
+invalid setup and unsupported dialects |    8      8  0.3s
+Test Summary:                       | Pass  Total  Time
+Python fixture numerical regression |   38     38  1.9s
+     Testing MistrasDTAJulia tests passed

@@ -44,19 +44,30 @@ hits_only = read_dta(path; read_waveforms=false)
 
 ## Reproduce the evidence
 
-The Python oracle requires NumPy. Run it with the existing project Python
-environment or another isolated environment containing NumPy:
+Verify the frozen Python fixture and oracle without regenerating them:
 
 ```sh
-python tools/export_python_oracle.py
 shasum -a 256 -c test/reference/reference.sha256
 ```
 
-Run the Julia validation:
+With an environment containing NumPy and pytest, the pinned upstream
+regression can also be run directly:
+
+```sh
+python -m pytest -q upstream/python/test_MistrasDTA.py \
+  --dtaDir=test/data/python --refDir=test/reference
+```
+
+Run the Julia validation and then verify the complete evidence package:
 
 ```sh
 julia --project=. -e 'using Pkg; Pkg.test()'
+shasum -a 256 -c MANIFEST.sha256
 ```
+
+`tools/export_python_oracle.py` is retained to document how the plain oracle
+was produced. It is not part of routine verification because the oracle is
+frozen.
 
 Generate the optional waveform figures without adding a Julia dependency:
 
@@ -68,13 +79,19 @@ This writes `results/waveform_01_julia_vs_python.png` and
 `results/all_8_waveforms.png`. The script calls the Julia reader, compares its
 arrays with the frozen Python oracle, and stops before plotting if they differ.
 
-The test run writes `results/comparison_summary.toml`. The verified reference
-result is:
+The test run writes `results/comparison_summary.toml`. It calculates
+missing/extra counts separately for hits and waveforms, checks both record
+orders, and reports per-field mismatches and maximum absolute errors. The
+verified reference result is:
 
 - 8 hits and 8 waveforms;
 - zero missing or extra records;
+- identical hit and waveform order;
 - zero field or waveform-length mismatches;
-- zero observed hit, feature, waveform-time, and waveform-voltage error.
+- all numerical fields within the fixed tolerances.
+
+The 56-test Julia suite includes deliberate delete, add and reorder mutations
+that must be rejected by the comparator.
 
 ## Interpretation boundary
 
@@ -86,4 +103,5 @@ the 2012 rail experiment, or establish support for every AEWin/Mistras format
 version.
 
 See `experiments/experiment_record.md` for the isolated GPT-5.5
-MATLAB-source versus Python-source generation experiment.
+MATLAB-source versus Python-source generation experiment, and
+`MANIFEST.sha256` for the frozen artifact set.

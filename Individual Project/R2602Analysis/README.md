@@ -1,34 +1,69 @@
-# R260_2 supplementary analysis
+# R260_2 processed-workbook evidence package
 
-> Project-level scope and defensible claims:
+> Project-level current status:
 > [Individual Project overview](../README.md)
 
-This directory contains a read-only, streaming analysis of:
+This is a secondary, bounded steel-related case for the thesis body. It audits
+a processed hit-level workbook labelled `R260_2`; it is not a raw-waveform or
+crack-detection validation.
 
-`/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx`
+## Validated boundary
 
-The 99 MB source workbook is never modified or loaded as one in-memory table.
-The script streams worksheet XML so the large S1–S10 sheets remain
-reproducible on the current machine.
+- The external workbook is read-only and frozen by `EXTERNAL_INPUTS.sha256`.
+- S3 contains 3,553 Msg-1 records, 3,553 Msg-173 waveform markers and 3,553
+  sequential time/channel pairs.
+- Missing, extra and order-mismatch counts are zero for this bounded S3 audit.
+- The ten equal-duration time bins reconcile to 3,553 records.
+- The invalid failure row remains in the source but is excluded from the
+  nine-interval exploratory calculation.
+- Both S3 PNG outputs are checked for a valid PNG signature and non-zero image
+  dimensions.
 
-Run:
+The workbook has no raw ADC waveform oracle. Material grade, specimen mapping,
+field units, data licence and the authoritative S3 failure-cycle count remain
+unconfirmed; see [PROVENANCE.md](PROVENANCE.md).
+
+## Reproduce without overwriting historical results
+
+Set `R260_WORKBOOK` to the local path of `Copy of current R260_2.xlsx`, then
+choose a new staging directory:
 
 ```sh
-python tools/analyse_r260.py \
-  "/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx" \
-  --output results
-
-uv run tools/plot_s3.py
+python3 tools/final_rehearsal.py \
+  --workbook "$R260_WORKBOOK" \
+  --staging evidence/final-rerun-20260729
 ```
 
-Primary outputs:
+The runner refuses an existing staging directory and never writes to
+`results/`. It records commands, separate stdout/stderr logs, exit codes,
+timestamps, Python/uv/NumPy/matplotlib/OS details, protected-result hashes and
+the generated-output manifest.
 
-- `results/analysis_report.md`
-- `results/specimen_summary.tsv`
-- `results/s3_feature_summary.tsv`
-- `results/s3_crack_growth.tsv`
-- `results/analysis.json`
-- two S3 analysis figures
+After the runner writes the complete package manifest, verify it independently:
 
-The workbook is treated as a processed rail-steel AE dataset labelled
-`R260_2`. Its exact steel grade and specimen provenance remain unconfirmed.
+```sh
+python3 tools/verify_r260.py \
+  --workbook "$R260_WORKBOOK" \
+  --results evidence/final-rerun-20260729/outputs \
+  --package-root .
+```
+
+Success requires exit code 0. `MANIFEST.sha256` covers every regular package
+file except itself and transient cache files.
+
+## Evidence roles
+
+- `results/`: preserved historical exploratory outputs.
+- `evidence/final-rerun-20260729/`: isolated final rerun and audit logs.
+- `PROVENANCE.md`: data, material, unit, cycle and permission limitations.
+- `MANIFEST.sha256`: complete package integrity manifest.
+
+Allowed thesis wording:
+
+> The processed workbook labelled R260_2 supports a bounded audit of paired
+> hit and waveform-marker records. It contains no raw ADC waveform oracle and
+> therefore does not validate Peak_Freq, DTA parsing, damage classification or
+> crack detection.
+
+No additional sheet dialects are mapped, no workbook formula is repaired and
+the result is not connected to the CT07 or Peak_Freq time axes.

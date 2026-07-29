@@ -1,0 +1,11 @@
+sheet	dimension	initial_crack_length_source_value	cycles_to_failure	max_load	min_load	frequency	recognised_common_schema_hit_count	recognised_common_schema_waveform_marker_count	recognised_common_schema_matched_pairs	pair_mismatches	channel_counts	cached_formula_errors
+S1	A1:BB493743	6564.185	7322	6.5	0.65	1	0	0	0	0	{}	0
+S2	A1:BW50231	2708.29	64476	6.5	0.65	1	25110	25110	25110	0	{"1": 25110}	0
+S3	A1:BC8560	2831.655	33212	6.5	0.65	1	3553	3553	3553	0	{"1": 3553}	4
+S4	A1:BC140611	2298.845	49325	6.5	0.65	1	70301	70302	70301	1	{"1": 70301}	2
+S5	A1:BB107154	1601.12	55022	6.5	0.65	1	53573	53573	53573	0	{"1": 53573}	2
+S6	A1:AK421183	2666.78	90349	6.5	0.65	1	0	0	0	0	{}	2
+S7	A1:AV38982	2856.395	72694	6.5	0.65	1	0	0	0	0	{}	7
+S8	A1:AE130590	2730.275	67152	6.5	0.65	1	0	0	0	0	{}	3
+S9	A1:AD109428	2694.64	77991	6.5	0.65	1	0	0	0	0	{}	2
+S10	A1:AK72149	2971.875	61436	6.5	0.65	1	0	0	0	0	{}	1

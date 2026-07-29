@@ -63,6 +63,7 @@
     }
   },
   "legacy_top1_t01": {
+    "dataset_scope": "complete T01",
     "matlab_rows": 3098,
     "missing_in_python": 0,
     "extra_in_python": 0,
@@ -72,7 +73,22 @@
     "julia_field_mismatches": 0,
     "passed": true
   },
+  "legacy_matlab_t01_t09_context": {
+    "research_role": "MATLAB-only descriptive context",
+    "dataset_scope": "T01-T09",
+    "file_count": 377,
+    "logical_frames": 11366550,
+    "selected_windows": 16240,
+    "valid_top1_rows": 16239,
+    "three_language_validation": false
+  },
   "adaptive_top3_t01_t09": {
+    "dataset_scope": "T01-T09",
+    "file_count": 377,
+    "candidate_windows": 9472125,
+    "selected_events": 522216,
+    "top1_rows": 522216,
+    "top3_rows": 1566634,
     "totals": {
       "missing_in_python": 0,
       "extra_in_python": 0,
@@ -236,10 +252,13 @@
       "supported_group_count": 0,
       "unresolved_group_count": 9,
       "identity_assignment_is_optimal": false,
-      "claim_level": "provisional_or_unresolved"
+      "claim_level": "unresolved"
     },
     "top3": {
       "decision": "retained",
+      "research_role": "secondary_descriptive_extension",
+      "decision_rule_label": "pre-specified follow-on decision rule",
+      "formal_preregistration": false,
       "criteria": {
         "availability_pass_groups": 9,
         "magnitude_pass_groups": 9,
@@ -252,10 +271,11 @@
       },
       "burst_clustering_conclusions_stable": true,
       "leave_one_group_out_stable": true,
-      "blind_audit_complete": true,
-      "blind_audit_noise_like_fraction": 0.09200968523002422,
-      "blind_audit_pass": true,
-      "numerical_gate_pass": true,
+      "morphology_screen_complete": true,
+      "morphology_screen_noise_like_fraction": 0.09200968523002422,
+      "morphology_screen_pass": true,
+      "numerical_criteria_pass": true,
+      "follow_on_decision_rule_pass": true,
       "reason_if_appendix_only": null,
       "claim_boundary": "Secondary peaks are descriptive spectral information, not crack-type labels or detection-accuracy evidence."
     }

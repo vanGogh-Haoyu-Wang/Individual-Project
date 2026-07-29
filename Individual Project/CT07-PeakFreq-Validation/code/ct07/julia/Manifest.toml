@@ -2,7 +2,7 @@
 
 julia_version = "1.12.6"
 manifest_format = "2.0"
-project_hash = "b1063a8f7804089800df76f0af8504b525de5e02"
+project_hash = "508e3eede3911ce898e84a1e8ffa534fe541b727"
 
 [[deps.AliasTables]]
 deps = ["PtrArrays", "Random"]
@@ -37,6 +37,12 @@ deps = ["Artifacts", "JLLWrappers", "Libdl"]
 git-tree-sha1 = "1b96ea4a01afe0ea4090c5c8039690672dd13f2e"
 uuid = "6e34b625-4abd-537c-b88f-471c36dfa7a0"
 version = "1.0.9+0"
+
+[[deps.CSV]]
+deps = ["CodecZlib", "Dates", "FilePathsBase", "InlineStrings", "Mmap", "Parsers", "PooledArrays", "PrecompileTools", "SentinelArrays", "Tables", "Unicode", "WeakRefStrings", "WorkerUtilities"]
+git-tree-sha1 = "8d8e0b0f350b8e1c91420b5e64e5de774c2f0f4d"
+uuid = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+version = "0.10.16"
 
 [[deps.Cairo_jll]]
 deps = ["Artifacts", "Bzip2_jll", "CompilerSupportLibraries_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "JLLWrappers", "Libdl", "Pixman_jll", "Xorg_libXext_jll", "Xorg_libXrender_jll", "Zlib_jll", "libpng_jll"]
@@ -199,6 +205,17 @@ deps = ["Artifacts", "Bzip2_jll", "FreeType2_jll", "FriBidi_jll", "JLLWrappers",
 git-tree-sha1 = "cac41ca6b2d399adfc95e51240566f8a60a80806"
 uuid = "b22a6f82-2f65-5046-a5b2-351ab43fb4e5"
 version = "8.1.0+0"
+
+[[deps.FilePathsBase]]
+deps = ["Compat", "Dates"]
+git-tree-sha1 = "3bab2c5aa25e7840a4b065805c0cdfc01f3068d2"
+uuid = "48062228-2e41-5def-b9a4-89aafe57970f"
+version = "0.9.24"
+weakdeps = ["Mmap", "Test"]
+
+    [deps.FilePathsBase.extensions]
+    FilePathsBaseMmapExt = "Mmap"
+    FilePathsBaseTestExt = "Test"
 
 [[deps.FileWatching]]
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
@@ -363,6 +380,18 @@ version = "1.6.1"
     JSONArrowExt = ["ArrowTypes"]
 
     [deps.JSON.weakdeps]
+    ArrowTypes = "31f734f8-188a-4ce0-8406-c8a06bd891cd"
+
+[[deps.JSON3]]
+deps = ["Dates", "Mmap", "Parsers", "PrecompileTools", "StructTypes", "UUIDs"]
+git-tree-sha1 = "411eccfe8aba0814ffa0fdf4860913ed09c34975"
+uuid = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+version = "1.14.3"
+
+    [deps.JSON3.extensions]
+    JSON3ArrowExt = ["ArrowTypes"]
+
+    [deps.JSON3.weakdeps]
     ArrowTypes = "31f734f8-188a-4ce0-8406-c8a06bd891cd"
 
 [[deps.JpegTurbo_jll]]
@@ -855,6 +884,12 @@ git-tree-sha1 = "d05693d339e37d6ab134c5ab53c29fce5ee5d7d5"
 uuid = "892a3eda-7b42-436c-8928-eab12a02cf0e"
 version = "0.4.4"
 
+[[deps.StructTypes]]
+deps = ["Dates", "UUIDs"]
+git-tree-sha1 = "159331b30e94d7b11379037feeb9b690950cace8"
+uuid = "856f2bd8-1eba-4b0a-8007-ebc267875bd4"
+version = "1.11.0"
+
 [[deps.StructUtils]]
 deps = ["Dates", "UUIDs"]
 git-tree-sha1 = "82bee338d650aa515f31866c460cb7e3bcef90b8"
@@ -954,6 +989,17 @@ deps = ["Artifacts", "EpollShim_jll", "Expat_jll", "JLLWrappers", "Libdl", "Libf
 git-tree-sha1 = "96478df35bbc2f3e1e791bc7a3d0eeee559e60e9"
 uuid = "a2964d1f-97da-50d4-b82a-358c7fce9d89"
 version = "1.24.0+0"
+
+[[deps.WeakRefStrings]]
+deps = ["DataAPI", "InlineStrings", "Parsers"]
+git-tree-sha1 = "0716e01c3b40413de5dedbc9c5c69f27cddfddfc"
+uuid = "ea10d353-3f73-51f8-a26c-33c1cb351aa5"
+version = "1.4.3"
+
+[[deps.WorkerUtilities]]
+git-tree-sha1 = "cd1659ba0d57b71a464a29e64dbc67cfe83d54e7"
+uuid = "76eceee3-57b5-4d4a-8e66-0e911cebbf60"
+version = "1.6.1"
 
 [[deps.XLSX]]
 deps = ["Colors", "Dates", "OrderedCollections", "PrecompileTools", "Printf", "Random", "Tables", "UUIDs", "Unicode", "XML", "ZipArchives"]

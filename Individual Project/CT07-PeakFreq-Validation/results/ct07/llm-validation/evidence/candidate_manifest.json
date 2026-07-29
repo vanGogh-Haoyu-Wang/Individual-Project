@@ -1,0 +1,1037 @@
+{
+  "schema_version": "1.0",
+  "terminology": {
+    "original_generation": "Code delivered in the recorded model response or directly saved by that generation session.",
+    "fixture_normalized_probe": "Original-generation code with only workbook and worksheet identifiers adapted to the frozen fixture.",
+    "candidate_derived_validation_runner": "Audited runnable implementation derived from the candidate and validated numerically; not a minimally repaired raw output."
+  },
+  "fixture": {
+    "config_reference": "validation.toml#paths.commercial_ct07_workbook",
+    "sheet": "CT07",
+    "sha256": "89033ea6af74f0b99cfe44a1dcda4e59e4fea709d1f4e4c4acba3745edc33b2d"
+  },
+  "matlab_oracle": {
+    "reference_directory": "results/ct07/llm-validation/reference",
+    "mechanical_rows": 1807,
+    "ae_rows": 5850,
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "candidate_count": 8,
+  "candidates": [
+    {
+      "candidate_id": "deepseek_julia",
+      "language": "Julia",
+      "model": "DeepSeek v4 Pro",
+      "interface": "Claude Code CLI via ccswitch",
+      "reasoning_level": "High",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_julia/historical_record.md",
+        "sha256": "02312f0c4ce425ee385fba45492f14166788ab5e570c1d292b628c384504de32",
+        "source_vault_relative_path": "Individual Project/Tools history/Claude code cli ccswitch to Deepseek-v4-pro/03Test Record from Deepseek v4 pro high.md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_julia/prompt.md",
+        "sha256": "e9dbbdbdb68acefc3e30c4db21c90efb5eb7a022d8788fba9c0c27092e072967"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_julia/response.md",
+        "sha256": "23fa1e272a5db135fc8b3d2ace604fd4d45d140c12458e550b77873ac04c1ae1"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_julia/original_generation.jl",
+        "sha256": "b4569be3c959cae6cafda9122ca4060fb2a2c18a12ee12ba055ad7892ae298d6",
+        "artifact_origin": "direct_historical_file",
+        "reconstructed_from_record": false,
+        "byte_exact_original_file_available": true,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "Tensile-processed.xlsx",
+        "requirement_sheet": "CT-07",
+        "embedded_matlab_workbook": "Tensile-processed.xlsx",
+        "embedded_matlab_sheet": "CT-07",
+        "internally_inconsistent": false
+      },
+      "fixture_normalized_probe": {
+        "status": "fixture_normalized",
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_julia/fixture_normalized_probe.jl",
+        "sha256": "0a1015853b82cf1c1ebc925861c87f3135364d6d3108d5c9563027e67a1e4f0d",
+        "changes": [
+          {
+            "old": "Tensile-processed.xlsx",
+            "new": "Commercial Tensile Tests.xlsx",
+            "count": 1
+          },
+          {
+            "old": "CT-07",
+            "new": "CT07",
+            "count": 1
+          }
+        ],
+        "diff_path": "results/ct07/llm-validation/evidence/candidates/deepseek_julia/normalization.diff",
+        "diff_sha256": "cfe29b5fd1a4ce520475d940fce200eaf2a806b8a7e0572b0a4d3e6e9e8aa0a8",
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Julia Meta.parseall"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "environment",
+          "summary": "XLSX was initially unavailable in the Julia environment.",
+          "evidence_section": "Debug: Missing Julia Dependencies"
+        },
+        "first_code_level_failure": {
+          "layer": "fixture_normalized_probe",
+          "category": "physical_column_inference",
+          "summary": "Execution with the fixture inferred nine columns and raised BoundsError.",
+          "evidence_section": "Debug: End-to-End Failure in load_tensile_data"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable",
+          "execution_evidence": "default fixture identifiers were not run strictly after environment setup"
+        },
+        "fixture_normalized_probe": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable",
+          "execution_evidence": "manual_equivalent_probe"
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/julia/deepseek_julia.jl",
+        "sha256": "c9775f2cd7b87763a9484f93c4431ff580f7fbd7ef7baffae2520f3d104a6f29",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/deepseek_julia/run_metadata.json",
+        "run_metadata_sha256": "f3cabdf02866a1ae609a4c03893be6460984deb11d8eb2a21ce4cc8b4f819362",
+        "repair_categories": [
+          "replace readtable with physical worksheet matrix",
+          "mixed-cell conversion",
+          "independent complete-case masks",
+          "CLI/headless export"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "deepseek_python",
+      "language": "Python",
+      "model": "DeepSeek v4 Pro",
+      "interface": "Claude Code CLI via ccswitch",
+      "reasoning_level": "XHigh",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_python/historical_record.md",
+        "sha256": "b9541c32c5e74db684a39f725bd0a878478636a70b2a10d282a58a2599f61b26",
+        "source_vault_relative_path": "Individual Project/Tools history/Claude code cli ccswitch to Deepseek-v4-pro/02Test Record from Deepseek v4 pro xhigh.md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_python/prompt.md",
+        "sha256": "c17d27bee43ba6e5663055fc40d7ba656370849d01e5d0a0fae7295ad1bd6498"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_python/response.md",
+        "sha256": "d01a0d485c354ef85d495badfc79d16a1f6395e397a4bccb042ffd2ea5f7bd60"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_python/original_generation.py",
+        "sha256": "c76666e7d7b87f2d7974d62e0d41e35ec6f57c859e85fe691dd7fb0e5591d72e",
+        "artifact_origin": "direct_historical_file",
+        "reconstructed_from_record": false,
+        "byte_exact_original_file_available": true,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "not_specified",
+        "requirement_sheet": "not_specified",
+        "embedded_matlab_workbook": "Commercial Tensile Tests",
+        "embedded_matlab_sheet": "CT07",
+        "internally_inconsistent": false
+      },
+      "fixture_normalized_probe": {
+        "status": "no_change_required",
+        "path": "results/ct07/llm-validation/evidence/candidates/deepseek_python/original_generation.py",
+        "sha256": "c76666e7d7b87f2d7974d62e0d41e35ec6f57c859e85fe691dd7fb0e5591d72e",
+        "changes": [],
+        "diff_path": null,
+        "diff_sha256": null,
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Python ast.parse"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "environment",
+          "summary": "Matplotlib was initially unavailable.",
+          "evidence_section": "Debug: First Strict Run: Missing Matplotlib"
+        },
+        "first_code_level_failure": {
+          "layer": "original_generation",
+          "category": "mixed_cell_handling",
+          "summary": "Figure 1 raised a mixed string/float Matplotlib TypeError.",
+          "evidence_section": "Debug: First Code-Level Failure"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/python/deepseek_python.py",
+        "sha256": "70f18a4b3bb1367ea06a50efced61a257dc08625548525a81f66ca652c4a0b30",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/deepseek_python/run_metadata.json",
+        "run_metadata_sha256": "e6563f8dc4f7621f38b2119b21dc70075266dfb13133e10ea8934f9963caaa57",
+        "repair_categories": [
+          "mixed-cell conversion",
+          "independent complete-case masks",
+          "CLI/output contract",
+          "headless rendering"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "gemini_julia",
+      "language": "Julia",
+      "model": "Gemini 3.1 Pro",
+      "interface": "Antigravity CLI",
+      "reasoning_level": "High",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_julia/historical_record.md",
+        "sha256": "8c4a13c52a7b70c25165e4ed138e392c8ff0d79384b0c125d5ca57525878c9a4",
+        "source_vault_relative_path": "Individual Project/Tools history/Antigravity Cli/03Test Record from Gemini 3.1 Pro (Julia).md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_julia/prompt.md",
+        "sha256": "d8ac73ab41651079fcefd29d87ba4a885d2cfe287562958c04314297904ebc0e"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_julia/response.md",
+        "sha256": "6c7e1dd51168f537af2acd48b2de04a2876c0cd85f998f169ede66a4cdb5a9fd"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_julia/original_generation.jl",
+        "sha256": "d64bd6e547783fdfd1c8059c82966e42528414f1f023914cc04396f8dee9ae30",
+        "artifact_origin": "direct_historical_file",
+        "reconstructed_from_record": false,
+        "byte_exact_original_file_available": true,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "Tensile-processed.xlsx",
+        "requirement_sheet": "CT-07",
+        "embedded_matlab_workbook": "Commercial Tensile Tests",
+        "embedded_matlab_sheet": "CT07",
+        "internally_inconsistent": true
+      },
+      "fixture_normalized_probe": {
+        "status": "fixture_normalized",
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_julia/fixture_normalized_probe.jl",
+        "sha256": "cf2d9da1236782206a5c06c285348f773960c0d2246c1459907ded5e80fafec8",
+        "changes": [
+          {
+            "old": "Tensile-processed.xlsx",
+            "new": "Commercial Tensile Tests.xlsx",
+            "count": 1
+          },
+          {
+            "old": "CT-07",
+            "new": "CT07",
+            "count": 1
+          }
+        ],
+        "diff_path": "results/ct07/llm-validation/evidence/candidates/gemini_julia/normalization.diff",
+        "diff_sha256": "d45caef3c2bdb0feb4b5496592b2fce7c47d47dfd44dbaa59cab63e2fc870e25",
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Julia Meta.parseall"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "entrypoint",
+          "summary": "Direct execution exited 0 without running because the only function call was commented out.",
+          "evidence_section": "Debug: Baseline Direct Run After Environment Setup"
+        },
+        "first_code_level_failure": {
+          "layer": "fixture_normalized_probe",
+          "category": "mixed_cell_handling",
+          "summary": "An explicit call with the fixture sheet failed converting mixed cells to Float64.",
+          "evidence_section": "Debug: Manual Function Call with the Actual CT07 Sheet"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        },
+        "fixture_normalized_probe": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable",
+          "execution_evidence": "manual_equivalent_probe"
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/julia/gemini_julia.jl",
+        "sha256": "b13aeebf998f2412d0282ac9833a36949e0e1198bcaf9725992704edc93c6b5e",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/gemini_julia/run_metadata.json",
+        "run_metadata_sha256": "7951f5ce1100cfec789f6ca6dfe6854dd346e3b78fbd294b3f6a8f3c9c3e9b34",
+        "repair_categories": [
+          "enable callable entry point",
+          "safe mixed-cell conversion",
+          "independent complete-case masks",
+          "headless output contract"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "gemini_python",
+      "language": "Python",
+      "model": "Gemini 3.1 Pro",
+      "interface": "Antigravity CLI",
+      "reasoning_level": "High",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_python/historical_record.md",
+        "sha256": "a528d84e087c73509565c20c981065fd9c27e9ace5020a9551cbfc5f3d36bb0e",
+        "source_vault_relative_path": "Individual Project/Tools history/Antigravity Cli/02Test Record from Gemini 3.1 Pro (Python).md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_python/prompt.md",
+        "sha256": "a4e516e26471b5ff1ee0db1eb1bcde39abc24d7fd23d80d0b45e86ffbd2b1ea0"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_python/response.md",
+        "sha256": "ebfda39c3150f7ca4d5d70e8930d8bffd07ae7f7cd8c1e410f19305dcf194daa"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_python/original_generation.py",
+        "sha256": "76c5fc095e4829f00970f6958a0d6c4d335f33714f7bdb676126948bc3d66f88",
+        "artifact_origin": "direct_historical_file",
+        "reconstructed_from_record": false,
+        "byte_exact_original_file_available": true,
+        "response_code_matches_artifact": false,
+        "notes": "The directly saved workspace file is authoritative; the Markdown response code block differs materially in indentation."
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "not_specified",
+        "requirement_sheet": "not_specified",
+        "embedded_matlab_workbook": "Commercial Tensile Tests",
+        "embedded_matlab_sheet": "CT07",
+        "internally_inconsistent": false
+      },
+      "fixture_normalized_probe": {
+        "status": "no_change_required",
+        "path": "results/ct07/llm-validation/evidence/candidates/gemini_python/original_generation.py",
+        "sha256": "76c5fc095e4829f00970f6958a0d6c4d335f33714f7bdb676126948bc3d66f88",
+        "changes": [],
+        "diff_path": null,
+        "diff_sha256": null,
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Python ast.parse"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "environment",
+          "summary": "Matplotlib was initially unavailable.",
+          "evidence_section": "Debug: Initial Strict Run: Missing Matplotlib"
+        },
+        "first_code_level_failure": {
+          "layer": "original_generation",
+          "category": "mixed_cell_handling",
+          "summary": "Figure 1 raised a mixed string/float Matplotlib TypeError.",
+          "evidence_section": "Debug: Strict Original Run After Dependency Provisioning"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/python/gemini_python.py",
+        "sha256": "762fca9eba75e18b4e8a76374a7cca90276994c2f69da973c1e335ba8a29c149",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/gemini_python/run_metadata.json",
+        "run_metadata_sha256": "6f88609fa297e35bfe01c60bbecab934cfe15689159550be11627b6bff63ee1d",
+        "repair_categories": [
+          "safe numeric coercion",
+          "independent complete-case masks",
+          "CLI/output contract",
+          "headless PNG export"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "gpt55_julia",
+      "language": "Julia",
+      "model": "GPT-5.5",
+      "interface": "Codex CLI",
+      "reasoning_level": "XHigh",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_julia/historical_record.md",
+        "sha256": "8b813a1338034f444ba5bf342bc59b3cf2cfb0966a817595a5b5e0aa65c4cd5d",
+        "source_vault_relative_path": "Individual Project/Tools history/Codex Cli/03Test Record from gpt-5.5 xhigh from matlab to julia.md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_julia/prompt.md",
+        "sha256": "1c5d4c80741ac1280b6a5ec0d41cb5a925e6c7b53470af8db0a39c4f732a225c"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_julia/response.md",
+        "sha256": "eb140e47db840a99040f456e36ff93a7564e580e4f0670e340fd3fd1876247b0"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_julia/original_generation.jl",
+        "sha256": "f412a103418f8a5a631f7d039496cc7a716a2ceaaa251ce73cf42f65186becad",
+        "artifact_origin": "direct_historical_file",
+        "reconstructed_from_record": false,
+        "byte_exact_original_file_available": true,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "Tensile-processed.xlsx",
+        "requirement_sheet": "CT-07",
+        "embedded_matlab_workbook": "Tensile-processed.xlsx",
+        "embedded_matlab_sheet": "CT-07",
+        "internally_inconsistent": false
+      },
+      "fixture_normalized_probe": {
+        "status": "fixture_normalized",
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_julia/fixture_normalized_probe.jl",
+        "sha256": "4b320191fb2500da3be7f9222eb1f0625e9f8b34f60865eaa1f94142358f2bd8",
+        "changes": [
+          {
+            "old": "Tensile-processed.xlsx",
+            "new": "Commercial Tensile Tests.xlsx",
+            "count": 1
+          },
+          {
+            "old": "CT-07",
+            "new": "CT07",
+            "count": 1
+          }
+        ],
+        "diff_path": "results/ct07/llm-validation/evidence/candidates/gpt55_julia/normalization.diff",
+        "diff_sha256": "e65cb03e89784583411bc6ad507e8c16fdbea003afccf6b6c68ab8d4e6818c0d",
+        "counted_as_model_error": false,
+        "terminal_newline_changed": true
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Julia Meta.parseall"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "environment",
+          "summary": "XLSX was initially unavailable in the Julia environment.",
+          "evidence_section": "Debug: First Attempt: Missing Julia Packages"
+        },
+        "first_code_level_failure": {
+          "layer": "original_generation",
+          "category": "fixture_identifier_mismatch",
+          "summary": "The original script could not find Tensile-processed.xlsx.",
+          "evidence_section": "Debug: Later Strict Direct-Run Tests"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        },
+        "fixture_normalized_probe": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable",
+          "first_failure": "Column 10 not found; sheet has 9 columns."
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/julia/gpt55_julia.jl",
+        "sha256": "a5d89112e46c5d3fa5599d189a51048b72c1d2c52f2804239ddf1eca1ea45849",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/gpt55_julia/run_metadata.json",
+        "run_metadata_sha256": "f7232334e46475e790abf6138933edfce8820f767edae60afc86bbea8fa6f79c",
+        "repair_categories": [
+          "replace automatic readtable detection with physical columns",
+          "independent complete-case masks",
+          "callable CLI",
+          "synchronise twin x axes"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "gpt55_python",
+      "language": "Python",
+      "model": "GPT-5.5",
+      "interface": "Codex CLI",
+      "reasoning_level": "XHigh",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": "The filename contains 'max'; the recorded reasoning label is XHigh.",
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_python/historical_record.md",
+        "sha256": "5569a60b066daa5dc1586ff13644bf07afa9442206ace2600ca1db9df496343d",
+        "source_vault_relative_path": "Individual Project/Tools history/Codex Cli/02Test Record from gpt-5.5 xhigh from matlab to python.md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_python/prompt.md",
+        "sha256": "e28069d3b05fe3d9066c85c05110cad4d82365d4ff426982588f27b13b97713c"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_python/response.md",
+        "sha256": "dbb904d34c90d2a5568425a6aaa521eb29947a08e5965b3b8518e6d5868c3877"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_python/original_generation.py",
+        "sha256": "c13a2e082b1e1f9fbb92fb7f8a1ebfd48834d0092976f005a0f590a57e738595",
+        "artifact_origin": "reconstructed_from_record",
+        "reconstructed_from_record": true,
+        "byte_exact_original_file_available": false,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "not_specified",
+        "requirement_sheet": "not_specified",
+        "embedded_matlab_workbook": "Tensile-processed.xlsx",
+        "embedded_matlab_sheet": "CT-07",
+        "internally_inconsistent": false
+      },
+      "fixture_normalized_probe": {
+        "status": "fixture_normalized",
+        "path": "results/ct07/llm-validation/evidence/candidates/gpt55_python/fixture_normalized_probe.py",
+        "sha256": "233c14d996fd1ba7e1c8290265afd95301462ae500c67e2bb363501331313e02",
+        "changes": [
+          {
+            "old": "Tensile-processed.xlsx",
+            "new": "Commercial Tensile Tests.xlsx",
+            "count": 1
+          },
+          {
+            "old": "CT-07",
+            "new": "CT07",
+            "count": 1
+          }
+        ],
+        "diff_path": "results/ct07/llm-validation/evidence/candidates/gpt55_python/normalization.diff",
+        "diff_sha256": "9ab8e33c71ec093899f9cee4157a677c9a198e0732c15a227601e190d8a5d3bd",
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Python ast.parse"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "environment",
+          "summary": "NumPy was initially unavailable.",
+          "evidence_section": "Debug: Python environment and dependencies"
+        },
+        "first_code_level_failure": {
+          "layer": "original_generation",
+          "category": "not_available",
+          "summary": "No strict execution log survives for the unmodified original-generation file.",
+          "evidence_section": "The historical record begins executable testing after fixture normalization."
+        },
+        "original_generation": {
+          "compiled_or_imported": null,
+          "completed_end_to_end": null,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable",
+          "historical_status": "not_available"
+        },
+        "fixture_normalized_probe": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": true,
+          "mechanical_rows": 1807,
+          "ae_rows": 5850,
+          "png_count": 0,
+          "silent_data_loss": false,
+          "limitation": "Five figures were constructed, but the script exported no PNG files."
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/python/gpt55_python.py",
+        "sha256": "5f8613823fb8818aa632faf9a80c6760b1f6360dab285ab521d0d65bd2f6e688",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/gpt55_python/run_metadata.json",
+        "run_metadata_sha256": "1eadb0b436f93bb19b2ab1a60a3798264f62b895352d6fdfb51c0cc20feabf9a",
+        "repair_categories": [
+          "replace global dropna with two masks",
+          "preserve physical column positions",
+          "CLI/output contract",
+          "headless PNG export"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "sonnet_julia",
+      "language": "Julia",
+      "model": "Claude Sonnet 4.6",
+      "interface": "Claude Code Desktop",
+      "reasoning_level": "High",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_julia/historical_record.md",
+        "sha256": "c2a477439b8ff00bd7133f92e244ae42ca70976bf1961facbdadc6907b3ac7d7",
+        "source_vault_relative_path": "Individual Project/Tools history/Claude code Desktop Sonnet 4.6/03Test Record from Sonnet 4.6 high (Julia).md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_julia/prompt.md",
+        "sha256": "d8ac73ab41651079fcefd29d87ba4a885d2cfe287562958c04314297904ebc0e"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_julia/response.md",
+        "sha256": "0ccc06b3c5dfdd7a6c14092a5014e5b2fdb9a766248c65c0fc6e05da02b4818e"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_julia/original_generation.jl",
+        "sha256": "6ed1181cace171ae6a0bb2afb8f3cf547e0a798dadd2897d0017a6db61fb7132",
+        "artifact_origin": "reconstructed_from_record",
+        "reconstructed_from_record": true,
+        "byte_exact_original_file_available": false,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "Tensile-processed.xlsx",
+        "requirement_sheet": "CT-07",
+        "embedded_matlab_workbook": "Commercial Tensile Tests",
+        "embedded_matlab_sheet": "CT07",
+        "internally_inconsistent": true
+      },
+      "fixture_normalized_probe": {
+        "status": "fixture_normalized",
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_julia/fixture_normalized_probe.jl",
+        "sha256": "e77f0121ef601c4a17a270de5a77d10711ef7218429c65d43ebaad004e4579db",
+        "changes": [
+          {
+            "old": "Tensile-processed.xlsx",
+            "new": "Commercial Tensile Tests.xlsx",
+            "count": 1
+          },
+          {
+            "old": "CT-07",
+            "new": "CT07",
+            "count": 1
+          }
+        ],
+        "diff_path": "results/ct07/llm-validation/evidence/candidates/sonnet_julia/normalization.diff",
+        "diff_sha256": "6d54a9b266858797d922c1dc3bba584977d0134fe93ca7d100f3283697f2562f",
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Julia Meta.parseall"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "fixture_identifier_mismatch",
+          "summary": "Direct execution could not find Tensile-processed.xlsx.",
+          "evidence_section": "Debug: Input File and Worksheet Mismatch"
+        },
+        "first_code_level_failure": {
+          "layer": "fixture_normalized_probe",
+          "category": "physical_column_inference",
+          "summary": "Normalized-only execution inferred nine columns and raised BoundsError at column 10.",
+          "evidence_section": "Debug: Automatic Table Detection Returned the Wrong Shape"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        },
+        "fixture_normalized_probe": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        },
+        "intermediate_debug_artifact": {
+          "canonical_layer": false,
+          "mechanical_rows": 1807,
+          "ae_rows": 5848,
+          "png_count": 5,
+          "silent_data_loss": true,
+          "notes": [
+            "Loaded A:O from first_row=4, dropping the first two valid AE records.",
+            "Changed the source-inherited Figure 2 title from T09 to T07.",
+            "Must not be labelled original_generation or fixture_normalized_probe."
+          ]
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/julia/sonnet_julia.jl",
+        "sha256": "baf5f4c4c88bf6ff205bce0b8976f10ec9c74cdcd1dded6deb6ac8e1f8220e13",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/sonnet_julia/run_metadata.json",
+        "run_metadata_sha256": "97ca5b1704cddb3ede5b7fb72abdfe342f052196eaaed73c79ac08a6a5dcb9e2",
+        "repair_categories": [
+          "read complete worksheet instead of first_row=4",
+          "restore first two AE rows",
+          "independent complete-case masks",
+          "synchronise twin x axes"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    },
+    {
+      "candidate_id": "sonnet_python",
+      "language": "Python",
+      "model": "Claude Sonnet 4.6",
+      "interface": "Claude Code Desktop",
+      "reasoning_level": "High",
+      "generation_date": "not_available",
+      "session_id": "not_available",
+      "historical_filename_note": null,
+      "historical_record": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_python/historical_record.md",
+        "sha256": "43b0454a702b06ed8af801c7bd2005bdece0541ca053399f5c65183447c85a99",
+        "source_vault_relative_path": "Individual Project/Tools history/Claude code Desktop Sonnet 4.6/02Test Record from Sonnet 4.6 high (Python).md"
+      },
+      "prompt": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_python/prompt.md",
+        "sha256": "a4e516e26471b5ff1ee0db1eb1bcde39abc24d7fd23d80d0b45e86ffbd2b1ea0"
+      },
+      "response": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_python/response.md",
+        "sha256": "cbfbdb031c7f0da910b526341ac2000556c8c56ac12f27b21cafb91cdd034404"
+      },
+      "original_generation": {
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_python/original_generation.py",
+        "sha256": "2d7e5518cd91d36d4a58ead866343af4de292f53f585d3cd2ad55b6025b6996f",
+        "artifact_origin": "reconstructed_from_record",
+        "reconstructed_from_record": true,
+        "byte_exact_original_file_available": false,
+        "response_code_matches_artifact": true,
+        "notes": null
+      },
+      "prompt_input_contract": {
+        "requirement_workbook": "not_specified",
+        "requirement_sheet": "not_specified",
+        "embedded_matlab_workbook": "Commercial Tensile Tests",
+        "embedded_matlab_sheet": "CT07",
+        "internally_inconsistent": false
+      },
+      "fixture_normalized_probe": {
+        "status": "no_change_required",
+        "path": "results/ct07/llm-validation/evidence/candidates/sonnet_python/original_generation.py",
+        "sha256": "2d7e5518cd91d36d4a58ead866343af4de292f53f585d3cd2ad55b6025b6996f",
+        "changes": [],
+        "diff_path": null,
+        "diff_sha256": null,
+        "counted_as_model_error": false,
+        "terminal_newline_changed": false
+      },
+      "recovery_integrity_check": {
+        "checked_on": "2026-07-29",
+        "syntax_parse_passed": true,
+        "historical_first_run": false,
+        "parser": "Python ast.parse"
+      },
+      "historical_execution": {
+        "first_observed_failure": {
+          "layer": "original_generation",
+          "category": "environment",
+          "summary": "Matplotlib was initially unavailable.",
+          "evidence_section": "Debug: Python Environment"
+        },
+        "first_code_level_failure": {
+          "layer": "original_generation",
+          "category": "mixed_cell_handling",
+          "summary": "Figure 1 raised a mixed string/integer Matplotlib TypeError.",
+          "evidence_section": "Debug: Original Script Direct-Run Failure"
+        },
+        "original_generation": {
+          "compiled_or_imported": true,
+          "completed_end_to_end": false,
+          "mechanical_rows": null,
+          "ae_rows": null,
+          "png_count": 0,
+          "silent_data_loss": "not_evaluable"
+        }
+      },
+      "candidate_derived_validation_runner": {
+        "path": "code/ct07/python/sonnet_python.py",
+        "sha256": "d3b8ff4b61e378b2ac25902e5c78b86cd1515e45f45cb5de21cb23a0439b0151",
+        "run_metadata_path": "results/ct07/llm-validation/candidates/sonnet_python/run_metadata.json",
+        "run_metadata_sha256": "3de702523a66f8e3b17af63ac326f497ff16eb2ff42af4c0e3fce9d7fa8a2640",
+        "repair_categories": [
+          "header row handling",
+          "numeric coercion for AE columns",
+          "independent complete-case masks",
+          "function/CLI/output contract"
+        ],
+        "repair_effort_quantified": false,
+        "source_inherited_issue": "Figure 2 title says T09"
+      },
+      "matlab_comparison": {
+        "summary_path": "results/ct07/llm-validation/comparison_summary.json",
+        "passed": true,
+        "mechanical_rows": 1807,
+        "ae_rows": 5850,
+        "png_count": 5,
+        "missing_in_candidate": 0,
+        "extra_in_candidate": 0,
+        "matrix_row_mismatches": 0,
+        "field_mismatches": 0,
+        "max_abs_error_per_field": {
+          "t1_s": 5.115907697472721e-13,
+          "strain_pct": 5.551115123125783e-16,
+          "stress_mpa": 5.115907697472721e-13,
+          "time_s": 0.0,
+          "rms_norm": 4.996003610813204e-16,
+          "cumrms_norm": 5.551115123125783e-16,
+          "energy_norm": 3.885780586188048e-16,
+          "cumenergy_norm": 5.551115123125783e-16
+        }
+      }
+    }
+  ],
+  "smop": {
+    "included_in_candidate_count": false,
+    "role": "separate deterministic transpiler baseline",
+    "evidence_path": "results/ct07/smop/smop_comparison_summary.json"
+  }
+}

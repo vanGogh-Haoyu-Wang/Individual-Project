@@ -108,5 +108,6 @@
   "supported_group_count": 0,
   "unresolved_group_count": 9,
   "stage_boundaries": {},
-  "interpretation": "Every data-supported mapping remains provisional until independently confirmed."
+  "claim_level": "unresolved",
+  "interpretation": "All nine candidate mappings are unresolved; no mechanical stages were assigned."
 }

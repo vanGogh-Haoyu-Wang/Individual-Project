@@ -1,0 +1,116 @@
+{
+  "failure": null,
+  "final_manifest_verification": "run tools/verify_r260.py after this process writes MANIFEST.sha256",
+  "finished_at_utc": "2026-07-29T08:45:37.270955+00:00",
+  "historical_results_unchanged": true,
+  "pre_manifest_verification": {
+    "correlation_interval_count": 9,
+    "failures": [],
+    "input": {
+      "actual_sha256": "2bf80527130a7eab326297a2dc1c17974dbae45cf3840217378169d227f8ea64",
+      "expected_sha256": "2bf80527130a7eab326297a2dc1c17974dbae45cf3840217378169d227f8ea64",
+      "logical_name": "Copy of current R260_2.xlsx",
+      "matched": true
+    },
+    "invalid_failure_row_excluded": true,
+    "package_manifest": {
+      "reason": "explicitly skipped",
+      "status": "not_checked"
+    },
+    "pngs": [
+      {
+        "bytes": 209709,
+        "height": 1500,
+        "path": "s3_hit_timing_and_pfrq.png",
+        "valid": true,
+        "width": 3600
+      },
+      {
+        "bytes": 201766,
+        "height": 1500,
+        "path": "s3_crack_growth_exploratory.png",
+        "valid": true,
+        "width": 3600
+      }
+    ],
+    "s3_records": {
+      "actual_hits": 3553,
+      "actual_pairs": 3553,
+      "actual_waveform_markers": 3553,
+      "expected_hits": 3553,
+      "expected_pairs": 3553,
+      "expected_waveform_markers": 3553,
+      "extra_hits": 0,
+      "extra_pairs": 0,
+      "extra_waveform_markers": 0,
+      "missing_hits": 0,
+      "missing_pairs": 0,
+      "missing_waveform_markers": 0,
+      "order_mismatches": 0
+    },
+    "scope": "processed_hit_level_s3_exploratory_audit",
+    "status": "passed",
+    "time_bin_total": 3553
+  },
+  "scope": "bounded_r260_s3_processed_hit_level_rehearsal",
+  "stages": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/tools/analyse_r260.py",
+        "/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx",
+        "--output",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/outputs"
+      ],
+      "cwd": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis",
+      "elapsed_seconds": 43.51427416698425,
+      "end_time_utc": "2026-07-29T08:45:36.104788+00:00",
+      "exit_code": 0,
+      "stage": "analyse",
+      "start_time_utc": "2026-07-29T08:44:52.590493+00:00",
+      "stderr_path": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/logs/01_analyse.stderr.log",
+      "stdout_path": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/logs/01_analyse.stdout.log"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/uv",
+        "run",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/tools/plot_s3.py",
+        "--results",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/outputs"
+      ],
+      "cwd": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis",
+      "elapsed_seconds": 1.0135415840195492,
+      "end_time_utc": "2026-07-29T08:45:37.119021+00:00",
+      "exit_code": 0,
+      "stage": "plot",
+      "start_time_utc": "2026-07-29T08:45:36.105521+00:00",
+      "stderr_path": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/logs/02_plot.stderr.log",
+      "stdout_path": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/logs/02_plot.stdout.log"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/tools/verify_r260.py",
+        "--workbook",
+        "/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx",
+        "--results",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/outputs",
+        "--package-root",
+        "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis",
+        "--skip-package-manifest"
+      ],
+      "cwd": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis",
+      "elapsed_seconds": 0.14909766599885188,
+      "end_time_utc": "2026-07-29T08:45:37.268656+00:00",
+      "exit_code": 0,
+      "stage": "verify_before_manifest",
+      "start_time_utc": "2026-07-29T08:45:37.119597+00:00",
+      "stderr_path": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/logs/03_verify_before_manifest.stderr.log",
+      "stdout_path": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729/logs/03_verify_before_manifest.stdout.log"
+    }
+  ],
+  "staging": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/R2602Analysis/evidence/final-rerun-20260729",
+  "started_at_utc": "2026-07-29T08:44:52.108210+00:00",
+  "status": "passed"
+}

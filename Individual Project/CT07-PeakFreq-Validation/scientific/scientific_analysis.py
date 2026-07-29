@@ -425,21 +425,25 @@ def deterministic_samples(config: dict, catalog: pd.DataFrame | None = None) -> 
     ).sort_values(["group", "file_name", "start_sample"])
     samples.insert(0, "sample_id", [f"S{index:04d}" for index in range(1, len(samples) + 1)])
     samples.to_csv(output / "waveform_sample_manifest.csv", index=False)
-    blinded = pd.DataFrame(
+    class_hidden = pd.DataFrame(
         {
             "sample_id": samples["sample_id"],
             "morphology": "",
             "burst_pattern": "",
-            "reviewer_notes": "",
-            "review_status": "pending",
+            "screen_metrics": "",
+            "screen_status": "pending",
         }
     )
-    blinded.to_csv(output / "waveform_audit_blinded.csv", index=False)
-    unblinded = samples.copy()
-    for column in ("morphology", "burst_pattern", "reviewer_notes"):
-        unblinded[column] = ""
-    unblinded["review_status"] = "pending"
-    unblinded.to_csv(output / "waveform_audit_unblinded.csv", index=False)
+    class_hidden.to_csv(
+        output / "waveform_morphology_screen_class_hidden.csv", index=False
+    )
+    class_revealed = samples.copy()
+    for column in ("morphology", "burst_pattern", "screen_metrics"):
+        class_revealed[column] = ""
+    class_revealed["screen_status"] = "pending"
+    class_revealed.to_csv(
+        output / "waveform_morphology_screen_class_revealed.csv", index=False
+    )
     return samples
 
 
@@ -562,8 +566,27 @@ def render_waveform_samples(config: dict, samples: pd.DataFrame | None = None) -
     return summary
 
 
-def blind_signal_audit(config: dict) -> pd.DataFrame:
-    """Apply a fixed signal-shape rubric without using matched/adaptive class."""
+def classify_morphology(
+    crest: float,
+    excess_kurtosis: float,
+    concentration: float,
+    flat_fraction: float,
+    rms_threshold_ratio: float,
+) -> str:
+    """Classify signal shape without accepting an event-class input."""
+    if flat_fraction >= 0.05:
+        return "clipped"
+    if crest >= 5.0 or excess_kurtosis >= 8.0:
+        return "impulsive"
+    if concentration >= 0.15 and excess_kurtosis < 8.0:
+        return "oscillatory"
+    if rms_threshold_ratio < 1.25 and crest < 3.5 and concentration < 0.10:
+        return "noise_like"
+    return "ambiguous"
+
+
+def class_hidden_morphology_screen(config: dict) -> pd.DataFrame:
+    """Apply the deterministic morphology screen without event-class labels."""
     from scipy.stats import kurtosis
 
     output = config["resolved"]["scientific_results"]
@@ -597,16 +620,9 @@ def blind_signal_audit(config: dict) -> pd.DataFrame:
                 max(np.mean(event == event.max()), np.mean(event == event.min()))
             )
             ratio = float(row.rms_threshold_ratio)
-            if flat_fraction >= 0.05:
-                morphology = "clipped"
-            elif crest >= 5.0 or excess_kurtosis >= 8.0:
-                morphology = "impulsive"
-            elif concentration >= 0.15 and excess_kurtosis < 8.0:
-                morphology = "oscillatory"
-            elif ratio < 1.25 and crest < 3.5 and concentration < 0.10:
-                morphology = "noise_like"
-            else:
-                morphology = "ambiguous"
+            morphology = classify_morphology(
+                crest, excess_kurtosis, concentration, flat_fraction, ratio
+            )
             burst_size = burst_sizes.get(
                 (group, file_name, int(row.start_sample)), 1
             )
@@ -617,22 +633,25 @@ def blind_signal_audit(config: dict) -> pd.DataFrame:
                     "burst_pattern": (
                         "repeated_or_adjacent" if burst_size > 1 else "single_burst"
                     ),
-                    "reviewer_notes": (
-                        "deterministic_blind_signal_rubric;"
+                    "screen_metrics": (
+                        "deterministic_class_hidden_morphology_screen;"
                         f"crest={crest:.6g};kurtosis={excess_kurtosis:.6g};"
                         f"spectral_concentration={concentration:.6g};"
                         f"flat_fraction={flat_fraction:.6g};burst_size={burst_size}"
                     ),
-                    "review_status": "complete",
+                    "screen_status": "complete",
                 }
             )
-    audit = pd.DataFrame(rows)
-    audit.to_csv(output / "waveform_audit_blinded.csv", index=False)
-    (output / "waveform_audit_method.json").write_text(
+    screen = pd.DataFrame(rows)
+    screen.to_csv(
+        output / "waveform_morphology_screen_class_hidden.csv", index=False
+    )
+    (output / "waveform_morphology_screen_method.json").write_text(
         json.dumps(
             {
-                "method": "deterministic_blind_signal_rubric",
+                "method": "deterministic_class_hidden_morphology_screen",
                 "used_matched_or_adaptive_class": False,
+                "expert_review": False,
                 "damage_ground_truth": False,
                 "thresholds": {
                     "clipped": "flat_fraction >= 0.05",
@@ -646,26 +665,31 @@ def blind_signal_audit(config: dict) -> pd.DataFrame:
         )
         + "\n"
     )
-    return audit
+    return screen
 
 
-def unblind(config: dict) -> pd.DataFrame:
+def reveal_morphology_classes(config: dict) -> pd.DataFrame:
     output = config["resolved"]["scientific_results"]
     manifest = pd.read_csv(output / "waveform_sample_manifest.csv")
-    blinded = pd.read_csv(output / "waveform_audit_blinded.csv", keep_default_na=False)
+    screen_path = output / "waveform_morphology_screen_class_hidden.csv"
+    class_hidden = pd.read_csv(screen_path, keep_default_na=False)
     require_columns(
-        blinded,
-        ["sample_id", "morphology", "burst_pattern", "reviewer_notes", "review_status"],
-        output / "waveform_audit_blinded.csv",
+        class_hidden,
+        ["sample_id", "morphology", "burst_pattern", "screen_metrics", "screen_status"],
+        screen_path,
     )
-    invalid_morphology = set(blinded["morphology"]) - MORPHOLOGY_LABELS - {""}
-    invalid_burst = set(blinded["burst_pattern"]) - BURST_LABELS - {""}
+    invalid_morphology = set(class_hidden["morphology"]) - MORPHOLOGY_LABELS - {""}
+    invalid_burst = set(class_hidden["burst_pattern"]) - BURST_LABELS - {""}
     if invalid_morphology or invalid_burst:
         raise ValueError(
-            f"invalid audit labels: morphology={invalid_morphology}, burst={invalid_burst}"
+            f"invalid screen labels: morphology={invalid_morphology}, burst={invalid_burst}"
         )
-    merged = manifest.merge(blinded, on="sample_id", how="left", validate="one_to_one")
-    merged.to_csv(output / "waveform_audit_unblinded.csv", index=False)
+    merged = manifest.merge(
+        class_hidden, on="sample_id", how="left", validate="one_to_one"
+    )
+    merged.to_csv(
+        output / "waveform_morphology_screen_class_revealed.csv", index=False
+    )
     return merged
 
 
@@ -1205,8 +1229,13 @@ def align_all(config: dict) -> dict:
         "supported_group_count": sum(supported.values()),
         "unresolved_group_count": len(groups) - sum(supported.values()),
         "stage_boundaries": stage_boundaries,
+        "claim_level": (
+            "provisional_data_supported" if any(supported.values()) else "unresolved"
+        ),
         "interpretation": (
-            "Every data-supported mapping remains provisional until independently confirmed."
+            "Only data-supported mappings may receive provisional mechanical stages."
+            if any(supported.values())
+            else "All nine candidate mappings are unresolved; no mechanical stages were assigned."
         ),
     }
     (output / "alignment_summary.json").write_text(
@@ -1282,6 +1311,22 @@ def bootstrap_file_mean(
     ).mean(axis=1)
     low, high = np.quantile(values, [0.025, 0.975])
     return float(low), float(high)
+
+
+def top3_follow_on_decision(
+    criteria: dict[str, int],
+    clustering_stable: bool,
+    leave_one_out_stable: bool,
+    morphology_screen_pass: bool,
+) -> bool:
+    return bool(
+        criteria["availability_pass_groups"] >= 6
+        and criteria["magnitude_pass_groups"] >= 6
+        and criteria["cross_band_pass_groups"] >= 6
+        and clustering_stable
+        and leave_one_out_stable
+        and morphology_screen_pass
+    )
 
 
 def evaluate_top3(config: dict) -> dict:
@@ -1369,42 +1414,54 @@ def evaluate_top3(config: dict) -> dict:
         ):
             leave_one_out_stable = False
             break
-    audit_path = output / "waveform_audit_unblinded.csv"
-    audit = pd.read_csv(audit_path, keep_default_na=False)
-    audit_complete = bool(
-        len(audit)
-        and (audit["review_status"] == "complete").all()
-        and audit["morphology"].isin(MORPHOLOGY_LABELS).all()
-        and audit["burst_pattern"].isin(BURST_LABELS).all()
+    screen_path = output / "waveform_morphology_screen_class_revealed.csv"
+    screen = pd.read_csv(screen_path, keep_default_na=False)
+    morphology_screen_complete = bool(
+        len(screen)
+        and (screen["screen_status"] == "complete").all()
+        and screen["morphology"].isin(MORPHOLOGY_LABELS).all()
+        and screen["burst_pattern"].isin(BURST_LABELS).all()
     )
     noise_fraction = (
-        float(audit["morphology"].isin({"noise_like", "clipped"}).mean())
-        if audit_complete
+        float(screen["morphology"].isin({"noise_like", "clipped"}).mean())
+        if morphology_screen_complete
         else None
     )
-    blind_audit_pass = bool(audit_complete and noise_fraction < 0.50)
-    numerical_gate = (
+    morphology_screen_pass = bool(
+        morphology_screen_complete and noise_fraction < 0.50
+    )
+    numerical_criteria_pass = (
         criteria["availability_pass_groups"] >= 6
         and criteria["magnitude_pass_groups"] >= 6
         and criteria["cross_band_pass_groups"] >= 6
         and clustering_stable
         and leave_one_out_stable
     )
-    decision = "retained" if numerical_gate and blind_audit_pass else "appendix_only"
+    follow_on_decision_rule_pass = top3_follow_on_decision(
+        criteria,
+        clustering_stable,
+        leave_one_out_stable,
+        morphology_screen_pass,
+    )
+    decision = "retained" if follow_on_decision_rule_pass else "appendix_only"
     summary = {
         "decision": decision,
+        "research_role": "secondary_descriptive_extension",
+        "decision_rule_label": "pre-specified follow-on decision rule",
+        "formal_preregistration": False,
         "criteria": criteria,
         "burst_clustering_counts": factor_counts,
         "burst_clustering_conclusions_stable": clustering_stable,
         "leave_one_group_out_stable": leave_one_out_stable,
-        "blind_audit_complete": audit_complete,
-        "blind_audit_noise_like_fraction": noise_fraction,
-        "blind_audit_pass": blind_audit_pass,
-        "numerical_gate_pass": numerical_gate,
+        "morphology_screen_complete": morphology_screen_complete,
+        "morphology_screen_noise_like_fraction": noise_fraction,
+        "morphology_screen_pass": morphology_screen_pass,
+        "numerical_criteria_pass": numerical_criteria_pass,
+        "follow_on_decision_rule_pass": follow_on_decision_rule_pass,
         "reason_if_appendix_only": (
             None
             if decision == "retained"
-            else "At least one preregistered numerical, sensitivity, or blind-audit condition failed or remains incomplete."
+            else "At least one numerical, sensitivity, or morphology-screen condition in the pre-specified follow-on decision rule failed or remains incomplete."
         ),
         "claim_boundary": (
             "Secondary peaks are descriptive spectral information, not crack-type labels or detection-accuracy evidence."
@@ -1421,8 +1478,8 @@ def run_all(config: dict) -> None:
     build_bursts(config, catalog)
     samples = deterministic_samples(config, catalog)
     render_waveform_samples(config, samples)
-    blind_signal_audit(config)
-    unblind(config)
+    class_hidden_morphology_screen(config)
+    reveal_morphology_classes(config)
     align_all(config)
     evaluate_top3(config)
 
@@ -1431,7 +1488,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "command",
-        choices=["all", "catalog", "bursts", "sample", "audit", "align", "unblind", "top3"],
+        choices=["all", "catalog", "bursts", "sample", "screen", "align", "reveal", "top3"],
     )
     parser.add_argument("--config", type=Path, required=True)
     args = parser.parse_args()
@@ -1447,13 +1504,12 @@ def main() -> int:
     elif args.command == "sample":
         samples = deterministic_samples(config)
         render_waveform_samples(config, samples)
-    elif args.command == "audit":
-        blind_signal_audit(config)
-        unblind(config)
+    elif args.command == "screen":
+        class_hidden_morphology_screen(config)
     elif args.command == "align":
         align_all(config)
-    elif args.command == "unblind":
-        unblind(config)
+    elif args.command == "reveal":
+        reveal_morphology_classes(config)
     elif args.command == "top3":
         evaluate_top3(config)
     return 0

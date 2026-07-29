@@ -1,9 +1,11 @@
 # Prompt Output Comparison: Experiment #1 (`CT07.m`)
 
-> [!warning] Pre-oracle experiment record
-> This report evaluates original-generation evidence available at that stage.
-> It does not replace the final MATLAB-oracle validation or support a general
-> ranking of model families. See [[Individual Project/README|Canonical Project Overview]].
+> [!warning] Unevaluated preliminary assessment
+> This historical report is based on generated text and static inspection. The
+> outputs had not yet been executed on the frozen fixture or compared with the
+> MATLAB oracle. Its rankings are preliminary observations, not a general
+> ranking of model families. See
+> [[Individual Project/README|Canonical Project Overview]].
 
 ## 1. Experiment Metadata
 - **Date**: 2026.05.20 to 2026.05.26

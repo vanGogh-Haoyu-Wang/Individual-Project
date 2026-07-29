@@ -21,3 +21,31 @@ The MATLAB files and fixture are retained unmodified. The reference files in
 MATLAB R2026a.
 
 The fixture provenance does not identify a material, specimen or experiment.
+
+## Evidence layers
+
+- `test/reference/reference.sha256` freezes the public fixture, MATLAB oracle
+  arrays and the upstream MATLAB reader files used by the exporter.
+- `results/comparison_summary.toml` is regenerated deterministically by
+  `tools/write_comparison_summary.jl`. It computes missing and extra channels
+  and samples independently, checks channel order and header fields, and
+  compares all 206,848 MATLAB-reference voltage values.
+- `results/final_run.log` is the combined output of the final Julia regression
+  run. The original stdout/stderr separation is not available from the
+  captured tool result.
+- `environment/versions.txt` records the final Julia/OS environment and the
+  installed MATLAB oracle application metadata.
+- `MANIFEST.sha256` freezes every non-ignored regular file in this case
+  package except the manifest itself.
+
+The final regression reused the frozen MATLAB R2026a oracle; it did not
+regenerate it. A live MATLAB version probe failed in the current runner during
+a Qt processor-feature check. This is recorded as an environment limitation,
+not as a WFS reader or numerical-comparison failure.
+
+## Dissertation boundary
+
+This package supports a secondary, single-fixture format/workflow result. It
+does not establish that the fixture contains steel data, validate damage or
+crack detection, connect the fixture to `R260_2`, or demonstrate compatibility
+with untested WFS dialects.

@@ -12,9 +12,9 @@ scientific_results = "results/scientific"
 mat_metadata = "results/input/mat_metadata.csv"
 
 [executables]
-python = "../temp/ae-peak-frequency/python/.venv/bin/python"
-julia = "/Users/vangogh/.julia/juliaup/julia-1.12.6+0.aarch64.apple.darwin14/Julia-1.12.app/Contents/Resources/julia/bin/julia"
-matlab = "/Applications/MATLAB_R2026a.app/bin/matlab"
+python = "python3"
+julia = "julia"
+matlab = "matlab"
 
 [analysis]
 groups = ["T01", "T02", "T03", "T04", "T05", "T06", "T07", "T08", "T09"]
@@ -30,4 +30,3 @@ bootstraps = 1000
 offset_min_s = -120
 offset_max_s = 120
 alignment_bin_widths_s = [0.5, 1.0, 2.0]
-

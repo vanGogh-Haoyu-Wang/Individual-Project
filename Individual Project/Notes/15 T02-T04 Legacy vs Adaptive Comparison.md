@@ -1,5 +1,10 @@
 # T02, T03 and T04: Legacy MATLAB vs Adaptive AE Peak-Frequency Comparison
 
+> [!note] Historical comparison stage
+> This note records the T02-T04 evidence available on 2026-07-15. Later
+> full-dataset numerical and scientific status is maintained in
+> [[Individual Project/README|Canonical Project Overview]].
+
 > Project-level current status: [[Individual Project/README|Canonical Project Overview]]
 
 ## Purpose
@@ -180,3 +185,13 @@ For a supervisor discussion, the defensible statement is:
 
 - Legacy MATLAB outputs: `/Users/vangogh/Documents/temp/ae-peak-frequency/outputs/t02-matlab-legacy`, `t03-matlab-legacy`, and `t04-matlab-legacy`.
 - Adaptive Python outputs: `/Users/vangogh/Documents/temp/ae-peak-frequency/outputs/t02-python-adaptive`, `t03-python-adaptive`, and `t04-python-adaptive`.
+
+## Final Status Addendum (2026-07-29)
+
+Adaptive/Top-3 was subsequently validated across T01-T09 in
+MATLAB/Python/Julia using 9,472,125 Adaptive complete windows, 522,216
+selected events and 1,566,634 Top-3 rows. The deterministic class-hidden
+morphology screen was completed, but it is not expert blind review or damage
+ground truth. The attempted waveform-to-workbook mapping supported `0` of
+the `9` groups, so no load, stress, yield or crack-stage interpretation is
+made. Top-3 remains secondary descriptive spectral information.

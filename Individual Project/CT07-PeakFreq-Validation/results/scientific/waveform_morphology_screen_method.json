@@ -1,0 +1,13 @@
+{
+  "method": "deterministic_class_hidden_morphology_screen",
+  "used_matched_or_adaptive_class": false,
+  "expert_review": false,
+  "damage_ground_truth": false,
+  "thresholds": {
+    "clipped": "flat_fraction >= 0.05",
+    "impulsive": "crest >= 5 or excess_kurtosis >= 8",
+    "oscillatory": "spectral_concentration >= 0.15 and kurtosis < 8",
+    "noise_like": "rms/threshold < 1.25, crest < 3.5 and concentration < 0.10",
+    "otherwise": "ambiguous"
+  }
+}

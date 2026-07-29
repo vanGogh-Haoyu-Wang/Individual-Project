@@ -1,0 +1,65 @@
+flowchart LR
+    subgraph I["Inputs and References"]
+        I1["CT07 workbook + CT07.m"]
+        I2["T01-T09 MAT waveforms + Peak_Freq.m"]
+        I3["Public DTA and WFS fixtures"]
+        I4["Processed R260_2 workbook"]
+    end
+
+    subgraph W["Migration and Analysis Workflows"]
+        W1["CT07: 8 LLM generations → normalized probes → candidate-derived runners"]
+        W2["SMOP: raw translation → 2 bounded recovery paths"]
+        W3["Legacy: MATLAB → Python / Julia"]
+        W4["Adaptive / Top-3: MATLAB reference → Python / Julia"]
+        W5["DTA: isolated MATLAB-source and Python-source candidates → Julia reader"]
+        W6["WFS: MATLAB fixture exporter → Julia reader"]
+        W7["R260_2: streaming ZIP/XML exploratory analysis"]
+    end
+
+    subgraph V["Verification"]
+        V1["MATLAB CT07 oracle\n1,807 mechanical + 5,850 AE"]
+        V2["MATLAB Legacy T01 oracle\n3,098 rows"]
+        V3["MATLAB Adaptive / Top-3 oracle\nT01-T09"]
+        V4["Public Python DTA oracle\n8 hits + 8 waveforms"]
+        V5["MATLAB WFS oracle\n2 × 103,424 samples"]
+        V6["No raw-waveform oracle\ninput-hash and schema checks only"]
+    end
+
+    subgraph C["Defensible Thesis Claims"]
+        C1["CT07 migration evidence\nOriginal success ≠ final validated runner"]
+        C2["SMOP deterministic baseline\nRecoverable, not automatic"]
+        C3["Legacy three-language validation\nComplete T01 only"]
+        C4["Adaptive / Top-3 numerical agreement\nSecondary descriptive role"]
+        C5["DTA format/workflow applicability\nOne tested variant"]
+        C6["WFS single-fixture validation\nMaterial unknown"]
+        C7["R260_2 exploratory hit-level case\nProvenance and units limited"]
+    end
+
+    I1 --> W1 --> V1 --> C1
+    I1 --> W2 --> V1 --> C2
+    I2 --> W3 --> V2 --> C3
+    I2 --> W4 --> V3 --> C4
+    I3 --> W5 --> V4 --> C5
+    I3 --> W6 --> V5 --> C6
+    I4 --> W7 --> V6 --> C7
+
+    E["SHA-256 manifests + session registry + symmetric comparisons"] --> C1
+    E --> C2
+    E --> C3
+    E --> C4
+    E --> C5
+    E --> C6
+    E --> C7
+
+    classDef input fill:#EAF2F8,stroke:#2874A6,color:#17202A,stroke-width:1.5px;
+    classDef workflow fill:#F4ECF7,stroke:#7D3C98,color:#17202A,stroke-width:1.5px;
+    classDef verify fill:#E8F8F5,stroke:#148F77,color:#17202A,stroke-width:1.5px;
+    classDef claim fill:#FEF5E7,stroke:#CA6F1E,color:#17202A,stroke-width:1.5px;
+    classDef evidence fill:#FDEDEC,stroke:#B03A2E,color:#17202A,stroke-width:1.5px;
+
+    class I1,I2,I3,I4 input;
+    class W1,W2,W3,W4,W5,W6,W7 workflow;
+    class V1,V2,V3,V4,V5,V6 verify;
+    class C1,C2,C3,C4,C5,C6,C7 claim;
+    class E evidence;
+

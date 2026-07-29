@@ -1,0 +1,36 @@
+{
+  "captured_at_utc": "2026-07-29T08:44:52.480238+00:00",
+  "external_input": {
+    "bytes": 103740621,
+    "path": "/Users/vangogh/Documents/毕设/Rail Steel/Copy of current R260_2.xlsx",
+    "sha256": "2bf80527130a7eab326297a2dc1c17974dbae45cf3840217378169d227f8ea64"
+  },
+  "git": {
+    "commit": "2ada9ea922518291a1e9b4545183c45808b5f0bb",
+    "r260_status": "M \"Individual Project/R2602Analysis/README.md\"\n M \"Individual Project/R2602Analysis/tools/plot_s3.py\"\n?? \"Individual Project/R2602Analysis/EXTERNAL_INPUTS.sha256\"\n?? \"Individual Project/R2602Analysis/PROVENANCE.md\"\n?? \"Individual Project/R2602Analysis/evidence/\"\n?? \"Individual Project/R2602Analysis/tools/final_rehearsal.py\"\n?? \"Individual Project/R2602Analysis/tools/verify_r260.py\""
+  },
+  "os": {
+    "locale": [
+      "C",
+      "UTF-8"
+    ],
+    "machine": "arm64",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "timezone": [
+      "GMT",
+      "BST"
+    ]
+  },
+  "plot_dependencies": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.4.6"
+  },
+  "python": {
+    "executable": "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "version": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]"
+  },
+  "uv": {
+    "executable": "/opt/homebrew/bin/uv",
+    "version": "uv 0.11.29 (Homebrew 2026-07-15 aarch64-apple-darwin)"
+  }
+}

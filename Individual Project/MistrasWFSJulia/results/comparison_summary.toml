@@ -1,0 +1,41 @@
+schema_version = 1
+status = "passed"
+passed = true
+
+[scope]
+fixture = "test/data/ExampleWFSdata.wfs"
+numerical_reference = "MATLAB R2026a fixture export"
+fixture_variant_only = true
+material_provenance = "not_available"
+raw_count_reference_available = false
+
+[channels]
+expected = 2
+actual = 2
+expected_order = [1, 2]
+actual_order = [1, 2]
+missing_in_julia = []
+extra_in_julia = []
+order_matches = true
+
+[samples]
+expected_per_channel = 103424
+actual_per_channel = [103424, 103424]
+missing_in_julia_per_expected_channel = [0, 0]
+extra_in_julia_per_actual_channel = [0, 0]
+missing_in_julia_total = 0
+extra_in_julia_total = 0
+
+[header]
+field_mismatches = 0
+mismatch_fields = []
+
+[time_axis]
+field_mismatches = 0
+max_abs_error_s = 0.0
+
+[voltage]
+compared_values = 206848
+value_mismatches = 0
+max_abs_error_mv = 0.0
+exact_full_matrix_match = true

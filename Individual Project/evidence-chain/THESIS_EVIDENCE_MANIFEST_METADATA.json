@@ -1,0 +1,10 @@
+{
+  "manifest": "THESIS_EVIDENCE_MANIFEST.sha256",
+  "base_directory": "Individual Project",
+  "path_style": "project-relative",
+  "purpose": "Integrity anchor for the final thesis evidence indexes, workflow diagram, formal package manifests, bounded steel-case manifests, clean-rehearsal receipts and selected thesis assets.",
+  "self_excluded": true,
+  "raw_large_inputs": "external and frozen by the referenced case input manifests",
+  "rehearsal_outputs": "retained locally through dissertation submission and ignored by Git",
+  "portability_boundary": "same-host verification with external inputs retained in place; no cross-machine or offline reproducibility claim"
+}

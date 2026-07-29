@@ -1,5 +1,18 @@
+schema_version = 2
 fixture = "210527-CH1-15.DTA"
 python_upstream_commit = "6c7dfb6f43f812dccff0c9219bd2c5c82bd98e85"
+hit_time_rtol = 0.0
+hit_time_atol_s = 1.0e-12
+integer_features_exact = true
+toleranced_feature = "ABS-ENERGY"
+floating_feature_rtol = 1.0e-12
+floating_feature_atol = 1.0e-12
+waveform_time_rtol = 0.0
+waveform_time_atol_s = 1.0e-12
+waveform_metadata_exact = true
+raw_counts_exact = true
+waveform_voltage_rtol = 1.0e-12
+waveform_voltage_atol_v = 1.0e-12
 hits = 8
 waveforms = 8
 missing_in_julia = 0
@@ -10,4 +23,64 @@ max_hit_time_error_s = 0.0
 max_feature_error = 0.0
 max_waveform_time_error_s = 0.0
 max_waveform_voltage_error_v = 0.0
+passed = true
 status = "numerically validated against the Python reference"
+
+[hit_counts]
+expected = 8
+actual = 8
+missing = 0
+extra = 0
+order_matches = true
+
+[waveform_counts]
+expected = 8
+actual = 8
+missing = 0
+extra = 0
+order_matches = true
+
+[hit_field_mismatches]
+"ABS-ENERGY" = 0
+"AMP" = 0
+"COUN" = 0
+"DURATION" = 0
+"ENER" = 0
+"FRQ-C" = 0
+"P-FRQ" = 0
+"RISE" = 0
+"channel" = 0
+"feature_set" = 0
+"time_s" = 0
+
+[hit_max_abs_error]
+"ABS-ENERGY" = 0.0
+"AMP" = 0.0
+"COUN" = 0.0
+"DURATION" = 0.0
+"ENER" = 0.0
+"FRQ-C" = 0.0
+"P-FRQ" = 0.0
+"RISE" = 0.0
+"channel" = 0.0
+"time_s" = 0.0
+
+[waveform_field_mismatches]
+"channel" = 0
+"sample_count" = 0
+"sample_rate_hz" = 0
+"time_s" = 0
+"trigger_delay_samples" = 0
+raw_counts = 0
+voltage_v = 0
+
+[waveform_max_abs_error]
+"channel" = 0.0
+"raw_counts" = 0.0
+"sample_count" = 0.0
+"sample_rate_hz" = 0.0
+"time_s" = 0.0
+"trigger_delay_samples" = 0.0
+"voltage_v" = 0.0
+
+[unknown_message_counts]

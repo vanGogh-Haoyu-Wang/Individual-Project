@@ -1,7 +1,7 @@
 # MATLAB Legacy Validation Package
 
-> **Superseded package notice:** This directory is retained as historical
-> validation material. Use the
+> [!warning] Superseded validation package
+> This directory is retained as historical validation material. Use the
 > [CT07–Peak_Freq validation package](../CT07-PeakFreq-Validation/README.md)
 > for current numerical evidence and the
 > [Individual Project overview](../README.md) for project-level scope.

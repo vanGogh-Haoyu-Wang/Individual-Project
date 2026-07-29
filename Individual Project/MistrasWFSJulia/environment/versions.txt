@@ -1,0 +1,29 @@
+captured_utc=2026-07-29T08:39:38Z
+workspace_git_head=2ada9ea922518291a1e9b4545183c45808b5f0bb
+workspace_git_branch=main
+
+[operating_system]
+product_name=macOS
+product_version=26.5.2
+build_version=25F84
+kernel=Darwin 25.5.0 arm64
+cpu=Apple M1 Pro
+
+[julia]
+version=1.12.6
+commit=15346901f00
+platform=arm64-apple-darwin24.0.0
+llvm=18.1.7
+threads=1 default, 1 interactive, 1 GC
+project_runtime_dependencies=Base only
+test_standard_library=Test
+
+[matlab_oracle]
+recorded_release=R2026a
+installed_application=/Applications/MATLAB_R2026a.app
+bundle_version=26.1.0
+binary_architecture=arm64
+oracle_regenerated_during_final_julia_run=false
+live_version_probe_status=environment_failure_exit_137
+live_version_probe_error=Qt processor feature check failed in the current runner
+interpretation=The frozen oracle remains the numerical reference; this probe failure is not a Julia reader or fixture-regression failure.
