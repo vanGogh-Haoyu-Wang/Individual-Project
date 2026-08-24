@@ -1,11 +1,11 @@
+00_files/
 66_notes/
-77_Hermes Agent/
-88_copilot/
+CLAUDE.md
 .DS_Store
 .trash/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
-00_files/github-recovery-codes.txt
+
 .obsidian/plugins/copilot/data.json
 .obsidian/plugins/obsidian-livesync/data.json
 .obsidian/copilot-index-*.json
@@ -17,8 +17,4 @@ codex/
 docs/
 AGENTS.md
 
-
-
-
-# Ignore Smart Environment folder
 .smart-env
