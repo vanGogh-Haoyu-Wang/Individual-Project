@@ -16,3 +16,9 @@
 codex/
 docs/
 AGENTS.md
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
