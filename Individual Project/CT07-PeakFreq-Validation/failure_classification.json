@@ -1,0 +1,12 @@
+{
+  "status": "failed",
+  "failure_category": "environment_declaration_failure",
+  "failed_stage": "ct07_candidate_derived_runner",
+  "failed_activity": "deepseek_julia",
+  "first_error": "Package CSV not found in the clean CT07 Julia project",
+  "algorithm_or_candidate_failure": false,
+  "protected_artifacts_unchanged": true,
+  "root_cause": "The shared Julia output helper imported CSV and JSON3, but the CT07 Julia Project.toml did not declare those runtime dependencies.",
+  "resolution": "CSV and JSON3 were declared in the CT07 Julia project, its manifest was refreshed, and clean-project import probes were added before the second rehearsal.",
+  "superseding_rehearsal": "final-20260729-r2"
+}
