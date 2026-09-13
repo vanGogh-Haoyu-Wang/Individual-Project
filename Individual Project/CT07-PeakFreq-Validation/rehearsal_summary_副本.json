@@ -1,0 +1,47 @@
+{
+  "started_at_utc": "2026-07-29T09:03:41.627776+00:00",
+  "status": "passed",
+  "stage_order": [
+    "ct07",
+    "legacy_top1_t01",
+    "adaptive_top3_t01_t09",
+    "scientific"
+  ],
+  "results_root": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/CT07-PeakFreq-Validation/rehearsals/final-20260729-r2/results",
+  "effective_config": "/Users/vangogh/Documents/Obsidian/brainmse/Individual Project/CT07-PeakFreq-Validation/rehearsals/final-20260729-r2/effective_validation.toml",
+  "reproducibility_scope": "complete_same_host_clean_environment_rehearsal",
+  "command_count": 61,
+  "nonzero_command_count": 0,
+  "newly_generated": [
+    "ct07_matlab_oracle",
+    "eight_ct07_candidate_derived_runners",
+    "legacy_top1_t01_matlab_python_julia",
+    "adaptive_top3_t01_t09_matlab_python_julia",
+    "scientific_catalog_morphology_alignment_and_top3_rule"
+  ],
+  "frozen_reused_inputs": [
+    "legacy_matlab_t01_t09_context",
+    "mat_metadata"
+  ],
+  "frozen_dependencies_reused": [
+    "results/peak-frequency/legacy-matlab-t01-t09",
+    "results/input/mat_metadata.csv",
+    "results/ct07/smop",
+    "CT07 prompt/original-generation provenance"
+  ],
+  "verified_totals": {
+    "ct07_candidates": "8/8",
+    "legacy_t01_rows": 3098,
+    "adaptive_candidate_windows": 9472125,
+    "adaptive_selected_events": 522216,
+    "adaptive_top3_rows": 1566634,
+    "morphology_figures": 413,
+    "alignment_supported": 0,
+    "alignment_unresolved": 9
+  },
+  "staged_verify_exit_code": 0,
+  "same_host_relocation_verify_exit_code": 0,
+  "cross_machine_reproducibility_claimed": false,
+  "protected_hashes_unchanged": true,
+  "ended_at_utc": "2026-07-29T09:23:03.567790+00:00"
+}
